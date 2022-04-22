@@ -7,11 +7,6 @@ const DynamicTypeWriterWithNoSSR = dynamic(
     { ssr: false }
   )
 
-const WhatWeDoContent = () => (
-  <Box>
-  <SplitWithImage />
-  </Box>
-)
 
 export default function LandingPage() {
   return (

@@ -38,7 +38,7 @@ import {
           <Stack spacing={4}>
             <Heading as='h3' size='2xl'>We Provide Space for Emerging Artists</Heading>
             <Text color={'gray.500'} fontSize={'2xl'}>
-            A "Co-Arts" space for artists, researchers, thinkers, experimenters, developers & do-ers.
+            A Co-Arts space for artists, researchers, thinkers, experimenters, developers & do-ers.
              We provide space and community for any and all explorers of African futures.
             </Text>
           </Stack>
