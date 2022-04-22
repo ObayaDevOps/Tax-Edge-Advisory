@@ -6,7 +6,7 @@ const ImageSlider = ({ slides }) => {
   return (
     <Carousel infiniteLoop autoPlay stopOnHover showThumbs interval="4200">
       {slides.map((slide) => {
-        return <NextImage src={slide} />;
+        return <NextImage src={slide} key={slide} />;
       })}
     </Carousel>
   );
