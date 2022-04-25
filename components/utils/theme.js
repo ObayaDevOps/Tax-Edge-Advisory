@@ -1,10 +1,8 @@
 import { extendTheme } from '@chakra-ui/react'
-import WithSubnavigation from '../../components/utils/navbar'
-import FooterLargeWithNewsletter from '../../components/utils/footer' 
 
 const theme = extendTheme({
     config:{
-      initialColorMode: 'dark',
+      initialColorMode: 'light',
       useSystemColorMode: false
     },
     fonts:{

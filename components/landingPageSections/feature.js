@@ -18,7 +18,7 @@ import {
   
   export default function LandingPageSplitWithImage() {
     return (
-      <Box p={8}>
+      <Center p={8}>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
@@ -57,6 +57,6 @@ import {
             <NextImage src={studio3} alt="work by kharumwa" placeholder="blur"/>
           </Flex>
         </SimpleGrid>
-      </Box>
+       </Center>
     );
   }

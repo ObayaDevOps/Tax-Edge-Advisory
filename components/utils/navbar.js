@@ -259,6 +259,26 @@ import theme from './theme';
   
   const NAV_ITEMS = [
     {
+      label: 'Tech+Art',
+      children: [
+        {
+          label: 'Metaverse Gallery',
+          subLabel: '',
+          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
+        },
+        // {
+        //   label: 'Artist Show Room',
+        //   subLabel: '',
+        //   href: '/tech/virtualGallery',
+        // },
+        {
+          label: 'Ascii Torus: Interactive',
+          subLabel: 'In-Browser Art Piece',
+          href: '/tech/asciiTorus',
+        }
+      ],
+    },
+    {
       label: 'Exhibitions',
       children: [
         {
@@ -288,26 +308,7 @@ import theme from './theme';
         },
       ],
     },
-    {
-      label: 'Tech+Art',
-      children: [
-        {
-          label: 'Metaverse Gallery',
-          subLabel: '',
-          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
-        },
-        // {
-        //   label: 'Artist Show Room',
-        //   subLabel: '',
-        //   href: '/tech/virtualGallery',
-        // },
-        {
-          label: 'Ascii Torus',
-          subLabel: 'Interactive Art Piece',
-          href: '/tech/asciiTorus',
-        }
-      ],
-    },
+,
     {
       label: 'Workshops',
       children: [
@@ -333,10 +334,21 @@ import theme from './theme';
         },
       ],
     },
-    // {
-    //   label: 'About Us',
-    //   href: '/our-story',
-    // },
+    {
+      label: 'About',
+      children: [
+        {
+          label: 'About Us',
+          subLabel: '',
+          href: '/about/about-us',
+        },
+        {
+          label: 'About this Website',
+          subLabel: '',
+          href: '/about/how-this-was-built',
+        },
+      ],
+    },
     // {
     //   label: 'Press',
     //   href: '/press',
