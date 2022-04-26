@@ -260,8 +260,8 @@ import theme from './theme';
             align={'start'}>
             {children &&
               children.map((child) => (
-                <NextLink href={child.href} passHref>
-                  <Link key={child.label} py={2}  fontFamily="Space Mono">
+                <NextLink href={child.href} key={child.label} passHref>
+                  <Link  py={2}  fontFamily="Space Mono">
                     {child.label}
                   </Link>
                 </NextLink>

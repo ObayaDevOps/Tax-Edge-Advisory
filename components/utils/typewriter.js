@@ -11,7 +11,7 @@ export default function SimpleTypeWriter() {
                     startDelay={600}
                     cursorColor="black"
                     multiText={[
-                      'AFROPOCENE: 22/04/2022 06:35-EAT ETHEREUM BLOCK:27426567   ', 
+                      'AFROPOCENE GENESIS: 22/04/2022 06:35-EAT ETHEREUM BLOCK:27426567   ', 
                       // 'ETHEREUM BLOCK:27426567   ',
                       // 'HASH: 0x55bbc...738',
                       'HASH: 0x55bbc...738  ---BEGIN MESSAGE---',

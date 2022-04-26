@@ -24,13 +24,9 @@ import Head from 'next/head'
     return (
       <Container maxW={'7xl'}>
       <Head>
-      {/* <link rel="icon" href="/public/favicon.ico" /> */}
         <title>Book Of Awaz Exhibition</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
-{/* BAD: http://localhost:3000/public/images/icon/uganda.png */}
-{/* {Good}:  http://localhost:3000/images/icon/uganda.png */}
-
       </Head>
 
 
