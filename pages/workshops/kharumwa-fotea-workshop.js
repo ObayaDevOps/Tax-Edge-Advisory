@@ -26,6 +26,7 @@ import Head from 'next/head'
       <Head>
         <title>Workshop: Nothing New Under the Sun</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
+        <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 
 

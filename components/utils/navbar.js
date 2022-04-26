@@ -84,9 +84,7 @@ import theme from './theme';
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <NextLink href='/#' passHref>
-            {/* <Link href='/#'> */}
             <Link>
-                {/* <NextImage src={africaIcon} width={40} height={40}/> */}
                 <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/>
             </Link>
           </NextLink>
@@ -135,7 +133,7 @@ import theme from './theme';
                   href={navItem.href ?? '#'}
                   fontWeight={500}
                   color={linkColor}
-                  _hover={{ bg: colorMode === 'light' ? 'blue.50': 'gray.700' }}
+                  _hover={{ bg: colorMode === 'light' ? 'blue.50': 'gray.700', textColor: 'blue.400'}}
                   fontFamily={'Space Mono'}
                   >
                     {navItem.label}
@@ -169,9 +167,7 @@ import theme from './theme';
   const DesktopSubNav = ({ label, href, subLabel }) => {
     return (
       <NextLink href={href} passHref>
-
       <Link
-        // href={href}
         role={'group'}
         display={'block'}
         p={2}
@@ -240,7 +236,6 @@ import theme from './theme';
           }}>
           <Text
             fontWeight={600}
-            // fontFamily="Space Mono"
             color={useColorModeValue('gray.600', 'gray.200')}>
             {label}
           </Text>

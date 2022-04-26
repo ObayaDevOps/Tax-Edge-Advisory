@@ -57,6 +57,7 @@ const ArticleList = () => {
       <Head>
         <title>Exhibitions: Afropocene</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
+        <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 
       <Heading as="h1">Exhibitions</Heading>
