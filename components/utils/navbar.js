@@ -26,6 +26,9 @@ import {
 
   import NextImage from 'next/image'
   import africaIcon from '../../public/images/icon/africa.png'
+  import africaIconColor from '../../public/images/icon/africa-colour-icon.png'
+  import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
+  
 
   import NextLink from 'next/link'
   import { MdNightlight } from 'react-icons/md';
@@ -51,8 +54,7 @@ import theme from './theme';
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-
-    
+    const { colorMode, toggleColorMode } = useColorMode()
   
     return (
       <Box>
@@ -81,9 +83,15 @@ import theme from './theme';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <NextLink href='/#'>
-              <NextImage src={africaIcon} width={40} height={40}/>
-            </NextLink>
+          <NextLink href='/#' passHref>
+            {/* <Link href='/#'> */}
+            <Link>
+                {/* <NextImage src={africaIcon} width={40} height={40}/> */}
+                <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/>
+            </Link>
+          </NextLink>
+
+
             
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -117,22 +125,22 @@ import theme from './theme';
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
-                <Link
+              <NextLink href={navItem.href ?? '#'} passHref>
+                <PopoverTrigger>
+                  <Link
                   p={2}
-                  href={navItem.href ?? '#'}
                   fontSize={'sm'}
+                  href={navItem.href ?? '#'}
                   fontWeight={500}
                   color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}
+                  _hover={{ bg: useColorModeValue('blue.50', 'gray.700') }}
                   fontFamily={'Space Mono'}
                   >
-                  {navItem.label}
-                </Link>
-              </PopoverTrigger>
+                    {navItem.label}
+                  </Link>
+                </PopoverTrigger>
+              </NextLink>
+
   
               {navItem.children && (
                 <PopoverContent
@@ -158,13 +166,16 @@ import theme from './theme';
   
   const DesktopSubNav = ({ label, href, subLabel }) => {
     return (
+      <NextLink href={href} passHref>
+
       <Link
-        href={href}
+        // href={href}
         role={'group'}
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}
+        >
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
@@ -172,9 +183,11 @@ import theme from './theme';
               _groupHover={{ color: 'blue.400' }}
               fontWeight={500}
               fontFamily={'Space Mono'}
+              _hover={{ color: 'blue.400' }}
               >
               {label}
             </Text>
+
             <Text fontSize={'sm'}>{subLabel}</Text>
           </Box>
           <Flex
@@ -189,6 +202,8 @@ import theme from './theme';
           </Flex>
         </Stack>
       </Link>
+      </NextLink>
+
     );
   };
   
@@ -259,6 +274,26 @@ import theme from './theme';
   
   const NAV_ITEMS = [
     {
+      label: 'About',
+      children: [
+        {
+          label: 'About Us',
+          subLabel: '',
+          href: '/about/about-us',
+        },
+        {
+          label: 'Artists In Residence',
+          subLabel: 'Past, Present, Future',
+          href: '/about/artists',
+        },
+        {
+          label: "How it's Made",
+          subLabel: 'The Tech Behind this Website',
+          href: '/about/how-this-was-built',
+        },
+      ],
+    },    
+    {
       label: 'Tech+Art',
       children: [
         {
@@ -275,23 +310,29 @@ import theme from './theme';
           label: 'Ascii Torus: Interactive',
           subLabel: 'In-Browser Art Piece',
           href: '/tech/asciiTorus',
+        },
+        {
+          label: '4FR0P0C3N3 43VR',
+          subLabel: 'Conceptual Blockchain Art',
+          href: '/tech/asciiTorus',
         }
       ],
     },
     {
       label: 'Exhibitions',
-      children: [
-        {
-          label: 'Odur: Mwawa',
-          subLabel: 'KLA ART 2021',
-          href: '/exhibitions/odur-mwawa-exhibition',
-        },
-        {
-          label: 'Museum Of Selves',
-          subLabel: 'Collaborative Exhibition and Youth Workshop',
-          href: '/exhibitions/museum-of-selves-exhibition',
-        }
-      ],
+      href: '/exhibitions/exhibitions-home',
+      // children: [
+      //   {
+      //     label: 'Odur: Mwawa',
+      //     subLabel: 'KLA ART 2021',
+      //     href: '/exhibitions/odur-mwawa-exhibition',
+      //   },
+      //   {
+      //     label: 'Museum Of Selves',
+      //     subLabel: 'Collaborative Exhibition and Youth Workshop',
+      //     href: '/exhibitions/museum-of-selves-exhibition',
+      //   }
+      // ],
     },
     {
       label: 'Studio Space',
@@ -311,13 +352,14 @@ import theme from './theme';
 ,
     {
       label: 'Workshops',
-      children: [
-        {
-          label: 'FOTEA: Nothing New Under the Sun',
-          subLabel: 'Kharumwa Photography Workshop',
-          href: '/workshops/kharumwa-fotea-workshop',
-        }
-      ],
+      href: '/workshops/workshops-home',
+      // children: [
+      //   {
+      //     label: 'FOTEA: Nothing New Under the Sun',
+      //     subLabel: 'Kharumwa Photography Workshop',
+      //     href: '/workshops/kharumwa-fotea-workshop',
+      //   }
+      // ],
     },
     {
       label: 'Contact',
@@ -334,21 +376,7 @@ import theme from './theme';
         },
       ],
     },
-    {
-      label: 'About',
-      children: [
-        {
-          label: 'About Us',
-          subLabel: '',
-          href: '/about/about-us',
-        },
-        {
-          label: 'About this Website',
-          subLabel: '',
-          href: '/about/how-this-was-built',
-        },
-      ],
-    },
+
     // {
     //   label: 'Press',
     //   href: '/press',

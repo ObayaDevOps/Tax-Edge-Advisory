@@ -1,4 +1,4 @@
-import { Heading, Box, Container, VStack, SimpleGrid, Center } from '@chakra-ui/react'
+import { Heading, Box, Container, VStack, SimpleGrid, Center, Button } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import LandingPageSplitWithImage from '../landingPageSections/feature'
 

@@ -11,10 +11,10 @@ export default function SimpleTypeWriter() {
                     startDelay={600}
                     cursorColor="black"
                     multiText={[
-                      'GENESIS: 22/04/2022 06:35 EAT', 
-                      'ETHEREUM BLOCK:27426567   ',
-                      'HASH: 0x55bbc...738',
-                      '---BEGIN MESSAGE---',
+                      'AFROPOCENE: 22/04/2022 06:35-EAT ETHEREUM BLOCK:27426567   ', 
+                      // 'ETHEREUM BLOCK:27426567   ',
+                      // 'HASH: 0x55bbc...738',
+                      'HASH: 0x55bbc...738  ---BEGIN MESSAGE---',
                       'Welcome to a new branch in the Future of African Creativity...',
                       'A group of thinkers, creators and doers formed a team to explore Art in all forms  ...',
                       'From the Physical... To the Digital...',

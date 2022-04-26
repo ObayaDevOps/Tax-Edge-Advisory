@@ -14,7 +14,9 @@ import {
   import { FaInstagram } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
   import { IoMdPlanet } from 'react-icons/io';
+  import { HiOutlineMail } from 'react-icons/hi';
 
+  
 
   import Image from 'next/image'
   import africaIcon from '../../public/images/icon/africa.png'
@@ -79,11 +81,14 @@ import {
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
                   <FaInstagram />
                 </SocialButton>
+                <SocialButton label={'Email'} href={'https://www.instagram.com/afropocene/'}>
+                  <HiOutlineMail />
+                </SocialButton>
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Company</ListHeader>
-              <Link href={'#'}>Contact us</Link>
+              <Link href={'/studios/contact-enquiry'}>Contact us</Link>
               <Link href={'#'}>Studio Space</Link>
             </Stack>
             <Stack align={'flex-start'}>

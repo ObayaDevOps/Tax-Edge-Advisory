@@ -15,7 +15,7 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/randomSlideData"
+import { SlideData } from "../../components/utils/carousel/odur-mwawa-slides"
 
 import Head from 'next/head'
 

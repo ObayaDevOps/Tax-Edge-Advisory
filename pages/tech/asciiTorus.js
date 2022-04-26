@@ -52,7 +52,20 @@ function Torusknot(props) {
 }
 //' .:-+*=%@#'
 //' afropocene STUDIO LAB'
-function AsciiRenderer({ renderIndex = 1, characters = ' .:-+*= afropocene STUDIO LAB', ...options }) {
+//' .:-+*= afropocene STUDIO LAB'
+//' BEGIN END.:-+*='
+//' ouroboros.:-+*='
+//' LIFE DEATH.:-+*='
+
+// var timedInput = ' BEGIN END*:-+*=' 
+
+
+// function changeTimedInput() {
+//   let op1 = ' .:-+*=%@#'
+//   let op2 = ' afropocene STUDIO LAB'
+// }
+
+function AsciiRenderer({ renderIndex = 1, characters = ' BEGIN END.:-+*=', ...options }) {
   // Reactive state
   const { size, gl, scene, camera } = useThree()
 

@@ -111,7 +111,7 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Face Masks, Recycled Plastics
+                     Barkcloth, Face Masks, Recycled Plastics
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
