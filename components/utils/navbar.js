@@ -119,6 +119,8 @@ import theme from './theme';
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    const { colorMode, toggleColorMode } = useColorMode()
+
   
     return (
       <Stack direction={'row'} spacing={4}>
@@ -133,7 +135,7 @@ import theme from './theme';
                   href={navItem.href ?? '#'}
                   fontWeight={500}
                   color={linkColor}
-                  _hover={{ bg: useColorModeValue('blue.50', 'gray.700') }}
+                  _hover={{ bg: colorMode === 'light' ? 'blue.50': 'gray.700' }}
                   fontFamily={'Space Mono'}
                   >
                     {navItem.label}
