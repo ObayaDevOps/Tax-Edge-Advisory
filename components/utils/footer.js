@@ -75,14 +75,14 @@ import {
                 Designed and Built in Kampala
               </Text>
               <Stack direction={'row'} spacing={6}>
-                <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
-                  <IoMdPlanet />
-                </SocialButton>
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
                   <FaInstagram />
                 </SocialButton>
                 <SocialButton label={'Email'} href={'https://www.instagram.com/afropocene/'}>
                   <HiOutlineMail />
+                </SocialButton>
+                <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
+                  <IoMdPlanet />
                 </SocialButton>
               </Stack>
             </Stack>

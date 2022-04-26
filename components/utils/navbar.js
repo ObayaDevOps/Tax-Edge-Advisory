@@ -233,12 +233,14 @@ import theme from './theme';
           href={href ?? '#'}
           justify={'space-between'}
           align={'center'}
+          fontFamily="Space Mono"
+
           _hover={{
             textDecoration: 'none',
           }}>
           <Text
             fontWeight={600}
-            fontFamily="Space Mono"
+            // fontFamily="Space Mono"
             color={useColorModeValue('gray.600', 'gray.200')}>
             {label}
           </Text>
@@ -263,9 +265,12 @@ import theme from './theme';
             align={'start'}>
             {children &&
               children.map((child) => (
-                <Link key={child.label} py={2} href={child.href}>
-                  {child.label}
-                </Link>
+                <NextLink href={child.href} passHref>
+                  <Link key={child.label} py={2}  fontFamily="Space Mono">
+                    {child.label}
+                  </Link>
+                </NextLink>
+
               ))}
           </Stack>
         </Collapse>
@@ -322,19 +327,24 @@ import theme from './theme';
     },
     {
       label: 'Exhibitions',
-      href: '/exhibitions/exhibitions-home',
-      // children: [
-      //   {
-      //     label: 'Odur: Mwawa',
-      //     subLabel: 'KLA ART 2021',
-      //     href: '/exhibitions/odur-mwawa-exhibition',
-      //   },
-      //   {
-      //     label: 'Museum Of Selves',
-      //     subLabel: 'Collaborative Exhibition and Youth Workshop',
-      //     href: '/exhibitions/museum-of-selves-exhibition',
-      //   }
-      // ],
+      // href: '/exhibitions/exhibitions-home',
+      children: [
+        {
+          label: 'Currently On',
+          subLabel: '',
+          href: '/exhibitions/exhibitions-home',
+        },
+        {
+          label: 'Exhibition Archive',
+          subLabel: '',
+          href: '/exhibitions/exhibitions-archive',
+        },
+        // {
+        //   label: 'Museum Of Selves',
+        //   subLabel: 'Collaborative Exhibition and Youth Workshop',
+        //   href: '/exhibitions/museum-of-selves-exhibition',
+        // }
+      ],
     },
     {
       label: 'Studio Space',
@@ -354,14 +364,18 @@ import theme from './theme';
 ,
     {
       label: 'Workshops',
-      href: '/workshops/workshops-home',
-      // children: [
-      //   {
-      //     label: 'FOTEA: Nothing New Under the Sun',
-      //     subLabel: 'Kharumwa Photography Workshop',
-      //     href: '/workshops/kharumwa-fotea-workshop',
-      //   }
-      // ],
+      children: [
+        {
+          label: 'Currently On',
+          subLabel: '',
+          href: '/workshops/workshops-home',
+        },
+        {
+          label: 'Workshop Archive',
+          subLabel: '',
+          href: '/workshops/workshops-archive',
+        }
+      ],
     },
     {
       label: 'Contact',
