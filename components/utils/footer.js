@@ -60,7 +60,7 @@ import {
   export default function FooterLargeWithNewsletter() {
     return (
       <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
+        bg={useColorModeValue('gray.50', 'gray.800')}
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid

@@ -47,7 +47,7 @@ import {
         align="center"
         justify="center"
         css={{
-          backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
+          // backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
           backgroundAttachment: 'fixed',
         }}
         id="contact">
@@ -94,7 +94,7 @@ import {
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       onClick={onCopy}
-                      isRound
+                      // isRound
                     />
                   </Tooltip>
   
@@ -109,7 +109,7 @@ import {
                         bg: 'blue.500',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
-                      isRound
+                      // isRound
                     />
                   </Link>
   
@@ -123,7 +123,7 @@ import {
                         bg: 'blue.500',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
-                      isRound
+                      // isRound
                     />
                   </Link>
   
@@ -137,7 +137,7 @@ import {
                         bg: 'blue.500',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
-                      isRound
+                      // isRound
                     />
                   </Link>
                 </Stack>

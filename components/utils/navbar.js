@@ -41,7 +41,7 @@ import {
     return (
       <header>
       <Script src="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'}>
+        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'} py={-1}>
           {colorMode === 'light' ? 'Dark' : 'Light'} Mode
         </Button>
       </header>
@@ -64,7 +64,7 @@ import theme from './theme';
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
-          borderBottom={1}
+          // borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}
@@ -121,7 +121,7 @@ import theme from './theme';
 
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4} paddingTop={1.5}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -148,7 +148,7 @@ import theme from './theme';
                   boxShadow={'xl'}
                   bg={popoverContentBgColor}
                   p={4}
-                  rounded={'xl'}
+                  // rounded={'xl'}
                   minW={'sm'}>
                   <Stack>
                     {navItem.children.map((child) => (
@@ -171,7 +171,7 @@ import theme from './theme';
         role={'group'}
         display={'block'}
         p={2}
-        rounded={'md'}
+        // rounded={'md'}
         _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}
         >
         <Stack direction={'row'} align={'center'}>
