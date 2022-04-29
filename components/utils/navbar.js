@@ -26,7 +26,6 @@ import {
 
   import NextImage from 'next/image'
   import africaIcon from '../../public/images/icon/africa.png'
-  import africaIconColor from '../../public/images/icon/africa-colour-icon.png'
   import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
   
 
@@ -41,7 +40,7 @@ import {
     return (
       <header>
       <Script src="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'} py={-1}>
+        <Button onClick={toggleColorMode} size='xs' fontFamily={'Space Mono'} py={-1} rounded={'none'} >
           {colorMode === 'light' ? 'Dark' : 'Light'} Mode
         </Button>
       </header>
@@ -89,9 +88,6 @@ import theme from './theme';
             </Link>
           </NextLink>
 
-
-            
-  
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -148,7 +144,7 @@ import theme from './theme';
                   boxShadow={'xl'}
                   bg={popoverContentBgColor}
                   p={4}
-                  // rounded={'xl'}
+                  rounded={'none'}
                   minW={'sm'}>
                   <Stack>
                     {navItem.children.map((child) => (
@@ -279,19 +275,39 @@ import theme from './theme';
       label: 'About',
       children: [
         {
-          label: 'About Us',
+          label: 'About Afropocene',
           subLabel: '',
           href: '/about/about-us',
         },
         {
           label: 'Artists In Residence',
-          subLabel: 'Past, Present, Future',
+          subLabel: 'Past, Present',
           href: '/about/artists',
         },
         {
-          label: "How it's Made",
-          subLabel: 'The Tech Behind this Website',
-          href: '/about/how-this-was-built',
+          label: 'Press',
+          subLabel: 'Afropocene in the News',
+          href: '/about/press',
+        },
+        // {
+        //   label: "How it's Made",
+        //   subLabel: 'The Tech Behind this Website',
+        //   href: '/about/how-this-was-built',
+        // },
+      ],
+    },
+    {
+      label: 'Studio Space',
+      children: [
+        {
+          label: 'Kabalagala StudioLab',
+          subLabel: '',
+          href: '/studios/kabalagala-studio',
+        },
+        {
+          label: 'Enquire About Space',
+          subLabel: 'Would you like to Create with us ?',
+          href: '/studios/contact-enquiry',
         },
       ],
     },    
@@ -299,19 +315,14 @@ import theme from './theme';
       label: 'Tech+Art',
       children: [
         {
-          label: 'Metaverse Gallery',
+          label: 'Metaverse NFT Gallery',
           subLabel: '',
           href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
         },
-        // {
-        //   label: 'Artist Show Room',
-        //   subLabel: '',
-        //   href: '/tech/virtualGallery',
-        // },
         {
-          label: 'Ascii Torus: Interactive',
-          subLabel: 'In-Browser Art Piece',
-          href: '/tech/asciiTorus',
+          label: 'this.',
+          subLabel: 'Interactive Digital Art on Reference and Perspective',
+          href: '/tech/this',
         },
         {
           label: '4FR0P0C3N3 43VR',
@@ -327,7 +338,7 @@ import theme from './theme';
         {
           label: 'Currently On',
           subLabel: '',
-          href: '/exhibitions/exhibitions-home',
+          href: '/exhibitions/current-exhibition',
         },
         {
           label: 'Exhibition Archive',
@@ -341,29 +352,14 @@ import theme from './theme';
         // }
       ],
     },
-    {
-      label: 'Studio Space',
-      children: [
-        {
-          label: 'Kabalagala Studio',
-          subLabel: '',
-          href: '/studios/kabalagala-studio',
-        },
-        {
-          label: 'Enquire About Space',
-          subLabel: 'Would you like to Create with us ?',
-          href: '/studios/contact-enquiry',
-        },
-      ],
-    },
-,
+
     {
       label: 'Workshops',
       children: [
         {
           label: 'Currently On',
           subLabel: '',
-          href: '/workshops/workshops-home',
+          href: '/workshops/current-workshop',
         },
         {
           label: 'Workshop Archive',

@@ -15,16 +15,16 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/odur-mwawa-slides"
+import { SlideData } from "../../components/utils/carousel/museum-of-selves-slides"
 
 import Head from 'next/head'
 
 
-  export default function OdurMwawaExhibitionPage() {
+  export default function KharumwaBookOfOwazExhibitionPage() {
     return (
       <Container maxW={'7xl'}>
       <Head>
-        <title>Odur: Mwawa Exhibition</title>
+        <title>Book Of Owaz Exhibition</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -44,13 +44,13 @@ import Head from 'next/head'
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Odur: Mwawa
+                Kharumwa: Book Of Awaz
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                KLAART Festival 2021
+                KLAART 2021
               </Text>
             </Box>
   
@@ -63,17 +63,14 @@ import Head from 'next/head'
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
-                  fontWeight={'300'}>
-                    Government be Crazy sumtimes
-                </Text>
                 <Text fontSize={'lg'}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam.
+                Martin‘s contribution to KLA ART 21 is a few pages from his project “The Book of Owaz”, 
+                borrowing from a medieval devotional that was filled with creative illustrations of spiritual and 
+                seasonal guidelines of that time.
+                These chapters cover the chaos of the time we live in with a focus on the deliberate exclusion of our 
+                population in the technological and social advancements of our time. He is interested in the theories 
+                around the next evolution of the homosapien that originated from East Africa, and what roles we are 
+                invited to play in the next chapter of the species.
                 </Text>
               </VStack>
               <Box>
@@ -114,13 +111,13 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Cast Aluminium, Sheet Aluminium
+                     Face Masks, Recycled Plastics
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
                       Dimensions
                     </Text>{' '}
-                    3m x 3m
+                    10m x 10m
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>

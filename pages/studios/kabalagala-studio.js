@@ -85,58 +85,7 @@ import Head from 'next/head'
                 </Text>
               </VStack>
               <Box>
-                <Text
-                  fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
-                  fontWeight={'500'}
-                  textTransform={'uppercase'}
-                  mb={'4'}>
-                  Features
-                </Text>
-  
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                  <List spacing={2}>
-                    <ListItem>Installation</ListItem>
-                    <ListItem>Sculpture</ListItem>{' '}
-                    <ListItem>Visual Art</ListItem>
-                  </List>
-                  {/* <List spacing={2}>
-                    <ListItem>Anti‑magnetic</ListItem>
-                    <ListItem>Chronometer</ListItem>
-                    <ListItem>Small seconds</ListItem>
-                  </List> */}
-                </SimpleGrid>
-              </Box>
-              <Box>
-                <Text
-                  fontSize={{ base: '16px', lg: '18px' }}
-                  color={useColorModeValue('yellow.500', 'yellow.300')}
-                  fontWeight={'500'}
-                  textTransform={'uppercase'}
-                  mb={'4'}>
-                  Art Details
-                </Text>
-  
-                <List spacing={2}>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Materials:
-                    </Text>{' '}
-                     Cast Aluminium, Sheet Aluminium
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Dimensions
-                    </Text>{' '}
-                    3m x 3m
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Case:
-                    </Text>{' '}
-                    Steel
-                  </ListItem>
-                </List>
+                
               </Box>
 
             </Stack>
@@ -151,7 +100,10 @@ import Head from 'next/head'
           <Box>
           </Box>
         </SimpleGrid>
+        <Box paddingBottom={10}>
         <MapContainer />
+
+        </Box>
 
       </Container>
     );

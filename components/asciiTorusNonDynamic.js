@@ -13,8 +13,10 @@ export default function AsciiTorus() {
   return (
     <Box>
       <Head>
-        <title>Ascii Torus: Interactive</title>
+        <title>Try Scrolling... | Afropocene StudioLab</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
+        <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
+
       </Head>
       <Canvas position="relative">
         <color attach="background" args={['black']} />
@@ -42,11 +44,16 @@ function Torusknot(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={clicked ? 1.5 : 1.25}
+      scale={0.02}
+      // scale={clicked ? 1.5 : 1.25}
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <torusKnotGeometry args={[1, 0.25, 128, 32]} />
+              {/* <torusKnotGeometry args={[3, 0.5, 128, 32]} /> */}
+
+      <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} />
+      {/* <torusKnotGeometry args={[1, 0.25, 128, 32]} /> */}
+
       <meshStandardMaterial color="orange" />
     </mesh>
   )
@@ -54,6 +61,7 @@ function Torusknot(props) {
 //' .:-+*=%@#'
 //' afropocene STUDIO LAB'
 //' .:-+*= afropocene STUDIO LAB'
+//' 01 &|~'
 //' BEGIN END.:-+*='
 //' ouroboros.:-+*='
 //' LIFE DEATH.:-+*='
@@ -66,7 +74,7 @@ function Torusknot(props) {
 //   let op2 = ' afropocene STUDIO LAB'
 // }
 
-function AsciiRenderer({ renderIndex = 1, characters = ' BEGIN END.:-+*=', ...options }) {
+function AsciiRenderer({ renderIndex = 1, characters = ' 01 &|', ...options }) {
   // Reactive state
   const { size, gl, scene, camera } = useThree()
 

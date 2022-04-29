@@ -15,16 +15,16 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/museum-of-selves-slides"
+import { SlideData } from "../../components/utils/carousel/odur-muwawa-slides"
 
 import Head from 'next/head'
 
 
-  export default function KharumwaBookOfAwazExhibitionPage() {
+  export default function OdurMuwawaExhibitionPage() {
     return (
       <Container maxW={'7xl'}>
       <Head>
-        <title>Book Of Awaz Exhibition</title>
+        <title>Odur: Muwawa Exhibition</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -44,13 +44,13 @@ import Head from 'next/head'
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Museum Of Selves
+                Odur: Muwawa
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                A Collaborative Exhibition and Youth Workshop
+                KLAART Festival 2021
               </Text>
             </Box>
   
@@ -63,12 +63,17 @@ import Head from 'next/head'
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
+                <Text
+                  color={useColorModeValue('gray.500', 'gray.400')}
+                  fontSize={'2xl'}
+                  fontWeight={'300'}>
+                    Government be Crazy sumtimes
+                </Text>
                 <Text fontSize={'lg'}>
-                The Past Remimagined ...
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                maxime modi nam officiis porro, quae, quisquam quos
-                reprehenderit velit? Natus, totam.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
+                  maxime modi nam officiis porro, quae, quisquam quos
+                  reprehenderit velit? Natus, totam.
                 </Text>
               </VStack>
               <Box>
@@ -109,13 +114,13 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Face Masks, Recycled Plastics
+                     Cast Aluminium, Sheet Aluminium
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
                       Dimensions
                     </Text>{' '}
-                    10m x 10m
+                    3m x 3m
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>

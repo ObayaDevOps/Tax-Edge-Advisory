@@ -14,12 +14,12 @@ import {
   import { FaInstagram } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
   import { IoMdPlanet } from 'react-icons/io';
-  import { HiOutlineMail } from 'react-icons/hi';
-
-  
+  import { HiOutlineMail } from 'react-icons/hi';  
 
   import Image from 'next/image'
+  import NextLink from 'next/link'
   import africaIcon from '../../public/images/icon/africa.png'
+  import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
 
   
   const SocialButton = ({
@@ -51,7 +51,7 @@ import {
   
   const ListHeader = ({ children }) => {
     return (
-      <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+      <Text fontWeight={'500'} fontSize={'lg'} mb={2} fontFamily={'Space Mono'}>
         {children}
       </Text>
     );
@@ -68,9 +68,9 @@ import {
             spacing={8}>
             <Stack spacing={6} >
               <Box>
-                <Image src={africaIcon} width={40} height={40}/>
+                <Image src={useColorModeValue( africaIcon,africaIconWhite)} width={40} height={40}/>
               </Box>
-              <Text fontSize={'sm'}>
+              <Text fontSize={'sm'} fontFamily={'Space Mono'}>
                 © 2022 Afropocene StudioLab.
                 Designed and Built in Kampala
               </Text>
@@ -87,9 +87,11 @@ import {
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Company</ListHeader>
-              <Link href={'/studios/contact-enquiry'}>Contact us</Link>
-              <Link href={'#'}>Studio Space</Link>
+              <ListHeader fontFamily={'Space Mono'}>Company</ListHeader>
+              <NextLink href={'/studios/contact-enquiry'} passHref>
+                <Link fontFamily={'Space Mono'}>Contact us</Link>
+              </NextLink>
+
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Stay up to date</ListHeader>
