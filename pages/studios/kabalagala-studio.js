@@ -58,7 +58,7 @@ import Head from 'next/head'
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                Kabalagala
+                Kabalagala, Kampala Uganda
               </Text>
             </Box>
   

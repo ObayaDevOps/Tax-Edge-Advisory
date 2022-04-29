@@ -5,9 +5,11 @@ import {
     Text,
     VStack,
     useBreakpointValue,
+  
   } from '@chakra-ui/react';
 
   import Head from 'next/head'
+  import NextLink from 'next/link'
   
   export default function WithBackgroundImage() {
     return (
@@ -69,6 +71,7 @@ We are afrofuturists interested in exploring the cultural aesthetics, philosophi
 A &apos;Co-Arts&apos; space for artists, researchers, thinkers, experimenters, developers & do-ers. We provide space and community for any and all explorers of African futures. 
             </Text>
             <Stack direction={'row'}>
+              <NextLink href="/studios/kabalagala-studio">
               <Button
                 bg={'whiteAlpha.300'}
                 rounded={'full'}
@@ -77,6 +80,7 @@ A &apos;Co-Arts&apos; space for artists, researchers, thinkers, experimenters, d
                 _hover={{ bg: 'whiteAlpha.500' }}>
                 Show me more
               </Button>
+              </NextLink>
             </Stack>
           </Stack>
         </VStack>

@@ -64,7 +64,7 @@ import {
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 0.2fr' }}
             spacing={8}>
             <Stack spacing={6} >
               <Box>
@@ -87,10 +87,10 @@ import {
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader fontFamily={'Space Mono'}>Company</ListHeader>
+              {/* <ListHeader fontFamily={'Space Mono'}>Company</ListHeader>
               <NextLink href={'/studios/contact-enquiry'} passHref>
                 <Link fontFamily={'Space Mono'}>Contact us</Link>
-              </NextLink>
+              </NextLink> */}
 
             </Stack>
             <Stack align={'flex-start'}>

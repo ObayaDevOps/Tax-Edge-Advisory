@@ -2,27 +2,17 @@ import {
     Avatar,
     Box,
     chakra,
-    Container,
     Flex,
-    Icon,
     SimpleGrid,
     useColorModeValue,
-    Badge,
     Button,
-    Heading,
-    Image,
-    Link,
-    Stack,
-    Text,
-    Center,
-    AvatarBadge
+    AvatarBadge,
   } from '@chakra-ui/react';
 
-import theme from '../../components/utils/theme';
 import Head from 'next/head';
 import NextLink from 'next/link'
 
-  const testimonials = [
+  const artistDescription = [
     {
         name: 'Kharumwa',
         active: true,
@@ -53,7 +43,7 @@ import NextLink from 'next/link'
     {
       name: 'Odur',
       active: true,
-      role: 'Painter, Sculptor, Installation',
+      role: 'Founder, Painter, Sculptor, Installation',
       content: "Conceptual art tied with fine metalwork and oil painting",
       avatar: '../../../images/team/OdurPFP.png',
       followLink:
@@ -91,7 +81,7 @@ import NextLink from 'next/link'
   
 
 
-  function TestimonialCard(props) {
+  function ArtistCard(props) {
     const { name, active, role, content, avatar, followLink, index  } = props;
     return (
       <Flex
@@ -226,8 +216,8 @@ import NextLink from 'next/link'
           spacing={'20'}
           mt={16}
           mx={'auto'}>
-          {testimonials.map((cardInfo, index) => (
-            <TestimonialCard {...cardInfo} index={index} key={index} />
+          {artistDescription.map((cardInfo, index) => (
+            <ArtistCard {...cardInfo} index={index} key={index} />
           ))}
         {/* <SocialProfileWithImageHorizontal /> */}
 

@@ -315,13 +315,13 @@ import theme from './theme';
       label: 'Tech+Art',
       children: [
         {
-          label: 'Metaverse NFT Gallery',
+          label: 'VR NFT Gallery',
           subLabel: '',
           href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
         },
         {
           label: 'this.',
-          subLabel: 'Interactive Digital Art on Reference and Perspective',
+          subLabel: 'Reference and Perspective. 1&0=Sculpture. Interactive',
           href: '/tech/this',
         },
         {
