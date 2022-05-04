@@ -28,7 +28,7 @@ export default function LandingPage() {
             <Center p={{sm:1 , md:10}} >
                 <Heading
                  as='h1'
-                 size='4xl'
+                 size='3xl'
                 //  fontSize = '6xl'
                 textAlign="center"
                 //  sx={{
