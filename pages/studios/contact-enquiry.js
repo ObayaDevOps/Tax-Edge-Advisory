@@ -16,13 +16,18 @@ import {
     useClipboard,
     useColorModeValue,
     VStack,
+    useToast,
   } from '@chakra-ui/react';
   import React from 'react';
   import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
   import { MdEmail, MdOutlineEmail } from 'react-icons/md';
   import Head from 'next/head'
+  import { useState } from 'react'
 
-  
+
+  //We add the rest of the code here : https://greedytaker.in/nextjs/email-sending-contact-page-nextjs
+
+
   const confetti = {
     light: {
       primary: '4299E1', // blue.400
@@ -40,6 +45,29 @@ import {
   
   export default function ContactFormWithSocialButtons() {
     const { hasCopied, onCopy } = useClipboard('hello@afropocene.com');
+    const [submitted, setSubmitted] = useState(false);
+
+
+    const userData = async event => {
+      event.preventDefault()
+      setSubmitted(true)
+
+      let userTypedData = {
+        Name: event.target.name.value,
+        Email: event.target.email.value,
+        Message: event.target.message.value
+      }
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userTypedData)
+      })
+    }
+
+    const toast = useToast()
   
     return (
       <Flex
@@ -98,7 +126,7 @@ import {
                     />
                   </Tooltip>
   
-                  <Link href="#">
+                  <Link href="https://github.com/ObayaDevOps">
                     <IconButton
                       aria-label="github"
                       variant="ghost"
@@ -148,55 +176,70 @@ import {
                   p={8}
                   color={useColorModeValue('gray.700', 'whiteAlpha.900')}
                   shadow="base">
-                  <VStack spacing={5}>
-                    <FormControl isRequired>
-                      <FormLabel>Name</FormLabel>
-  
-                      <InputGroup>
-                        <InputLeftElement>
-                          <BsPerson />
-                        </InputLeftElement>
-                        <Input type="text" name="name" placeholder="Your Name" />
-                      </InputGroup>
-                    </FormControl>
-  
-                    <FormControl isRequired>
-                      <FormLabel>Email</FormLabel>
-  
-                      <InputGroup>
-                        <InputLeftElement>
-                          <MdOutlineEmail />
-                        </InputLeftElement>
-                        <Input
-                          type="email"
-                          name="email"
-                          placeholder="Your Email"
+                  <form onSubmit={(e) => userData(e)}>
+                    <VStack spacing={5}>
+                      <FormControl isRequired>
+                        <FormLabel htmlFor="name">Name</FormLabel>
+    
+                        <InputGroup>
+                          <InputLeftElement>
+                            <BsPerson />
+                          </InputLeftElement>
+                          <Input id="name" type="text" name="name" placeholder="Your Name" />
+                        </InputGroup>
+                      </FormControl>
+    
+                      <FormControl isRequired>
+                        <FormLabel htmlFor="email">Email</FormLabel>
+    
+                        <InputGroup>
+                          <InputLeftElement>
+                            <MdOutlineEmail />
+                          </InputLeftElement>
+                          <Input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                          />
+                        </InputGroup>
+                      </FormControl>
+    
+                      <FormControl isRequired>
+                        <FormLabel htmlFor="message">Message</FormLabel>
+    
+                        <Textarea
+                          id="message"
+                          name="message"
+                          placeholder="Your Message"
+                          rows={6}
+                          resize="none"
                         />
-                      </InputGroup>
-                    </FormControl>
-  
-                    <FormControl isRequired>
-                      <FormLabel>Message</FormLabel>
-  
-                      <Textarea
-                        name="message"
-                        placeholder="Your Message"
-                        rows={6}
-                        resize="none"
-                      />
-                    </FormControl>
-  
-                    <Button
-                      colorScheme="blue"
-                      bg="blue.400"
-                      color="white"
-                      _hover={{
-                        bg: 'blue.500',
-                      }}
-                      isFullWidth>
-                      Send Message
-                    </Button>
-                  </VStack>
+                      </FormControl>
+    
+                      <Button
+                      type="submit"
+                        colorScheme="blue"
+                        bg="blue.400"
+                        color="white"
+                        _hover={{
+                          bg: 'blue.500',
+                        }}
+                        isFullWidth
+                        onClick={() =>
+                          toast({
+                            title: 'Message Sent.',
+                            description: "We will get back to you soon!",
+                            status: 'success',
+                            duration: 9000,
+                            isClosable: true,
+                          })}
+        
+                        >
+                        Send Message
+                      </Button>
+                    </VStack>
+                  </form>
                 </Box>
               </Stack>
             </VStack>

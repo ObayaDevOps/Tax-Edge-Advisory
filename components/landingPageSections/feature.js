@@ -7,7 +7,9 @@ import {
     Stack,
     Box,
     Center,
-    Button
+    Button,
+    AspectRatio,
+    HStack
   } from '@chakra-ui/react';
 
   import NextImage from 'next/image'
@@ -22,6 +24,7 @@ import theme from '../utils/theme';
     return (
       <Center p={8}>
 
+
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
             <Heading as='h3' size='2xl'>We Write New African Narratives</Heading>
@@ -35,8 +38,8 @@ import theme from '../utils/theme';
             <Button size="md" color={'blue.500'} fontFamily="Space Mono"> More About Us</Button>
           </Stack>
           <Flex>
-            <NextImage src={studio1} alt="work by kharumwa" placeholder="blur" />
-          </Flex>
+            <NextImage src={studio3} alt="work by kharumwa" placeholder="blur"/>
+            </Flex>
 
           <Stack spacing={4}>
             <Heading as='h3' size='2xl'>We Provide Space for Emerging Artists</Heading>
@@ -61,7 +64,17 @@ import theme from '../utils/theme';
             <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
           </Stack>
           <Flex>
-            <NextImage src={studio3} alt="work by kharumwa" placeholder="blur"/>
+            <AspectRatio ratio={4/3}  float="left" clear="both" width={'85vw'} height={{base:'45vh', md:'55vh'}} left >
+              <iframe 
+              loop
+              autoPlay
+              muted
+              src={'../../../video/Reaction-Diffusion.mp4'} 
+              allow="autoplay"
+              title="Reaction-Diffusion-Clip" ></iframe>
+
+            </AspectRatio>
+
           </Flex>
         </SimpleGrid>
        </Center>

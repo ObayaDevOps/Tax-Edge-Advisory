@@ -17,14 +17,18 @@
     "@fontsource/raleway": "^4.5.5",
     "@react-three/drei": "^9.5.0",
     "@react-three/fiber": "^8.0.12",
+    "ethers": "^5.6.4",
+    "formidable": "^2.0.1",
     "framer-motion": "^6.2.9",
     "next": "12.1.4",
+    "nodemailer": "^6.7.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
     "react-responsive-carousel": "^3.2.23",
     "react-typewriter-effect": "^1.1.0",
-    "three": "^0.139.2"
+    "three": "^0.139.2",
+    "wagmi": "^0.3.1"
   },
   "devDependencies": {
     "eslint": "8.13.0",
