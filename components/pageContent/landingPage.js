@@ -23,7 +23,7 @@ export default function LandingPage() {
 
       {/* backgroundImage={'../../../images/visting-artists/acunye/Afropocene-Studio-Acunye-darkened.jpg'}
       recursiveperlinnoise2.png */}
-        <Box minHeight='100vh'  bgPosition="center"  backgroundImage={'../../../images/backgrounds/recursiveLarge.png'}
+        <Box minHeight='100vh'  bgPosition="left"  backgroundImage={'../../../images/backgrounds/recursiveLarge.png'}
  >
             <Center p={{sm:1 , md:10}} >
                 <Heading

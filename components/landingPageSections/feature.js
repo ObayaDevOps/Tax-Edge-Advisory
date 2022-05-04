@@ -66,7 +66,7 @@ import theme from '../utils/theme';
           <Flex>
             <AspectRatio ratio={4/3}  float="left" clear="both" width={'85vw'} height={{base:'45vh', md:'55vh'}} left >
               <iframe 
-              loop
+              loop={true}
               autoPlay
               muted
               src={'../../../video/Reaction-Diffusion.mp4'} 
