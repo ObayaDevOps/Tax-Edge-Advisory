@@ -19,7 +19,7 @@ export default function LandingPage() {
     <SimpleGrid
     columns={1}
     spacing={{ base: 8, md: 10 }}
-    py={{ base: 18, md: 24, lg:5 }}
+    // py={{ base: 0, md: 0, lg:0 }}
     >
 
       {/* backgroundImage={'../../../images/visting-artists/acunye/Afropocene-Studio-Acunye-darkened.jpg'}
