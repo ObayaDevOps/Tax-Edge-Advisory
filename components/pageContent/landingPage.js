@@ -30,7 +30,7 @@ export default function LandingPage() {
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" filter="brightness(60%)" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
 
       */}
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
+        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotSmallDark.jpg', lg:'../../../images/backgrounds/MandelbrotMediumDark.jpg' }}>
             
             <Center p={{sm:1 , md:10}} >
                 <Heading
