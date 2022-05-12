@@ -68,7 +68,9 @@ import {
             spacing={8}>
             <Stack spacing={6} >
               <Box>
+                <NextLink href='/#'>
                 <Image src={useColorModeValue( africaIcon,africaIconWhite)} width={40} height={40}/>
+                </NextLink>
               </Box>
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
                 © 2022 Afropocene StudioLab.

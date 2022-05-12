@@ -7,7 +7,7 @@ export default function SimpleTypeWriter() {
   return (
     <Container centerContent>
       <TypeWriterEffect
-                    textStyle={{ fontFamily: 'Space Mono', color: '#FFFFFF', fontWeight: 500, fontSize:'2em' }}
+                    textStyle={{ fontFamily: 'Space Mono', color: '#FFFFFF', fontWeight: 50, fontSize:'2.3em' }}
                     startDelay={600}
                     cursorColor="white"
                     color="red"

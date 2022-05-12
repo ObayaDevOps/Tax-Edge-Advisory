@@ -187,7 +187,6 @@ const ExhibitionList = () => {
           <Box
             width={{ base: '100%', sm: '85%' }}
             zIndex="2"
-            marginLeft={{ base: '0', sm: '5%' }}
             marginTop="5%">
             <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image

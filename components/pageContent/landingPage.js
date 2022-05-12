@@ -44,7 +44,7 @@ export default function LandingPage() {
                 //   WebkitTextFillColor: "transparent"
                 // }}
                 color="white"
-                pt={{base: 10, md: 55}}
+                pt={{base: 10, md: 95}}
                 pb={{base: 5}}
                  >
                    Afropocene StudioLab

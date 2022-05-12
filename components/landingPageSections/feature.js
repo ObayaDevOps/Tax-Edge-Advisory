@@ -9,14 +9,15 @@ import {
     Center,
     Button,
     AspectRatio,
-    HStack
+    HStack,
   } from '@chakra-ui/react';
 
   import NextImage from 'next/image'
   import studio1 from '../../public/images/studio/afropocene-studio2.jpg'
   import studio2 from '../../public/images/studio/afropocene-OdurAssistant.jpg'
   import studio3 from '../../public/images/studio/PaperEgg.png'
-import theme from '../utils/theme';
+  import theme from '../utils/theme';
+  import NextLink from 'next/link'
   
 
   
@@ -35,7 +36,9 @@ import theme from '../utils/theme';
 
             Our mission is to help ... to create ... to inspire
             </Text>
-            <Button size="md" color={'blue.500'} fontFamily="Space Mono"> More About Us</Button>
+            <NextLink href='../../../about/about-us' passHref>
+              <Button size="md" color={'blue.500'} fontFamily="Space Mono"> More About Us</Button>
+            </NextLink>
           </Stack>
           <Flex>
             <NextImage src={studio3} alt="work by kharumwa" placeholder="blur"/>
@@ -47,7 +50,10 @@ import theme from '../utils/theme';
             A Co-Arts space for artists, researchers, thinkers, experimenters, developers & do-ers.
              We provide space and community for any and all explorers of African futures.
             </Text>
-            <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore the Studio</Button>
+            <NextLink href='../../../studios/kabalagala-studio' passHref>
+              <Button  size="md" color={'blue.500'} fontFamily="Space Mono">Explore the Studio</Button>
+            </NextLink>
+
 
 
           </Stack>
@@ -61,7 +67,9 @@ import theme from '../utils/theme';
             We also have extensive experience with Technology and Software Development
              and we have plans to merge the worlds of Nature, Art and Technology...
             </Text>
-            <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
+            <NextLink href='../../../tech/this'>
+              <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
+            </NextLink>
           </Stack>
           <Flex>
             <AspectRatio ratio={4/3}  float="left" clear="both" width={'85vw'} height={{base:'45vh', md:'55vh'}} left >

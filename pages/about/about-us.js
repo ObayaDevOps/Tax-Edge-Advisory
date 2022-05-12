@@ -15,7 +15,7 @@ import {
     return (
       <Flex
         w={'full'}
-        h={'100vh'}
+        minH={'100vh'}
         // backgroundImage={'../../../../images/backgrounds/mandelbrot.jpg'        }
         backgroundSize={'fit'}
         backgroundPosition={'center center'}>
@@ -36,48 +36,67 @@ import {
               lineHeight={1.2}
               fontFamily={'Space Mono'}
               fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}>
-Anthropocene
+                Anthropocene
 
-/&apos;anθrəpəˌsiːn/ {' '}
+                /&apos;anθrəpəˌsiːn/ {' '}
 
-adjective
+                adjective
 
-relating to or denoting the current geological age, viewed as the period during which human activity has been the dominant influence on climate and the environment.
+                relating to or denoting the current geological age, 
+                viewed as the period during which human activity has been the dominant 
+                influence on climate and the environment.
 
-​
+                ​
+                </Text>
+                <Text color={'white'}
+              fontWeight={700}
+              lineHeight={1.2}
+              fontFamily={'Space Mono'}
+              fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}>
+              
+                Afro-
 
-Afro-
+                /&apos;afrəʊ/
 
-/&apos;afrəʊ/
+                combining form
 
-combining form
+                prefix: Afro-
 
-prefix: Afro-
+                African; African and …
 
-African; African and …
+                &apos;Afro-Asiatic&apos;
 
-&apos;Afro-Asiatic&apos;
+                relating to Africa.
 
-relating to Africa.
+                &apos;Afrocentric&apos;
 
-&apos;Afrocentric&apos;
+                ​
+                </Text>
+                <Text
+                color={'white'}
+                fontWeight={700}
+                lineHeight={1.2}
+                fontFamily={'Space Mono'}
+                fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+                >
+                We are afrofuturists interested in exploring the cultural aesthetics, 
+                philosophies of science and history that are borne of the developing intersection of 
+                African/Africana diaspora culture with technology. 
 
-​
+                ​
 
-We are afrofuturists interested in exploring the cultural aesthetics, philosophies of science and history that are borne of the developing intersection of African/Africana diaspora culture with technology. 
-
-​
-
-A &apos;Co-Arts&apos; space for artists, researchers, thinkers, experimenters, developers & do-ers. We provide space and community for any and all explorers of African futures. 
+                A &apos;Co-Arts&apos; space for artists, researchers, thinkers, experimenters, developers 
+                & do-ers. We provide space and community for any and all explorers of African futures. 
             </Text>
             <Stack direction={'row'}>
-              <NextLink href="/studios/kabalagala-studio">
+              <NextLink href="../about/artists">
               <Button
                 bg={'whiteAlpha.300'}
                 rounded={'full'}
                 color={'white'}
                 fontFamily={'Space Mono'}
-                _hover={{ bg: 'whiteAlpha.500' }}>
+                _hover={{ bg: 'whiteAlpha.500' }}
+                >
                 Show me more
               </Button>
               </NextLink>

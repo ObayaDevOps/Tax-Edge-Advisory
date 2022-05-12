@@ -42,22 +42,22 @@ import Head from 'next/head'
           columns={1}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24, lg: 5 }}>
-          <Flex>
+           <Flex>
             {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
             <ImageSlider slides={SlideData} />
-          </Flex>
+            </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <Box as={'header'}>
               <Heading
                 lineHeight={1.1}
                 fontWeight={600}
-                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
+                fontSize={{ base: '4xl', sm: '4xl', lg: '5xl' }}>
                 Afropocene StudioLab
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
-                fontSize={'2xl'}>
+                fontSize={'1xl'}>
                 Kabalagala, Kampala Uganda
               </Text>
             </Box>
