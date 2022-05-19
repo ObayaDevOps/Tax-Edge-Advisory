@@ -40,6 +40,9 @@ function Torusknot(props) {
   const [hovered, hover] = useState(false)
   useCursor(hovered)
   useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 2))
+
+  // var shapeMixer = Math.floor(Math.random(1) * 3)
+  // console.log("SHAPE MIXER:"+ shapeMixer.toString())
   return (
     <mesh
       {...props}
@@ -52,7 +55,7 @@ function Torusknot(props) {
               {/* <torusKnotGeometry args={[3, 0.5, 128, 32]} /> */}
 
       <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} />
-      {/* <torusKnotGeometry args={[1, 0.25, 128, 32]} /> */}
+      {/* <torusKnotGeometry args={[shapeMixer, 0.25, 128, 32]} /> */}
 
       <meshStandardMaterial color="orange" />
     </mesh>

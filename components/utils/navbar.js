@@ -321,25 +321,25 @@ import theme from './theme';
         },
         {
           label: 'this.',
-          subLabel: 'Reference and Perspective. 1&0=Sculpture. Interactive',
+          subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
           href: '/tech/this',
         },
-        {
-          label: '4FR0P0C3N3 43VR',
-          subLabel: 'Conceptual Blockchain Art',
-          href: '/tech/asciiTorus',
-        }
+        // {
+        //   label: '4FR0P0C3N3 43VR',
+        //   subLabel: 'Conceptual Blockchain Art',
+        //   href: '/tech/asciiTorus',
+        // }
       ],
     },
     {
       label: 'Exhibitions',
       // href: '/exhibitions/exhibitions-home',
       children: [
-        {
-          label: 'Currently On',
-          subLabel: '',
-          href: '/exhibitions/current-exhibition',
-        },
+        // {
+        //   label: 'Upcoming/Current',
+        //   subLabel: '',
+        //   href: '/exhibitions/current-exhibition',
+        // },
         {
           label: 'Exhibition Archive',
           subLabel: '',
@@ -356,11 +356,11 @@ import theme from './theme';
     {
       label: 'Workshops',
       children: [
-        {
-          label: 'Currently On',
-          subLabel: '',
-          href: '/workshops/current-workshop',
-        },
+        // {
+        //   label: 'Upcoming/Current',
+        //   subLabel: '',
+        //   href: '/workshops/current-workshop',
+        // },
         {
           label: 'Workshop Archive',
           subLabel: '',

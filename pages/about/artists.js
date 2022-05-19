@@ -53,8 +53,7 @@ import NextLink from 'next/link'
         name: 'Mona Taha',
         active: false,
         role: 'Charcoal Artist',
-        content:
-          'I am so pleased with this product. EEZY is both attractive and highly adaptable. Without EEZY, we would have gone bankrupt by now. Thank you for creating this product!',
+        content:'',
         avatar: '../../../images/team/MonaPFP.png',
         followLink:
           'https://www.instagram.com/mona_tee/',
@@ -63,8 +62,7 @@ import NextLink from 'next/link'
         name: 'Roshan',
         active: true,
         role: 'Artist',
-        content:
-          'I am so pleased with this product. EEZY is both attractive and highly adaptable. Without EEZY, we would have gone bankrupt by now. Thank you for creating this product!',
+        content:'',
         avatar: '../../../images/team/RoshanPFP.png',
         followLink:
           'https://www.instagram.com/mz_karmali/',

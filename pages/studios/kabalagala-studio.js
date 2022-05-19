@@ -18,7 +18,6 @@ import WithSubnavigation from '../../components/utils/navbar';
 
 import NextImage from 'next/image';
 import odurAssistantPhoto from '../../public/images/studio/afropocene-OdurAssistant.jpg'
-import watchmakerGreenScreenPhoto from '../../public/images/studio/afropocene-studio2.jpg'
 import paperEggPhoto from '../../public/images/studio/PaperEgg.png'
 import odurInstallationPhoto from '../../public/images/studio/odurInstallation.jpg'
 
@@ -78,10 +77,10 @@ import Head from 'next/head'
                     Welcome to our (MeatSpace) Home
                 </Text>
                 <Text fontSize={'lg'}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam.
+                The studio lab is a place for ideas big and small! With two floors in an industrial building, we
+                provide space and community for experimentation and collaboration. So far the space has
+                had several configurations: from studio space, to pop up museum, to a concert hall, and a
+                film all in a year!
                 </Text>
               </VStack>
               <Box>

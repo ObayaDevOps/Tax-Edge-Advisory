@@ -15,7 +15,7 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/museum-of-selves-slides"
+import { SlideData } from "../../components/utils/carousel/museum-of-selves-exhibition-slides"
 
 import Head from 'next/head'
 
@@ -129,7 +129,7 @@ import Head from 'next/head'
               </Box>
             </Stack>
   
-            <Button
+            {/* <Button
               rounded={'none'}
               w={'full'}
               mt={8}
@@ -148,7 +148,7 @@ import Head from 'next/head'
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
               <MdLocalShipping />
               <Text>Physical Delivery Only</Text>
-            </Stack>
+            </Stack> */}
           </Stack>
         </SimpleGrid>
       </Container>

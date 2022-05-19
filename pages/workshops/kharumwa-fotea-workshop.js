@@ -64,7 +64,11 @@ import Head from 'next/head'
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
                 <Text fontSize={'lg'}>
-                A photography talk... Very good, would reccommend
+                This creative workshop was produced by Martin Kharumwa in collaboration with Fotea an
+                organisation dedicated to producing photographic and visual literacy education programs.
+                Over the 4 weekend sessions the cohort explored how to build a creative practice in a world
+                saturated by images. Participants were tasked to use existing visual references to create
+                something different and hopefully new.
 
                 </Text>
               </VStack>
@@ -106,11 +110,11 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Projector, Words, Ideas
+                     Projector
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Length
+                      Length:
                     </Text>{' '}
                     2 Hours
                   </ListItem>

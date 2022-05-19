@@ -9,8 +9,8 @@ export default function SimpleTypeWriter() {
       <TypeWriterEffect
                     textStyle={{ fontFamily: 'Space Mono', color: '#FFFFFF', fontWeight: 50, fontSize:'2.3em' }}
                     startDelay={600}
-                    cursorColor="white"
-                    color="red"
+                    // cursorColor="white"
+                    // color="red"
                     multiText={[
                       // 'AFROPOCENE GENESIS: 22/04/2022 06:35-EAT ETHEREUM BLOCK:27426567   ', 
                       // // 'ETHEREUM BLOCK:27426567   ',

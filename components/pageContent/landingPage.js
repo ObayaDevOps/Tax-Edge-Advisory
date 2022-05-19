@@ -30,8 +30,10 @@ export default function LandingPage() {
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" filter="brightness(60%)" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
 
       */}
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotSmallDark.jpg', lg:'../../../images/backgrounds/MandelbrotMediumDark.jpg' }}>
-            
+        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}>
+        {/* <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" > */}
+ 
+
             <Center p={{sm:1 , md:10}} >
                 <Heading
                  as='h1'
@@ -39,12 +41,12 @@ export default function LandingPage() {
                 //  fontSize = '6xl'
                 textAlign="center"
                 //  sx={{
-                //   background: "linear-gradient(90deg, #1652f0 0%, #b9cbfb 70.35%)",
+                //   background: "linear-gradient(90deg, #1652f0 20%, #b9cbfb 70.35%)",
                 //   WebkitBackgroundClip: "text",
                 //   WebkitTextFillColor: "transparent"
                 // }}
                 color="white"
-                pt={{base: 10, md: 95}}
+                pt={{base: 10, md: 20}}
                 pb={{base: 5}}
                  >
                    Afropocene StudioLab

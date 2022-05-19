@@ -26,6 +26,8 @@ import NextImage from 'next/image'
 import odurMuwawaPhoto from '../../public/images/exhibitions/odur-muwawa-kla-art/odur-studio-plants.jpg'
 import odurPFP from '../../public/images/team/Odur/Odur2022.jpg'
 import FoteaPhoto from '../../public/images/workshops/Fotea-Kharumwa.png'
+import MuseumOfselvesWorkshopPhoto from '../../public/images/workshops/museum-of-selves/MuseumOfSelves1.jpg'
+
 //future improvement: The Exhbition cards should be defined once and can be passed here, will autopopulate the feed
 
 
@@ -33,13 +35,13 @@ const workshopDetails = [
   {
     workshopName: 'Nothing New Under the Sun',
     artistName: 'Kharumwa',
-    startDate: '2021-04-06',
-    endDate: '2021-04-06',
+    startDate: '2022-04-22',
+    endDate: '2022-04-22',
     headerWorkshop: true,
     active: true,
     blogTags: ['Photography'],
-    workshopDescription:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
+    workshopDescription: 
+    "This creative workshop was produced by Martin Kharumwa in collaboration with Fotea an organisation dedicated to producing photographic and visual literacy education programs.",
     photo: FoteaPhoto,
     artistPFP: odurPFP,
     linkToWorkshop: '/workshops/kharumwa-fotea-workshop',
@@ -47,21 +49,20 @@ const workshopDetails = [
         'https://www.instagram.com/afropocene/',
   },
   {
-    workshopName: 'Mwawa',
-    artistName: 'Odur',
-    startDate: '2021-04-06',
-    endDate: '2021-04-06',
+    workshopName: 'Museum of Selves Workshop',
+    artistName: 'Allan Kyakman',
+    startDate: '2021-12-21',
+    endDate: '2021-12-21',
     headerWorkshop: true,
     active: true,
-    blogTags: ['Installation', 'Sculpture', 'Aluminium'],
-    workshopDescription:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
-    photo: odurMuwawaPhoto,
+    blogTags: ['Mixed Media', 'Youth'],
+    workshopDescription:"Artist Allan Kyakman worked with high school students from around kampala to explore ideas of representation, self imaging and identity as an ever evolving process.",
+    photo: MuseumOfselvesWorkshopPhoto,
     artistPFP: odurPFP,
-    linkToWorkshop: '/exhibitions/odur-mwawa-exhibition',
+    linkToWorkshop: '/workshops/museum-of-selves-workshop', 
     followLink:
         'https://www.instagram.com/afropocene/',
-  },
+  }
 ];
 
 
@@ -79,7 +80,7 @@ export const BlogAuthor = (props) => {
       /> */}
       <Text fontWeight="medium">{props.artistName}</Text>
       <Text>—</Text>
-      <Text>{props.date.toLocaleDateString()}</Text>
+      <Text>{props.date.toLocaleDateString('en-GB')}</Text>
     </HStack>
   );
 };
@@ -166,17 +167,14 @@ const WorkshopList = () => {
           marginRight="3"
           position="relative"
           alignItems="center">
-          <Box
+          {/* <Box
             width={{ base: '100%', sm: '85%' }}
             zIndex="2"
-            marginLeft={{ base: '0', sm: '5%' }}
             marginTop="5%">
             <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image
                 
-                src={
-                  'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-                }
+                src={'../../../images/workshops/studioWorkshop.jpg'}
                 alt="some good alt text"
                 objectFit="contain"
               />
@@ -192,9 +190,9 @@ const WorkshopList = () => {
               opacity="0.4"
               height="100%"
             />
-          </Box>
+          </Box> */}
         </Box>
-        <Box
+        {/* <Box
           display="flex"
           flex="1"
           flexDirection="column"
@@ -213,16 +211,12 @@ const WorkshopList = () => {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Host your workshop with Afropocene !
           </Text>
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
-        </Box>
+        </Box> */}
       </Box>
       <Heading as="h2" marginTop="10">
-        Workshop Archive
+        Archive
       </Heading>
       <Divider marginTop="5" />
 

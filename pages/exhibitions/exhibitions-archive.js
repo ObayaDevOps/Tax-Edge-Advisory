@@ -27,6 +27,8 @@ import odurMuwawaPhoto from '../../public/images/exhibitions/odur-muwawa-kla-art
 import odurPFP from '../../public/images/team/Odur/Odur2022.jpg'
 import museumOfSelves from '../../public/images/exhibitions/museum-of-selves/wide-shot-museum-of-selves.jpg'
 import bookOfOwaz from '../../public/images/exhibitions/kharumwa-book-of-owaz-kla-art/Martin-10-scaled.jpg'
+import alokaPhoto2 from '../../public/images/exhibitions/aloka-ready-for-export/aloka2.jpg'
+import btsStudio from '../../public/images/studio/AfropoceneStudio65.jpg'
 
 //future improvement: The Exhbition cards should be defined once and can be passed here, will autopopulate the feed
 
@@ -40,27 +42,10 @@ const exhibitionDetails = [
     headerExhibition: true,
     active: true,
     blogTags: ['Installation', 'Sculpture', 'Aluminium'],
-    exhibitionDescription:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
+    exhibitionDescription:"Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. ",
     photo: odurMuwawaPhoto,
     artistPFP: odurPFP,
     linkToExhibition: '/exhibitions/odur-muwawa-exhibition',
-    followLink:
-        'https://www.instagram.com/afropocene/',
-  },
-  {
-    exhibitionName: 'Museum Of Selves',
-    artistName: 'Odur',
-    startDate: '2021-04-06',
-    endDate: '2021-04-06',
-    headerExhibition: true,
-    active: true,
-    blogTags: ['Installation', 'Portraiture', 'Bark Cloth'],
-    exhibitionDescription:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
-    photo: museumOfSelves,
-    artistPFP: odurPFP,
-    linkToExhibition: '/exhibitions/museum-of-selves-exhibition',
     followLink:
         'https://www.instagram.com/afropocene/',
   },
@@ -72,14 +57,44 @@ const exhibitionDetails = [
     headerExhibition: true,
     active: true,
     blogTags: ['Installation','Plastic', 'Photography', 'Futuristic'],
-    exhibitionDescription:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
+    exhibitionDescription:"“The Book of Owaz”, borrowing from a medieval devotional that was filled with creative illustrations of spiritual and seasonal guidelines of that time.",
     photo: bookOfOwaz,
     artistPFP: odurPFP,
     linkToExhibition: '/exhibitions/kharumwa-book-of-owaz-exhibition',
     followLink:
         'https://www.instagram.com/afropocene/',
   },
+  {
+    exhibitionName: 'Ready For Export',
+    artistName: 'Aloka',
+    startDate: '2021-04-06',
+    endDate: '2021-04-06',
+    headerExhibition: true,
+    active: true,
+    blogTags: ['Installation','Sack', 'Oil Paint'],
+    exhibitionDescription:"An export clearance area as an inquiry into migratory labour practices among young people.",
+    photo: alokaPhoto2,
+    artistPFP: odurPFP,
+    linkToExhibition: '/exhibitions/aloka-ready-for-export-exhibition',
+    followLink:
+        'https://www.instagram.com/afropocene/',
+  },
+  {
+    exhibitionName: 'Museum Of Selves',
+    artistName: 'Allan Kyakonye',
+    startDate: '2021-04-06',
+    endDate: '2021-04-06',
+    headerExhibition: true,
+    active: true,
+    blogTags: ['Portraiture','Egg Tempera', 'Bark Cloth'],
+    exhibitionDescription:"A collaborative exhibition which brought together the egg tempera portrait works of Kyakonye Allan and the works of Kampala students who participated in the workshop.",
+    photo: museumOfSelves,
+    artistPFP: odurPFP,
+    linkToExhibition: '/exhibitions/museum-of-selves-exhibition',
+    followLink:
+        'https://www.instagram.com/afropocene/',
+  },
+
 ];
 
 
@@ -167,7 +182,7 @@ const ExhibitionList = () => {
   return (
     <Container maxW={'7xl'} p="3">
       <Head>
-        <title>Exhibitions: Afropocene</title>
+        <title>Exhibition Archive: Afropocene</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -178,7 +193,7 @@ const ExhibitionList = () => {
         display="flex"
         flexDirection={{ base: 'column', sm: 'row' }}
         justifyContent="space-between">
-        <Box
+        {/* <Box
           display="flex"
           flex="1"
           marginRight="3"
@@ -191,9 +206,7 @@ const ExhibitionList = () => {
             <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image
                 
-                src={
-                  'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-                }
+                src={'../../../images/studio/AfropoceneStudio65.jpg'}
                 alt="some good alt text"
                 objectFit="contain"
               />
@@ -210,8 +223,8 @@ const ExhibitionList = () => {
               height="100%"
             />
           </Box>
-        </Box>
-        <Box
+        </Box> */}
+        {/* <Box
           display="flex"
           flex="1"
           flexDirection="column"
@@ -230,16 +243,12 @@ const ExhibitionList = () => {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+              Get in contact to host your own Afropocene Exhibition
           </Text>
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
-        </Box>
+        </Box> */}
       </Box>
       <Heading as="h2" marginTop="10">
-        Exhibition Archive
+        Archive
       </Heading>
       <Divider marginTop="5" />
 

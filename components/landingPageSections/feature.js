@@ -13,10 +13,8 @@ import {
   } from '@chakra-ui/react';
 
   import NextImage from 'next/image'
-  import studio1 from '../../public/images/studio/afropocene-studio2.jpg'
   import studio2 from '../../public/images/studio/afropocene-OdurAssistant.jpg'
   import studio3 from '../../public/images/studio/PaperEgg.png'
-  import theme from '../utils/theme';
   import NextLink from 'next/link'
   
 
