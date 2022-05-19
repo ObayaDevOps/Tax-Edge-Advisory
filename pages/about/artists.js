@@ -61,7 +61,7 @@ import NextLink from 'next/link'
       {
         name: 'Roshan',
         active: true,
-        role: 'Artist',
+        role: 'Mixed Media Artist',
         content:'',
         avatar: '../../../images/team/RoshanPFP.png',
         followLink:

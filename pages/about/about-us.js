@@ -35,7 +35,9 @@ import {
               fontWeight={700}
               lineHeight={1.2}
               fontFamily={'Space Mono'}
-              fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}>
+              fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+              paddingTop={useBreakpointValue({base: '10', md: '0'})}
+              >
                 Anthropocene
 
                 /&apos;anθrəpəˌsiːn/ {' '}
@@ -88,7 +90,11 @@ import {
                 A &apos;Co-Arts&apos; space for artists, researchers, thinkers, experimenters, developers 
                 & do-ers. We provide space and community for any and all explorers of African futures. 
             </Text>
-            <Stack direction={'row'}>
+            <Stack 
+            direction={'row'}
+            paddingBottom={useBreakpointValue({base: '5em', md: '0'})}
+
+            >
               <NextLink href="../about/artists">
               <Button
                 bg={'whiteAlpha.300'}
