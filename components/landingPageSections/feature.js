@@ -35,7 +35,7 @@ import {
             Our mission is to help ... to create ... to inspire
             </Text>
             <NextLink href='../../../about/about-us' passHref>
-              <Button size="md" color={'blue.500'} fontFamily="Space Mono"> More About Us</Button>
+              <Button size="md" color={'green.500'} fontFamily="Space Mono"> More About Us</Button>
             </NextLink>
           </Stack>
           <Flex>
@@ -49,7 +49,7 @@ import {
              We provide space and community for any and all explorers of African futures.
             </Text>
             <NextLink href='../../../studios/kabalagala-studio' passHref>
-              <Button  size="md" color={'blue.500'} fontFamily="Space Mono">Explore the Studio</Button>
+              <Button  size="md" color={'green.500'} fontFamily="Space Mono">Explore the Studio</Button>
             </NextLink>
 
 
@@ -66,7 +66,7 @@ import {
              and we have plans to merge the worlds of Nature, Art and Technology...
             </Text>
             <NextLink href='../../../tech/this'>
-              <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
+              <Button size="md" color={'green.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
             </NextLink>
           </Stack>
           <Flex>

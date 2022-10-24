@@ -30,26 +30,26 @@ export default function LandingPage() {
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" filter="brightness(60%)" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
 
       */}
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}>
-        {/* <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" > */}
+        {/* <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}> */}
+        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" >
  
 
             <Center p={{sm:1 , md:10}} >
                 <Heading
                  as='h1'
-                 size='3xl'
-                //  fontSize = '6xl'
+                 size='6xl'
+                 fontSize = '6xl'
                 textAlign="center"
-                //  sx={{
-                //   background: "linear-gradient(90deg, #1652f0 20%, #b9cbfb 70.35%)",
-                //   WebkitBackgroundClip: "text",
-                //   WebkitTextFillColor: "transparent"
-                // }}
+                 sx={{
+                  background: "linear-gradient(90deg, #62e897 20%, #129b3c 70.35%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent"
+                }}
                 color="white"
                 pt={{base: 10, md: 20}}
                 pb={{base: 5}}
                  >
-                   Afropocene StudioLab
+                   Med-Optics
                 </Heading>
             </Center>
 
@@ -66,7 +66,7 @@ export default function LandingPage() {
           as='h1'
           size='4xl'
           sx={{
-            background: "linear-gradient(90deg, #1652f0 0%, #b9cbfb 70.35%)",
+            background: "linear-gradient(90deg, #62e897 20%, #129b3c 70.35%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent"
           }}
