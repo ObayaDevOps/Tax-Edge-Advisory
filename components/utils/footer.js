@@ -20,9 +20,6 @@ import {
   import NextLink from 'next/link'
   import africaIcon from '../../public/images/icon/africa.png'
   import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
-  import MedOptics20Years from '../../public/images/icon/Med-Optics.svg'
-
-
 
   
   const SocialButton = ({
@@ -72,12 +69,12 @@ import {
             <Stack spacing={6} >
               <Box>
                 <NextLink href='/#'>
-                <Image src={useColorModeValue( MedOptics20Years,MedOptics20Years)} width={595} height={134}/>
+                <Image src={useColorModeValue( africaIcon,africaIconWhite)} width={40} height={40}/>
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
-                © 2022 Med-Optics Ltd.
-                Cherish the Gift of Sight
+                © 2022 Afropocene StudioLab.
+                Designed and Built in Kampala
               </Text>
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
@@ -110,7 +107,7 @@ import {
                   }}
                 />
                 <IconButton
-                  bg={useColorModeValue('green.400', 'green.800')}
+                  bg={useColorModeValue('blue.400', 'blue.800')}
                   color={useColorModeValue('white', 'gray.800')}
                   _hover={{
                     bg: 'green.600',

@@ -24,13 +24,9 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 
-  import theme from '../utils/theme'
-
   import NextImage from 'next/image'
   import africaIcon from '../../public/images/icon/africa.png'
   import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
-  import MedOptics20Years from '../../public/images/icon/Med-Optics.svg'
-
   
 
   import NextLink from 'next/link'
@@ -52,6 +48,7 @@ import {
   }
 
   import { FaBeer } from 'react-icons/fa';
+import theme from './theme';
 
 
   export default function WithSubnavigation() {
@@ -87,7 +84,7 @@ import {
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <NextLink href='/#' passHref>
             <Link>
-                <NextImage src={colorMode === 'light' ? MedOptics20Years:  MedOptics20Years} width={(595*0.4)} height={(134*0.4)}/>
+                <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/>
             </Link>
           </NextLink>
 
@@ -132,7 +129,7 @@ import {
                   href={navItem.href ?? '#'}
                   fontWeight={500}
                   color={linkColor}
-                  _hover={{ bg: colorMode === 'light' ? 'green.50': 'green.700', textColor: 'green.400'}}
+                  _hover={{ bg: colorMode === 'light' ? 'blue.50': 'gray.700', textColor: 'blue.400'}}
                   fontFamily={'Space Mono'}
                   >
                     {navItem.label}
@@ -171,16 +168,16 @@ import {
         display={'block'}
         p={2}
         // rounded={'md'}
-        _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}
+        _hover={{ bg: useColorModeValue('blue.50', 'gray.900') }}
         >
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'green.400' }}
+              _groupHover={{ color: 'blue.400' }}
               fontWeight={500}
               fontFamily={'Space Mono'}
-              _hover={{ color: 'green.400' }}
+              _hover={{ color: 'blue.400' }}
               >
               {label}
             </Text>
@@ -195,7 +192,7 @@ import {
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'green.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'blue.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -278,19 +275,19 @@ import {
       label: 'About',
       children: [
         {
-          label: 'Who We Are',
-          subLabel: 'Our Journey',
+          label: 'About Afropocene',
+          subLabel: '',
           href: '/about/about-us',
         },
         {
-          label: 'FAQs',
-          subLabel: 'Frequently Asked Questions',
-          href: '/about/faqs',
+          label: 'Artists In Residence',
+          subLabel: 'Past, Present',
+          href: '/about/artists',
         },
         {
-          label: 'Careers',
-          subLabel: 'Interested in working for us ?',
-          href: '/about/careers',
+          label: 'Press',
+          subLabel: 'Afropocene in the News',
+          href: '/about/press',
         },
         // {
         //   label: "How it's Made",
@@ -300,37 +297,32 @@ import {
       ],
     },
     {
-      label: 'Products & Services',
+      label: 'Studio Space',
       children: [
         {
-          label: 'Products',
-          subLabel: 'Frames, Lenses, Contact Lens and more ...',
-          href: '/products-and-services/products',
+          label: 'Kabalagala StudioLab',
+          subLabel: '',
+          href: '/studios/kabalagala-studio',
         },
         {
-          label: 'Services',
-          subLabel: 'Book Appointments, Consultations ...',
-          href: '/products-and-services/services',
-        },
-        {
-          label: 'Frame Size Guide',
-          subLabel: 'Guidance for the perfect glasses fit !',
-          href: '/products-and-services/frame-size-guide',
+          label: 'Enquire About Space',
+          subLabel: 'Would you like to Create with us ?',
+          href: '/studios/contact-enquiry',
         },
       ],
     },    
     {
-      label: 'Find Us',
+      label: 'Tech+Art',
       children: [
         {
-          label: 'Service Centres',
+          label: 'VR NFT Gallery',
           subLabel: '',
-          href: '/info/service-centres',
+          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
         },
         {
-          label: 'Contact Us',
-          subLabel: " ",
-          href: '/info/contact-enquiry',
+          label: 'this.',
+          subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
+          href: '/tech/this',
         },
         // {
         //   label: '4FR0P0C3N3 43VR',
@@ -340,7 +332,7 @@ import {
       ],
     },
     {
-      label: 'Blog',
+      label: 'Exhibitions',
       // href: '/exhibitions/exhibitions-home',
       children: [
         // {
@@ -362,7 +354,7 @@ import {
     },
 
     {
-      label: 'Shop',
+      label: 'Workshops',
       children: [
         // {
         //   label: 'Upcoming/Current',
@@ -375,5 +367,25 @@ import {
           href: '/workshops/workshops-archive',
         }
       ],
-    }
+    },
+    {
+      label: 'Contact',
+      children: [
+        {
+          label: 'Get in Touch',
+          subLabel: '',
+          href: '/studios/contact-enquiry',
+        },
+        {
+          label: 'Visit the Studio',
+          subLabel: '',
+          href: '/studios/kabalagala-studio',
+        },
+      ],
+    },
+
+    // {
+    //   label: 'Press',
+    //   href: '/press',
+    // },
   ];

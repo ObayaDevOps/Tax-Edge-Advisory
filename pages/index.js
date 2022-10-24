@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div >
       <Head>
-        <title>Home | MedOptics Ltd</title>
-        <meta name="description" content="MedOptics Ltd Webpage" />
+        <title>Home | Afropocene StudioLab</title>
+        <meta name="description" content="Afropocene StudioLab Webpage" />
         {/* <link rel="shortcut icon" href="../public/favicon.ico"></link> */}
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
