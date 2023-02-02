@@ -11,18 +11,21 @@ import StudioSpace from '../../../public/images/studio/AfropoceneStudio65.jpg'
 import social1 from '../../../public/images/studio/socials/AfropoceneStudioCouch.JPG'
 import social2 from '../../../public/images/studio/socials/AfropoceneStudio67.jpg'
 
+import alokaPhoto1 from '../../../public/images/exhibitions/aloka-ready-for-export/aloka1.jpg'
+import NyaraLightsPhoto from '../../../public/images/music/nyara-waves/Nyarafropocene.jpg'
+import germanPuppetPhoto1 from '../../../public/images/visting-artists/conqueringOfViennaFilm/GermanFilm.JPG'
 
 
 export const SlideData = [
     Acunye1,
-    Acunye2,
-    odurAssistantPhoto, 
     social1,
-    Acunye3,
-    AfropoceneStudio1,
+    alokaPhoto1,
+    NyaraLightsPhoto,
+    odurAssistantPhoto, 
     social2,
     StudioSpace,
     PlanningExhibition,
-
+    germanPuppetPhoto1,
+    AfropoceneStudio1,
   ];
   

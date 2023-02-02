@@ -54,7 +54,7 @@ export const BlogAuthor = (props) => {
 
 const ArticleList = () => {
   return (
-    <Container maxW={'7xl'} p="12">
+    <Container maxW={'7xl'} p="12" minH="80vh">
       <Heading as="h1">Afropocene in the News</Heading>
     
       <Head>
@@ -87,7 +87,7 @@ const ArticleList = () => {
             </Box>
             <BlogTags tags={['Venice Biennale 2022']} marginTop="3" />
             <Heading fontSize="xl" marginTop="2">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide">
+              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide" passHref>
                 ZAM Magazine: Africa in Venice. A Guide
               </NextLink>
             </Heading>
@@ -109,7 +109,7 @@ const ArticleList = () => {
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
           <Box w="100%">
             <Box  overflow="hidden">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.artforum.com/picks/odur-ronald-87064">
+              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.artforum.com/picks/odur-ronald-87064" passHref>
                 <Image
                   transform="scale(1.0)"
                   src={'../../../images/press/ArtForumFull.png'}
