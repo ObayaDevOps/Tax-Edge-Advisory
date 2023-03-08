@@ -4,8 +4,8 @@ import { Box, Text, Button, Container } from '@chakra-ui/layout'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
-const DynamicAsciiTorusComponentWithCustomLoading = dynamic(
-  () => import('../../components/asciiTorusNonDynamic'),
+const Web3WalletLoginComponentWithCustomLoading = dynamic(
+  () => import('../../components/web3/web3WalletLogin'),
   // { loading: () => <Box> </Box> }
   { loading: () => {
       <Box minHeight="60vh"  minWidth ="100vw" bgColor="red" position="fixed">
@@ -13,17 +13,14 @@ const DynamicAsciiTorusComponentWithCustomLoading = dynamic(
   } }
 )
 
-export default function AsciiTorus() {
+export default function AboutThisNftPage() {
   return (
     <Box>
       <Head>
-        <title>Ascii Torus: Interactive</title>
+        <title>About this.| Afropocene Studio Lab </title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
       </Head>
-
-      <Box>
-        <DynamicAsciiTorusComponentWithCustomLoading />
-      </Box>
+        <Web3WalletLoginComponentWithCustomLoading />
     </Box>
 
 

@@ -4,13 +4,23 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, useCursor, Text as FibreText } from '@react-three/drei'
 import { AsciiEffect } from 'three-stdlib'
-import { Box } from '@chakra-ui/layout'
+import { Box, Button } from '@chakra-ui/layout'
 
+import Link from 'next/link'
 import Head from 'next/head'
 
 
 export default function AsciiTorus() {
   return (
+    <Box bgColor={'black'} minHeight={'100vh'}>
+      {/* <button type="button" >   
+        <strong>Codex</strong> 
+      </button> */}
+
+      <Link href="/tech/about-this-nft" passHref>
+        <a>Codex</a>
+      </Link>{" "}
+      
     <Box>
       <Head>
         <title>Try Scrolling... | Afropocene StudioLab</title>
@@ -18,14 +28,17 @@ export default function AsciiTorus() {
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
 
       </Head>
+      
       <Canvas position="relative">
         <color attach="background" args={['black']} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} />
         <Torusknot />
         <OrbitControls />
+        <FibreText />
         <AsciiRenderer invert />
       </Canvas>
+    </Box>
     </Box>
 
 

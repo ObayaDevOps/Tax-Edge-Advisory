@@ -60,13 +60,50 @@ import NextLink from 'next/link'
       },
       {
         name: 'Roshan',
-        active: true,
+        active: false,
         role: 'Mixed Media Artist',
         content:'',
         avatar: '../../../images/team/RoshanPFP.png',
         followLink:
           'https://www.instagram.com/mz_karmali/',
       },
+      {
+        name: 'Henry Robinson',
+        active: true,
+        role: 'Photographer',
+        content:'Afropocene First International Resident',
+        avatar: '../../../images/team/RoshanPFP.png',
+        followLink:
+          'https://www.instagram.com/oh_henry/',
+      },
+      {
+        name: 'Noel - ScarlettMotiff',
+        active: true,
+        role: 'Digital Artist',
+        content:'',
+        avatar: '../../../images/team/RoshanPFP.png',
+        followLink:
+          'https://www.instagram.com/scarletmotiff/',
+      },
+      {
+        name: 'Tracian',
+        active: false,
+        role: 'Curator',
+        content:'Afropocene First International Resident',
+        avatar: '../../../images/team/RoshanPFP.png',
+        followLink:
+          'https://www.instagram.com/scarletmotiff/',
+      }
+      ,
+      {
+        name: 'Birungi',
+        active: false,
+        role: 'Mixed Media Artist',
+        content:'Njabbala Foundation Resident',
+        avatar: '../../../images/team/RoshanPFP.png',
+        followLink:
+          'https://www.instagram.com/scarletmotiff/',
+      }
   ];
   
   const backgrounds = [
