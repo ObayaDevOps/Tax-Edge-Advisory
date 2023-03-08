@@ -7,16 +7,15 @@ function User({ user }) {
   return (
     <div>
 
-<Head>
-        <title>Try Scrolling... | Afropocene StudioLab</title>
+    <Head>
+        <title> Welcome. | Afropocene StudioLab</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
-
       </Head>
 
       <h4>User session:</h4>
       <pre>{JSON.stringify(user, null, 2)}</pre>
-      <button onClick={() => signOut({ redirect: "/tech/web3-login" })}>Sign out</button>
+      <button onClick={() => signOut({ redirect: "/tech/about-this-nft" })}>Sign out</button>
     </div>
   );
 }

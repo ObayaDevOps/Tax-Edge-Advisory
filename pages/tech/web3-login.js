@@ -17,7 +17,7 @@ export default function AboutThisNftPage() {
   return (
     <Box>
       <Head>
-        <title>About this.| Afropocene Studio Lab </title>
+        <title>Web3 Wallet Login | Afropocene Studio Lab </title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
       </Head>
         <Web3WalletLoginComponentWithCustomLoading />

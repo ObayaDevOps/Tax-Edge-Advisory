@@ -17,7 +17,7 @@ export default function AsciiTorus() {
         <strong>Codex</strong> 
       </button> */}
 
-      <Link href="/tech/about-this-nft" passHref>
+      <Link href="/tech/about-this" passHref>
         <a>Codex</a>
       </Link>{" "}
       

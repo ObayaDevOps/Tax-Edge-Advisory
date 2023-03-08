@@ -82,7 +82,7 @@ function Web3WalletLoginPage(props) {
       message,
       signature,
       redirect: false,
-      callbackUrl: "/tech/nftUserProfile",
+      callbackUrl: "/tech/web3-user",
     });
     /**
      * instead of using signIn(..., redirect: "/user")
