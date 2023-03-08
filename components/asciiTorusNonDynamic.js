@@ -18,7 +18,12 @@ export default function AsciiTorus() {
       </button> */}
 
       <Link href="/tech/about-this" passHref>
-        <a>Codex</a>
+        <a style={{ 
+          fontFamily: 'Space Mono',
+          padding: 10
+        }
+          
+        }>Info</a>
       </Link>{" "}
       
     <Box>

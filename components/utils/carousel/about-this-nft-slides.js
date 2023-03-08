@@ -10,10 +10,10 @@ import thisPhoto5 from '../../../public/images/exhibitions/this-nft/this-nft-5.p
 
 
 export const SlideData = [
+    thisPhoto2,
+    thisPhoto5, 
     thisPhoto1,
-    thisPhoto2, 
-    thisPhoto3,
     thisPhoto4,
-    thisPhoto5
+    thisPhoto3
   ];
   

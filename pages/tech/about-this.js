@@ -64,18 +64,11 @@ import Link from 'next/link'
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text fontSize={'lg'}>
-                If not investigated, nothing is noted about the piece.
+              <Text fontSize={'lg'} textAlign="left">
+                Taking Inspiration from the  Buddist Teachings of the Heart Sutra, the Dharmachakra wheel and Concepts of Dependent Origination, <i>&apos;this.&apos;</i> represents the reality around us symbolically as a digital interactive sculpture.
                 </Text>
                 <Text fontSize={'lg'} textAlign="left">
-                It is said, according to the Pitāpūtrasamāgama-sūtra, Siddhārtha became a buddha &apos;awakened one&apos; because he fully understood the meaning of the two truths—conventional truth (saṁvṛti-satya) and ultimate truth (paramārtha-satya)—and that the reality of all the objects of knowledge, the text says, is exhaustively comprised of these two truths. [https://plato.stanford.edu/entries/twotruths-india/]               </Text>
-                <Text fontSize={'lg'} textAlign="left">
-                Taking Inspiration from the Heart Sutra of Buddist Teaching, the Dharmachakra wheel and Concepts of Dependent Origination, &apos;this.&apos; represents the reality around us symbolically in a digital interactive sculpture.
-
-                </Text>
-
-                <Text fontSize={'lg'} textAlign="start">
-                Created from only the basic computing symbols of ‘0’ and ‘1’ ,the two sides to the simplest ‘bit’ of information -  on-off / light-dark / yes-no , and the Logical AND operator
+                It is said, according to the Pitāpūtrasamāgama-sūtra, Siddhārtha became a buddha &apos;awakened one&apos; because he fully understood the meaning of the two truths—conventional truth (saṁvṛti-satya) and ultimate truth (paramārtha-satya)—and that the reality of all the objects of knowledge, the text says, is exhaustively comprised of these two truths. [https://plato.stanford.edu/entries/twotruths-india/]
                 </Text>
                 <Text fontSize={'lg'} textAlign="start">
                 When further investigated, the shape of a knotted Torus is seen in ASCII, rotating about an axis, the user can use the mouse (or fingers on mobile) to play with the newly revealed shape.
@@ -83,6 +76,18 @@ import Link from 'next/link'
                 <Text fontSize={'lg'}>
                 ‘this.’ is a keyword in programming used to specify what the programmer is referring to. 
                 </Text>
+                <Text fontSize={'lg'} textAlign="start">
+                Written in Javascript ( NextJs and ThreeJs ) and created from only the basic computing symbols of &apos;0&apos;, &apos;1&apos;, &apos;&&apos; the two sides to the simplest &apos;bit&apos; of information -  on-off / light-dark / yes-no, and the &apos;&&apos; logical operator to allow for complexity and abstraction.
+                </Text>
+                <Text fontSize={'lg'}>
+                Abstraction: The entire work can be reduced to a single changing symbol, or it can be a twisted, rotating, interconnected mass of symbols. Its the exact same thing, just from different perspectives.  The work challenges our views simplicity and complexity.
+
+                This is a statement on the creators beliefs : 
+                </Text>
+                <Text fontSize={'2xl'}>
+                Information is all, all is Empty.
+                </Text>
+            
               </VStack>
               <Box>
                 <Text

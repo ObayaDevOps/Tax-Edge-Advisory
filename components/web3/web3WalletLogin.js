@@ -123,10 +123,10 @@ function Web3WalletLoginPage(props) {
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={6} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
-            Connect Wallet
+            Connect Wallet to Mint
           </Heading>
           <Text fontSize={'lg'} color={'white.600'}>
-            to learn more about <i>this.</i>✌️
+            and to learn more about <i>this.</i>✌️
           </Text>
         </Stack>
         <Box
