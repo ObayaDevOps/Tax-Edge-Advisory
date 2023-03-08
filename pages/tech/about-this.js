@@ -67,7 +67,7 @@ import Link from 'next/link'
               <Text fontSize={'lg'} textAlign="left">
                 Taking Inspiration from the  Buddist Teachings of the Heart Sutra, the Dharmachakra wheel and Concepts of Dependent Origination, <i>&apos;this.&apos;</i> represents the reality around us symbolically as a digital interactive sculpture.
                 </Text>
-                <Text fontSize={'lg'} textAlign="left">
+                <Text fontSize={'lg'} textAlign="start">
                 It is said, according to the Pitāpūtrasamāgama-sūtra, Siddhārtha became a buddha &apos;awakened one&apos; because he fully understood the meaning of the two truths—conventional truth (saṁvṛti-satya) and ultimate truth (paramārtha-satya)—and that the reality of all the objects of knowledge, the text says, is exhaustively comprised of these two truths. [https://plato.stanford.edu/entries/twotruths-india/]
                 </Text>
                 <Text fontSize={'lg'} textAlign="start">
