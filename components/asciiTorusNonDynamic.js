@@ -65,14 +65,18 @@ function Torusknot(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={0.02}
+      // scale={0.02} //GOOD
+      scale={0.025}
+
       // scale={clicked ? 1.5 : 1.25}
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
               {/* <torusKnotGeometry args={[3, 0.5, 128, 32]} /> */}
 
-      <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} />
+      {/* <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} /> */}
+      <torusKnotGeometry args={[3, 0.45, 256, 32, 3, 4]} />
+
       {/* <torusKnotGeometry args={[shapeMixer, 0.25, 128, 32]} /> */}
 
       <meshStandardMaterial color="orange" />

@@ -15,16 +15,16 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/odur-muwawa-slides"
-
+import { SlideData } from "../../components/utils/carousel/kharumwa-fotea-workshop-slides"
 import Head from 'next/head'
 
 
-  export default function OdurMuwawaExhibitionPage() {
+
+  export default function UNDPNFTWorkshopPage() {
     return (
       <Container maxW={'7xl'}>
       <Head>
-        <title>Odur: Muwawa Exhibition</title>
+        <title>Workshop: Zero to One - A Practical Guide to NFTs</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -44,13 +44,13 @@ import Head from 'next/head'
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Odur: Muwawa
+                Zero to One - A Practical Guide to NFTs
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                KLAART Festival 2021
+                NFT Workshop
               </Text>
             </Box>
   
@@ -63,14 +63,11 @@ import Head from 'next/head'
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
-                  fontWeight={'300'}>
-                    
-                </Text>
                 <Text fontSize={'lg'}>
-                Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. The installation’s projectile shadows are cast all over the room, like the stray bullets and stray tear gas that have marked many with violence and death regardless of intention. In Muwawa, the fear of being an unintended victim is a looming presence even in spaces deemed private because violence is cheap and easy to reproduce without care.
+                Have you been wanting to understand more about the NFT space as an artist? 
+                If so join us on Saturday for an introduction and demo led by Obaya Dralega. 
+                We’ll take you through the basics: historical context, setting up, platforms and wallets.
+                Come with a smart phone or laptop to follow along, so that you can leave with your first NFT!
                 </Text>
               </VStack>
               <Box>
@@ -85,9 +82,9 @@ import Head from 'next/head'
   
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                   <List spacing={2}>
-                    <ListItem>Installation</ListItem>
-                    <ListItem>Sculpture</ListItem>{' '}
-                    <ListItem>Visual Art</ListItem>
+                    <ListItem>Workshop</ListItem>
+                    <ListItem>Education</ListItem>{' '}
+                    <ListItem>Blockchain Programming</ListItem>
                   </List>
                   {/* <List spacing={2}>
                     <ListItem>Anti‑magnetic</ListItem>
@@ -103,7 +100,7 @@ import Head from 'next/head'
                   fontWeight={'500'}
                   textTransform={'uppercase'}
                   mb={'4'}>
-                  Art Details
+                  Talk Details
                 </Text>
   
                 <List spacing={2}>
@@ -111,44 +108,24 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Cast Aluminium, Sheet Aluminium
+                     Projector
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Dimensions
+                      Length:
                     </Text>{' '}
-                    3m x 3m
+                    2 Hours
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
-                      Case:
+                      Language:
                     </Text>{' '}
-                    Steel
+                    English
                   </ListItem>
                 </List>
               </Box>
             </Stack>
   
-            {/* <Button
-              rounded={'none'}
-              w={'full'}
-              mt={8}
-              size={'lg'}
-              py={'7'}
-              bg={useColorModeValue('gray.900', 'gray.50')}
-              color={useColorModeValue('white', 'gray.900')}
-              textTransform={'uppercase'}
-              _hover={{
-                transform: 'translateY(2px)',
-                boxShadow: 'lg',
-              }}>
-              Purchase
-            </Button>
-  
-            <Stack direction="row" alignItems="center" justifyContent={'center'}>
-              <MdLocalShipping />
-              <Text>Physical Delivery Only</Text>
-            </Stack> */}
           </Stack>
         </SimpleGrid>
       </Container>

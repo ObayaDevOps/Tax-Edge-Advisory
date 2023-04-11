@@ -77,7 +77,7 @@ import NextLink from 'next/link'
           'https://www.instagram.com/oh_henry/',
       },
       {
-        name: 'Noel - ScarlettMotiff',
+        name: 'SCARLETMOTIFF - Noel Apitta',
         active: true,
         role: 'Digital Artist',
         content:'',
