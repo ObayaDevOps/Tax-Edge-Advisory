@@ -4,12 +4,12 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  name: 'default',
-  title: 'afropocene-sanity',
+  basePath:'/studio',
 
-  projectId: 'udf0dgps',
-  dataset: 'production',
+  name: 'afropocene-sanity',
 
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   plugins: [deskTool(), visionTool()],
 
   schema: {

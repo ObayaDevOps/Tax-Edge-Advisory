@@ -10,6 +10,8 @@ import { SessionProvider } from "next-auth/react";
 import { mainnet } from "wagmi/chains";
 
 
+import { Analytics } from '@vercel/analytics/react';
+
 const { provider, webSocketProvider } = configureChains(
   [mainnet],
   [publicProvider()]
@@ -31,6 +33,8 @@ function MyApp({ Component, pageProps }) {
         <WithSubnavigation />
         <Component {...pageProps} />
         <FooterLargeWithNewsletter />
+        <Analytics />
+
       </ChakraProvider>      
     
     </SessionProvider>

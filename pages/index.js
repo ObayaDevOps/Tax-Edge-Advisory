@@ -3,24 +3,12 @@ import {  Box, Icon } from '@chakra-ui/react'
 import LandingPage from '../components/pageContent/landingPage'
 import Image from 'next/image'
 import HeadImage from '../public/images/icon/africa.png'
-import sanityClient from "@sanity/client";
 
-
-const client = sanityClient({ 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: "v2023-04-13",
-  useCdn: false
-  })
-
+import client from '../sanityClient'
 
   export async function getStaticProps() {
     const landingPageContent = await client.fetch(`
     *[_type == "landingPage"]`);
-    // *[_type == "landingPage"]`, { next: { revalidate: 1 } });
-
-    // const posts = await client.fetch(`
-    // *[_type == "post"]`);
 
     return {
       props: {
