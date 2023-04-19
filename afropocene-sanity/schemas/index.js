@@ -1,4 +1,4 @@
-import landingPage from '../schemas/landingPage'
+import landingPage from './landingPageSchema'
+import exhibitionPage from '/schemas/exhibitionPageSchema'
 
-
-export const schemaTypes = [landingPage]
+export const schemaTypes = [landingPage,exhibitionPage]

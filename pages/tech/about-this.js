@@ -151,7 +151,7 @@ import Link from 'next/link'
               </Box>
             </Stack>  
 
-            <Link href="/tech/web3-login" passHrefs>      
+            <Link href="/tech/web3-login" passHref>      
             <Button
             
               rounded={'none'}

@@ -345,11 +345,11 @@ import theme from './theme';
           subLabel: 'Immersive Volumetric Projection',
           href: '/exhibitions/dreamcatcher-x-generative-dreams',
         },
-        {
-          label: 'Exhibition Archive',
-          subLabel: 'Past Exhibitions',
-          href: '/exhibitions/exhibitions-archive',
-        },
+        // {
+        //   label: 'Exhibition Archive',
+        //   subLabel: 'Past Exhibitions',
+        //   href: '/exhibitions/exhibitions-archive',
+        // },
       ],
     },
 

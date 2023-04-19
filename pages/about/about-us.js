@@ -95,7 +95,7 @@ import {
             paddingBottom={useBreakpointValue({base: '5em', md: '0'})}
 
             >
-              <NextLink href="../about/artists">
+              <NextLink href="../about/artists" passHref>
               <Button
                 bg={'whiteAlpha.300'}
                 rounded={'full'}

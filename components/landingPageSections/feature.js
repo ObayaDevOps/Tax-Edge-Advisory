@@ -65,7 +65,7 @@ import {
             We also have extensive experience with Technology and Software Development
              and we have plans to merge the worlds of Nature, Art and Technology...
             </Text>
-            <NextLink href='../../../tech/this'>
+            <NextLink href='../../../tech/this' passHref>
               <Button size="md" color={'blue.500'} fontFamily="Space Mono">Explore Tech+Art</Button>
             </NextLink>
           </Stack>

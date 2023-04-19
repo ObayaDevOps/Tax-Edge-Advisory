@@ -65,8 +65,8 @@ function Torusknot(props) {
     <mesh
       {...props}
       ref={ref}
-      // scale={0.02} //GOOD
-      scale={0.025}
+      scale={0.02} //GOOD
+      // scale={0.025}
 
       // scale={clicked ? 1.5 : 1.25}
       onClick={() => click(!clicked)}

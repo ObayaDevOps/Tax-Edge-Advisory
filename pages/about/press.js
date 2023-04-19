@@ -70,7 +70,7 @@ const ArticleList = () => {
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
           <Box w="100%">
             <Box  overflow="hidden">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide">
+              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide" passHref>
                 <Image
                   transform="scale(1.0)"
                   src={'../../../images/press/ZamFull.png'}

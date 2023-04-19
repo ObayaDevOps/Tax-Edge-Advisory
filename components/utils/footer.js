@@ -64,21 +64,35 @@ import {
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 0.2fr' }}
+            // templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+            templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr' }}
+
             spacing={8}>
             <Stack spacing={6} >
-              <Box>
-                <NextLink href='/#'>
+              <Box text="left">
+                <NextLink href='/#' passHref>
                 <Image src={useColorModeValue( africaIcon,africaIconWhite)} width={40} height={40}/>
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
                 © 2022 Afropocene StudioLab.
                 Designed and Built in Kampala by&nbsp;               
-                <NextLink href="https://www.linkedin.com/in/obaya-dralega/">
+                <NextLink href="https://obaya.me/">
                       Obaya
                 </NextLink>  
               </Text>
+              <Stack align={'flex-start'}>
+              <Link href={'/studio'}>
+                <Text fontSize={'sm'} fontFamily={'Space Mono'}>
+                  Editor Studio
+                </Text>
+                </Link>
+              <Link href={'https://www.sanity.io/manage/personal/project/udf0dgps'}>
+                <Text fontSize={'sm'} fontFamily={'Space Mono'}>
+                  Admin Panel
+                </Text>
+              </Link>
+            </Stack>
 
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
@@ -92,8 +106,7 @@ import {
                 </SocialButton>
               </Stack>
             </Stack>
-            <Stack align={'flex-start'}>
-            </Stack>
+
           </SimpleGrid>
         </Container>
       </Box>
