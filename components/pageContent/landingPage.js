@@ -1,5 +1,7 @@
-import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio } from '@chakra-ui/react'
+import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio, Alert, AlertIcon, useToast } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { useEffect } from "react";
+
 import LandingPageSplitWithImage from '../landingPageSections/feature'
 import acunye from '../../public/images/visting-artists/acunye/Afropocene-Studio-BTS60.jpg'
 
@@ -13,8 +15,32 @@ const DynamicTypeWriterWithNoSSR = dynamic(
 export default function LandingPage(props) {
   const landingPageContent  = props.pageContent[0] || [];
 
+  const toast = useToast();
+  const id = 'test-toast'
+
+
+  useEffect(() => {
+    // Show toast every 5 seconds.
+      toast({
+        title: "Click here to see latest Workshop/Exhibition",
+        id,
+        // description: `Time ${new Date()}`,
+        status: "info",
+        position: "bottom",
+        duration: 5000,
+        isClosable: true
+      });
+
+  }, []); // Passing in empty array so this will only get called on mount
+  
+  
   return (
     <Box>
+      
+      {/* <Alert status='info' variant='left-accent'>
+      <AlertIcon />
+      Click here to see latest Workshop/Exhibition 
+      </Alert> */}
 
     <SimpleGrid
     columns={1}
