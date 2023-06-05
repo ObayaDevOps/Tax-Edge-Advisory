@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
       <SessionProvider session={pageProps.session} refetchInterval={0}>
 
       <ChakraProvider theme={theme}>
-        <WithSubnavigation />
+        <WithSubnavigation  {...pageProps} />
         <Component {...pageProps} />
         <FooterLargeWithNewsletter />
         <Analytics />

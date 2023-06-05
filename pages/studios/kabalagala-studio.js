@@ -74,13 +74,10 @@ import Head from 'next/head'
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
-                    Welcome to our (MeatSpace) Home
+                    Welcome to our Space
                 </Text>
                 <Text fontSize={'lg'}>
-                The studio lab is a place for ideas big and small! With two floors in an industrial building, we
-                provide space and community for experimentation and collaboration. So far the space has
-                had several configurations: from studio space, to pop up museum, to a concert hall, and a
-                film all in a year!
+                The studio lab consists of two floors in an industrial building in kabalagala (Tools and Machinery Ggaba road). The space includes individual artist studio’s, a meeting room, kitchen and storage space. Flexible and amenable to a variety of different ideas, and often shifts every quarter to reflect the needs of the community. In just under 2 years it has taken the form of concert hall, exhibition space, a film production set and hosted several open studio’s both for resident and visiting artists and a variety of worskshops. 
                 </Text>
               </VStack>
               <Box>

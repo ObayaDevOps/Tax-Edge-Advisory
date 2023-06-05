@@ -116,15 +116,15 @@ export default defineType({
         type: 'boolean',
         validation: (rule) => rule.required(),
       }),
-      defineField({
-        name: 'linkToPurchaseUrl',
-        title: 'Link to Purchase URL',
-        type: 'url',
-        validation: Rule => Rule.uri({
-          scheme: ['http', 'https']
-        }),
-        hidden: ({ document }) => !document?.availableForPurchase,
-      }),
+      // defineField({
+      //   name: 'linkToPurchaseUrl',
+      //   title: 'Link to Purchase URL',
+      //   type: 'url',
+      //   validation: Rule => Rule.uri({
+      //     scheme: ['http', 'https']
+      //   }),
+      //   hidden: ({ document }) => !document?.availableForPurchase,
+      // }),
 
       //For the Archive Page
       defineField({

@@ -8,6 +8,7 @@ import { Box, Button } from '@chakra-ui/layout'
 
 import Link from 'next/link'
 import Head from 'next/head'
+import { color } from '@chakra-ui/styled-system'
 
 
 export default function AsciiTorus() {
@@ -20,7 +21,8 @@ export default function AsciiTorus() {
       <Link href="/tech/about-this" passHref>
         <a style={{ 
           fontFamily: 'Space Mono',
-          padding: 10
+          padding: 10,
+          color:'white'
         }
           
         }>Info</a>

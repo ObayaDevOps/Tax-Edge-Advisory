@@ -177,6 +177,12 @@ export async function getStaticPaths() {
         `*[_type == "exhibitionPage" && defined(slug.current)][].slug.current`
     )
 
+    console.log("paths:")
+    console.log(paths) //prints the slug - is this what I need in navbar
+    //remember all this routing only works in the 'pages' directory
+
+    //so how to get into navbar ? - navbar cannot be a page
+
     return {
         paths: paths.map((slug) => ({params: {slug}})),
         fallback: false,

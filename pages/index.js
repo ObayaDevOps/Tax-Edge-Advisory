@@ -10,6 +10,7 @@ import client from '../sanityClient'
     const landingPageContent = await client.fetch(`
     *[_type == "landingPage"]`);
 
+
     return {
       props: {
         landingPageContent,

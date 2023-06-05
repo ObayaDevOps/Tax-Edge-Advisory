@@ -15,16 +15,16 @@ import {
   } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
-import { SlideData } from "../../components/utils/carousel/odur-muwawa-slides"
+import { SlideData } from "../../components/utils/carousel/aloka-ready-for-export-slides"
 
 import Head from 'next/head'
 
 
-  export default function OdurMuwawaExhibitionPage() {
+  export default function AlokaReadyForExportExhibitionPage() {
     return (
       <Container maxW={'7xl'}>
       <Head>
-        <title>Odur: Muwawa Exhibition</title>
+        <title>Ready For Export Exhibition</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -44,13 +44,13 @@ import Head from 'next/head'
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                Odur: Muwawa
+                Aloka: Ready For Export
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                KLAART Festival 2021
+                KLAART 2021
               </Text>
             </Box>
   
@@ -63,14 +63,15 @@ import Head from 'next/head'
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
-                  fontWeight={'300'}>
-                    
-                </Text>
                 <Text fontSize={'lg'}>
-                Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. The installation’s projectile shadows are cast all over the room, like the stray bullets and stray tear gas that have marked many with violence and death regardless of intention. In Muwawa, the fear of being an unintended victim is a looming presence even in spaces deemed private because violence is cheap and easy to reproduce without care.                </Text>
+                In Ready for Export, Trevor stages an export clearance area as an inquiry into migratory labour 
+                practices among young people. Through paintings of children’s faces within the installation, 
+                he evokes a humanity that is often invisible in the transactions of the labour market. 
+                Using a palette of copper and gold, Aloka places personified objects and precious metals on 
+                pedestals to connect labour as a commodity to how young people view their own value, 
+                and what their value is worth to their own country.
+                </Text>
+
               </VStack>
               <Box>
                 <Text
@@ -110,13 +111,13 @@ import Head from 'next/head'
                     <Text as={'span'} fontWeight={'bold'}>
                       Materials:
                     </Text>{' '}
-                     Cast Aluminium, Sheet Aluminium
+                     Oil Paint, Shipping Materials
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
                       Dimensions
                     </Text>{' '}
-                    3m x 3m
+                    10m x 10m
                   </ListItem>
                   <ListItem>
                     <Text as={'span'} fontWeight={'bold'}>
@@ -125,6 +126,9 @@ import Head from 'next/head'
                     Steel
                   </ListItem>
                 </List>
+                <Text fontSize={'xs'} textAlign="left" paddingTop="1em">
+                    Slide Photo Credit: https://klaart.org/showcase-item/trevor-aloka-2/
+                </Text>
               </Box>
             </Stack>
   

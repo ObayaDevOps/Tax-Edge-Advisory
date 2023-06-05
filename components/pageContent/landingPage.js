@@ -15,23 +15,23 @@ const DynamicTypeWriterWithNoSSR = dynamic(
 export default function LandingPage(props) {
   const landingPageContent  = props.pageContent[0] || [];
 
-  const toast = useToast();
-  const id = 'test-toast'
+  // const toast = useToast();
+  // const id = 'test-toast'
 
 
-  useEffect(() => {
-    // Show toast every 5 seconds.
-      toast({
-        title: "Click here to see latest Workshop/Exhibition",
-        id,
-        // description: `Time ${new Date()}`,
-        status: "info",
-        position: "bottom",
-        duration: 5000,
-        isClosable: true
-      });
+  // useEffect(() => {
+  //   // Show toast every 5 seconds.
+  //     toast({
+  //       title: "Click here to see latest Workshop/Exhibition",
+  //       id,
+  //       // description: `Time ${new Date()}`,
+  //       status: "info",
+  //       position: "bottom",
+  //       duration: 12000,
+  //       isClosable: true
+  //     });
 
-  }, []); // Passing in empty array so this will only get called on mount
+  // }, []); // Passing in empty array so this will only get called on mount
   
   
   return (
