@@ -42,7 +42,7 @@ import Head from 'next/head'
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24, lg: 5 }}>
            <Flex>
-            {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
+            {/* <NextImage src={odurInstallationPhoto}  placeholder="blur" /> */}
             <ImageSlider slides={SlideData} />
             </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
