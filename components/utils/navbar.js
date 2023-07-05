@@ -347,16 +347,16 @@ import theme from './theme';
       label: 'Exhibitions',
       // href: '/exhibitions/exhibitions-home',
       children: [
-        {
-          label: 'Proof of Work',
-          subLabel: 'UNDP Innovation Prize 2022',
-          href: '/exhibitions/undp-proof-of-work',
-        },
-        {
-          label: 'Dreamcatcher x Generative Dreams',
-          subLabel: 'Immersive Volumetric Projection',
-          href: '/exhibitions/dreamcatcher-x-generative-dreams',
-        },
+        // {
+        //   label: 'Proof of Work',
+        //   subLabel: 'UNDP Innovation Prize 2022',
+        //   href: '/exhibitions/undp-proof-of-work',
+        // },
+        // {
+        //   label: 'Dreamcatcher x Generative Dreams',
+        //   subLabel: 'Immersive Volumetric Projection',
+        //   href: '/exhibitions/dreamcatcher-x-generative-dreams',
+        // },
         {
           label: 'Exhibition Archive',
           subLabel: 'Past Exhibitions',
@@ -368,11 +368,11 @@ import theme from './theme';
     {
       label: 'Workshops',
       children: [
-        {
-          label: 'NFT Workshop',
-          subLabel: '',
-          href: '/workshops/undp-nft-workshop',
-        },
+        // {
+        //   label: 'NFT Workshop',
+        //   subLabel: '',
+        //   href: '/workshops/undp-nft-workshop',
+        // },
         {
           label: 'Workshop Archive',
           subLabel: '',

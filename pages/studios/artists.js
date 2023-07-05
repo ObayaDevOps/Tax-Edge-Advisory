@@ -12,6 +12,11 @@ import {
 import Head from 'next/head';
 import NextLink from 'next/link'
 
+  
+import client from '../../sanityClient'
+import groq from 'groq'
+
+
   const artistDescription = [
     {
         name: 'Letaru Dralega',
@@ -108,12 +113,12 @@ import NextLink from 'next/link'
 
 
   function ArtistCard(props) {
-    const { name, active, role, content, avatar, followLink, index  } = props;
+    const { artistName, currentlyActiveResidentArtist, artistDisiplines, artistDescription, artistPFP, socialMediaUrl, index  } = props;
     return (
       <Flex
         // boxShadow={'xl'}
         maxW={'640px'}
-        direction={{ base: 'column-reverse', md: 'row' }}
+        direction={{ base: 'column-reverse', md: 'row' }}vsocialMediaUrl
         width={'full'}
         // rounded={'xl'}
         rounded={'none'}
@@ -131,14 +136,14 @@ import NextLink from 'next/link'
           textAlign={'left'}
           justifyContent={'space-between'}>
           <chakra.p fontFamily={'Space Mono'} fontWeight={'bold'} fontSize={20}>
-            {name}
+            {artistName}
             <chakra.span
               fontFamily={'Space Mono'}
               fontWeight={'medium'}
               color={'gray.500'}
               py={3}>
               {' '}
-              - {role}
+              - {artistDisiplines}
             </chakra.span>
           </chakra.p>
           <chakra.p
@@ -146,12 +151,12 @@ import NextLink from 'next/link'
             fontWeight={'light'}
             fontSize={'15px'}
             pb={10}>
-            {content}
+            {artistDescription}
           </chakra.p>
-        <NextLink href={followLink} passHref>
+        <NextLink href={socialMediaUrl} passHref>
             <Button
                 // flex={1}
-                onClick={followLink}
+                onClick={socialMediaUrl}
                 size={'xs'}
                 fontSize={'md'}
                 rounded={'none'}
@@ -172,21 +177,21 @@ import NextLink from 'next/link'
 
         </Flex>
         <Avatar
-          src={avatar}
+          src={artistPFP}
           height={'200px'}
           width={'200px'}
           alignSelf={'center'}
           size='2xl'
           m={{ base: '0 0 35px 0', md: '0 0 0 50px' }}
         >
-        <AvatarBadge boxSize='1.25em' bg={active ? 'green.500' : 'blue.500'} />
+        <AvatarBadge boxSize='1.25em' bg={currentlyActiveResidentArtist ? 'green.500' : 'blue.500'} />
         </Avatar>
 
       </Flex>
     );
   }
   
-  export default function GridBlurredBackdrop() {
+  export default function GridBlurredBackdrop({artistCardsPage}) {
     return (
       <Flex
         textAlign={'center'}
@@ -242,7 +247,7 @@ import NextLink from 'next/link'
           spacing={'20'}
           mt={16}
           mx={'auto'}>
-          {artistDescription.map((cardInfo, index) => (
+          {artistCardsPage.map((cardInfo, index) => (
             <ArtistCard {...cardInfo} index={index} key={index} />
           ))}
         {/* <SocialProfileWithImageHorizontal /> */}
@@ -251,3 +256,33 @@ import NextLink from 'next/link'
       </Flex>
     );
   }
+
+
+
+
+//I wanr the query to return all the info
+const query = groq`*[_type == "artistCardPage"] | order(_createdAt asc) {
+  artistName,
+  artistDisiplines,
+  artistDescription,
+  "artistPFP": artistPFP.asset->url,
+  socialMediaUrl,
+  currentlyActiveResidentArtist
+} `
+
+
+export async function getStaticProps(context) {
+  const artistCardsPage = await client.fetch(
+      query    
+  )
+
+  console.log("RETURNR4")
+  console.log(artistCardsPage)
+
+
+  return {
+      props: {
+        artistCardsPage
+      }
+  }
+}

@@ -17,8 +17,8 @@ import { defineField, defineType, defineConfig } from 'sanity'
 
 
 export default defineType({
-  name: 'exhibitionPage',
-  title: 'Exhibition Page',
+  name: 'workshopPage',
+  title: 'Workshop Page',
   icon: PackageIcon,
   type: 'document',
   fields: [
@@ -29,8 +29,8 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'exhibitionName',
-      title: 'Exhibition Name',
+      name: 'workshopName',
+      title: 'Workshop Name',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -60,8 +60,8 @@ export default defineType({
     }),
 
     defineField({
-      name: 'exhibitionParagraphText',
-      title: 'Exhibition Paragraph Text',
+      name: 'workshopParagraphText',
+      title: 'Workshop Paragraph Text',
       type: 'text',
       validation: (rule) => rule.required(),
     }),
@@ -81,14 +81,14 @@ export default defineType({
         validation: (rule) => rule.required(),
       }),
       defineField({
-        name: 'exhibitionStartDate',
-        title: 'Exhibition Start Date',
+        name: 'workshopStartDate',
+        title: 'Workshop Start Date',
         type: 'date',
         validation: (rule) => rule.required(),
       }),
       defineField({
-        name: 'exhibitionEndDate',
-        title: 'Exhibition End Date',
+        name: 'workshopEndDate',
+        title: 'Workshop End Date',
         type: 'date',
         validation: (rule) => rule.required(),
       }),
@@ -97,7 +97,7 @@ export default defineType({
 
       //Display Parameters
       defineField({
-        name: 'currentlyActiveExhibition',
+        name: 'currentlyActiveWorkshop',
         title: 'Currently Active ?',
         type: 'boolean',
         validation: (rule) => rule.required(),
@@ -110,6 +110,15 @@ export default defineType({
           maxLength: 50
         }
       }),
+      // defineField({
+      //   name: 'linkToPurchaseUrl',
+      //   title: 'Link to Purchase URL',
+      //   type: 'url',
+      //   validation: Rule => Rule.uri({
+      //     scheme: ['http', 'https']
+      //   }),
+      //   hidden: ({ document }) => !document?.availableForPurchase,
+      // }),
 
       //For the Archive Page
       defineField({
@@ -157,8 +166,8 @@ export default defineType({
     // Link -currently installed: https://www.npmjs.com/package/sanity-plugin-mux-input
     // Link: https://docs.mux.com/guides/video/integrate-with-sanity#1-install-mux-plugin
     // defineField({
-    //     name: 'exhibitionVideo',
-    //     title: 'Exhibition Video',
+    //     name: 'workshopVideo',
+    //     title: 'Workshop Video',
     //     type: 'document',
     //     fields: [
     //         {title: 'Title', name: 'title', type: 'string'},

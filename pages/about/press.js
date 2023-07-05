@@ -19,18 +19,16 @@ import {
 import Head from 'next/head'
 import NextLink from 'next/link'
 
+import client from '../../sanityClient'
+import groq from 'groq'
 
 
 const BlogTags = (props) => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-            {tag}
+          <Tag size={'md'} variant="solid" colorScheme="orange" key={props.tags}>
+            {props.tags}
           </Tag>
-        );
-      })}
     </HStack>
   );
 };
@@ -52,7 +50,48 @@ export const BlogAuthor = (props) => {
   );
 };
 
-const ArticleList = () => {
+const PressCard = (props) => {
+  const { articleName, articleTag, articlePFP, pressArticleUrl, index  } = props;
+
+  console.log("HEYO");
+  console.log(props);
+
+
+
+  return (
+    <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+    <Box w="100%">
+      <Box  overflow="hidden">
+        <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href={pressArticleUrl} passHref>
+          <Image
+            transform="scale(1.0)"
+            src={articlePFP}
+            alt="some text"
+            objectFit="contain"
+            width="100%"
+            transition="0.3s ease-in-out"
+            rounded={'none'}
+            _hover={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </NextLink>
+      </Box>
+      <BlogTags tags={articleTag} marginTop="3" />
+      <Heading fontSize="xl" marginTop="2">
+        <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href={pressArticleUrl} passHref>
+          {articleName}
+        </NextLink>
+      </Heading>
+    </Box>
+
+    
+  </WrapItem>
+  );
+};
+
+
+const ArticleList = ({pressCardPage}) => {
   return (
     <Container maxW={'7xl'} p="12" minH="80vh">
       <Heading as="h1">Afropocene in the News</Heading>
@@ -67,89 +106,46 @@ const ArticleList = () => {
 
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <Box  overflow="hidden">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide" passHref>
-                <Image
-                  transform="scale(1.0)"
-                  src={'../../../images/press/ZamFull.png'}
-                  alt="some text"
-                  objectFit="contain"
-                  width="100%"
-                  transition="0.3s ease-in-out"
-                  rounded={'none'}
-                  _hover={{
-                    transform: 'scale(1.05)',
-                  }}
-                />
-              </NextLink>
-            </Box>
-            <BlogTags tags={['Venice Biennale 2022']} marginTop="3" />
-            <Heading fontSize="xl" marginTop="2">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.zammagazine.com/arts/1479-africa-in-venice-a-guide" passHref>
-                ZAM Magazine: Africa in Venice. A Guide
-              </NextLink>
-            </Heading>
-            {/* <Text as="p" fontSize="md" marginTop="2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text> */}
-            {/* <BlogAuthor
-              name="John Doe"
-              date={new Date('2021-04-06T19:01:27Z')}
-            /> */}
-          </Box>
-
-          
-        </WrapItem>
-
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <Box  overflow="hidden">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.artforum.com/picks/odur-ronald-87064" passHref>
-                <Image
-                  transform="scale(1.0)"
-                  src={'../../../images/press/ArtForumFull.png'}
-                  alt="some text"
-                  objectFit="contain"
-                  width="100%"
-                  transition="0.3s ease-in-out"
-                  rounded={'none'}
-                  _hover={{
-                    transform: 'scale(1.05)',
-                  }}
-                />
-              </NextLink>
-            </Box>
-            <BlogTags tags={['KLA ART 2021']} marginTop="3" />
-            <Heading fontSize="xl" marginTop="2">
-              <NextLink textDecoration="none" _hover={{ textDecoration: 'none' }} href="https://www.artforum.com/picks/odur-ronald-87064">
-                ART FORUM: Odur Ronald at Afropocene
-              </NextLink>
-            </Heading>
-            {/* <Text as="p" fontSize="md" marginTop="2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text> */}
-            {/* <BlogAuthor
-              name="John Doe"
-              date={new Date('2021-04-06T19:01:27Z')}
-            /> */}
-          </Box>
-
-          
-        </WrapItem>
-
-
-
+        {pressCardPage.map((cardInfo, index) => (
+          <PressCard {...cardInfo} index={index} key={index}/>
+        ))}
       </Wrap>
+
+
+
+
     </Container>
   );
 };
+
+
+
+//I wanr the query to return all the info
+const query = groq`*[_type == "pressCardPage"] | order(_createdAt asc) {
+  articleName,
+  articleTag,
+  "articlePFP": articlePFP.asset->url,
+  pressArticleUrl,
+} `
+
+
+export async function getStaticProps(context) {
+  const pressCardPage = await client.fetch(
+      query    
+  )
+
+  console.log("RETURNR5")
+  console.log(pressCardPage)
+
+
+  return {
+      props: {
+        pressCardPage
+      }
+  }
+}
+
+
+
 
 export default ArticleList;

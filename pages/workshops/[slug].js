@@ -1,4 +1,4 @@
-//this will be the template page for all exhibitions
+//this will be the template page for all workshops
 
 //Link: https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js
 //Link: How to get images : https://www.sanity.io/docs/how-queries-work#584ed2426ff5
@@ -31,12 +31,12 @@ import NextLink from 'next/link'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
 
 
-const Exhibition = ({exhibitionPage}) => {
+const Workshop = ({workshopPage}) => {
 
     return (
     <Container maxW={'7xl'}>
       <Head>
-        <title>{exhibitionPage.artistName}: {exhibitionPage.exhibitionName}</title>
+        <title>{workshopPage.artistName}: {workshopPage.workshopName}</title>
         <meta name="description" content="Afropocene StudioLab Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
@@ -48,9 +48,9 @@ const Exhibition = ({exhibitionPage}) => {
           py={{ base: 18, md: 24, lg:5 }}>
           <Flex>
             {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
-            {/* <NextImage src={exhibitionPage.slideShowImageUrls[0]} layout='responsive' /> */}
+            {/* <NextImage src={workshopPage.slideShowImageUrls[0]} layout='responsive' /> */}
 
-            <ImageSlider slides={exhibitionPage.slideShowImageUrls} />
+            <ImageSlider slides={workshopPage.slideShowImageUrls} />
           </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <Box as={'header'}>
@@ -58,13 +58,13 @@ const Exhibition = ({exhibitionPage}) => {
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                {exhibitionPage.artistName}: {exhibitionPage.exhibitionName}
+                {workshopPage.artistName}: {workshopPage.workshopName}
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'2xl'}>
-                {exhibitionPage.subTitle}
+                {workshopPage.subTitle}
               </Text>
             </Box>
   
@@ -84,7 +84,7 @@ const Exhibition = ({exhibitionPage}) => {
                     
                 </Text>
                 <Text fontSize={'lg'}>
-                {exhibitionPage.exhibitionParagraphText}
+                {workshopPage.workshopParagraphText}
                 </Text>
               </VStack>
               <Box>
@@ -99,7 +99,7 @@ const Exhibition = ({exhibitionPage}) => {
   
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                   <List spacing={2}>
-                      {exhibitionPage.featuresList.map(feature =>
+                      {workshopPage.featuresList.map(feature =>
                       <ListItem key={feature}>
                         <Text as={'span'} fontWeight={'bold'}>
                             {feature}
@@ -120,7 +120,7 @@ const Exhibition = ({exhibitionPage}) => {
                 </Text>
   
                 <List spacing={2}>
-                    {exhibitionPage.artDetailsList.map(artDetail => 
+                    {workshopPage.artDetailsList.map(artDetail => 
                         <ListItem key={artDetail}>
                             <Text as={'span'} fontWeight={'bold'}>
                             {artDetail}
@@ -146,7 +146,7 @@ const Exhibition = ({exhibitionPage}) => {
 
 export async function getStaticPaths() {
     const paths = await client.fetch(
-        `*[_type == "exhibitionPage" && defined(slug.current)][].slug.current`
+        `*[_type == "workshopPage" && defined(slug.current)][].slug.current`
     )
 
     console.log("paths:")
@@ -161,15 +161,15 @@ export async function getStaticPaths() {
     }
 }
 
-const query = groq`*[_type == "exhibitionPage" && slug.current == $slug][0]{
+const query = groq`*[_type == "workshopPage" && slug.current == $slug][0]{
     artDetailsList,
     artistName,
     "artistPFPUrl": artistPFP.asset->url,
-    currentlyActiveExhibition,
-    exhibitionEndDate,
-    exhibitionName,
-    exhibitionParagraphText,
-    exhibitionStartDate,
+    currentlyActiveWorkshop,
+    workshopEndDate,
+    workshopName,
+    workshopParagraphText,
+    workshopStartDate,
     featuresList,
     "slideShowImageUrls": slideShowImages[].asset->url,
     subTitle,
@@ -182,19 +182,19 @@ export async function getStaticProps(context) {
     const { slug = "" } = context.params
 
 
-    const exhibitionPage = await client.fetch(
+    const workshopPage = await client.fetch(
         query, { slug }    
     )
 
-    console.log("RETURNR")
-    console.log(exhibitionPage)
+    // console.log("RETURNR")
+    // console.log(workshopPage)
 
 
     return {
         props: {
-            exhibitionPage
+            workshopPage
         }
     }
 }
 
-export default Exhibition
+export default Workshop
