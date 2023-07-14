@@ -101,8 +101,10 @@ const BlogTags = (props) => {
 
 
 function WorkshopCard(props) {
-  // const { workshopName, artistName, startDate, endDate, headerWorkshop, active, blogTags, workshopDescription,
-  //    photo, artistPFP, linkToWorkshop,  followLink ,index  } = props;
+
+  // console.log("RETURNR3")
+  // console.log(props)
+
 
 
   const {workshopName,artistName,workshopStartDate, featuresList, archivePageDisplayShortDescription,
@@ -110,15 +112,16 @@ function WorkshopCard(props) {
     } = props;  
 
 
-    // console.log("RETURNR3")
-    // console.log(props)
 
   return (
           <Box w="100%">
             <Box overflow="hidden">
               <NextLink href={slug} passHref>
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <NextImage src={archiveDisplayImage} height={1824} width={2736}></NextImage>
+                <NextImage 
+                src={archiveDisplayImage} 
+                height={1824} 
+                width={2736}></NextImage>
               </Link>
               </NextLink>
             </Box>
@@ -205,7 +208,9 @@ export async function getStaticProps(context) {
   return {
       props: {
           workshopPage
-      }
+      },
+      revalidate: 10, //In seconds
+
   }
 }
 

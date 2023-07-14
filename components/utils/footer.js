@@ -77,7 +77,7 @@ import {
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
                 © 2022 Afropocene StudioLab.
                 Designed and Built in Kampala by&nbsp;               
-                <NextLink href="https://obaya.me/">
+                <NextLink href="https://www.linkedin.com/in/obaya-dralega/">
                       Obaya
                 </NextLink>  
               </Text>

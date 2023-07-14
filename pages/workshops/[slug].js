@@ -109,7 +109,7 @@ const Workshop = ({workshopPage}) => {
                   </List>
                 </SimpleGrid>
               </Box>
-              <Box>
+              {/* <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
                   color={useColorModeValue('yellow.500', 'yellow.300')}
@@ -128,7 +128,7 @@ const Workshop = ({workshopPage}) => {
                         </ListItem>  
                     )}
                 </List>
-              </Box>
+              </Box> */}
             </Stack>
   
           </Stack>
@@ -162,7 +162,6 @@ export async function getStaticPaths() {
 }
 
 const query = groq`*[_type == "workshopPage" && slug.current == $slug][0]{
-    artDetailsList,
     artistName,
     "artistPFPUrl": artistPFP.asset->url,
     currentlyActiveWorkshop,
@@ -193,7 +192,9 @@ export async function getStaticProps(context) {
     return {
         props: {
             workshopPage
-        }
+        },
+        revalidate: 10, //In seconds
+
     }
 }
 

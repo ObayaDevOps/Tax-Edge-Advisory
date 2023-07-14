@@ -154,8 +154,9 @@ const BlogTags = (props) => {
 
 
 function ExhibitionCard(props) {
-  // const { exhibitionName, artistName, startDate, endDate, headerExhibition, active, blogTags, exhibitionDescription,
-  //    photo, artistPFP, linkToExhibition,  followLink ,index  } = props;
+
+  // console.log("RETURNR3")
+  // console.log(props)
 
 
   const {exhibitionName,artistName,exhibitionStartDate, featuresList, archivePageDisplayShortDescription,
@@ -163,8 +164,6 @@ function ExhibitionCard(props) {
     } = props;  
 
 
-    // console.log("RETURNR3")
-    // console.log(props)
 
   return (
           <Box w="100%">
@@ -263,7 +262,9 @@ export async function getStaticProps(context) {
   return {
       props: {
           exhibitionPage
-      }
+      },
+      revalidate: 10,
+
   }
 }
 

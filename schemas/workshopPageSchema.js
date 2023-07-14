@@ -74,13 +74,6 @@ export default defineType({
         validation: (rule) => rule.required(),
       }),
       defineField({
-        name: 'artDetailsList',
-        title: 'Art Details List',
-        type: 'array',
-        of:[{type: 'string'}],
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
         name: 'workshopStartDate',
         title: 'Workshop Start Date',
         type: 'date',
@@ -136,6 +129,8 @@ export default defineType({
         options: {
           hotspot: true,
         },
+        validation: (rule) => rule.required(),
+
       }),
       defineField({
         name: 'artistPFP',

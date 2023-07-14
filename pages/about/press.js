@@ -141,7 +141,9 @@ export async function getStaticProps(context) {
   return {
       props: {
         pressCardPage
-      }
+      },
+      revalidate: 10, //In seconds
+
   }
 }
 

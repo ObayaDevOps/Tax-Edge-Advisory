@@ -138,6 +138,8 @@ export async function getStaticProps(context) {
   return {
       props: {
         aboutStudioLabPage
-      }
+      },
+      revalidate: 10, //In seconds
+
   }
 }

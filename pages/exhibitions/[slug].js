@@ -193,7 +193,9 @@ export async function getStaticProps(context) {
     return {
         props: {
             exhibitionPage
-        }
+        },
+        revalidate: 10, //In seconds
+
     }
 }
 

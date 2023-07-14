@@ -375,7 +375,7 @@ import theme from './theme';
         // },
         {
           label: 'Workshop Archive',
-          subLabel: '',
+          subLabel: 'Past Workshops',
           href: '/workshops/workshops-archive',
         }
       ],

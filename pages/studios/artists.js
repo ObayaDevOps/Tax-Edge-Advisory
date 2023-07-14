@@ -283,6 +283,8 @@ export async function getStaticProps(context) {
   return {
       props: {
         artistCardsPage
-      }
+      },
+      revalidate: 10, //In seconds
+
   }
 }
