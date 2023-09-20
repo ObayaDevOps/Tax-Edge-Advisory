@@ -31,7 +31,12 @@ import alokaPhoto2 from '../../public/images/exhibitions/aloka-ready-for-export/
 import btsStudio from '../../public/images/studio/AfropoceneStudio65.jpg'
 
 //future improvement: The Exhbition cards should be defined once and can be passed here, will autopopulate the feed
+import client from '../../sanityClient'
+import groq from 'groq'
 
+
+//This exhibition details should be replaced by the data coming from sanity:
+  
 
 const exhibitionDetails = [
   {
@@ -94,6 +99,21 @@ const exhibitionDetails = [
     followLink:
         'https://www.instagram.com/afropocene/',
   },
+  {
+    exhibitionName: 'Boda Stage Concert',
+    artistName: 'Nyarawaves',
+    startDate: '2022-04-06',
+    endDate: '2022-04-06',
+    headerExhibition: false,
+    active: false,
+    blogTags: ['Music','Performance'],
+    exhibitionDescription:"For one night only Afropocene transformed into a concert hall for the launch of Nyarawaves EP, Polar. The night kicked off with live performances for Izaya the composer and Wana DJ (Benjain Wana).",
+    photo: museumOfSelves,
+    artistPFP: odurPFP,
+    linkToExhibition: '/exhibitions/boda-stage-concert',
+    followLink:
+        'https://www.instagram.com/afropocene/',
+  },
 
 ];
 
@@ -134,41 +154,41 @@ const BlogTags = (props) => {
 
 
 function ExhibitionCard(props) {
-  const { exhibitionName, artistName, startDate, endDate, headerExhibition, active, blogTags, exhibitionDescription,
-     photo, artistPFP, linkToExhibition,  followLink ,index  } = props;
+
+  // console.log("RETURNR3")
+  // console.log(props)
+
+
+  const {exhibitionName,artistName,exhibitionStartDate, featuresList, archivePageDisplayShortDescription,
+     archiveDisplayImage, slug
+    } = props;  
+
+
 
   return (
           <Box w="100%">
             <Box overflow="hidden">
-              <NextLink href={linkToExhibition} passHref>
+              <NextLink href={slug} passHref>
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <NextImage src={photo} ></NextImage>
-                {/* <Image
-                  transform="scale(1.0)"
-                  src={photo}
-                  alt="some text"
-                  objectFit="contain"
-                  width="100%"
-                  transition="0.3s ease-in-out"
-                  _hover={{
-                    transform: 'scale(1.05)',
-                  }}
-                /> */}
+                <NextImage
+                 src={archiveDisplayImage} 
+                 height={1824} width={2736}
+                 ></NextImage>
               </Link>
               </NextLink>
             </Box>
-            <BlogTags tags={blogTags} marginTop="3" />
+            <BlogTags tags={featuresList} marginTop="3" />
             <Heading fontSize="2xl" marginTop="2">
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 {exhibitionName}
               </Link>
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
-                {exhibitionDescription}
+                {archivePageDisplayShortDescription}
             </Text>
             <BlogAuthor
               name={artistName}
-              date={new Date(startDate)}
+              date={new Date(exhibitionStartDate)}
             />
           </Box>
 
@@ -176,8 +196,10 @@ function ExhibitionCard(props) {
 
 }
 
+// tHis is what is exported:
 
-const ExhibitionList = () => {
+// I need to show that I can access the sanoty ehibition data here too , just like in [slug]
+const ExhibitionList = ({exhibitionPage}) => {
 
   return (
     <Container maxW={'7xl'} p="3">
@@ -193,59 +215,6 @@ const ExhibitionList = () => {
         display="flex"
         flexDirection={{ base: 'column', sm: 'row' }}
         justifyContent="space-between">
-        {/* <Box
-          display="flex"
-          flex="1"
-          marginRight="3"
-          position="relative"
-          alignItems="center">
-          <Box
-            width={{ base: '100%', sm: '85%' }}
-            zIndex="2"
-            marginTop="5%">
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              <Image
-                
-                src={'../../../images/studio/AfropoceneStudio65.jpg'}
-                alt="some good alt text"
-                objectFit="contain"
-              />
-            </Link>
-          </Box>
-          <Box zIndex="1" width="100%" position="absolute" height="100%">
-            <Box
-              bgGradient={useColorModeValue(
-                'radial(blue.600 1px, transparent 1px)',
-                'radial(blue.300 1px, transparent 1px)'
-              )}
-              backgroundSize="20px 20px"
-              opacity="0.4"
-              height="100%"
-            />
-          </Box>
-        </Box> */}
-        {/* <Box
-          display="flex"
-          flex="1"
-          flexDirection="column"
-          justifyContent="center"
-          marginTop={{ base: '3', sm: '0' }}>
-          <Heading marginTop="1">
-            <NextLink href={'/studios/contact-enquiry'} passHref>
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                Host an Exhibition!
-              </Link>
-            </NextLink>
-
-          </Heading>
-          <Text
-            as="p"
-            marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="lg">
-              Get in contact to host your own Afropocene Exhibition
-          </Text>
-        </Box> */}
       </Box>
       <Heading as="h2" marginTop="10">
         Archive
@@ -257,12 +226,50 @@ const ExhibitionList = () => {
           spacing={'20'}
           mt={16}
           mx={'auto'}>
-          {exhibitionDetails.map((cardInfo, index) => (
+          {exhibitionPage.map((cardInfo, index) => (
             <ExhibitionCard {...cardInfo} index={index} key={index} />
           ))}
         </SimpleGrid>
     </Container>
   );
 };
+
+
+
+
+
+//I wanr the query to return all the info
+const query = groq`*[_type == "exhibitionPage"]{
+  exhibitionName,
+  artistName,
+  exhibitionStartDate,
+  featuresList,
+  archivePageDisplayShortDescription,
+  "archiveDisplayImage":archiveDisplayImage.asset->url,
+  "slug": slug.current
+}`
+
+
+export async function getStaticProps(context) {
+  const exhibitionPage = await client.fetch(
+      query    
+  )
+
+  // console.log("RETURNR2")
+  // console.log(exhibitionPage)
+
+
+  return {
+      props: {
+          exhibitionPage
+      },
+      revalidate: 10,
+
+  }
+}
+
+
+
+
 
 export default ExhibitionList;

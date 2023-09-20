@@ -18,14 +18,14 @@ import germanPuppetPhoto1 from '../../../public/images/visting-artists/conquerin
 
 export const SlideData = [
     Acunye1,
+    germanPuppetPhoto1,
+    odurAssistantPhoto, 
     social1,
     alokaPhoto1,
     NyaraLightsPhoto,
-    odurAssistantPhoto, 
     social2,
     StudioSpace,
     PlanningExhibition,
-    germanPuppetPhoto1,
     AfropoceneStudio1,
   ];
   

@@ -12,27 +12,23 @@ import {
 import Head from 'next/head';
 import NextLink from 'next/link'
 
+  
+import client from '../../sanityClient'
+import groq from 'groq'
+
+
   const artistDescription = [
     {
-        name: 'Kharumwa',
-        active: true,
-        role: 'Founder, Photographer, Digital Artist',
-        content:"Award-Winning Photographer and Digital Artist. He is interested in the theories around the next evolution of the homosapien that originated from East Africa, and what roles we are invited to play in the next chapter of the species.",
-        avatar:'../../../images/team/MartinPFP.png',
-        followLink:
-          'https://www.instagram.com/kharumwa/',
-    },
-    {
-        name: 'Letaru',
+        name: 'Letaru Dralega',
         active: true,
         role: 'Founder, Curator, Mixed-Media Artist',
-        content: "Interdisciplinary self-taught artist intrigued by humans in general but more specifically by the questions of post-colonial identity formation",
+        content: "Letaru is a multidisciplinary artist based in Kampala. She experiments across collage, marbling, painting, installation and sound to create meditative works and to contemplate belonging, and memory as they relate to the African/Afro-diasporic postcolonial condition, to race, religion and cosmology.",
         avatar:'../../../images/team/LetaruPFP.png',
         followLink:
             'https://www.instagram.com/letaru.dralega/',
     },
     {
-      name: 'Obaya',
+      name: 'Obaya Dralega',
       active: true,
       role: 'Founder, Technologist, Generative Artist',
       content:"Computer Scientist by training exploring African Fractals, Biological Systems, Emergence, Recursion and Blockchains+NFTs",
@@ -41,10 +37,19 @@ import NextLink from 'next/link'
         'https://www.instagram.com/odralega/',
     },
     {
+      name: 'Kharumwa',
+      active: true,
+      role: 'Photographer, Digital Artist',
+      content:"Award-Winning Photographer and Digital Artist. He is interested in the theories around the next evolution of the homosapien that originated from East Africa, and what roles we are invited to play in the next chapter of the species.",
+      avatar:'../../../images/team/MartinPFP.png',
+      followLink:
+        'https://www.instagram.com/kharumwa/',
+    },
+    {
       name: 'Odur',
       active: true,
       role: 'Founder, Painter, Sculptor, Installation',
-      content: "Conceptual art tied with fine metalwork and oil painting",
+      content: "A multi-disciplinary visual artist, he uses aluminum printing plates, exploring its possibilities one technique at a time. He paints, dents, burns, stitches, and weaves the shiny metal achieving texture, color, shape, and character. His sculptures, installations, paintings, and performances explore the complexities of socio-political interactions and their influence in the contemporary world. His work addresses contemporary issues of power, movement, access, belonging, and personhood.",
       avatar: '../../../images/team/OdurPFP.png',
       followLink:
         'https://www.instagram.com/odurart/',
@@ -53,20 +58,48 @@ import NextLink from 'next/link'
         name: 'Mona Taha',
         active: false,
         role: 'Charcoal Artist',
-        content:'',
+        content:'Mona primarily works with charcoal on medium to large-scale paper. Her drawings are figurative and oftentimes self-portraits depicting herself in intimate, yet mundane poses. She is fascinated by anatomy and how the body can portray a message oscillating between motion and stillness. The figures depicted in her work seem to be frozen in moments between movement and stillness, moving on from stillness, yet caught in suspension while contemplating how to move forward. ',
         avatar: '../../../images/team/MonaPFP.png',
         followLink:
           'https://www.instagram.com/mona_tee/',
       },
       {
-        name: 'Roshan',
+        name: 'Henry Robinson',
         active: true,
-        role: 'Mixed Media Artist',
-        content:'',
-        avatar: '../../../images/team/RoshanPFP.png',
+        role: 'Photographer',
+        content:'Henry is a Jamaican photographer who has worked commercially in film and photography in both Jamaica and the UK. Specializing in portrait photography, he spent his time in residence capturing a series on women and their bicycles in Lira ',
+        avatar: '../../../images/team/HenryPFP.png',
         followLink:
-          'https://www.instagram.com/mz_karmali/',
+          'https://www.instagram.com/oh_henry/',
       },
+      {
+        name: 'SCARLETMOTIFF',
+        active: true,
+        role: 'Technologist, Generative artist',
+        content:'Scarlet Motiff is an audio-visual artist and technologist. He generates his code-based art using programming languages such as Python and the real-time programming visual language TouchDesigner. His current body of work Generative Dreams, began in 2020 as a daily practice of contemplation, and to date, consists of over 800 unique sound and video pieces.  He’s always on the lookout for new ways to translate the narratives of our analog world into the digital tongue. ',
+        avatar: '../../../images/team/NoelPFP.png',
+        followLink:
+          'https://www.instagram.com/scarletmotiff/',
+      },
+      {
+        name: 'Tracian Meikle',
+        active: false,
+        role: 'Curator, Artist and Educator',
+        content:'A Jamaican based between Lagos and Amsterdam, her work focuses on blackness, place-making and community-building for black people. Tracian&apos;s artistic work is experimental and research-based; her installations vary in medium and range from second-hand clothing to plastic sheets. Tracian is currently the lead facilitator at 1952 Africa, and is also a co-curator of the Treehouse Lagos, a space that supports creative experimentation and artistic research.',
+        avatar: '../../../images/team/TracianPFP.jpeg',
+        followLink:
+          'https://www.instagram.com/tracianmeikle/',
+      }
+      ,
+      {
+        name: 'Birungi Kawooya',
+        active: false,
+        role: 'Mixed Media, Natural Fibre',
+        content:'She is the first Artist in Residence hosted by the Njabala Foundation in Uganda from Sept 2022 - March 2023. Her residency was tailored to provide for her specific needs as a Ugandan - British artist with the urge to explore her own interests and culture with the mentorship of 5 women artists. She is working towards creating self-portraits and installations around the theme of care, self-reflection and well-being to exhibit with the Njabala Foundation in March 2023. She has been supported by the Arts Council England.',
+        avatar: '../../../images/team/birungiPFP.jpeg',
+        followLink:
+          'https://www.instagram.com/birungiart/',
+      }
   ];
   
   const backgrounds = [
@@ -80,12 +113,12 @@ import NextLink from 'next/link'
 
 
   function ArtistCard(props) {
-    const { name, active, role, content, avatar, followLink, index  } = props;
+    const { artistName, currentlyActiveResidentArtist, artistDisiplines, artistDescription, artistPFP, socialMediaUrl, index  } = props;
     return (
       <Flex
         // boxShadow={'xl'}
         maxW={'640px'}
-        direction={{ base: 'column-reverse', md: 'row' }}
+        direction={{ base: 'column-reverse', md: 'row' }}vsocialMediaUrl
         width={'full'}
         // rounded={'xl'}
         rounded={'none'}
@@ -103,14 +136,14 @@ import NextLink from 'next/link'
           textAlign={'left'}
           justifyContent={'space-between'}>
           <chakra.p fontFamily={'Space Mono'} fontWeight={'bold'} fontSize={20}>
-            {name}
+            {artistName}
             <chakra.span
               fontFamily={'Space Mono'}
               fontWeight={'medium'}
               color={'gray.500'}
               py={3}>
               {' '}
-              - {role}
+              - {artistDisiplines}
             </chakra.span>
           </chakra.p>
           <chakra.p
@@ -118,12 +151,12 @@ import NextLink from 'next/link'
             fontWeight={'light'}
             fontSize={'15px'}
             pb={10}>
-            {content}
+            {artistDescription}
           </chakra.p>
-        <NextLink href={followLink} passHref>
+        <NextLink href={socialMediaUrl} passHref>
             <Button
                 // flex={1}
-                onClick={followLink}
+                onClick={socialMediaUrl}
                 size={'xs'}
                 fontSize={'md'}
                 rounded={'none'}
@@ -144,21 +177,21 @@ import NextLink from 'next/link'
 
         </Flex>
         <Avatar
-          src={avatar}
+          src={artistPFP}
           height={'200px'}
           width={'200px'}
           alignSelf={'center'}
           size='2xl'
           m={{ base: '0 0 35px 0', md: '0 0 0 50px' }}
         >
-        <AvatarBadge boxSize='1.25em' bg={active ? 'green.500' : 'blue.500'} />
+        <AvatarBadge boxSize='1.25em' bg={currentlyActiveResidentArtist ? 'green.500' : 'blue.500'} />
         </Avatar>
 
       </Flex>
     );
   }
   
-  export default function GridBlurredBackdrop() {
+  export default function GridBlurredBackdrop({artistCardsPage}) {
     return (
       <Flex
         textAlign={'center'}
@@ -214,7 +247,7 @@ import NextLink from 'next/link'
           spacing={'20'}
           mt={16}
           mx={'auto'}>
-          {artistDescription.map((cardInfo, index) => (
+          {artistCardsPage.map((cardInfo, index) => (
             <ArtistCard {...cardInfo} index={index} key={index} />
           ))}
         {/* <SocialProfileWithImageHorizontal /> */}
@@ -223,3 +256,35 @@ import NextLink from 'next/link'
       </Flex>
     );
   }
+
+
+
+
+//I wanr the query to return all the info
+const query = groq`*[_type == "artistCardPage"] | order(_createdAt asc) {
+  artistName,
+  artistDisiplines,
+  artistDescription,
+  "artistPFP": artistPFP.asset->url,
+  socialMediaUrl,
+  currentlyActiveResidentArtist
+} `
+
+
+export async function getStaticProps(context) {
+  const artistCardsPage = await client.fetch(
+      query    
+  )
+
+  console.log("RETURNR4")
+  console.log(artistCardsPage)
+
+
+  return {
+      props: {
+        artistCardsPage
+      },
+      revalidate: 10, //In seconds
+
+  }
+}

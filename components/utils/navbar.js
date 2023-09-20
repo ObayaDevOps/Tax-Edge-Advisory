@@ -33,6 +33,7 @@ import {
   import { MdNightlight } from 'react-icons/md';
   import Script from 'next/script'
 
+//Dynamic Routing for NavBars: https://nextjs.org/learn/basics/dynamic-routes/implement-getstaticpaths
 
   
   function DarkToggleButton() {
@@ -269,7 +270,10 @@ import theme from './theme';
     );
   };
   
-  
+    //This array should take items from the Sanity List
+  //use the client to fetch the list you want
+
+
   const NAV_ITEMS = [
     {
       label: 'About',
@@ -278,11 +282,6 @@ import theme from './theme';
           label: 'About Afropocene',
           subLabel: '',
           href: '/about/about-us',
-        },
-        {
-          label: 'Artists In Residence',
-          subLabel: 'Past, Present',
-          href: '/about/artists',
         },
         {
           label: 'Press',
@@ -305,6 +304,11 @@ import theme from './theme';
           href: '/studios/kabalagala-studio',
         },
         {
+          label: 'Artists In Residence',
+          subLabel: 'Past, Present',
+          href: '/studios/artists',
+        },
+        {
           label: 'Enquire About Space',
           subLabel: 'Would you like to Create with us ?',
           href: '/studios/contact-enquiry',
@@ -315,15 +319,22 @@ import theme from './theme';
       label: 'Tech+Art',
       children: [
         {
-          label: 'VR NFT Gallery',
-          subLabel: '',
-          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
-        },
-        {
           label: 'this.',
           subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
           href: '/tech/this',
         },
+        {
+          label: 'UNDP x AFRPCN NFT Gallery',
+          subLabel: 'Proof of Work 2023',
+          href: 'https://oncyber.io/undp-afropocene',
+        },
+        {
+          label: 'VR NFT Gallery',
+          subLabel: '',
+          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
+        },
+
+
         // {
         //   label: '4FR0P0C3N3 43VR',
         //   subLabel: 'Conceptual Blockchain Art',
@@ -331,25 +342,26 @@ import theme from './theme';
         // }
       ],
     },
-    {
+    { //Now need to show how to display the list of items and have links to them
+      //Easy ?
       label: 'Exhibitions',
       // href: '/exhibitions/exhibitions-home',
       children: [
         // {
-        //   label: 'Upcoming/Current',
-        //   subLabel: '',
-        //   href: '/exhibitions/current-exhibition',
+        //   label: 'Proof of Work',
+        //   subLabel: 'UNDP Innovation Prize 2022',
+        //   href: '/exhibitions/undp-proof-of-work',
+        // },
+        // {
+        //   label: 'Dreamcatcher x Generative Dreams',
+        //   subLabel: 'Immersive Volumetric Projection',
+        //   href: '/exhibitions/dreamcatcher-x-generative-dreams',
         // },
         {
           label: 'Exhibition Archive',
-          subLabel: '',
+          subLabel: 'Past Exhibitions',
           href: '/exhibitions/exhibitions-archive',
         },
-        // {
-        //   label: 'Museum Of Selves',
-        //   subLabel: 'Collaborative Exhibition and Youth Workshop',
-        //   href: '/exhibitions/museum-of-selves-exhibition',
-        // }
       ],
     },
 
@@ -357,13 +369,13 @@ import theme from './theme';
       label: 'Workshops',
       children: [
         // {
-        //   label: 'Upcoming/Current',
+        //   label: 'NFT Workshop',
         //   subLabel: '',
-        //   href: '/workshops/current-workshop',
+        //   href: '/workshops/undp-nft-workshop',
         // },
         {
           label: 'Workshop Archive',
-          subLabel: '',
+          subLabel: 'Past Workshops',
           href: '/workshops/workshops-archive',
         }
       ],
@@ -389,3 +401,6 @@ import theme from './theme';
     //   href: '/press',
     // },
   ];
+
+  
+

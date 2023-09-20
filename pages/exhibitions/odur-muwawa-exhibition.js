@@ -67,14 +67,10 @@ import Head from 'next/head'
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
-                    Government be Crazy sumtimes
+                    
                 </Text>
                 <Text fontSize={'lg'}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam.
-                </Text>
+                Odur reconstructs his living space, placing a hanging installation of sand cast aluminium shaped like bullets, in the centre of the room. The installation’s projectile shadows are cast all over the room, like the stray bullets and stray tear gas that have marked many with violence and death regardless of intention. In Muwawa, the fear of being an unintended victim is a looming presence even in spaces deemed private because violence is cheap and easy to reproduce without care.                </Text>
               </VStack>
               <Box>
                 <Text
@@ -132,7 +128,7 @@ import Head from 'next/head'
               </Box>
             </Stack>
   
-            <Button
+            {/* <Button
               rounded={'none'}
               w={'full'}
               mt={8}
@@ -151,7 +147,7 @@ import Head from 'next/head'
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
               <MdLocalShipping />
               <Text>Physical Delivery Only</Text>
-            </Stack>
+            </Stack> */}
           </Stack>
         </SimpleGrid>
       </Container>

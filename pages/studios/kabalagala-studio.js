@@ -26,8 +26,19 @@ import { SlideData } from "../../components/utils/carousel/kabalagala-studio-sli
 import MapContainer from '../../components/utils/map';
 import Head from 'next/head'
 
+import client from '../../sanityClient'
+import groq from 'groq'
 
-  export default function KabalagalaStudioPage() {
+
+  export default function KabalagalaStudioPage(props) {
+    console.log("HERE ===============================");
+    console.log(props.aboutStudioLabPage);
+
+    const {title,subTitle, slideShowImages, introText, paragraphDescription 
+     } = props.aboutStudioLabPage;  
+ 
+
+    
     return (
       <Container maxW={'7xl'}>
 
@@ -42,8 +53,7 @@ import Head from 'next/head'
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24, lg: 5 }}>
            <Flex>
-            {/* <NextImage src={odurInstallation}  placeholder="blur" /> */}
-            <ImageSlider slides={SlideData} />
+            <ImageSlider slides={slideShowImages} />
             </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <Box as={'header'}>
@@ -51,13 +61,13 @@ import Head from 'next/head'
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '4xl', sm: '4xl', lg: '5xl' }}>
-                Afropocene StudioLab
+                {title}
               </Heading>
               <Text
                 color={useColorModeValue('gray.900', 'gray.400')}
                 fontWeight={300}
                 fontSize={'1xl'}>
-                Kabalagala, Kampala Uganda
+                {subTitle}
               </Text>
             </Box>
   
@@ -74,13 +84,10 @@ import Head from 'next/head'
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
-                    Welcome to our (MeatSpace) Home
+                    {introText}
                 </Text>
                 <Text fontSize={'lg'}>
-                The studio lab is a place for ideas big and small! With two floors in an industrial building, we
-                provide space and community for experimentation and collaboration. So far the space has
-                had several configurations: from studio space, to pop up museum, to a concert hall, and a
-                film all in a year!
+                  {paragraphDescription}
                 </Text>
               </VStack>
               <Box>
@@ -107,3 +114,32 @@ import Head from 'next/head'
       </Container>
     );
   }
+
+
+const query = groq`*[_type == "aboutStudioLabPage"][0]{
+  title,
+  subTitle,
+  introText,
+  paragraphDescription,
+  "slideShowImages": slideShowImages[].asset->url,
+}`
+
+
+export async function getStaticProps(context) {
+
+  const aboutStudioLabPage = await client.fetch(
+      query    
+  )
+
+  // console.log("RETURNR7")
+  // console.log(aboutStudioLabPage)
+
+
+  return {
+      props: {
+        aboutStudioLabPage
+      },
+      revalidate: 10, //In seconds
+
+  }
+}

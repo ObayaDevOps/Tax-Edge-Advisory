@@ -1,5 +1,7 @@
-import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio } from '@chakra-ui/react'
+import { Heading, Box, Container, VStack, SimpleGrid, Center, Button, AspectRatio, Alert, AlertIcon, useToast } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { useEffect } from "react";
+
 import LandingPageSplitWithImage from '../landingPageSections/feature'
 import acunye from '../../public/images/visting-artists/acunye/Afropocene-Studio-BTS60.jpg'
 
@@ -10,52 +12,56 @@ const DynamicTypeWriterWithNoSSR = dynamic(
   )
 
 
-export default function LandingPage() {
+export default function LandingPage(props) {
+  const landingPageContent  = props.pageContent[0] || [];
+
+  // const toast = useToast();
+  // const id = 'test-toast'
 
 
+  // useEffect(() => {
+  //   // Show toast every 5 seconds.
+  //     toast({
+  //       title: "Click here to see latest Workshop/Exhibition",
+  //       id,
+  //       // description: `Time ${new Date()}`,
+  //       status: "info",
+  //       position: "bottom",
+  //       duration: 12000,
+  //       isClosable: true
+  //     });
+
+  // }, []); // Passing in empty array so this will only get called on mount
+  
+  
   return (
     <Box>
+      
+      {/* <Alert status='info' variant='left-accent'>
+      <AlertIcon />
+      Click here to see latest Workshop/Exhibition 
+      </Alert> */}
 
     <SimpleGrid
     columns={1}
     spacing={{ base: 8, md: 10 }}
-    // py={{ base: 0, md: 0, lg:0 }}
     >
-
-      {/* backgroundImage={'../../../images/visting-artists/acunye/Afropocene-Studio-Acunye-darkened.jpg'}
-      Mandelbrot-small.jpg
-      recursiveperlinnoise2.png
-              <Box minHeight='100vh'  bgPosition="left"  backgroundImage={'../../../images/backgrounds/recursivePerlinNoise.png'}
-        <Box minHeight='100vh' bgRepeat="no-repeat" bgSize="100%" bgPosition="fixed"  width="100%" height="auto" backgroundImage={'../../../images/backgrounds/MandelbrotLarge.jpg'}>
-        <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" filter="brightness(60%)" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMedium.jpg', lg:'../../../images/backgrounds/MandelbrotLarge.jpg' }}>
-
-      */}
         <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" backgroundImage={{base: '../../../images/backgrounds/MandelbrotMediumDark.jpg', lg:'../../../images/backgrounds/MandelbrotLargeDark.jpg' }}>
-        {/* <Box minHeight='100vh' bgSize="cover" bgPosition="center" bgAttachment="fixed" > */}
- 
-
             <Center p={{sm:1 , md:10}} >
                 <Heading
                  as='h1'
                  size='3xl'
-                //  fontSize = '6xl'
                 textAlign="center"
-                //  sx={{
-                //   background: "linear-gradient(90deg, #1652f0 20%, #b9cbfb 70.35%)",
-                //   WebkitBackgroundClip: "text",
-                //   WebkitTextFillColor: "transparent"
-                // }}
                 color="white"
                 pt={{base: 10, md: 20}}
                 pb={{base: 5}}
                  >
-                   Afropocene StudioLab
+                   {landingPageContent.headingTop}
                 </Heading>
             </Center>
 
             {/* Scrolling Text */}
-            <Container maxW='md' centerContent     zIndex={1}
->
+            <Container maxW='md' centerContent     zIndex={1}>
                 <DynamicTypeWriterWithNoSSR/>
             </Container>
 

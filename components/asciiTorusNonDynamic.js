@@ -4,13 +4,30 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, useCursor, Text as FibreText } from '@react-three/drei'
 import { AsciiEffect } from 'three-stdlib'
-import { Box } from '@chakra-ui/layout'
+import { Box, Button } from '@chakra-ui/layout'
 
+import Link from 'next/link'
 import Head from 'next/head'
+import { color } from '@chakra-ui/styled-system'
 
 
 export default function AsciiTorus() {
   return (
+    <Box bgColor={'black'} minHeight={'100vh'}>
+      {/* <button type="button" >   
+        <strong>Codex</strong> 
+      </button> */}
+
+      <Link href="/tech/about-this" passHref>
+        <a style={{ 
+          fontFamily: 'Space Mono',
+          padding: 10,
+          color:'white'
+        }
+          
+        }>Info</a>
+      </Link>{" "}
+      
     <Box>
       <Head>
         <title>Try Scrolling... | Afropocene StudioLab</title>
@@ -18,14 +35,17 @@ export default function AsciiTorus() {
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
 
       </Head>
+      
       <Canvas position="relative">
         <color attach="background" args={['black']} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} />
         <Torusknot />
         <OrbitControls />
+        <FibreText />
         <AsciiRenderer invert />
       </Canvas>
+    </Box>
     </Box>
 
 
@@ -47,14 +67,18 @@ function Torusknot(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={0.02}
+      scale={0.02} //GOOD
+      // scale={0.025}
+
       // scale={clicked ? 1.5 : 1.25}
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
               {/* <torusKnotGeometry args={[3, 0.5, 128, 32]} /> */}
 
-      <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} />
+      {/* <torusKnotGeometry args={[3, 0.5, 256, 32, 3, 5]} /> */}
+      <torusKnotGeometry args={[3, 0.45, 256, 32, 3, 4]} />
+
       {/* <torusKnotGeometry args={[shapeMixer, 0.25, 128, 32]} /> */}
 
       <meshStandardMaterial color="orange" />

@@ -4,8 +4,24 @@ import LandingPage from '../components/pageContent/landingPage'
 import Image from 'next/image'
 import HeadImage from '../public/images/icon/africa.png'
 
+import client from '../sanityClient'
 
-export default function Home() {
+  export async function getStaticProps() {
+    const landingPageContent = await client.fetch(`
+    *[_type == "landingPage"]`);
+
+
+    return {
+      props: {
+        landingPageContent,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
+
+
+export default function Home(props) {
   return (
     <div >
       <Head>
@@ -16,7 +32,7 @@ export default function Home() {
       </Head>
 
       <Box>
-        <LandingPage />
+        <LandingPage pageContent={props.landingPageContent} />
       </Box>
 
     </div>
