@@ -11,15 +11,12 @@ import {
     IconButton,
     useColorModeValue,
   } from '@chakra-ui/react';
-  import { FaInstagram } from 'react-icons/fa';
-  import { BiMailSend } from 'react-icons/bi';
-  import { IoMdPlanet } from 'react-icons/io';
-  import { HiOutlineMail } from 'react-icons/hi';  
+  import { FaLinkedinIn } from 'react-icons/fa';
+
 
   import Image from 'next/image'
   import NextLink from 'next/link'
-  import africaIcon from '../../public/images/icon/africa.png'
-  import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
+  import taxEdgeLogoBlack from '../../public/images/icon/logo-black.svg'
 
   
   const SocialButton = ({
@@ -69,22 +66,16 @@ import {
             <Stack spacing={6} >
               <Box>
                 <NextLink href='/#'>
-                <Image src={useColorModeValue( africaIcon,africaIconWhite)} width={40} height={40}/>
+                <Image src={useColorModeValue( taxEdgeLogoBlack,taxEdgeLogoBlack)} width={40} height={40}/>
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} fontFamily={'Space Mono'}>
-                © 2022 Afropocene StudioLab.
-                Designed and Built in Kampala
+                © 2023 Tax Edge Advisory.
+                Designed and Built by ObayaDevOps
               </Text>
               <Stack direction={'row'} spacing={6}>
-                <SocialButton label={'Instagram'} href={'https://www.instagram.com/afropocene/'}>
-                  <FaInstagram />
-                </SocialButton>
-                <SocialButton label={'Email'} href={'https://www.instagram.com/afropocene/'}>
-                  <HiOutlineMail />
-                </SocialButton>
-                <SocialButton label={'NFT Gallery'} href={'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt'}>
-                  <IoMdPlanet />
+                <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>
+                  <FaLinkedinIn />
                 </SocialButton>
               </Stack>
             </Stack>

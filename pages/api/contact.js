@@ -14,7 +14,7 @@ export default async (req, res) => {
   });
 const data={ from: Email,
     to: process.env.RECIPIENT_ADDRESS,
-    subject: `Afropocene Contact form submission from ${Name}`,
+    subject: `Tax Edge Advisory Contact form submission from ${Name}`,
       html: `<h1>${Name} Has contacted you</h1>
       <p>You have a contact form submission</p><br>
         <p><strong>Email: </strong> ${Email}</p><br>

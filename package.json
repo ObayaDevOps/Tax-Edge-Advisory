@@ -1,5 +1,5 @@
 {
-  "name": "afropcene-next-chakra",
+  "name": "tax-edge-advisory",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,9 +15,8 @@
     "@emotion/styled": "^11.8.1",
     "@fontsource/open-sans": "^4.5.8",
     "@fontsource/raleway": "^4.5.5",
-    "@react-three/drei": "^9.5.0",
-    "@react-three/fiber": "^8.0.12",
-    "ethers": "^5.6.4",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.16.7",
     "formidable": "^2.0.1",
     "framer-motion": "^6.2.9",
     "next": "12.1.4",
@@ -27,7 +26,8 @@
     "react-icons": "^4.3.1",
     "react-responsive-carousel": "^3.2.23",
     "react-typewriter-effect": "^1.1.0",
-    "three": "^0.139.2"
+    "sanity": "^3.16.7",
+    "styled-components": "5.2"
   },
   "devDependencies": {
     "eslint": "8.13.0",

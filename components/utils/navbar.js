@@ -25,8 +25,7 @@ import {
   } from '@chakra-ui/icons';
 
   import NextImage from 'next/image'
-  import africaIcon from '../../public/images/icon/africa.png'
-  import africaIconWhite from '../../public/images/icon/africa-white-icon.png'
+  import taxEdgeLogo from '../../public/images/icon/logo-black.svg'
   
 
   import NextLink from 'next/link'
@@ -84,7 +83,7 @@ import theme from './theme';
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <NextLink href='/#' passHref>
             <Link>
-                <NextImage src={colorMode === 'light' ? africaIcon:  africaIconWhite} width={40} height={40}/>
+                <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={40} height={40}/>
             </Link>
           </NextLink>
 
@@ -270,122 +269,51 @@ import theme from './theme';
   };
   
   
-  const NAV_ITEMS = [
+  const NAV_ITEMS = [  
     {
-      label: 'About',
+      label: 'Tax Calculator',
       children: [
         {
-          label: 'About Afropocene',
-          subLabel: '',
-          href: '/about/about-us',
-        },
-        {
-          label: 'Artists In Residence',
-          subLabel: 'Past, Present',
-          href: '/about/artists',
-        },
-        {
-          label: 'Press',
-          subLabel: 'Afropocene in the News',
-          href: '/about/press',
-        },
-        // {
-        //   label: "How it's Made",
-        //   subLabel: 'The Tech Behind this Website',
-        //   href: '/about/how-this-was-built',
-        // },
-      ],
-    },
-    {
-      label: 'Studio Space',
-      children: [
-        {
-          label: 'Kabalagala StudioLab',
-          subLabel: '',
-          href: '/studios/kabalagala-studio',
-        },
-        {
-          label: 'Enquire About Space',
-          subLabel: 'Would you like to Create with us ?',
-          href: '/studios/contact-enquiry',
-        },
-      ],
-    },    
-    {
-      label: 'Tech+Art',
-      children: [
-        {
-          label: 'VR NFT Gallery',
-          subLabel: '',
-          href: 'https://oncyber.io/spaces/Gaq0PmUWPt9sbOio7aUt',
-        },
-        {
-          label: 'this.',
-          subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
-          href: '/tech/this',
-        },
-        // {
-        //   label: '4FR0P0C3N3 43VR',
-        //   subLabel: 'Conceptual Blockchain Art',
-        //   href: '/tech/asciiTorus',
-        // }
-      ],
-    },
-    {
-      label: 'Exhibitions',
-      // href: '/exhibitions/exhibitions-home',
-      children: [
-        // {
-        //   label: 'Upcoming/Current',
-        //   subLabel: '',
-        //   href: '/exhibitions/current-exhibition',
-        // },
-        {
-          label: 'Exhibition Archive',
-          subLabel: '',
-          href: '/exhibitions/exhibitions-archive',
-        },
-        // {
-        //   label: 'Museum Of Selves',
-        //   subLabel: 'Collaborative Exhibition and Youth Workshop',
-        //   href: '/exhibitions/museum-of-selves-exhibition',
-        // }
-      ],
-    },
-
-    {
-      label: 'Workshops',
-      children: [
-        // {
-        //   label: 'Upcoming/Current',
-        //   subLabel: '',
-        //   href: '/workshops/current-workshop',
-        // },
-        {
-          label: 'Workshop Archive',
-          subLabel: '',
-          href: '/workshops/workshops-archive',
+          label: 'Tax Calculator',
+          subLabel: 'See how much you can save today!',
+          href: '/tax/tax-calculator',
         }
       ],
     },
     {
-      label: 'Contact',
+      label: 'Capital Allowance',
+      children: [
+        {
+          label: 'About Capital Allowance',
+          subLabel: 'Capital Allowance Explained',
+          href: '/tax/capital-allowance',
+        },
+      ],
+    },
+    {
+      label: 'R&D Tax Relief',
+      children: [
+        {
+          label: 'About R&D Tax Relief',
+          subLabel: 'R&D Tax Relief',
+          href: '/tax/rd-tax-relief',
+        }
+      ],
+    },
+
+    {
+      label: 'Case Studies',
+      href: '/case-studies/case-study-1',
+    },
+    {
+      label: 'Contact Us',
       children: [
         {
           label: 'Get in Touch',
-          subLabel: '',
-          href: '/studios/contact-enquiry',
-        },
-        {
-          label: 'Visit the Studio',
-          subLabel: '',
-          href: '/studios/kabalagala-studio',
+          subLabel: 'Ask us about your tax matters today!',
+          href: '/info/contact-enquiry',
         },
       ],
     },
 
-    // {
-    //   label: 'Press',
-    //   href: '/press',
-    // },
   ];
