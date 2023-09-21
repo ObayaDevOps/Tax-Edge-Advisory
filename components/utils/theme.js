@@ -4,13 +4,13 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
     config:{
-      initialColorMode: 'dark',
+      initialColorMode: 'light',
       useSystemColorMode: false
     },
     fonts:{
-      heading: 'Space Mono, sans-serif',
+      heading: 'Arvo, sans-serif',
       body: 'Arial, sans-serif',
-      text:  'Space Mono, sans-serif',
+      text:  'Arvo, sans-serif',
     },
     colors:{
       50: '#f2f2f2',
