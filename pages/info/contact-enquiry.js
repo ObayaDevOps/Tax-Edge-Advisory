@@ -30,13 +30,13 @@ import {
 
   const confetti = {
     light: {
-      primary: '4299E1', // blue.400
-      secondary: 'BEE3F8', // blue.100
+      primary: '4299E1', // green.400
+      secondary: 'BEE3F8', // green.100
     },
   
     dark: {
-      primary: '1A365D', // blue.900
-      secondary: '2A4365', // blue.800
+      primary: '1A365D', // green.900
+      secondary: '2A4365', // green.800
     },
   };
   
@@ -71,7 +71,7 @@ import {
   
     return (
       <Flex
-        bg={useColorModeValue('gray.100', 'gray.900')}
+        bg={'blackAlpha.50'}
         align="center"
         justify="center"
         css={{
@@ -89,14 +89,18 @@ import {
         <Box
           borderRadius="lg"
           m={{ base: 5, md: 16, lg: 10 }}
-          p={{ base: 5, lg: 16 }}>
+          p={{ base: 5, lg: 5 }}>
           <Box>
-            <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+            <VStack spacing={{ base: 4, md: 8, lg: 10 }}>
               <Heading
                 fontSize={{
                   base: '4xl',
                   md: '5xl',
-                }}>
+                  lg: '6xl'
+                }}
+                bgClip="text"
+                bgGradient="linear(to-r, green.900, green.300)"
+                >
                 Interested in Making Tax Savings?
               </Heading>
   
@@ -118,43 +122,14 @@ import {
                       fontSize="3xl"
                       icon={<MdEmail />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'green.500',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       onClick={onCopy}
                       // isRound
                     />
                   </Tooltip>
-  
-                  <Link href="https://github.com/ObayaDevOps">
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      fontSize="3xl"
-                      icon={<BsGithub />}
-                      _hover={{
-                        bg: 'blue.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      // isRound
-                    />
-                  </Link>
-  
-                  <Link href="#">
-                    <IconButton
-                      aria-label="twitter"
-                      variant="ghost"
-                      size="lg"
-                      icon={<BsTwitter size="28px" />}
-                      _hover={{
-                        bg: 'blue.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      // isRound
-                    />
-                  </Link>
-  
+                  
                   <Link href="#">
                     <IconButton
                       aria-label="linkedin"
@@ -162,7 +137,7 @@ import {
                       size="lg"
                       icon={<BsLinkedin size="28px" />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'green.500',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       // isRound
@@ -219,11 +194,11 @@ import {
     
                       <Button
                       type="submit"
-                        colorScheme="blue"
-                        bg="blue.400"
+                        colorScheme="green"
+                        bg="green.400"
                         color="white"
                         _hover={{
-                          bg: 'blue.500',
+                          bg: 'green.500',
                         }}
                         isFullWidth
                         onClick={() =>

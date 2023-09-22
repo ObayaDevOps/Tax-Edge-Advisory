@@ -10,19 +10,18 @@ import {
   Icon,
   Box,
   IconProps,
-  useColorModeValue
+  useColorModeValue,
+  ScaleFade
 } from '@chakra-ui/react'
 
 import Lottie from "lottie-react";
-import carAnimation from "../utils/animation/car.json";
-import carAnimation2 from "../utils/animation/animation_1.json";
-import carAnimation3 from "../utils/animation/animation_2.json";
-import carAnimation4 from "../utils/animation/animation_3.json";
+import taxAnimation from "../utils/animation/animation_1.json"; //they like this one
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 
 
-
-const CarAnimation = () => {
-  return <Lottie animationData={carAnimation2} />;
+const TaxAnimation = () => {
+  return <Lottie animationData={taxAnimation} />;
 };
 
 const Illustration = (props) => {
@@ -839,40 +838,81 @@ const Illustration = (props) => {
 }
 
 export default function CallToActionWithIllustration() {
+  const scaleFactor = 0.9;
+
+  const ref1 = useRef(null)
+  const isInView1 = useInView(ref1)
+
   return (
-    <Box pt={{md: 10}}>
-    <Container maxW={'80vw'} bg={useColorModeValue('gray.50', 'black')} rounded='3xl' shadow='lg'>
+
+<ScaleFade initialScale={0.6}
+    in={isInView1}>
+    <Box pt={{md: 5}}  ref={ref1}>
+    <Container maxW={'85vw'} bg={useColorModeValue('green.50', 'black')} rounded='3xl' shadow='lg'>
       <Stack
         textAlign={'center'}
         align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 20 }}
+        spacing={{ base: 8, md: 5 }}
+        py={{ base: 20, md: 16 }}
         >
         <Heading
-          fontWeight={600}
-          fontSize={{ base: '3xl', sm: '4xl', md: '9xl' }}
+          fontWeight={900}
+          fontSize={{ base: '3xl', sm: '7xl', md: '9xl' }}
           letterSpacing={'tight'}
-          lineHeight={'110%'}>
+          lineHeight={'110%'}
+
+          bgClip="text"
+          bgGradient="linear(to-r, blackAlpha.900, green.500)"
+          fontWeight="extrabold"
+          transition='all .65s ease' _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+          >
           Tax affairs{' '}
-          <Text as={'span'} color={'orange.400'}>
+          <Text as={'span'} color={'green.400'}
+          bgClip="text"
+          bgGradient="linear(to-r, green.600, green.300)"
+          fontWeight="extrabold"
+          transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+          >
             made easy
           </Text>
         </Heading>
-        <Text color={useColorModeValue('gray.500', 'gray.50')} maxW={'5xl'} fontSize={{ base: 'xl', sm: '4xl', md: '3xl' }} >
+        <Text 
+        color={useColorModeValue('green.800', 'gray.50')} maxW={'5xl'} 
+        fontSize={{ base: 'xl', sm: '4xl', md: '2xl' }} 
+        transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+        >
         Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
         a focus on providing expert advice on UK tax incentives to businesses,
         accountants, and other professional advisers.
         </Text>
-        <Stack spacing={6} direction={'row'}>
+
+
+        <Stack spacing={{base: 8, md: 12}} direction={'row'} p={{md:6}}>
           <Button
-            rounded={'full'}
-            px={6}
-            colorScheme={'orange'}
-            bg={'orange.400'}
-            _hover={{ bg: 'orange.500' }}>
+            _hover={{ bg: 'green.500' }}
+            as="a"
+            colorScheme="green"
+            textColor={useColorModeValue('green.50', 'green.200')}
+            alignItems="center"
+            justifyContent="center"
+            mb={{ base: 2, sm: 0 }}
+            shadow={'xl'}
+            size={'lg'}
+            >
             Calculate Tax Savings
           </Button>
-          <Button rounded={'full'} px={6} size={'2xl'}>
+
+          <Button
+            _hover={{ bg: 'whiteAlpha.500', textColor:'green.500'}}
+            as="a"
+            textColor={useColorModeValue('green.500', 'green.200')}
+            alignItems="center"
+            justifyContent="center"
+            mb={{ base: 2, sm: 0 }}
+            shadow={'xl'}
+            size={'lg'}
+
+          >
             Learn more
           </Button>
         </Stack>
@@ -880,11 +920,13 @@ export default function CallToActionWithIllustration() {
           <Illustration height={{ sm: '24rem', lg: '40rem' }} mt={{ base: 12, sm: 16 }} />
         </Flex> */}
 
-        <Flex>
-        <CarAnimation />
+        <Flex maxH={'50vh'}>
+          <TaxAnimation />
         </Flex>
+
       </Stack>
     </Container>
     </Box>
+    </ScaleFade>
   )
 }

@@ -7,9 +7,11 @@ import {
   Icon,
   SimpleGrid,
   Stack,
+  Center,
   GridItem,
 } from "@chakra-ui/react";
 export default function App(){
+
   const Feature = (props) => {
     return (
       <Flex>
@@ -32,36 +34,41 @@ export default function App(){
         </Flex>
         <Box ml={4}>
           <chakra.dt
-            fontSize="lg"
+            fontSize="xl"
             fontWeight="bold"
             lineHeight="6"
-            _light={{ color: "gray.900" }}
+            _light={{ color: "green.800" }}
           >
             {props.title}
           </chakra.dt>
-          <chakra.dd mt={2} color="gray.500" _dark={{ color: "gray.400" }}>
+          <chakra.dd mt={2} color="gray.700" _dark={{ color: "green.400" }}    fontSize="lg">
             {props.children}
           </chakra.dd>
         </Box>
       </Flex>
     );
   };
+
   return (
+    <Center 
+    pt={8}>
     <Flex
-      bg="#edf3f8"
-      _dark={{ bg: "#3e3e3e" }}
+      bg='green.50'
       p={20}
       w="auto"
       justifyContent="center"
       alignItems="center"
+      maxW={'85vw'}
+      rounded='3xl' 
+      shadow='lg'
     >
       <Box
-        shadow="xl"
-        bg="white"
-        _dark={{ bg: "gray.800" }}
+        bg="whiteAlpha.900"
+        _dark={{ bg: "green.800" }}
         px={8}
         py={20}
         mx="auto"
+        rounded='3xl' 
       >
         <SimpleGrid
           alignItems="center"
@@ -69,12 +76,14 @@ export default function App(){
           spacingY={{ base: 10, lg: 32 }}
           spacingX={{ base: 10, lg: 24 }}
         >
-          <Box alignSelf="start">
+          <Box alignSelf="start" >
             <chakra.h2
-              _light={{ color: "brand.500" }}
               fontWeight="semibold"
-              textTransform="uppercase"
               letterSpacing="wide"
+              fontSize={{ base: 'xl', sm: 'xl', md: '2xl' }}
+              lineHeight={'110%'}
+              bgClip="text"
+              bgGradient="linear(to-r, blackAlpha.900, green.500)"
             >
               Everything you need
             </chakra.h2>
@@ -93,8 +102,8 @@ export default function App(){
               mb={6}
               fontSize={{ base: "lg", md: "xl" }}
               textAlign={{ base: "center", sm: "left" }}
-              color="gray.600"
-              _dark={{ color: "gray.500" }}
+              color="green.900"
+              _dark={{ color: "green.500" }}
             >
               Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
               magnam voluptatum cupiditate veritatis in accusamus quisquam.
@@ -106,7 +115,7 @@ export default function App(){
               display={{ md: "grid" }}
               gridTemplateColumns={{ md: "repeat(2,1fr)" }}
               gridColumnGap={{ md: 8 }}
-              gridRowGap={{ md: 10 }}
+              gridRowGap={{ md: 12 }}
             >
               <Feature title="Invite team members">
                 Improve your conversion rates by monitoring exactly what’s going
@@ -141,5 +150,6 @@ export default function App(){
         </SimpleGrid>
       </Box>
     </Flex>
+    </Center>
   );
 };

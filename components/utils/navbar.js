@@ -27,27 +27,12 @@ import {
 } from '@chakra-ui/icons';
 
 import NextImage from 'next/image'
-import taxEdgeLogo from '../../public/images/icon/logo-black.svg'
+import taxEdgeLogo from '../../public/images/icon/logo-no-background.svg'
 
 
 import NextLink from 'next/link'
 import { MdNightlight } from 'react-icons/md';
 import Script from 'next/script'
-
-
-
-function DarkToggleButton() {
-  const { colorMode, toggleColorMode } = useColorMode()
-  return (
-    <header>
-    <Script src="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-      <Button onClick={toggleColorMode} size='md' py={-1} rounded={'lg'} >
-        {colorMode === 'light' ? 'Dark' : 'Light'} Mode
-      </Button>
-    </header>
-  )
-}
-
 import { FaBeer } from 'react-icons/fa';
 import theme from './theme';
 
@@ -57,9 +42,9 @@ export default function WithSubnavigation() {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Box  margin='auto' >
+    <Box  margin='auto' bg={'blackAlpha.50'} pt={{md:5}} >
       <Flex
-        bg={useColorModeValue('white', 'black')}
+        bg={useColorModeValue('whiteAlpha.900', 'black')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2, md:5 }}
@@ -69,6 +54,9 @@ export default function WithSubnavigation() {
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         margin='auto'
+        rounded={{md:'3xl'}}
+        maxW={{md:'85vw'}}
+        // position='absolute'
         >
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -84,7 +72,7 @@ export default function WithSubnavigation() {
           />
         </Flex>
 
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'normal' }} marginLeft={{lg:'20vw'}}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'normal' }} marginLeft={{lg:'15vw'}}>
         <NextLink href='/#' passHref>
           <Link>
               <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={60} height={60}/>
@@ -97,11 +85,6 @@ export default function WithSubnavigation() {
           </Flex>
         </Flex>
 
-
-
-        <Flex pt={3} marginRight={{lg:'20vw'}}>
-          <DarkToggleButton />
-        </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -119,7 +102,7 @@ const DesktopNav = () => {
 
 
   return (
-    <Stack direction={'row'} spacing={5} paddingTop={{md:5}} pl={{md:10}}>
+    <Stack direction={'row'} spacing={5} paddingTop={{md:5}} >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -127,15 +110,15 @@ const DesktopNav = () => {
               <PopoverTrigger>
                 <Link
                 p={5}
-                fontSize={'lg'}
+                fontSize={'md'}
                 href={navItem.href ?? '#'}
                 fontWeight={550}
                 fontFamily={'Helvetica'}
                 rounded="lg"
-                textColor='gray.600'
+                textColor='green.800'
 
                 color={linkColor}
-                _hover={{ bg: colorMode === 'light' ? 'orange.50': 'gray.700', textColor: 'orange.400'}}
+                _hover={{ bg: colorMode === 'light' ? 'green.50': 'gray.700', textColor: 'green.400'}}
                 >
                   {navItem.label}
                 </Link>
@@ -174,15 +157,15 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={'block'}
       p={2}
       // rounded={'md'}
-      _hover={{ bg: useColorModeValue('orange.50', 'gray.900') }}
+      _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}
       >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'orange.400' }}
+            _groupHover={{ color: 'green.400' }}
             fontWeight={500}
-            _hover={{ color: 'orange.400' }}
+            _hover={{ color: 'green.400' }}
             >
             {label}
           </Text>
@@ -197,7 +180,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'orange.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'green.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -287,29 +270,47 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Capital Allowance',
+    label: 'Research & Development',
     children: [
       {
-        label: 'About Capital Allowance',
-        subLabel: 'Capital Allowance Explained',
+        label: 'R&D Tax Credits',
+        subLabel: 'UK government incentive for innovation and investment',
+        href: '/tax/rd-tax-relief',
+      },
+      {
+        label: 'Patent Box',
+        subLabel: 'Save money on protecting your invention',
+        href: '/tax/rd-tax-relief',
+      }
+    ],
+  },
+  {
+    label: 'Capital Allowances',
+    children: [
+      {
+        label: 'Embedded Capital Allowance',
+        subLabel: 'Tax relief available to commercial property owners in the UK',
+        href: '/tax/capital-allowance',
+      },
+      {
+        label: 'Land Remediation Relief',
+        subLabel: 'Tax incentive to encourage the redevelopment of contaminated and derelict land',
         href: '/tax/capital-allowance',
       },
     ],
   },
   {
-    label: 'R&D Tax Relief',
+    label: 'Past Work',
     children: [
       {
-        label: 'About R&D Tax Relief',
-        subLabel: 'R&D Tax Relief Explained',
-        href: '/tax/rd-tax-relief',
-      }
+        label: 'Client Testimonials',
+        href: '/tax/client-testimonials',
+      },
+      {
+        label: 'Project Examples',
+        href: '/tax/project-examples',
+      },
     ],
-  },
-
-  {
-    label: 'Case Studies',
-    href: '/case-studies/case-study-1',
   },
   {
     label: 'Contact Us',
