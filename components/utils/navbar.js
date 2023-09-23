@@ -279,16 +279,22 @@ const NAV_ITEMS = [
   },
   {
     label: 'Research & Development',
+    href: '/research-and-dev/research-and-dev-landing-page',
     children: [
       {
+        label: 'R&D Home',
+        subLabel: '',
+        href: '/research-and-dev/research-and-dev-landing-page',
+      },
+      {
         label: 'R&D Tax Credits',
-        subLabel: 'UK government incentive for innovation and investment',
-        href: '/tax/rd-tax-relief',
+        subLabel: 'Fueling Innovation and Savings',
+        href: '/research-and-dev/tax-credits',
       },
       {
         label: 'Patent Box',
-        subLabel: 'Save money on protecting your invention',
-        href: '/tax/rd-tax-relief',
+        subLabel: 'UK government incentives for innovation and investment',
+        href: '/research-and-dev/patent-box',
       }
     ],
   },
@@ -296,15 +302,10 @@ const NAV_ITEMS = [
     label: 'Capital Allowances',
     children: [
       {
-        label: 'Embedded Capital Allowance',
+        label: 'Capital Allowance',
         subLabel: 'Tax relief available to commercial property owners in the UK',
-        href: '/tax/capital-allowance',
-      },
-      {
-        label: 'Land Remediation Relief',
-        subLabel: 'Tax incentive to encourage the redevelopment of contaminated and derelict land',
-        href: '/tax/capital-allowance',
-      },
+        href: '/capital-allowance/capital-allowance-info',
+      }
     ],
   },
   {
@@ -312,7 +313,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: 'Client Testimonials',
-        href: '/tax/client-testimonials',
+        href: '/past-work/client-testimonials',
       },
       {
         label: 'Project Examples',

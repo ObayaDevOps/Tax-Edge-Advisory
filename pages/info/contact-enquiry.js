@@ -71,13 +71,9 @@ import {
   
     return (
       <Flex
-        bg={'blackAlpha.50'}
+        bg={'blackAlpha.200'}
         align="center"
         justify="center"
-        css={{
-          // backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
-          backgroundAttachment: 'fixed',
-        }}
         id="contact">
 
       <Head>
@@ -90,7 +86,7 @@ import {
           borderRadius="lg"
           m={{ base: 5, md: 16, lg: 10 }}
           p={{ base: 5, lg: 5 }}>
-          <Box>
+          <Box >
             <VStack spacing={{ base: 4, md: 8, lg: 10 }}>
               <Heading
                 fontSize={{
@@ -146,11 +142,12 @@ import {
                 </Stack>
   
                 <Box
-                  bg={useColorModeValue('white', 'gray.700')}
+                  bg={'white'}
+                  shadow='4xl'
                   borderRadius="lg"
                   p={8}
-                  color={useColorModeValue('gray.700', 'whiteAlpha.900')}
-                  shadow="base">
+                  color={'gray.700'}
+                  >
                   <form onSubmit={(e) => userData(e)}>
                     <VStack spacing={5}>
                       <FormControl isRequired>

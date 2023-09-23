@@ -56,9 +56,13 @@ import {
   
   export default function FooterLargeWithNewsletter() {
     return (
+      <Box bg="blackAlpha.200" >
       <Box
-        bg={useColorModeValue('gray.50', 'gray.800')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+      bgGradient="linear(to-r, green.700, green.200)"
+      color={useColorModeValue('gray.700', 'gray.200')}
+      // maxW={'85vw'} 
+      shadow='2xl'  
+       >
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid
             templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 0.2fr' }}
@@ -69,7 +73,7 @@ import {
                 <Image src={useColorModeValue( taxEdgeLogoBlack,taxEdgeLogoBlack)} width={40} height={40}/>
                 </NextLink>
               </Box>
-              <Text fontSize={'sm'} fontFamily={'Space Mono'}>
+              <Text fontSize={'sm'} textColor='white'>
                 © 2023 Tax Edge Advisory.
                 Designed and Built by ObayaDevOps
               </Text>
@@ -83,6 +87,7 @@ import {
             </Stack>
           </SimpleGrid>
         </Container>
+      </Box>
       </Box>
     );
   }

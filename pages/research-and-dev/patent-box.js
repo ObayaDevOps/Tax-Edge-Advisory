@@ -1,29 +1,391 @@
-'use client'
-
 import {
-  Flex,
   Container,
+  SimpleGrid,
+  Flex,
   Heading,
-  Stack,
   Text,
-  Button,
-  Icon,
+  Stack,
   Box,
-  IconProps,
+  Button,
+  chakra,
+  Icon,
   useColorModeValue,
-  ScaleFade,
-  useBreakpointValue
-} from '@chakra-ui/react'
+  UnorderedList,
+  List,
+  ListItem
+} from '@chakra-ui/react';
 
-import Lottie from "lottie-react";
-import taxAnimation from "../utils/animation/animation_1.json"; //they like this one
-import React, { useRef } from "react";
-import { useInView } from "framer-motion";
+import Head from 'next/head';
+import NextLink from 'next/link'
 
 
-const TaxAnimation = () => {
-  return <Lottie animationData={taxAnimation} />;
-};
+export default function CapitalAllowancePage() {
+  return (
+    <Box bg="blackAlpha.200" pt={6} pb={12}>
+        <Head>
+          <title>Patent Box | Tax Edge Advisory</title>
+          <meta name="description" content="Tax Edge Advisory Webpage" />
+        </Head>
+
+      <Container 
+        maxW={{base:'1xl',md:'85vw'}} 
+        py={12} 
+        minHeight={{md:'110vh'}}   
+        rounded='3xl' 
+        shadow='2xl'    
+        background="rgba(240,255,244,0.65)"
+      >
+      <Container maxW={{base:'1xl',md:'75vw'}} >
+        <Stack
+          align={'center'}
+          spacing={{ base: 8, md: 2 }}
+        >                    
+          <Flex
+            textAlign={'center'}
+            pt={10}
+            justifyContent={'center'}
+            direction={'column'}
+            width={'full'}
+            overflow={'hidden'}>
+
+          <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin={'auto'} pb={32}>
+            <chakra.h3
+              fontWeight={'bold'}
+              fontSize={20}
+              textTransform={'uppercase'}
+              color={'green.400'}>
+              Tax Information Series
+            </chakra.h3>
+            <Heading
+              as={'h1'}
+                mb={{base: 2, md: 6}}
+                fontSize={{ base: "5xl",md: "6xl", lg:"7xl",}}
+                minHeight={'1vh'}
+                fontWeight="bold"
+                lineHeight="none"
+                letterSpacing={{base: "normal",md: "tight" }}
+                color="green.900"
+                textAlign='center'
+              >
+                <Text
+                  w="full"
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontWeight="extrabold"
+                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+                  py={10}
+                >
+                  Patent Box
+                </Text>
+              </Heading>
+            <chakra.h2
+              margin={'auto'}
+              width={'70%'}
+              fontWeight={'medium'}
+              fontSize={'lg'}
+              color={useColorModeValue('gray.500', 'gray.400')}
+              >
+              See why our clients have chosen Tax Edge Advisory
+            </chakra.h2>
+          </Box>
+          </Flex>
+
+        <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
+          <Illustration height={{ sm: '24rem', lg: '40vh' }} mt={{ base: 12, sm: 16, md:0 }} mb={{lg: 5}} />
+        </SimpleGrid>
+        </Stack>
+      <Box pb={8}>
+        <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "5xl",md: "4xl",}}
+          pb={4}
+        >
+        Introduction
+        </Text>
+        <Text color={'black'} fontSize={'2xl'}pb={2} >
+          Have you recently purchased a commercial property, or perhaps undertaken renovations on one? If you have, then you may be sitting on a goldmine of potential tax savings waiting to be uncovered.
+        </Text>
+        <Text color={'black'} fontSize={'2xl'} pb={2}>
+          Whenever your business invests in purchasing, constructing, refurbishing, fitting, or acquiring equipment, you have an opportunity to claim valuable capital allowances.
+          </Text>
+          <Text color={'black'} fontSize={'2xl'} pb={16}>
+          Capital allowances are a valuable tax benefit that can be claimed on the money you&apos;ve invested in your commercial property. Even better, you can still claim these allowances on qualifying expenditure from the past that is now part of the property
+        </Text>
+      </Box>
+
+      <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "5xl",md: "4xl",}}
+        >
+        How We Empower Your Financial Success
+      </Text>
+
+      <List p={4}>
+            <ListItem pb={8}>
+              <Text 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl"}} pb={2}
+              >
+              1. Feasibility Reports and Estimates
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                    Our team provides comprehensive feasibility reports and cost estimates.
+                  </ListItem>
+                  <ListItem>
+                    We assess potential relief opportunities to help you make informed decisions.                    </ListItem>
+                  <ListItem>
+                    These insights are invaluable for financial projections and evaluating the advantages of project proposals.                    </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}
+              >
+                2. Capital Allowances Cost Reports
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                    We craft highly detailed technical capital allowances cost reports.
+                  </ListItem>
+                  <ListItem>
+                    These reports optimise your claims by categorising assets effectively
+                   </ListItem>
+                  <ListItem>
+                    This process simplifies filings with HMRC and ensures you claim every eligible allowance  
+                  </ListItem>
+                  <ListItem>
+                  Past Expenditure Analysis and Audit of Historic Claims
+                  </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
+              3. Review and Analysis of Prior Expenditure
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  Our team conducts thorough reviews of your past expenditure
+                  </ListItem>
+                  <ListItem>
+                  We identify additional qualifying expenditure that can be included for capital allowances purposes
+                   </ListItem>
+                  <ListItem>
+                  This leads to substantial cash reimbursements and future tax savings
+                  </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
+              4. Full Expensing and Super Deductions
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  We offer advanced guidance on how to maximise qualifying expenditure
+                  </ListItem>
+                  <ListItem>
+                  We help businesses navigate the nuances of the new relief, available for expenditures between April 1, 2021, and March 31, 2023 (Super Deductions) and March 31, 2023, onwards (Full Expensing)
+                  </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
+              5. Capital Allowances Integration
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  We assist businesses in factoring capital allowances into commercial negotiations and contract documentation.                    </ListItem>
+                  <ListItem>
+                  Ensuring that value is preserved and maximised throughout property transactions.
+                  </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
+                6. 150% Contaminated Land Remediation Relief Claims
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  We specialise in optimising 150% tax relief claims for companies involved in land remediation projects                    </ListItem>
+                  <ListItem>
+                  This includes the possibility of repayable cash credits, ultimately generating substantial tax savings                    </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={8}>
+              <Text                 
+              bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
+              7. Negotiations with HMRC
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  We excel in assisting clients with efficient, successful, and cost-effective claims negotiations with HMRC, if the need arises                    </ListItem>
+                </UnorderedList>
+              </Text>
+            </ListItem>
+
+            <ListItem pb={4} pt={8}>
+              <Text                 
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontWeight="extrabold"
+                fontSize={{ base: "5xl",md: "4xl",}}
+                pb={2}
+              >
+              Our Approach
+              </Text>
+              <Text color={'black'} fontSize={'2xl'} pb={5}>
+                <UnorderedList>
+                  <ListItem>
+                  Our team is spearheaded by specialists possessing a unique blend of expertise                    </ListItem>
+                  <ListItem>
+                  We are committed to guiding you through the intricate regulations with a personalised approach                    </ListItem>
+                  <ListItem>
+                  Our modus operandi involves real-time, tailored advice
+                  </ListItem>
+                  <ListItem>
+                  We leverage tried-and-tested methodologies to minimise disruptions to your business operations while achieving optimal outcomes                    </ListItem>
+                
+                </UnorderedList>
+              </Text>
+            </ListItem>
+      </List>
+
+      <Box py={12}>
+        <Text             
+        bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "5xl",md: "4xl",}}
+            pb={2}>
+        Contact Us
+        </Text>
+        <Text color={'black'} fontSize={'2xl'} pb={6}>
+        At Tax Edge Advisory, we are your trusted partners in navigating the complex landscape of capital investment reliefs.     
+          Our goal is to ensure your business maximises its financial potential by unlocking valuable tax savings through property capital allowances.
+        </Text>
+        <Stack
+            direction={{ base: "column", sm: "row" }}
+            mt={{ base: 8, lg: 0 }}
+            flexShrink={{ lg: 0 }}
+            pb={12}
+          >
+            <NextLink href="/pricing/our-prices">
+                <Button
+                as="a"
+                variant="solid"
+                colorScheme="whiteAlpha"
+                textColor={useColorModeValue('green.600', 'white')}
+                display="inline-flex"
+                alignItems="center"
+                justifyContent="center"
+                shadow={'lg'}
+
+                w={{
+                    base: "full",
+                    sm: "auto",
+                }}
+                mb={{
+                    base: 2,
+                    sm: 0,
+                }}
+                size="lg"
+                cursor="pointer"
+                >
+                Tax Savings Calculator
+                <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                    />
+                </Icon>
+                </Button>
+              </NextLink>
+            
+
+              <NextLink href="/info/contact-enquiry">
+                  <Button
+                  as="a"
+                  colorScheme="whiteAlpha"
+                  display="inline-flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow={'lg'}
+                  textColor={useColorModeValue('green.600', 'white')}
+
+
+                  w={{
+                      base: "full",
+                      sm: "auto",
+                  }}
+                  mb={{
+                      base: 2,
+                      sm: 0,
+                  }}
+                  size="lg"
+                  cursor="pointer"
+                  fontFamily="Helvetica"
+
+                  >
+                  Get in Contact
+                  <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                      <path
+                      fillRule="evenodd"
+                      d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                      clipRule="evenodd"
+                      />
+                  </Icon>
+                  </Button>
+                </NextLink>
+                
+        </Stack>
+      </Box>
+      </Container>
+      </Container>
+    </Box>
+  );
+}
+
 
 const Illustration = (props) => {
   return (
@@ -837,152 +1199,3 @@ const Illustration = (props) => {
     </Icon>
   )
 }
-
-export default function CallToActionWithIllustration() {
-  const scaleFactor = 0.9;
-
-  const ref1 = useRef(null)
-  const isInView1 = useInView(ref1)
-
-  return (
-<Box>
-  <Blur
-    position={'absolute'}
-    top={'60vh'}
-    left={'40vw'}
-    style={{ filter: 'blur(80px)' }}
-    />
-
-  <ScaleFade 
-    initialScale={0.6}
-    in={isInView1}
-  >
-    <Box pt={{md: 5}}  ref={ref1}>
-    <Container 
-      maxW={'85vw'} 
-      rounded='3xl' 
-      shadow='2xl'    
-      background="rgba(240,255,244,0.55)"
-    >
-      <Stack
-        textAlign={'center'}
-        align={'center'}
-        spacing={{ base: 8, md: 5 }}
-        py={{ base: 20, md: 16 }}
-        >
-        <Heading
-          fontSize={{ base: '3xl', sm: '7xl', md: '8xl' }}
-          letterSpacing={'tight'}
-          lineHeight={'110%'}
-
-          bgClip="text"
-          bgGradient="linear(to-r, blackAlpha.900, green.500)"
-          fontWeight="extrabold"
-          transition='all .65s ease' _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
-          >
-          Tax affairs{' '}
-          <Text as={'span'} color={'green.400'}
-          bgClip="text"
-          bgGradient="linear(to-r, green.600, green.500)"
-          fontWeight="extrabold"
-          transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
-          >
-            made easy
-          </Text>
-        </Heading>
-        <Text 
-        color={useColorModeValue('green.900', 'gray.50')} maxW={'5xl'} 
-        fontSize={{ base: 'xl', sm: '4xl', md: '2xl' }} 
-        transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
-        >
-        Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
-        a focus on providing expert advice on UK tax incentives to businesses,
-        accountants, and other professional advisers.
-        </Text>
-
-
-        <Stack spacing={{base: 8, md: 12}} direction={'row'} p={{md:6}}>
-          <Button
-            _hover={{ bg: 'green.300', textColor: 'green.700'  }}
-            as="a"
-            colorScheme="green"
-            textColor={useColorModeValue('green.50', 'green.200')}
-            alignItems="center"
-            justifyContent="center"
-            mb={{ base: 2, sm: 0 }}
-            shadow={'xl'}
-            size={'lg'}
-            >
-            Calculate Tax Savings
-          </Button>
-
-          <Button
-            _hover={{ bg: 'whiteAlpha.500', textColor:'green.500'}}
-            as="a"
-            textColor={useColorModeValue('green.500', 'green.200')}
-            alignItems="center"
-            justifyContent="center"
-            mb={{ base: 2, sm: 0 }}
-            shadow={'xl'}
-            size={'lg'}
-            bg={'whiteAlpha.800'}
-
-
-          >
-            Learn more
-          </Button>
-        </Stack>
-        {/* <Flex w={'full'}>
-          <Illustration height={{ sm: '24rem', lg: '40rem' }} mt={{ base: 12, sm: 16 }} />
-        </Flex> */}
-
-        <Flex maxH={'50vh'}>
-          <TaxAnimation />
-        </Flex>
-
-      </Stack>
-    </Container>
-    </Box>
-    </ScaleFade>
-    </Box>
-  )
-}
-
-export const Blur = (props) => {
-  return (
-    <Icon
-      width={useBreakpointValue({ base: '100%', md: '40vw', lg: '25vw' })}
-      zIndex={useBreakpointValue({ base: -1, md: -1, lg: -1 })}
-      alignContent={'center'}
-      height={useBreakpointValue({  lg: '65vh' })}
-      viewBox="-30 0 928 560"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-
-      <circle cx="11" cy="11" r="811" fill="#48BB78" />
-      {/* <circle cx="230.5" cy="58.5" r="101.5" fill="#48BB78" /> */}
-      {/* <circle cx="230.5" cy="58.5" r="101.5" fill="#48BB78" /> */}
-
-
-
-      
-      {/* <circle cx="244" cy="106" r="139" fill="#68D391" />
-      <circle cy="291" r="139" fill="#68D391" />
-      <circle cx="80.5" cy="189.5" r="101.5" fill="#68D391" />
-      <circle cx="196.5" cy="317.5" r="101.5" fill="#68D391" />
-
-      <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
-      <circle cx="426.5" cy="-0.5" r="101.5" fill="#48BB78" />
-      <circle cx="71" cy="61" r="111" fill="#48BB78" />
-      <circle cx="244" cy="106" r="139" fill="#48BB78" /> */}
-
-      {/* <circle cy="291" r="139" fill="#22543D" />
-      <circle cx="80.5" cy="189.5" r="101.5" fill="#22543D" />
-      <circle cx="196.5" cy="317.5" r="101.5" fill="#22543D" />
-      <circle cx="70.5" cy="458.5" r="101.5" fill="#22543D" />
-      <circle cx="426.5" cy="-0.5" r="101.5" fill="#22543D" /> */}
-    </Icon>
-  );
-};
-
