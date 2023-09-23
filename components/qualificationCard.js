@@ -14,7 +14,7 @@ export default function App(){
 
   const Feature = (props) => {
     return (
-      <Flex py={10}>
+      <Flex >
         <Flex shrink={0}>
           <Icon
             boxSize={5}

@@ -27,7 +27,7 @@ import {
 } from '@chakra-ui/icons';
 
 import NextImage from 'next/image'
-import taxEdgeLogo from '../../public/images/icon/logo-no-background.svg'
+import taxEdgeLogo from '../../public/images/icon/logo-black.svg'
 
 
 import NextLink from 'next/link'
@@ -41,21 +41,24 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
 
+
+  
   return (
-    <Box  margin='auto' bg={'blackAlpha.50'} pt={{md:5}} >
+    <Box  margin='auto' bg={'blackAlpha.200'} pt={{md:5}} >
       <Flex
-        bg={useColorModeValue('whiteAlpha.900', 'black')}
+        bgGradient="linear(to-r, green.600, green.500)"
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
-        py={{ base: 2, md:5 }}
+        py={{ base: 2, md:3 }}
         px={{ base: 4 }}
-        shadow="sm"
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
+        shadow="xl"
+        // borderBottom={1}
+        // borderStyle={'solid'}
+        // borderColor={useColorModeValue('gray.200', 'gray.900')}
         margin='auto'
         rounded={{md:'3xl'}}
         maxW={{md:'85vw'}}
+        maxH={{md: '8vh'}}
         // position='absolute'
         >
         <Flex
@@ -72,15 +75,17 @@ export default function WithSubnavigation() {
           />
         </Flex>
 
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'normal' }} marginLeft={{lg:'15vw'}}>
-        <NextLink href='/#' passHref>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}  >
+          <Box mt={{lg:-1}}>
+        <NextLink href='/#' passHref >
           <Link>
-              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={60} height={60}/>
+              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={60} height={60} />
           </Link>
         </NextLink>
+        </Box>
 
 
-          <Flex display={{ base: 'none', md: 'flex' }} marginLeft={{lg:'4vw'}} >
+          <Flex display={{ base: 'none', md: 'flex' }} marginLeft={{lg:'7vw'}} >
             <DesktopNav />
           </Flex>
         </Flex>
@@ -102,7 +107,7 @@ const DesktopNav = () => {
 
 
   return (
-    <Stack direction={'row'} spacing={5} paddingTop={{md:5}} >
+    <Stack direction={'row'} spacing={4} paddingTop={{md:4}} >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -110,12 +115,13 @@ const DesktopNav = () => {
               <PopoverTrigger>
                 <Link
                 p={5}
-                fontSize={'md'}
+                fontSize={{md:'sm', lg:'md'}}
                 href={navItem.href ?? '#'}
                 fontWeight={550}
                 fontFamily={'Helvetica'}
                 rounded="lg"
-                textColor='green.800'
+                textColor='white'
+                
 
                 color={linkColor}
                 _hover={{ bg: colorMode === 'light' ? 'green.50': 'gray.700', textColor: 'green.400'}}
@@ -164,8 +170,10 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           <Text
             transition={'all .3s ease'}
             _groupHover={{ color: 'green.400' }}
-            fontWeight={500}
+            fontWeight={300}
             _hover={{ color: 'green.400' }}
+            fontSize={'lg'}
+
             >
             {label}
           </Text>

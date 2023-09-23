@@ -23,10 +23,8 @@ import { useInView } from "framer-motion";
 
 
 //put this in a carousel
-export default function blogPostWithImage() {
+export default function BlogPostWithImage() {
   const scaleFactor = 0.9;
-
-  const { colorMode } = useColorMode()
 
   const ref1 = useRef(null)
   const isInView1 = useInView(ref1)
@@ -52,19 +50,12 @@ export default function blogPostWithImage() {
 
       <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}pt={{md:40}}     ref={ref1}
  >
-      {colorMode === 'light' && (
+
         <Heading fontSize={{base: '7xl', md:'9xl'}} bgClip="text"
             bgGradient="linear(to-r, green.900, green.300)"
             fontWeight="extrabold">
               Our Work
-        </Heading>)}
-
-      {colorMode === 'dark' && (
-        <Heading fontSize={{base: '7xl', md:'8xl'}} bgClip="text"
-            bgGradient="linear(to-r, white, whiteAlpha.500)"
-            fontWeight="extrabold">
-              Our Work
-        </Heading>)}
+        </Heading>)
 
 
         <Text color={useColorModeValue('gray.600', 'green.200')}   fontSize={'2xl'} p={4}>
@@ -120,7 +111,7 @@ export default function blogPostWithImage() {
           </NextLink>
 
           <Text color={useColorModeValue('gray.500', 'white')}>
-          A 'Top 100 Mid-Sized Companies in UK 2022' Winner. 
+          A Top 100 Mid-Sized Companies in UK 2022 Winner. 
           </Text>
         </Stack>
       </Box>
@@ -195,8 +186,6 @@ export default function blogPostWithImage() {
         <Stack>
           <Text
             color={'green.500'}
-            color={useColorModeValue('green.500', 'white')}
-
             textTransform={'uppercase'}
             fontWeight={800}
             fontSize={'sm'}

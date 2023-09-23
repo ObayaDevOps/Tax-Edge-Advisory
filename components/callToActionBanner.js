@@ -89,7 +89,6 @@ export default function CallToActionBanner(){
                   <Button
                   as="a"
                   colorScheme="whiteAlpha"
-                  textColor={useColorModeValue('gray.600', 'white')}
                   display="inline-flex"
                   alignItems="center"
                   justifyContent="center"

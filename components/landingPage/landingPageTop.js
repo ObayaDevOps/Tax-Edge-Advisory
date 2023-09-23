@@ -11,7 +11,8 @@ import {
   Box,
   IconProps,
   useColorModeValue,
-  ScaleFade
+  ScaleFade,
+  useBreakpointValue
 } from '@chakra-ui/react'
 
 import Lottie from "lottie-react";
@@ -844,11 +845,26 @@ export default function CallToActionWithIllustration() {
   const isInView1 = useInView(ref1)
 
   return (
+<Box>
+  <Blur
+    position={'absolute'}
+    top={'60vh'}
+    left={'40vw'}
+    style={{ filter: 'blur(80px)' }}
+    />
 
-<ScaleFade initialScale={0.6}
-    in={isInView1}>
+  <ScaleFade 
+    initialScale={0.6}
+    in={isInView1}
+  >
     <Box pt={{md: 5}}  ref={ref1}>
-    <Container maxW={'85vw'} bg={useColorModeValue('green.50', 'black')} rounded='3xl' shadow='lg'>
+    <Container 
+      maxW={'85vw'} 
+      bg={useColorModeValue('green.50', 'black')} 
+      rounded='3xl' 
+      shadow='2xl'    
+      background="rgba(240,255,244,0.55)"
+    >
       <Stack
         textAlign={'center'}
         align={'center'}
@@ -856,28 +872,27 @@ export default function CallToActionWithIllustration() {
         py={{ base: 20, md: 16 }}
         >
         <Heading
-          fontWeight={900}
-          fontSize={{ base: '3xl', sm: '7xl', md: '9xl' }}
+          fontSize={{ base: '3xl', sm: '7xl', md: '8xl' }}
           letterSpacing={'tight'}
           lineHeight={'110%'}
 
           bgClip="text"
           bgGradient="linear(to-r, blackAlpha.900, green.500)"
           fontWeight="extrabold"
-          transition='all .65s ease' _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+          transition='all .65s ease' _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
           >
           Tax affairs{' '}
           <Text as={'span'} color={'green.400'}
           bgClip="text"
-          bgGradient="linear(to-r, green.600, green.300)"
+          bgGradient="linear(to-r, green.600, green.500)"
           fontWeight="extrabold"
-          transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+          transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
           >
             made easy
           </Text>
         </Heading>
         <Text 
-        color={useColorModeValue('green.800', 'gray.50')} maxW={'5xl'} 
+        color={useColorModeValue('green.900', 'gray.50')} maxW={'5xl'} 
         fontSize={{ base: 'xl', sm: '4xl', md: '2xl' }} 
         transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
         >
@@ -889,7 +904,7 @@ export default function CallToActionWithIllustration() {
 
         <Stack spacing={{base: 8, md: 12}} direction={'row'} p={{md:6}}>
           <Button
-            _hover={{ bg: 'green.500' }}
+            _hover={{ bg: 'green.300', textColor: 'green.700'  }}
             as="a"
             colorScheme="green"
             textColor={useColorModeValue('green.50', 'green.200')}
@@ -911,6 +926,8 @@ export default function CallToActionWithIllustration() {
             mb={{ base: 2, sm: 0 }}
             shadow={'xl'}
             size={'lg'}
+            bg={'whiteAlpha.800'}
+
 
           >
             Learn more
@@ -928,5 +945,45 @@ export default function CallToActionWithIllustration() {
     </Container>
     </Box>
     </ScaleFade>
+    </Box>
   )
 }
+
+export const Blur = (props) => {
+  return (
+    <Icon
+      width={useBreakpointValue({ base: '100%', md: '40vw', lg: '25vw' })}
+      zIndex={useBreakpointValue({ base: -1, md: -1, lg: -1 })}
+      alignContent={'center'}
+      height={useBreakpointValue({  lg: '65vh' })}
+      viewBox="-30 0 928 560"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+
+      <circle cx="11" cy="11" r="811" fill="#48BB78" />
+      {/* <circle cx="230.5" cy="58.5" r="101.5" fill="#48BB78" /> */}
+      {/* <circle cx="230.5" cy="58.5" r="101.5" fill="#48BB78" /> */}
+
+
+
+      
+      {/* <circle cx="244" cy="106" r="139" fill="#68D391" />
+      <circle cy="291" r="139" fill="#68D391" />
+      <circle cx="80.5" cy="189.5" r="101.5" fill="#68D391" />
+      <circle cx="196.5" cy="317.5" r="101.5" fill="#68D391" />
+
+      <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
+      <circle cx="426.5" cy="-0.5" r="101.5" fill="#48BB78" />
+      <circle cx="71" cy="61" r="111" fill="#48BB78" />
+      <circle cx="244" cy="106" r="139" fill="#48BB78" /> */}
+
+      {/* <circle cy="291" r="139" fill="#22543D" />
+      <circle cx="80.5" cy="189.5" r="101.5" fill="#22543D" />
+      <circle cx="196.5" cy="317.5" r="101.5" fill="#22543D" />
+      <circle cx="70.5" cy="458.5" r="101.5" fill="#22543D" />
+      <circle cx="426.5" cy="-0.5" r="101.5" fill="#22543D" /> */}
+    </Icon>
+  );
+};
+
