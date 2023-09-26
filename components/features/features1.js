@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import {
   chakra,
@@ -9,8 +9,15 @@ import {
   Stack,
   Center,
   GridItem,
+  ScaleFade,
 } from "@chakra-ui/react";
+import { useInView } from "framer-motion";
+
+
 export default function App(){
+  const ref1 = useRef(null)
+  const isInView1 = useInView(ref1)
+
 
   const Feature = (props) => {
     return (
@@ -52,6 +59,10 @@ export default function App(){
   return (
     <Center 
     pt={8}>
+      <ScaleFade 
+        initialScale={0.4}
+        in={isInView1}
+      >
     <Flex
       bg='green.50'
       p={20}
@@ -61,6 +72,8 @@ export default function App(){
       maxW={'85vw'}
       rounded='3xl' 
       shadow='lg'
+      ref={ref1}
+
     >
       <Box
         bg="whiteAlpha.900"
@@ -150,6 +163,7 @@ export default function App(){
         </SimpleGrid>
       </Box>
     </Flex>
+    </ScaleFade>
     </Center>
   );
 };

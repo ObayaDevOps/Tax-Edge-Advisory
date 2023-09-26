@@ -1,4 +1,3 @@
-import React from "react";
 
 import {
   chakra,
@@ -9,12 +8,27 @@ import {
   Stack,
   Center,
   GridItem,
+  ScaleFade,
 } from "@chakra-ui/react";
-export default function App(){
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
+
+
+import NextImage from 'next/image'
+import IFAMasterLogo from '../public/images/qualification/IFA_Logo_Master_HR.png'
+
+
+export default function QualificationCard(){
+  const scaleFactor = 0.9;
+
+  const ref1 = useRef(null)
+  const isInView1 = useInView(ref1)
+
 
   const Feature = (props) => {
     return (
       <Flex >
+
         <Flex shrink={0}>
           <Icon
             boxSize={5}
@@ -50,106 +64,36 @@ export default function App(){
   };
 
   return (
-    <Center 
-    pt={8}>
-    <Flex
-      bg='green.50'
-      p={20}
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-      maxW={'85vw'}
-      rounded='3xl' 
-      shadow='lg'
-    >
-      <Box
-        bg="whiteAlpha.900"
-        _dark={{ bg: "green.800" }}
-        px={8}
-        py={20}
-        mx="auto"
-        rounded='3xl' 
-      >
-        <SimpleGrid
-          alignItems="center"
-          columns={{ base: 1, lg: 3 }}
-          spacingY={{ base: 10, lg: 32 }}
-          spacingX={{ base: 10, lg: 24 }}
+
+    <Center pt={8}>
+      <ScaleFade 
+          initialScale={0.4}
+          in={isInView1}
         >
-          <Box alignSelf="start" >
-            <chakra.h2
-              fontWeight="semibold"
-              letterSpacing="wide"
-              fontSize={{ base: 'xl', sm: 'xl', md: '2xl' }}
-              lineHeight={'110%'}
-              bgClip="text"
-              bgGradient="linear(to-r, blackAlpha.900, green.500)"
-            >
-              Everything you need
-            </chakra.h2>
-            <chakra.h2
-              mb={3}
-              fontSize={{ base: "3xl", md: "4xl" }}
-              fontWeight="extrabold"
-              textAlign={{ base: "center", sm: "left" }}
-              _light={{ color: "black" }}
-              lineHeight="shorter"
-              letterSpacing="tight"
-            >
-              All-in-one platform
-            </chakra.h2>
-            <chakra.p
-              mb={6}
-              fontSize={{ base: "lg", md: "xl" }}
-              textAlign={{ base: "center", sm: "left" }}
-              color="green.900"
-              _dark={{ color: "green.500" }}
-            >
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
-            </chakra.p>
+        <Flex
+          bg='white'
+          w="auto"
+          justifyContent="center"
+          alignItems="center"
+          maxW={'85vw'}
+          rounded='3xl' 
+          shadow='lg'
+          minW={{md: '85vw'}}
+          ref={ref1}
+        >
+          <Box
+            bg="whiteAlpha.900"
+            _dark={{ bg: "green.800" }}
+            px={8}
+            py={20}
+            mx="auto"
+            rounded='3xl' 
+          >
+            <NextImage src={IFAMasterLogo} width={(3531/5)} height={(1962/5)} />
+
           </Box>
-          <GridItem colSpan={2}>
-            <Stack
-              spacing={{ base: 10, md: 0 }}
-              display={{ md: "grid" }}
-              gridTemplateColumns={{ md: "repeat(2,1fr)" }}
-              gridColumnGap={{ md: 8 }}
-              gridRowGap={{ md: 12 }}
-            >
-              <Feature title="Invite team members">
-                Improve your conversion rates by monitoring exactly what’s going
-                on while your customers are in trial.{" "}
-              </Feature>
-              <Feature title="Unify your payments stack">
-                Manage all your online and offline sales in one place with a
-                single integration, simplifying reporting and reconciliation.
-              </Feature>
-              <Feature title="Own your in-store experience">
-                {" "}
-                Provide a seamless customer experience across channels, like
-                reserving online and picking up in store.
-              </Feature>
-              <Feature title="Grow your platform’s revenue">
-                {" "}
-                Add in-person payments to your platform or marketplace. Using
-                Terminal with Connect.{" "}
-              </Feature>
-              <Feature title="Clear overview for efficient tracking">
-                {" "}
-                Handle your subscriptions and transactions efficiently with the
-                clear overview in Dashboard. Fea
-              </Feature>
-              <Feature title="Decide how you integrate Payments">
-                {" "}
-                Love to code? Decide how you integrate Payments and build
-                advanced and reliable products yourself from scratch.{" "}
-              </Feature>
-            </Stack>
-          </GridItem>
-        </SimpleGrid>
-      </Box>
-    </Flex>
+        </Flex>
+      </ScaleFade>
     </Center>
   );
 };

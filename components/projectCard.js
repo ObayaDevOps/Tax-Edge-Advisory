@@ -21,6 +21,11 @@ import React, { useRef } from "react";
 import { useInView } from "framer-motion";
   
 
+import NextImage from 'next/image'
+import IFAMasterLogo from '../public/images/qualification/IFA_Logo_Master_HR.png'
+
+
+
 
 //put this in a carousel
 export default function BlogPostWithImage() {
@@ -45,23 +50,29 @@ export default function BlogPostWithImage() {
     
     <Box p={4}>
 
-<ScaleFade initialScale={0.6}
-    in={isInView1}>
-
-      <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}pt={{md:40}}     ref={ref1}
- >
-
-        <Heading fontSize={{base: '7xl', md:'9xl'}} bgClip="text"
+      <ScaleFade 
+        initialScale={0.6}
+        in={isInView1}
+      >
+        <Stack 
+          spacing={4} 
+          as={Container} 
+          maxW={'3xl'} 
+          textAlign={'center'}
+          pt={{md:40}}  
+          ref={ref1}>
+          <Heading 
+            fontSize={{base: '7xl', md:'9xl'}} bgClip="text"
             bgGradient="linear(to-r, green.900, green.300)"
             fontWeight="extrabold">
               Our Work
-        </Heading>)
+          </Heading>
 
-
-        <Text color={useColorModeValue('gray.600', 'green.200')}   fontSize={'2xl'} p={4}>
-          Past Clients that we have been happy to work with
-        </Text>
-      </Stack>
+          <Text color={useColorModeValue('gray.600', 'green.200')}   fontSize={'2xl'} p={4}>
+            Past Clients that we have been happy to work with
+          </Text>
+          
+        </Stack>
       </ScaleFade>
 
     
@@ -85,8 +96,8 @@ export default function BlogPostWithImage() {
 
         <Box  maxW={{md:'75vw'}} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'} >
         <NextLink href='https://www.medopticsltd.com/'>
-            My name Jeff
-            </NextLink>
+          <NextImage src={IFAMasterLogo} width={(3531/3)} height={(1962/3)} />
+        </NextLink>
 
         </Box>
         <Stack>
@@ -133,7 +144,7 @@ export default function BlogPostWithImage() {
         >
         <Box  maxW={'75vw'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'} >
         <NextLink href='https://www.afropocene.com/'>
-            Heyo
+          <NextImage src={IFAMasterLogo} width={(3531/3)} height={(1962/3)} />
         </NextLink>
         </Box>
         <Stack>

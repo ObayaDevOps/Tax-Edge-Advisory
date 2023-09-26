@@ -24,8 +24,6 @@ export default function Home() {
         <link rel="shortcut icon" href="../../../images/icon/logo-black.svg"></link>
       </Head>
 
-
-      {/* Landing Page */}
       <Box bg={'blackAlpha.200'}>
         <LandingPageTop />
 
