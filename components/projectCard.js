@@ -191,7 +191,7 @@ export default function BlogPostWithImage() {
         >
         <Box  maxW={'75vw'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'} >
         <NextLink href='http://humble-beeing.com/'>
-            Another one
+          <NextImage src={IFAMasterLogo} width={(3531/3)} height={(1962/3)} />
         </NextLink>
         </Box>
         <Stack>

@@ -48,7 +48,7 @@ export default function CapitalAllowancePage() {
             width={'full'}
             overflow={'hidden'}>
 
-          <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin={'auto'} pb={32}>
+          <Box width={{ base: 'full', sm: 'lg', lg: '2xl' }} margin={'auto'} pb={32}>
             <chakra.h3
               fontWeight={'bold'}
               fontSize={20}
@@ -75,7 +75,8 @@ export default function CapitalAllowancePage() {
                   transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
                   py={10}
                 >
-                  Patent Box
+                  Patent Box: Protecting Intellectual Capital and Tax Advantage
+
                 </Text>
               </Heading>
             <chakra.h2
@@ -102,17 +103,75 @@ export default function CapitalAllowancePage() {
           fontSize={{ base: "5xl",md: "4xl",}}
           pb={4}
         >
-        Introduction
+        Unlock the Power of Intellectual Property
         </Text>
         <Text color={'black'} fontSize={'2xl'}pb={2} >
-          Have you recently purchased a commercial property, or perhaps undertaken renovations on one? If you have, then you may be sitting on a goldmine of potential tax savings waiting to be uncovered.
+          The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.        </Text>
+        
+          <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "5xl",md: "4xl",}}
+          pb={4}
+        >
+        Unlock the Power of Intellectual Property
         </Text>
+        
         <Text color={'black'} fontSize={'2xl'} pb={2}>
-          Whenever your business invests in purchasing, constructing, refurbishing, fitting, or acquiring equipment, you have an opportunity to claim valuable capital allowances.
-          </Text>
-          <Text color={'black'} fontSize={'2xl'} pb={16}>
-          Capital allowances are a valuable tax benefit that can be claimed on the money you&apos;ve invested in your commercial property. Even better, you can still claim these allowances on qualifying expenditure from the past that is now part of the property
+          Holding patents is more than just protecting your intellectual capital; it&apos;s about gaining a competitive edge and realising significant tax benefits. This scheme rewards companies that invest in innovation and protect their unique ideas.          </Text>
+          
+          
+          <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "5xl",md: "4xl",}}
+          pb={4}
+        >
+        What It Offers:
         </Text>
+          
+        <UnorderedList p={4}>
+              <ListItem pb={8}>
+                <Text 
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
+                >
+                  Reduced Corporate Tax:
+                </Text>
+                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+                  Pay less tax on profits generated from patented products or processes.
+                </Text>
+              </ListItem>
+
+              <ListItem pb={8}>
+                <Text 
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
+                >
+                  Encouragement for Innovation:
+                </Text>
+                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+                  Stimulate research and development efforts.                </Text>
+              </ListItem>
+
+              <ListItem pb={8}>
+                <Text 
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
+                >
+                Market Leadership:
+                </Text>
+                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+                  Strengthen your position through IP protection.
+                </Text>
+              </ListItem>
+
+        </UnorderedList>
       </Box>
 
       <Text
@@ -121,8 +180,7 @@ export default function CapitalAllowancePage() {
           fontWeight="extrabold"
           fontSize={{ base: "5xl",md: "4xl",}}
         >
-        How We Empower Your Financial Success
-      </Text>
+Ready to delve deeper into the world of Patent Box tax relief? Visit our dedicated page to uncover the details of eligibility, calculation, and strategic implementation.      </Text>
 
       <List p={4}>
             <ListItem pb={8}>
