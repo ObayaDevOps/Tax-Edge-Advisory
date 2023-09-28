@@ -8,6 +8,7 @@ import {
   Divider,
   HStack,
   Tag,
+  Center,
   Wrap,
   WrapItem,
   SpaceProps,
@@ -32,27 +33,34 @@ const ArticleList = () => {
         shadow='2xl'    
         background="rgba(240,255,244,0.65)"
       >
-        <Flex
-            textAlign={'center'}
-            pt={10}
-            justifyContent={'center'}
-            direction={'column'}
-            width={'full'}
-            overflow={'hidden'}
-            >
-        <Heading
-              as={'h1'}
-              mb={{base: 2, md: 6}}
-              fontSize={{ base: "5xl",md: "6xl", lg:"6xl",}}
-              minHeight={'1vh'}
-              fontWeight="bold"
-              lineHeight="none"
-              letterSpacing={{base: "normal",md: "tight" }}
-              color="green.900"
-              textAlign='center'
+        <Center 
+        axis='horizontal'
+        py={{base:8, md: 10}}
         >
-          Unleash the Power of Innovation with R&D Tax Credits and Patent Box</Heading>
-      </Flex>
+          <Heading
+                as={'h1'}
+                mb={{base: 2, md: 6}}
+                fontSize={{ base: "5xl",md: "6xl", lg:"6xl",}}
+                minHeight={'1vh'}
+                fontWeight="bold"
+                lineHeight="none"
+                letterSpacing={{base: "normal",md: "tight" }}
+                color="green.900"
+                textAlign='center'
+                maxW='3xl'
+          >
+            <Text
+                  w="full"
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontWeight="extrabold"
+                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+            >
+              Unleash the Power of Innovation with R&D Tax Credits and Patent Box
+
+            </Text>
+            </Heading>
+      </Center>
 
         <Box
           marginTop={{ base: '1', sm: '5' }}

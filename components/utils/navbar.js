@@ -282,27 +282,33 @@ const NAV_ITEMS = [
     href: '/research-and-dev/research-and-dev-landing-page',
     children: [
       {
-        label: 'R&D Home',
-        subLabel: '',
+        label: 'R&D Tax',
+        subLabel: 'How can R&D Taxation can help you ?',
         href: '/research-and-dev/research-and-dev-landing-page',
-      },
-      {
-        label: 'R&D Tax Credits',
-        subLabel: 'Fueling Innovation and Savings',
-        href: '/research-and-dev/tax-credits',
-      },
-      {
-        label: 'Patent Box',
-        subLabel: 'UK government incentives for innovation and investment',
-        href: '/research-and-dev/patent-box',
-      }
-    ],
+      }]
+    // children: [
+    //   {
+    //     label: 'R&D Home',
+    //     subLabel: '',
+    //     href: '/research-and-dev/research-and-dev-landing-page',
+    //   },
+    //   {
+    //     label: 'R&D Tax Credits',
+    //     subLabel: 'Fueling Innovation and Savings',
+    //     href: '/research-and-dev/tax-credits',
+    //   },
+    //   {
+    //     label: 'Patent Box',
+    //     subLabel: 'UK government incentives for innovation and investment',
+    //     href: '/research-and-dev/patent-box',
+    //   }
+    // ],
   },
   {
     label: 'Capital Allowances',
     children: [
       {
-        label: 'Capital Allowance',
+        label: 'Capital Allowances',
         subLabel: 'Tax relief available to commercial property owners in the UK',
         href: '/capital-allowance/capital-allowance-info',
       }
@@ -310,8 +316,13 @@ const NAV_ITEMS = [
   },
   {
     label: 'Client Testimonials',
-    href: '/past-work/client-testimonials',
-
+    children: [
+      {
+        label: 'Client Testimonials',
+        subLabel: 'See what our past clients have said about us!',
+        href: '/past-work/client-testimonials',
+      }
+      ],
   },
   {
     label: 'Contact Us',
