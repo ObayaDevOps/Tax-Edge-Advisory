@@ -23,7 +23,7 @@ export default function CapitalAllowancePage() {
   return (
     <Box bg="blackAlpha.200" pt={8} pb={12}>
         <Head>
-          <title>Capital Allowance | Tax Edge Advisory</title>
+          <title>R&D claim example | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
         </Head>
 
@@ -48,7 +48,7 @@ export default function CapitalAllowancePage() {
             width={'full'}
             overflow={'hidden'}>
 
-          <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin={'auto'} pb={32}>
+          <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin={'auto'} pb={{base:12, md:32}}>
             <chakra.h3
               fontWeight={'bold'}
               fontSize={20}
@@ -76,7 +76,7 @@ export default function CapitalAllowancePage() {
                   pt={8}
                   pb={6}
                 >
-                  Research and Development Tax Credits
+                  Research and Development Claim Example
                 </Text>
               </Heading>
             <chakra.h2
@@ -92,27 +92,26 @@ export default function CapitalAllowancePage() {
           </Flex>
 
         <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
-          <Illustration height={{ sm: '24rem', lg: '30vh' }} mt={{ base: 12, sm: 16, md:-8 }} mb={{lg: 5}} />
+          <Illustration height={{ sm: '24rem', lg: '30vh' }} mt={{ base: 0, md:-8 }} mb={{base:12,md: 5}} />
         </SimpleGrid>
+
         </Stack>
       <Box pb={8}>
         <Text
           bgClip="text"
           bgGradient='linear(to-r, blackAlpha.800, green.500)'
           fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
+          fontSize={{ base: "4xl",md: "4xl",}}
           pb={4}
         >
-        Introduction
+          Summary
         </Text>
-        <Text color={'gray.700'} fontSize={'2xl'}pb={2} >
-        R&D tax credits are a valuable incentive introduced by the UK government to encourage
-innovation and investment in research and development activities.
+        <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
+          The claim revolved around R&D projects and activities undertaken by a waste management business providing several services such as collection, recycling and technologically driven energy generation services. This company is considered an SME.
          </Text>
-        <Text color={'gray.700'} fontSize={'2xl'} pb={16}>
-        They provide businesses
-with tax relief or cash credits for a portion of their eligible R&D expenditures, fostering growth
-and competitiveness within the UK economy.          </Text>
+        <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
+          During the period covered in the claim the company attempted to appreciably improve capabilities for responsible treatment of waste by improving its IT infrastructure. After conversations regarding the IT projects it was evaluated that the projects involved building on existing products and developing new features to bring the software to modern standards.         
+        </Text>
 
       </Box>
 
@@ -120,9 +119,12 @@ and competitiveness within the UK economy.          </Text>
           bgClip="text"
           bgGradient='linear(to-r, blackAlpha.800, green.500)'
           fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
-        >
-        How We Empower Your Financial Success
+          fontSize={{ base: "4xl",md: "4xl",}}
+      >
+        Qualifying R&D expenditure & activities
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
+        There were three main qualifying expenditures & activities:
       </Text>
 
       <List p={4}>
@@ -130,19 +132,15 @@ and competitiveness within the UK economy.          </Text>
               <Text 
               bgClip="text"
               bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl"}} pb={2}
+              fontSize={{ base: "3xl",md: "3xl"}} pb={2}
               >
-              1. Feasibility Reports and Estimates
+              Staff costs
               </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
                 <UnorderedList>
                   <ListItem>
-                    Our team provides comprehensive feasibility reports and cost estimates.
+                    The claim involved quantifying the eligible hours spent on the R&D activities by employees who had filled in timesheets as well as those, such as Directors or senior management, who may have not filled in timesheets.                   
                   </ListItem>
-                  <ListItem>
-                    We assess potential relief opportunities to help you make informed decisions.                    </ListItem>
-                  <ListItem>
-                    These insights are invaluable for financial projections and evaluating the advantages of project proposals.                    </ListItem>
                 </UnorderedList>
               </Text>
             </ListItem>
@@ -151,23 +149,14 @@ and competitiveness within the UK economy.          </Text>
               <Text                
               bgClip="text"
               bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}
+              fontSize={{ base: "3xl",md: "3xl",}} pb={2}
               >
-                2. Capital Allowances Cost Reports
+                Externally provided workers: Third Party
               </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
                 <UnorderedList>
                   <ListItem>
-                    We craft highly detailed technical capital allowances cost reports.
-                  </ListItem>
-                  <ListItem>
-                    These reports optimise your claims by categorising assets effectively
-                   </ListItem>
-                  <ListItem>
-                    This process simplifies filings with HMRC and ensures you claim every eligible allowance  
-                  </ListItem>
-                  <ListItem>
-                  Past Expenditure Analysis and Audit of Historic Claims
+                    These workers were hired for these projects specifically therefore 100% of their hours were claimed.                  
                   </ListItem>
                 </UnorderedList>
               </Text>
@@ -177,115 +166,16 @@ and competitiveness within the UK economy.          </Text>
               <Text                 
               bgClip="text"
               bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              3. Review and Analysis of Prior Expenditure
+              fontSize={{ base: "3xl",md: "3xl",}} pb={2}>
+                Software
               </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
+              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
                 <UnorderedList>
                   <ListItem>
-                  Our team conducts thorough reviews of your past expenditure
+                    The actual R&D activities undertaken were around improving vehicle monitoring and route visualisation software                  
                   </ListItem>
                   <ListItem>
-                  We identify additional qualifying expenditure that can be included for capital allowances purposes
-                   </ListItem>
-                  <ListItem>
-                  This leads to substantial cash reimbursements and future tax savings
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              4. Full Expensing and Super Deductions
-              </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We offer advanced guidance on how to maximise qualifying expenditure
-                  </ListItem>
-                  <ListItem>
-                  We help businesses navigate the nuances of the new relief, available for expenditures between April 1, 2021, and March 31, 2023 (Super Deductions) and March 31, 2023, onwards (Full Expensing)
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              5. Capital Allowances Integration
-              </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We assist businesses in factoring capital allowances into commercial negotiations and contract documentation.                    </ListItem>
-                  <ListItem>
-                  Ensuring that value is preserved and maximised throughout property transactions.
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-                6. 150% Contaminated Land Remediation Relief Claims
-              </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We specialise in optimising 150% tax relief claims for companies involved in land remediation projects                    </ListItem>
-                  <ListItem>
-                  This includes the possibility of repayable cash credits, ultimately generating substantial tax savings                    </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              7. Negotiations with HMRC
-              </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We excel in assisting clients with efficient, successful, and cost-effective claims negotiations with HMRC, if the need arises                    </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={4} pt={8}>
-              <Text                 
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontWeight="extrabold"
-                fontSize={{ base: "5xl",md: "4xl",}}
-                pb={2}
-              >
-              Our Approach
-              </Text>
-              <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  Our team is spearheaded by specialists possessing a unique blend of expertise                    </ListItem>
-                  <ListItem>
-                  We are committed to guiding you through the intricate regulations with a personalised approach                    </ListItem>
-                  <ListItem>
-                  Our modus operandi involves real-time, tailored advice
-                  </ListItem>
-                  <ListItem>
-                  We leverage tried-and-tested methodologies to minimise disruptions to your business operations while achieving optimal outcomes                    </ListItem>
-                
+                    Licences were purchased specifically for use in R&D projects.                  </ListItem>
                 </UnorderedList>
               </Text>
             </ListItem>
@@ -296,11 +186,11 @@ and competitiveness within the UK economy.          </Text>
         bgClip="text"
             bgGradient='linear(to-r, blackAlpha.800, green.500)'
             fontWeight="extrabold"
-            fontSize={{ base: "5xl",md: "4xl",}}
+            fontSize={{ base: "4xl",md: "4xl",}}
             pb={2}>
         Contact Us
         </Text>
-        <Text color={'gray.700'} fontSize={'2xl'} pb={6}>
+        <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
         At Tax Edge Advisory, we are your trusted partners in navigating the complex landscape of capital investment reliefs.     
           Our goal is to ensure your business maximises its financial potential by unlocking valuable tax savings through property capital allowances.
         </Text>

@@ -35,382 +35,266 @@ export default function CapitalAllowancePage() {
         shadow='2xl'    
         background="rgba(240,255,244,0.65)"
       >
-      <Container maxW={{base:'1xl',md:'75vw'}} >
-        <Stack
-          align={'center'}
-          spacing={{ base: 8, md: 2 }}
-        >                    
-          <Flex
-            textAlign={'center'}
-            pt={10}
-            justifyContent={'center'}
-            direction={'column'}
-            width={'full'}
-            overflow={'hidden'}>
+        <Container maxW={{base:'1xl',md:'75vw'}} >
+          <Stack
+            align={'center'}
+            spacing={{ base: 8, md: 2 }}
+          >                    
+            <Flex
+              textAlign={'center'}
+              pt={10}
+              justifyContent={'center'}
+              direction={'column'}
+              width={'full'}
+              overflow={'hidden'}>
 
-          <Box width={{ base: 'full', sm: 'lg', lg: '2xl' }} margin={'auto'} pb={32}>
-            <chakra.h3
-              fontWeight={'bold'}
-              fontSize={20}
-              textTransform={'uppercase'}
-              color={'green.400'}>
-              Tax Information Series
-            </chakra.h3>
-            <Heading
-              as={'h1'}
-                mb={{base: 2, md: 6}}
-                fontSize={{ base: "5xl",md: "6xl", lg:"7xl",}}
-                minHeight={'1vh'}
-                fontWeight="bold"
-                lineHeight="none"
-                letterSpacing={{base: "normal",md: "tight" }}
-                color="green.900"
-                textAlign='center'
-              >
-                <Text
-                  w="full"
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontWeight="extrabold"
-                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
-                  py={10}
+            <Box width={{ base: 'full', sm: 'lg', lg: '2xl' }} margin={'auto'} pb={32}>
+              <chakra.h3
+                fontWeight={'bold'}
+                fontSize={20}
+                textTransform={'uppercase'}
+                color={'green.400'}>
+                Tax Information Series
+              </chakra.h3>
+              <Heading
+                as={'h1'}
+                  mb={{base: 2, md: 6}}
+                  fontSize={{ base: "5xl",md: "6xl", lg:"7xl",}}
+                  minHeight={'1vh'}
+                  fontWeight="bold"
+                  lineHeight="none"
+                  letterSpacing={{base: "normal",md: "tight" }}
+                  color="green.900"
+                  textAlign='center'
                 >
-                  Patent Box: Protecting Intellectual Capital and Tax Advantage
+                  <Text
+                    w="full"
+                    bgClip="text"
+                    bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                    fontWeight="extrabold"
+                    transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+                    py={10}
+                  >
+                    Maximising Your Benefits with Patent Box Tax Relief
 
-                </Text>
-              </Heading>
-            <chakra.h2
-              margin={'auto'}
-              width={'70%'}
-              fontWeight={'medium'}
-              fontSize={'lg'}
-              color={useColorModeValue('gray.500', 'gray.400')}
-              >
-              See why our clients have chosen Tax Edge Advisory
-            </chakra.h2>
-          </Box>
-          </Flex>
+                  </Text>
+                </Heading>
+              <chakra.h2
+                margin={'auto'}
+                width={'70%'}
+                fontWeight={'medium'}
+                fontSize={'lg'}
+                color={useColorModeValue('gray.500', 'gray.400')}
+                >
+                See why our clients have chosen Tax Edge Advisory
+              </chakra.h2>
+            </Box>
+            </Flex>
 
-        <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
-          <Illustration height={{ sm: '24rem', lg: '40vh' }} mt={{ base: 12, sm: 16, md:0 }} mb={{lg: 5}} />
-        </SimpleGrid>
-        </Stack>
-      <Box pb={8}>
-        <Text
-          bgClip="text"
-          bgGradient='linear(to-r, blackAlpha.800, green.500)'
-          fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
-          pb={4}
-        >
-        Unlock the Power of Intellectual Property
-        </Text>
-        <Text color={'black'} fontSize={'2xl'}pb={2} >
-          The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.        </Text>
-        
+          <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
+            <Illustration height={{ sm: '24rem', lg: '30vh' }} mt={{ base: -8, md:-8 }} mb={{base:12,md: 5}} />
+          </SimpleGrid>
+
+          </Stack>
+          
+        <Box pb={8}>
           <Text
-          bgClip="text"
-          bgGradient='linear(to-r, blackAlpha.800, green.500)'
-          fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
-          pb={4}
-        >
-        Unlock the Power of Intellectual Property
-        </Text>
-        
-        <Text color={'black'} fontSize={'2xl'} pb={2}>
-          Holding patents is more than just protecting your intellectual capital; it&apos;s about gaining a competitive edge and realising significant tax benefits. This scheme rewards companies that invest in innovation and protect their unique ideas.          </Text>
-          
-          
-          <Text
-          bgClip="text"
-          bgGradient='linear(to-r, blackAlpha.800, green.500)'
-          fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
-          pb={4}
-        >
-        What It Offers:
-        </Text>
-          
-        <UnorderedList p={4}>
-              <ListItem pb={8}>
-                <Text 
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
-                >
-                  Reduced Corporate Tax:
-                </Text>
-                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                  Pay less tax on profits generated from patented products or processes.
-                </Text>
-              </ListItem>
-
-              <ListItem pb={8}>
-                <Text 
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
-                >
-                  Encouragement for Innovation:
-                </Text>
-                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                  Stimulate research and development efforts.                </Text>
-              </ListItem>
-
-              <ListItem pb={8}>
-                <Text 
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontSize={{ base: "5xl",md: "3xl"}} pb={2}
-                >
-                Market Leadership:
-                </Text>
-                <Text color={'gray.700'} fontSize={'2xl'} pb={5}>
-                  Strengthen your position through IP protection.
-                </Text>
-              </ListItem>
-
-        </UnorderedList>
-      </Box>
-
-      <Text
-          bgClip="text"
-          bgGradient='linear(to-r, blackAlpha.800, green.500)'
-          fontWeight="extrabold"
-          fontSize={{ base: "5xl",md: "4xl",}}
-        >
-Ready to delve deeper into the world of Patent Box tax relief? Visit our dedicated page to uncover the details of eligibility, calculation, and strategic implementation.      </Text>
-
-      <List p={4}>
-            <ListItem pb={8}>
-              <Text 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl"}} pb={2}
-              >
-              1. Feasibility Reports and Estimates
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                    Our team provides comprehensive feasibility reports and cost estimates.
-                  </ListItem>
-                  <ListItem>
-                    We assess potential relief opportunities to help you make informed decisions.                    </ListItem>
-                  <ListItem>
-                    These insights are invaluable for financial projections and evaluating the advantages of project proposals.                    </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}
-              >
-                2. Capital Allowances Cost Reports
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                    We craft highly detailed technical capital allowances cost reports.
-                  </ListItem>
-                  <ListItem>
-                    These reports optimise your claims by categorising assets effectively
-                   </ListItem>
-                  <ListItem>
-                    This process simplifies filings with HMRC and ensures you claim every eligible allowance  
-                  </ListItem>
-                  <ListItem>
-                  Past Expenditure Analysis and Audit of Historic Claims
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              3. Review and Analysis of Prior Expenditure
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  Our team conducts thorough reviews of your past expenditure
-                  </ListItem>
-                  <ListItem>
-                  We identify additional qualifying expenditure that can be included for capital allowances purposes
-                   </ListItem>
-                  <ListItem>
-                  This leads to substantial cash reimbursements and future tax savings
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              4. Full Expensing and Super Deductions
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We offer advanced guidance on how to maximise qualifying expenditure
-                  </ListItem>
-                  <ListItem>
-                  We help businesses navigate the nuances of the new relief, available for expenditures between April 1, 2021, and March 31, 2023 (Super Deductions) and March 31, 2023, onwards (Full Expensing)
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              5. Capital Allowances Integration
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We assist businesses in factoring capital allowances into commercial negotiations and contract documentation.                    </ListItem>
-                  <ListItem>
-                  Ensuring that value is preserved and maximised throughout property transactions.
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-                6. 150% Contaminated Land Remediation Relief Claims
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We specialise in optimising 150% tax relief claims for companies involved in land remediation projects                    </ListItem>
-                  <ListItem>
-                  This includes the possibility of repayable cash credits, ultimately generating substantial tax savings                    </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "5xl",md: "3xl",}} pb={2}>
-              7. Negotiations with HMRC
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  We excel in assisting clients with efficient, successful, and cost-effective claims negotiations with HMRC, if the need arises                    </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-
-            <ListItem pb={4} pt={8}>
-              <Text                 
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontWeight="extrabold"
-                fontSize={{ base: "5xl",md: "4xl",}}
-                pb={2}
-              >
-              Our Approach
-              </Text>
-              <Text color={'black'} fontSize={'2xl'} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                  Our team is spearheaded by specialists possessing a unique blend of expertise                    </ListItem>
-                  <ListItem>
-                  We are committed to guiding you through the intricate regulations with a personalised approach                    </ListItem>
-                  <ListItem>
-                  Our modus operandi involves real-time, tailored advice
-                  </ListItem>
-                  <ListItem>
-                  We leverage tried-and-tested methodologies to minimise disruptions to your business operations while achieving optimal outcomes                    </ListItem>
-                
-                </UnorderedList>
-              </Text>
-            </ListItem>
-      </List>
-
-      <Box py={12}>
-        <Text             
-        bgClip="text"
+            bgClip="text"
             bgGradient='linear(to-r, blackAlpha.800, green.500)'
             fontWeight="extrabold"
-            fontSize={{ base: "5xl",md: "4xl",}}
-            pb={2}>
-        Contact Us
-        </Text>
-        <Text color={'black'} fontSize={'2xl'} pb={6}>
-        At Tax Edge Advisory, we are your trusted partners in navigating the complex landscape of capital investment reliefs.     
-          Our goal is to ensure your business maximises its financial potential by unlocking valuable tax savings through property capital allowances.
-        </Text>
-        <Stack
-            direction={{ base: "column", sm: "row" }}
-            mt={{ base: 8, lg: 0 }}
-            flexShrink={{ lg: 0 }}
-            pb={12}
+            fontSize={{ base: "3xl",md: "4xl",}}
+            pb={{base: 6, md: 0}}
           >
-            <NextLink href="/pricing/our-prices">
-                <Button
-                as="a"
-                variant="solid"
-                colorScheme="whiteAlpha"
-                textColor={useColorModeValue('green.600', 'white')}
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
-                shadow={'lg'}
-
-                w={{
-                    base: "full",
-                    sm: "auto",
-                }}
-                mb={{
-                    base: 2,
-                    sm: 0,
-                }}
-                size="lg"
-                cursor="pointer"
-                >
-                Tax Savings Calculator
-                <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                    />
-                </Icon>
-                </Button>
-              </NextLink>
+          Unlock the Power of Intellectual Property
+          </Text>
+          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:12, md:2}} >
+            The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.        
+            </Text>
+          
+            <Text
+            bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "3xl",md: "4xl",}}
+            py={4}
+          >
+          What is Patent Box Tax Relief?
+          </Text>
+          
+          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:6, md: 2}}>
+          The Patent Box is a UK government initiative designed to reward businesses that actively innovate and hold patents. This initiative offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability. Essentially, it rewards businesses for protecting their intellectual property.            </Text>
             
+            
+            <Text
+            bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "3xl",md: "4xl",}}
+            py={4}
+          >
+          Benefits of Patent Box Tax Relief
+          </Text>
+            
+          <List p={4}>
+                <ListItem pb={8}>
+                  <Text 
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
+                  >
+                    1. Reduced Corporate Tax
+                  </Text>
+                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
+                  One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.                  </Text>
+                </ListItem>
 
-              <NextLink href="/info/contact-enquiry">
+                <ListItem pb={8}>
+                  <Text 
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
+                  >
+                    2. Encouragement for Innovation
+                  </Text>
+                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
+                  The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It&apos;s a win-win situation – businesses thrive through innovation, and the government supports economic growth.               
+                    </Text>
+                </ListItem>
+
+                <ListItem pb={8}>
+                  <Text 
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
+                  >
+                  3. Competitive Advantage
+                  </Text>
+                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
+                  Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position.
+                  </Text>
+                </ListItem>
+
+                <ListItem pb={8}>
+                  <Text 
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
+                  >
+                  4. Streamlined Application Process
+                  </Text>
+                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
+                  Applying for Patent Box tax relief can be straightforward when done correctly. However, it&apos;s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.                  </Text>
+                </ListItem>                
+
+          </List>
+        </Box>
+
+        <Text
+            bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "3xl",md: "4xl",}}
+            py={4}
+          >
+          Who Qualifies for Patent Box?
+          </Text>
+          
+          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
+          To be eligible for Patent Box tax relief, your business must:
+          </Text>
+
+          <UnorderedList pb={{base: 20,md:0}}>
+            <ListItem>
+              <Text fontSize={{base:'xl', md: '2xl'}}>
+              Hold qualifying patents or exclusive licences
+              </Text>
+            </ListItem>
+            <ListItem>
+            <Text fontSize={{base:'xl', md: '2xl'}}>
+            Be liable to pay UK corporation tax
+              </Text>
+            </ListItem>
+            <ListItem>
+            <Text fontSize={{base:'xl', md: '2xl'}}>
+            Derive income from patented products or processes
+              </Text>
+            </ListItem>
+          </UnorderedList>
+            
+          <Text
+            bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "3xl",md: "4xl",}}
+            py={4}
+          >
+          How Can Tax Edge Advisory Help?
+          </Text>
+          
+          <Text color={'black'} fontSize={{base:'2xl', md: '2xl'}} pb={{base:6, md:2}}>
+          Navigating the intricacies of tax incentives like the Patent Box scheme can be challenging. That&apos;s where Tax Edge Advisory comes in. Our team of experts specialises in helping businesses like yours make the most of tax relief opportunities.
+          </Text>
+          <Text
+            bgClip="text"
+            bgGradient='linear(to-r, blackAlpha.800, green.500)'
+            fontWeight="extrabold"
+            fontSize={{ base: "2xl",md: "4xl",}}
+            py={4}
+          >
+          We provide:
+          </Text>
+
+          <UnorderedList pb={{base: 10, md: 0}}>
+            <ListItem>
+            <Text fontSize={{base:'2xl', md: '2xl'}}>
+            Patent Box eligibility assessments
+              </Text>
+            </ListItem>
+            <ListItem>
+            <Text fontSize={{base:'2xl', md: '2xl'}}>
+            Assistance with patent identification and documentation
+              </Text>
+            </ListItem>
+            <ListItem>
+            <Text fontSize={{base:'2xl', md: '2xl'}}>
+            Comprehensive tax planning and compliance services
+              </Text>
+            </ListItem>
+          </UnorderedList>
+            
+          <Text color={'black'} fontSize={'2xl'} pb={2}>
+          Let us help you harness the power of Patent Box tax relief to drive innovation, reduce your tax liability, and enhance your competitive advantage.
+          </Text>
+
+            
+        <Box py={12}>
+          <Text             
+          bgClip="text"
+              bgGradient='linear(to-r, blackAlpha.800, green.500)'
+              fontWeight="extrabold"
+              fontSize={{ base: "4xl",md: "4xl",}}
+              pb={2}>
+          Contact Us
+          </Text>
+          <Text color={'black'} fontSize={'2xl'} pb={6}>
+          Ready to explore the benefits of Patent Box tax relief for your business? Contact Tax Edge Advisory today to schedule a consultation with our experienced tax professionals. Together, we can build a tax strategy that supports your innovation and growth.
+          </Text>
+          <Stack
+              direction={{ base: "column", sm: "row" }}
+              mt={{ base: 8, lg: 0 }}
+              flexShrink={{ lg: 0 }}
+              pb={12}
+            >
+              <NextLink href="/pricing/our-prices">
                   <Button
                   as="a"
+                  variant="solid"
                   colorScheme="whiteAlpha"
+                  textColor={useColorModeValue('green.600', 'white')}
                   display="inline-flex"
                   alignItems="center"
                   justifyContent="center"
                   shadow={'lg'}
-                  textColor={useColorModeValue('green.600', 'white')}
-
 
                   w={{
                       base: "full",
@@ -422,23 +306,57 @@ Ready to delve deeper into the world of Patent Box tax relief? Visit our dedicat
                   }}
                   size="lg"
                   cursor="pointer"
-                  fontFamily="Helvetica"
-
                   >
-                  Get in Contact
+                  Tax Savings Calculator
                   <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                       <path
                       fillRule="evenodd"
-                      d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
                       clipRule="evenodd"
                       />
                   </Icon>
                   </Button>
                 </NextLink>
-                
-        </Stack>
-      </Box>
-      </Container>
+              
+
+                <NextLink href="/info/contact-enquiry">
+                    <Button
+                    as="a"
+                    colorScheme="whiteAlpha"
+                    display="inline-flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    shadow={'lg'}
+                    textColor={useColorModeValue('green.600', 'white')}
+
+
+                    w={{
+                        base: "full",
+                        sm: "auto",
+                    }}
+                    mb={{
+                        base: 2,
+                        sm: 0,
+                    }}
+                    size="lg"
+                    cursor="pointer"
+                    fontFamily="Helvetica"
+
+                    >
+                    Get in Contact
+                    <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                        fillRule="evenodd"
+                        d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                        clipRule="evenodd"
+                        />
+                    </Icon>
+                    </Button>
+                  </NextLink>
+                  
+          </Stack>
+        </Box>
+        </Container>
       </Container>
     </Box>
   );

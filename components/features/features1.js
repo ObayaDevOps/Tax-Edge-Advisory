@@ -109,7 +109,7 @@ export default function App(){
               lineHeight="shorter"
               letterSpacing="tight"
             >
-              All-in-one platform
+              One stop shop for UK Tax Incentives
             </chakra.h2>
             <chakra.p
               mb={6}
@@ -118,8 +118,7 @@ export default function App(){
               color="green.900"
               _dark={{ color: "green.500" }}
             >
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              Click on a box to learn more about the incentive and how we can help you!
             </chakra.p>
           </Box>
           <GridItem colSpan={2}>
@@ -130,33 +129,24 @@ export default function App(){
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 12 }}
             >
-              <Feature title="Invite team members">
-                Improve your conversion rates by monitoring exactly what’s going
-                on while your customers are in trial.{" "}
+              <Feature title="R&D Tax credits">
+                If your company invests in research and development activities, you may be sitting on a goldmine of tax-saving opportunities{" "}
               </Feature>
-              <Feature title="Unify your payments stack">
-                Manage all your online and offline sales in one place with a
-                single integration, simplifying reporting and reconciliation.
-              </Feature>
-              <Feature title="Own your in-store experience">
+              <Feature title="Patent Box tax relief">
                 {" "}
-                Provide a seamless customer experience across channels, like
-                reserving online and picking up in store.
+                Offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability - rewarding businesses for protecting their intellectual property
               </Feature>
-              <Feature title="Grow your platform’s revenue">
+              <Feature title="Land remediation relief">
                 {" "}
-                Add in-person payments to your platform or marketplace. Using
-                Terminal with Connect.{" "}
+                Provides financial benefits to companies for cleaning up contaminated or derelict land to encourage its redevelopment{" "}
               </Feature>
-              <Feature title="Clear overview for efficient tracking">
+              <Feature title="New property transactions">
                 {" "}
-                Handle your subscriptions and transactions efficiently with the
-                clear overview in Dashboard. Fea
+                Claim tax deductions on qualifying capital expenditures related to commercial buildings
               </Feature>
-              <Feature title="Decide how you integrate Payments">
+              <Feature title="Refurbishments for existing property">
                 {" "}
-                Love to code? Decide how you integrate Payments and build
-                advanced and reliable products yourself from scratch.{" "}
+                Claim tax deductions on qualifying capital expenditures related to existing commercial buildings{" "}
               </Feature>
             </Stack>
           </GridItem>

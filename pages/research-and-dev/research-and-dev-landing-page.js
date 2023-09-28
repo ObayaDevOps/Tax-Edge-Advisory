@@ -69,8 +69,9 @@ const ArticleList = () => {
               width={{ base: '100%', sm: '85%' }}
               zIndex="2"
               marginLeft={{ base: '0', sm: '5%' }}
-              marginTop="5%">
-              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              marginTop="5%"
+              >
+              <Box>
                 <Image
                   borderRadius="lg"
                   src={

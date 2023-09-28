@@ -309,17 +309,9 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Past Work',
-    children: [
-      {
-        label: 'Client Testimonials',
-        href: '/past-work/client-testimonials',
-      },
-      {
-        label: 'Project Examples',
-        href: '/tax/project-examples',
-      },
-    ],
+    label: 'Client Testimonials',
+    href: '/past-work/client-testimonials',
+
   },
   {
     label: 'Contact Us',
