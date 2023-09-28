@@ -16,7 +16,7 @@ import {
 
   import Image from 'next/image'
   import NextLink from 'next/link'
-  import taxEdgeLogoBlack from '../../public/images/icon/logo-black.svg'
+  import taxEdgeLogoBlack from '../../public/images/icon/logo-white-removebg.png'
 
   
   const SocialButton = ({
@@ -63,19 +63,23 @@ import {
       // maxW={'85vw'} 
       shadow='2xl'  
        >
-        <Container as={Stack} maxW={'6xl'} py={10}>
+        <Container as={Stack} maxW={'6xl'} py={2}>
           <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 0.2fr' }}
+            templateColumns={{ base: '1fr 1fr'}}
             spacing={8}>
             <Stack spacing={6} >
               <Box>
                 <NextLink href='/#'>
-                <Image src={useColorModeValue( taxEdgeLogoBlack,taxEdgeLogoBlack)} width={40} height={40}/>
+                <Image src={useColorModeValue( taxEdgeLogoBlack,taxEdgeLogoBlack)} width={350} height={350}/>
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} textColor='white'>
                 © 2023 Tax Edge Advisory.
-                Designed and Built by ObayaDevOps
+              </Text>
+              <Text fontSize={'sm'} textColor='white'>
+              Designed and Built by 
+              <NextLink href='https://www.dralegawebops.com/'> ObayaDevOps</NextLink>
+              
               </Text>
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>

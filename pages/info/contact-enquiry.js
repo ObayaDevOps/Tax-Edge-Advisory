@@ -78,7 +78,7 @@ import {
 
       <Head>
         <title>Tax Edge Advisory Enquiry</title>
-        <meta name="description" content="Afropocene StudioLab Webpage" />
+        <meta name="description" content="Tax Edge Advisory Webpage" />
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 

@@ -27,7 +27,7 @@ import {
 } from '@chakra-ui/icons';
 
 import NextImage from 'next/image'
-import taxEdgeLogo from '../../public/images/icon/logo-black.svg'
+import taxEdgeLogo from '../../public/images/icon/logo-white-removebg-crop.png'
 
 
 import NextLink from 'next/link'
@@ -76,10 +76,10 @@ export default function WithSubnavigation() {
         </Flex>
 
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}  >
-          <Box mt={{lg:-1}}>
+          <Box mt={{lg: -2}}>
         <NextLink href='/#' passHref >
           <Link>
-              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={60} height={60} />
+              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={730/6} height={351/6} />
           </Link>
         </NextLink>
         </Box>
