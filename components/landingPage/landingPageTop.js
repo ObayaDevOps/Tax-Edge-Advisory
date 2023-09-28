@@ -104,7 +104,7 @@ export default function CallToActionWithIllustration() {
             >
             Calculate Tax Savings
           </Button>
-{/* 
+
           <Button
             _hover={{ bg: 'whiteAlpha.500', textColor:'green.500'}}
             as="a"
@@ -115,11 +115,10 @@ export default function CallToActionWithIllustration() {
             shadow={'xl'}
             size={'lg'}
             bg={'whiteAlpha.800'}
-
-
+            href='/info/contact-enquiry'
           >
-            Learn more
-          </Button> */}
+            Get in Contact
+          </Button>
         </Stack>
         {/* <Flex w={'full'}>
           <Illustration height={{ sm: '24rem', lg: '40rem' }} mt={{ base: 12, sm: 16 }} />
