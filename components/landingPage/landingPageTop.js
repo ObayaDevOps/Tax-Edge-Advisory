@@ -100,10 +100,11 @@ export default function CallToActionWithIllustration() {
             mb={{ base: 2, sm: 0 }}
             shadow={'xl'}
             size={'lg'}
+            href='/tax/tax-calculator'
             >
             Calculate Tax Savings
           </Button>
-
+{/* 
           <Button
             _hover={{ bg: 'whiteAlpha.500', textColor:'green.500'}}
             as="a"
@@ -118,7 +119,7 @@ export default function CallToActionWithIllustration() {
 
           >
             Learn more
-          </Button>
+          </Button> */}
         </Stack>
         {/* <Flex w={'full'}>
           <Illustration height={{ sm: '24rem', lg: '40rem' }} mt={{ base: 12, sm: 16 }} />
