@@ -6,6 +6,8 @@ import {
   Text,
   Stack,
   Box,
+  HStack,
+  VStack,
   Button,
   chakra,
   Icon,
@@ -14,16 +16,82 @@ import {
   List,
   ListItem
 } from '@chakra-ui/react';
+import { CheckIcon } from '@chakra-ui/icons'
+// import { ReactComponent as RndSvgIllustration } from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
+
+import   rndSvgIllustration  from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
+import NextImage from 'next/image';
+
+
+
+
 
 import Head from 'next/head';
 import NextLink from 'next/link'
+
+const features1 = [
+  {
+    id: 0,
+    title: 'Developing new or improving existing products, processes, or services.',
+    text: ''  },
+  {
+    id: 1,
+    title: 'Creating or enhancing software solutions or applications.',
+    text: '',
+  },
+  {
+      id: 2,
+      title: 'Developing or improving production methods to increase efficiency or reduce waste',
+      text: '',
+    },
+
+    {
+      id: 3,
+      title: 'Exploring alternative energy sources or environmental technologies',
+      text: '',
+    },
+    {
+      id: 3,
+      title: 'Investigating new materials or manufacturing techniques.',
+      text: '',
+    },
+];
+
+const features2 = [
+  {
+    id: 0,
+    title: 'Project Overview',
+    text: 'Describe the project, its objectives, and the context in which it was carried out'  },
+  {
+    id: 1,
+    title: 'Technical Narrative',
+    text: 'Explain the scientific or technological challenges faced during the project and how they were addressed, demonstrating the innovative nature of the project and its advancement of knowledge in the field',
+  },
+  {
+      id: 2,
+      title: 'Eligible Expenditures',
+      text: 'Identify and itemize the R&D costs associated with the project, including staff costs, subcontractor expenses, consumable materials, and software',
+    },
+
+    {
+      id: 3,
+      title: 'Cost Calculation',
+      text: 'Detail the methodology used to calculate the total eligible R&D costs and the corresponding tax relief or cash credit being claimed',
+    },
+    {
+      id: 3,
+      title: 'Supporting Documentation',
+      text: 'Provide any relevant supporting documents, such as project plans, technical reports, or patent applications, to substantiate the R&D claim',
+    },
+];
+
 
 
 export default function CapitalAllowancePage() {
   return (
     <Box bg="blackAlpha.200" pt={8} pb={12}>
         <Head>
-          <title>R&D claim example | Tax Edge Advisory</title>
+          <title>Research and Development Tax Credits | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
         </Head>
 
@@ -76,7 +144,7 @@ export default function CapitalAllowancePage() {
                   pt={8}
                   pb={6}
                 >
-                  Research and Development Claim Example
+                  Research and Development Tax Credits
                 </Text>
               </Heading>
             <chakra.h2
@@ -92,7 +160,7 @@ export default function CapitalAllowancePage() {
           </Flex>
 
         <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
-          <Illustration height={{ sm: '24rem', lg: '30vh' }} mt={{ base: 0, md:-8 }} mb={{base:12,md: 5}} />
+          <Illustration2 height={{ sm: '24rem', lg: '30vh' }} mt={{ base: 0, md:-8 }} mb={{base:12,md: 5}} />
         </SimpleGrid>
 
         </Stack>
@@ -107,12 +175,14 @@ export default function CapitalAllowancePage() {
           Summary
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-          The claim revolved around R&D projects and activities undertaken by a waste management business providing several services such as collection, recycling and technologically driven energy generation services. This company is considered an SME.
+          R&D tax credits are a valuable incentive introduced by the UK government to encourage
+          innovation and investment in research and development activities.
          </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-          During the period covered in the claim the company attempted to appreciably improve capabilities for responsible treatment of waste by improving its IT infrastructure. After conversations regarding the IT projects it was evaluated that the projects involved building on existing products and developing new features to bring the software to modern standards.         
+          They provide businesses
+          with tax relief or cash credits for a portion of their eligible R&D expenditures, fostering growth
+          and competitiveness within the UK economy.
         </Text>
-
       </Box>
 
       <Text
@@ -121,65 +191,144 @@ export default function CapitalAllowancePage() {
           fontWeight="extrabold"
           fontSize={{ base: "4xl",md: "4xl",}}
       >
-        Qualifying R&D expenditure & activities
+        Eligible R&D Activities
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
+        To qualify for R&D tax credits, a project must involve the creation or improvement of a product, process, or service through the resolution of scientific or technological uncertainties.
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-        There were three main qualifying expenditures & activities:
+          Examples of potentially qualifying activities include:
       </Text>
 
-      <List p={4}>
-            <ListItem pb={8}>
-              <Text 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "3xl",md: "3xl"}} pb={2}
-              >
-              Staff costs
-              </Text>
-              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                    The claim involved quantifying the eligible hours spent on the R&D activities by employees who had filled in timesheets as well as those, such as Directors or senior management, who may have not filled in timesheets.                   
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
 
-            <ListItem pb={8}>
-              <Text                
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "3xl",md: "3xl",}} pb={2}
-              >
-                Externally provided workers: Third Party
-              </Text>
-              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                    These workers were hired for these projects specifically therefore 100% of their hours were claimed.                  
-                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
+{/* make this a sexy card - get your money bitch */}
+      <Container maxW={{md: '85vw'}} mt={2} >
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+          {features1.map((feature) => (
+              <Box
+              maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
+              // padding={7}
+              py={8}
+              paddingRight={13}
+              paddingLeft={2}
+              bgColor="gray.100"
+              // opacity={0.15}
+              // background="rgba(192,192,192,0.15)"
+              background="white"
+              border='30px'
+              shadow={'xl'}
+              key={feature.id}
 
-            <ListItem pb={8}>
-              <Text                 
-              bgClip="text"
-              bgGradient='linear(to-r, blackAlpha.800, green.500)'
-              fontSize={{ base: "3xl",md: "3xl",}} pb={2}>
-                Software
-              </Text>
-              <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                <UnorderedList>
-                  <ListItem>
-                    The actual R&D activities undertaken were around improving vehicle monitoring and route visualisation software                  
-                  </ListItem>
-                  <ListItem>
-                    Licences were purchased specifically for use in R&D projects.                  </ListItem>
-                </UnorderedList>
-              </Text>
-            </ListItem>
-      </List>
+              >
+
+              <HStack  align={'top'} >
+                <Box color={'green.400'} px={2} >
+                  <Icon as={CheckIcon} />
+                </Box>
+                <VStack align={'start'}>
+                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'}
+                  fontSize={'lg'}>{feature.text}</Text>
+                </VStack>
+              </HStack>
+              </Box>
+            ))}
+        </SimpleGrid>
+      </Container>
+
+
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} py={16}>
+        Please note that this is not an exhaustive list, and eligibility will depend on the specifics of each project.
+      </Text>
+
+      <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "4xl",md: "4xl",}}
+          pt={12}
+          pb={8}
+      >
+        R&D Tax Credit Report
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
+        An essential component of the R&D tax credit claim process is the preparation of a comprehensive report that details the project, its objectives, the scientific or technological uncertainties it aims to address, and the eligible R&D costs incurred. The report should include the following sections:
+      </Text>
+      
+      <Container maxW={{md: '85vw'}} mt={2} >
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+          {features2.map((feature) => (
+              <Box
+              maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
+              // padding={7}
+              py={8}
+              paddingRight={13}
+              paddingLeft={2}
+              bgColor="gray.100"
+              // opacity={0.15}
+              // background="rgba(192,192,192,0.15)"
+              background="white"
+              border='30px'
+              shadow={'xl'}
+              key={feature.id}
+              >
+
+              <HStack  align={'top'} >
+                <Box color={'green.400'} px={2} >
+                  <Icon as={CheckIcon} />
+                </Box>
+                <VStack align={'start'}>
+                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'}
+                  fontSize={'lg'}>{feature.text}</Text>
+                </VStack>
+              </HStack>
+              </Box>
+            ))}
+        </SimpleGrid>
+      </Container>
+
+      <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "4xl",md: "4xl",}}
+          pt={24}
+          pb={8}
+      >
+        UK R&D Tax Credit Scheme
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
+        In the UK, there are two primary R&D tax credit schemes: the Small and Medium-sized Enterprises (SME) scheme and the Research and Development Expenditure Credit (RDEC) scheme, designed for larger companies. The SME scheme offers more generous benefits but has specific eligibility criteria based on the company’s size, turnover, and balance sheet.
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
+        Under the new rules, effective from April, the SME scheme provides tax relief of up to 186% on qualifying R&D expenditures, meaning that for every £100 spent on eligible R&D activities, a company can deduct £186 from its taxable profits. This can significantly reduce the company’s corporation tax liability.
+      </Text>
+          
+
+
+
+      <Text
+          bgClip="text"
+          bgGradient='linear(to-r, blackAlpha.800, green.500)'
+          fontWeight="extrabold"
+          fontSize={{ base: "4xl",md: "4xl",}}
+          pt={12}
+          pb={8}
+      >
+        Loss-Making Companies and R&D Tax Credits
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
+      Loss-making companies, particularly SMEs, can also benefit from the R&D tax credit scheme. Instead of carrying the loss forward or backward to offset against future or past profits, a loss-making SME can choose to surrender the loss attributable to R&D expenditures for a cash credit from HM Revenue and Customs (HMRC).
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
+      This is particularly beneficial for startups and early-stage businesses that may not yet be generating profits. The cash credit is calculated as 10% of the surrendered loss. For example, if a loss-making SME has £100,000 of qualifying R&D expenditures, it can surrender the loss related to the £186,000 tax deduction (186% of the expenditure) for a cash credit of £18,600 (£186,000 x 10%).
+      </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
+      To claim the R&D tax credit, the company must submit the R&D tax credit report, along with its corporation tax return (CT600) and any relevant supporting documents, to HMRC. It is essential to ensure that the report is accurate, complete, and compliant with HMRC’s guidelines, as errors or omissions can lead to delays, adjustments, or even rejections of the claim.
+      </Text>
+                 
+                    
 
       <Box py={12}>
         <Text             
@@ -1090,3 +1239,13 @@ const Illustration = (props) => {
     </Icon>
   )
 }
+
+const Illustration2 = (props) => {
+  return (
+    <Box>
+      <NextImage src={rndSvgIllustration} >
+      </NextImage>
+    </Box>
+  )
+}
+
