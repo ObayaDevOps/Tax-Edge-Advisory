@@ -66,7 +66,7 @@ export default function TaxCalculator () {
                                 Total Estimated Savings
                                 </Text>
                             {/* Show a variable here, modify that variable based on the button fucntion call */}
-                            <Center w='full' pb={{base:10, md: 4}}>
+                            <Center w='full' pb={{base:10, md: 8}}>
                                 <Stat>
                                     <StatNumber textAlign='center' fontSize={{base: '3xl', md: '5xl'}}>
                                          £ {calculatedUserTaxSavingsVariable}</StatNumber>

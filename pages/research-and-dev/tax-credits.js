@@ -207,30 +207,30 @@ export default function CapitalAllowancePage() {
           {features1.map((feature) => (
               <Box
               maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
-              // padding={7}
-              py={8}
-              paddingRight={13}
-              paddingLeft={2}
+              padding={8}
+              // py={8}
+              paddingRight={12}
+              // paddingLeft={2}
               bgColor="gray.100"
               // opacity={0.15}
               // background="rgba(192,192,192,0.15)"
               background="white"
               border='30px'
-              shadow={'xl'}
+              shadow={'md'}
               key={feature.id}
 
               >
 
-              <HStack  align={'top'} >
-                <Box color={'green.400'} px={2} >
+              <VStack  align={'center'} >
+                <Box color={'green.400'} px={7} >
                   <Icon as={CheckIcon} />
                 </Box>
                 <VStack align={'start'}>
-                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'} fontWeight={200} fontSize={'xl'} textAlign='center'>{feature.title}</Text>
                   <Text color={'black'}
                   fontSize={'lg'}>{feature.text}</Text>
                 </VStack>
-              </HStack>
+              </VStack>
               </Box>
             ))}
         </SimpleGrid>
@@ -251,9 +251,13 @@ export default function CapitalAllowancePage() {
       >
         R&D Tax Credit Report
       </Text>
-      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
-        An essential component of the R&D tax credit claim process is the preparation of a comprehensive report that details the project, its objectives, the scientific or technological uncertainties it aims to address, and the eligible R&D costs incurred. The report should include the following sections:
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
+        An essential component of the R&D tax credit claim process is the preparation of a comprehensive report that details the project, its objectives, the scientific or technological uncertainties it aims to address, and the eligible R&D costs incurred. 
       </Text>
+      <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={8}>
+        The report should include the following sections:
+      </Text>
+      
       
       <Container maxW={{md: '85vw'}} mt={2} >
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
@@ -261,9 +265,9 @@ export default function CapitalAllowancePage() {
               <Box
               maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
               // padding={7}
-              py={8}
-              paddingRight={13}
-              paddingLeft={2}
+              py={12}
+              paddingRight={12}
+              paddingLeft={8}
               bgColor="gray.100"
               // opacity={0.15}
               // background="rgba(192,192,192,0.15)"
@@ -349,7 +353,7 @@ export default function CapitalAllowancePage() {
             flexShrink={{ lg: 0 }}
             pb={12}
           >
-            <NextLink href="/pricing/our-prices">
+            <NextLink href="/tax/tax-calculator">
                 <Button
                 as="a"
                 variant="solid"
