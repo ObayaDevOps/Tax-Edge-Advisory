@@ -31,14 +31,21 @@ import {
     StatHelpText,
     StatArrow,
     StatGroup,
+    useControllableState
   } from '@chakra-ui/react';
   
+  import React, { useState } from 'react';
+
+
+
   import Head from 'next/head';
   import NextLink from 'next/link' 
  
   let calculatedUserTaxSavingsVariable = 0;
 
-export default function TaxCalculator () {
+
+export default function TaxCalculatorInputComponent () {
+    const [userIncurredExpense, setIncurredExpense] = useState(0);
 
     return (
         <Box bg='white' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
@@ -69,7 +76,7 @@ export default function TaxCalculator () {
                             <Center w='full' pb={{base:10, md: 8}}>
                                 <Stat>
                                     <StatNumber textAlign='center' fontSize={{base: '3xl', md: '5xl'}}>
-                                         £ {calculatedUserTaxSavingsVariable}</StatNumber>
+                                         £ {userIncurredExpense}</StatNumber>
                                     {/* <StatArrow alignSelf='center' type='increase' /> */}
                                 </Stat>
                             </Center>
@@ -88,7 +95,7 @@ export default function TaxCalculator () {
                     </Select>
 
                     <FormLabel pt={2} >Incurred Expense </FormLabel>
-                        <Input size='lg' placeholder='Enter amount (£)' />
+                        <Input size='lg' placeholder='Enter amount (£)' name='userIncurredExpense' />
                         {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
                 </FormControl>
                 {/* <Text fontSize='xs'>
@@ -96,7 +103,7 @@ export default function TaxCalculator () {
                 </Text> */}
 
                 <SimpleGrid pt={{base: 6, md:8}}>
-                <Button colorScheme='green'mb={4}>
+                <Button colorScheme='green'mb={4} type='submit' onClick={() => setUserTaxSaving(1000000)}>
                     Calculate Tax Savings*
                 </Button>
 

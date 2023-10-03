@@ -25,7 +25,7 @@ import {
   
   import Head from 'next/head';
   import NextLink from 'next/link' 
-  import  TaxCalculator  from '../../components/utils/tax-calculator';
+  import  TaxCalculator  from '../../components/utils/tax-calculatorInputComponent';
 
  
  export default function TaxCalculatorPage() {
