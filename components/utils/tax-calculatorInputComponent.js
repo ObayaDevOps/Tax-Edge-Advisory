@@ -30,6 +30,7 @@ import {
     StatNumber,
     StatHelpText,
     StatArrow,
+    InputLeftAddon,
     StatGroup,
     useControllableState
   } from '@chakra-ui/react';
@@ -128,8 +129,13 @@ export default function TaxCalculatorInputComponent () {
                     </Select>
 
                     <FormLabel pt={2} >Incurred Expense (Overall) </FormLabel>
-                        <Input size='lg' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
+                    <InputGroup>
+                        <InputLeftAddon>£</InputLeftAddon>
+                        <Input size='md' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
                         {/* I need this value entered to be console.logged */}
+                    </InputGroup>
+
+
 
                         {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
                 </FormControl>
@@ -144,7 +150,7 @@ export default function TaxCalculatorInputComponent () {
 
                 <Button colorScheme='green' as="a" href='/info/contact-enquiry'
 >
-                    Click Here for a no obligation FREE eligibility check!
+                    FREE eligibility check!
                 </Button>
 
                 <Text pt={{base: 2, md:1}}>
