@@ -36,6 +36,8 @@ import {
   
   import React, { useState } from 'react';
 
+  import ConfettiExplosion from 'react-confetti-explosion';
+
 
 
   import Head from 'next/head';
@@ -47,6 +49,8 @@ export default function TaxCalculatorInputComponent () {
     const [inputValue, setInputValue] = useState(0);
     const [userTaxSavings, setUserTaxSavings] = useState(0);
     const [showUpOnlyGreenIcon, setshowUpOnlyGreenIcon] = useState(false);
+    const [isExploding, setIsExploding] = React.useState(false);
+
 
     showUpOnlyGreenIcon
 
@@ -59,6 +63,7 @@ export default function TaxCalculatorInputComponent () {
         // 👇 Store the input value to local state
         setUserTaxSavings(inputValue * 0.86);
         setshowUpOnlyGreenIcon(true);
+        setIsExploding(true);
 
       };
     
@@ -67,7 +72,9 @@ export default function TaxCalculatorInputComponent () {
     let  userInput = 0;
     return (
         <Box bg='white' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
+
         <Container>
+
             <VStack pt={{base:6, md: 0}}>
                 <Box
                     maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
@@ -80,7 +87,11 @@ export default function TaxCalculatorInputComponent () {
                     border='80px'
                     shadow={'md'}
                 >
+
                     <Box ml={{md:4}} mt={{base: -2, md:4}} pt={{base:4, md: 1}}>
+                        <Center mt={8}>
+                            {isExploding && <ConfettiExplosion duration={2500} particleCount={80} width={1000} color={'green'} />}
+                        </Center>
                         <Text textAlign='center' fontSize={{base:'xl', md:'2xl', lg:'3xl'}}
                                                     w="full"
                                                     bgClip="text"
@@ -116,7 +127,7 @@ export default function TaxCalculatorInputComponent () {
                         <option>Land Remediation Relief</option>
                     </Select>
 
-                    <FormLabel pt={2} >Incurred Expense </FormLabel>
+                    <FormLabel pt={2} >Incurred Expense (Overall) </FormLabel>
                         <Input size='lg' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
                         {/* I need this value entered to be console.logged */}
 

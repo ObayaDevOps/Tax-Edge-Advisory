@@ -280,29 +280,29 @@ const NAV_ITEMS = [
   {
     label: 'Research & Development',
     href: '/research-and-dev/research-and-dev-landing-page',
-    children: [
-      {
-        label: 'R&D Tax',
-        subLabel: 'How can R&D Taxation can help you ?',
-        href: '/research-and-dev/research-and-dev-landing-page',
-      }]
     // children: [
     //   {
-    //     label: 'R&D Home',
-    //     subLabel: '',
+    //     label: 'R&D Tax',
+    //     subLabel: 'How can R&D Taxation can help you ?',
     //     href: '/research-and-dev/research-and-dev-landing-page',
-    //   },
-    //   {
-    //     label: 'R&D Tax Credits',
-    //     subLabel: 'Fueling Innovation and Savings',
-    //     href: '/research-and-dev/tax-credits',
-    //   },
-    //   {
-    //     label: 'Patent Box',
-    //     subLabel: 'UK government incentives for innovation and investment',
-    //     href: '/research-and-dev/patent-box',
-    //   }
-    // ],
+    //   }]
+    children: [
+      // {
+      //   label: 'R&D Home',
+      //   subLabel: '',
+      //   href: '/research-and-dev/research-and-dev-landing-page',
+      // },
+      {
+        label: 'R&D Tax Credits',
+        subLabel: 'Fueling Innovation and Savings',
+        href: '/research-and-dev/tax-credits',
+      },
+      {
+        label: 'Patent Box',
+        subLabel: 'UK government incentives for innovation and investment',
+        href: '/research-and-dev/patent-box',
+      }
+    ],
   },
   {
     label: 'Capital Allowances',
