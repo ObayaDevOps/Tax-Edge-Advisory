@@ -11,6 +11,7 @@ import {
     chakra,
     Input,
     Icon,
+    Center,
     Select,
     useColorModeValue,
     UnorderedList,
@@ -101,14 +102,13 @@ import {
                     </Flex>
 
                     {/* Calculator */}
-                    <Box>
+                    <Center>
                         <TaxCalculator />
-                    </Box>
+                    </Center>
 
 
 
-                    <SimpleGrid columns={{ base: 1, md: 1, lg:2 }} spacing={10} pb={{base: 2, md: 24}}>
-                    <Box>
+                    {/* <Box>
                         <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
                         At Tax Edge Advisory we understand the importance of maximising your tax savings. That’s why we’ve developed an easy-to-us calculator to help you estimate your potential tax credits from three key UK tax incentives: Research and Development (R&D) tax credits,
                         Embedded Capital Allowances, and Land Remediation Relief.                        
@@ -116,16 +116,11 @@ import {
                         <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
                             Our calculator tool is designed to provide you with an approximate figure of the tax credits you could be eligible for based on your incurred expenditure for each incentive. Please note that the results provided by our calculator tool are approximate figures, and it’s essential to consult one of our tax advisors for a more accurate assessment tailored to your specific circumstances.                      
                         </Text>
-                    </Box>
-
-
-                    
-                    </SimpleGrid>
+                    </Box> */}
 
                     </Stack>
-
-
                 </Container>
+
             </Container>
          </Box>
      )

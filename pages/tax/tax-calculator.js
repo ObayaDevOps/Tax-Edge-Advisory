@@ -9,6 +9,7 @@ import {
     Button,
     VStack,
     chakra,
+    Center,
     Input,
     Icon,
     Select,
@@ -24,6 +25,8 @@ import {
   
   import Head from 'next/head';
   import NextLink from 'next/link' 
+  import  TaxCalculator  from '../../components/utils/tax-calculator';
+
  
  export default function TaxCalculatorPage() {
      return (
@@ -54,13 +57,13 @@ import {
                         width={'full'}
                         overflow={'hidden'}>
 
-                    <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} margin={'auto'} pb={{base:12, md:32}}>
+                    <Box width={{ base: 'full', sm: 'lg', lg: '2xl' }} margin={'auto'} pb={{base:12, md:32}}>
                         <chakra.h3
                         fontWeight={'bold'}
                         fontSize={20}
                         textTransform={'uppercase'}
                         color={'green.400'}>
-                        Business savings
+                         Business tax savings
                         </chakra.h3>
                         <Heading
                         as={'h1'}
@@ -82,7 +85,7 @@ import {
                             pt={8}
                             pb={6}
                             >
-                            Tax Savings Calculator
+                            Tax Relief Calculator
                             </Text>
                         </Heading>
                         <chakra.h2
@@ -93,15 +96,21 @@ import {
                         color={useColorModeValue('gray.500', 'gray.400')}
                         >
                         See How Much 
-                        your Business Could Save Today
+                        Tax Relief could you claim today!
                         </chakra.h2>
                     </Box>
                     </Flex>
 
-                    <SimpleGrid columns={{ base: 1, md: 1, lg:2 }} spacing={10} pb={{base: 2, md: 24}}>
-                    <Box>
-                        <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-                        At Tax Edge Advisory we understand the importance of maximising your tax savings. That’s why we’ve developed an easy-to-us calculator to help you estimate your potential tax credits from three key UK tax incentives: Research and Development (R&D) tax credits,
+                    {/* Calculator */}
+                    <Center>
+                        <TaxCalculator />
+                    </Center>
+
+
+
+                    <Box p={{base:4, md:20}}>
+                        <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={10}>
+                        At Tax Edge Advisory we understand the importance of maximising your tax savings. That’s why we’ve developed an easy-to-use calculator to help you estimate your potential tax credits from three key UK tax incentives: Research and Development (R&D) tax credits,
                         Embedded Capital Allowances, and Land Remediation Relief.                        
                         </Text>
                         <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
@@ -109,57 +118,9 @@ import {
                         </Text>
                     </Box>
 
-                    <Box bg='white' p={12} >
-                        <Container>
-                            <VStack>
-                                <Text
-                                fontSize='4xl'
-                                    bgClip="text"
-                                    bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                                    fontWeight="extrabold"
-                                    transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
-                                >
-                                    Calculator
-                                </Text>
-                                <Text>
-                                    Estimated tax savings you are due*
-                                </Text>
-                                <Text>
-                                *Subject to professional checks
-                                </Text>
-                                <Input>
-                                </Input>
-                                <FormControl>
-                                    <FormLabel>Country</FormLabel>
-                                    <Select placeholder='Select Tax Type'>
-                                        <option>Research and Development Tax Credit</option>
-                                        <option>Embedded Capital Allowances</option>
-                                        <option>Land Remediation Releif</option>
-                                    </Select>
-
-                                    <FormLabel pt={2}>Incurred Expense</FormLabel>
-                                        <Input />
-                                        {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
-                                </FormControl>
-                                <Button>
-                                    Calculate Tax Savings
-                                </Button>
-                                <Text>
-                                For a no obligation FREE eligibility check, contact us below.
-                                </Text>
-                                <Button>
-                                    Contact Us
-                                </Button>
-                            </VStack>
-                        </Container>
-                    </Box>
-                    
-                    </SimpleGrid>
-
                     </Stack>
-
-
                 </Container>
+
             </Container>
          </Box>
      )

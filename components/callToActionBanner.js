@@ -51,7 +51,7 @@ export default function CallToActionBanner(){
             mt={{ base: 8, lg: 0 }}
             flexShrink={{ lg: 0 }}
           >
-            <NextLink href="/pricing/our-prices">
+            <NextLink href="/tax/tax-calculator">
                 <Button
                 as="a"
                 variant="solid"
