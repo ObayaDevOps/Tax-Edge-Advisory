@@ -138,17 +138,15 @@ export default function TaxCalculatorInputComponent () {
                 </Text> */}
 
                 <SimpleGrid pt={{base: 6, md:8}}>
-                <Button colorScheme='green'mb={4} type='submit' onClick={handleChange2}>
+                <Button mb={4} type='submit' onClick={handleChange2}>
                     Calculate Tax Savings*
                 </Button>
 
-                <Button as="a" href='/info/contact-enquiry'
+                <Button colorScheme='green' as="a" href='/info/contact-enquiry'
 >
-                    Contact Us
+                    Click Here for a no obligation FREE eligibility check!
                 </Button>
-                <Text pt={{base:10, md: 8}}>
-                For a no obligation FREE eligibility check, contact us below.
-                </Text>
+
                 <Text pt={{base: 2, md:1}}>
                     Subject to professional checks*
                 </Text>
