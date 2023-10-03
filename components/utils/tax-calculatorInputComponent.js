@@ -41,12 +41,30 @@ import {
   import Head from 'next/head';
   import NextLink from 'next/link' 
  
-  let calculatedUserTaxSavingsVariable = 0;
 
 
 export default function TaxCalculatorInputComponent () {
-    const [userIncurredExpense, setIncurredExpense] = useState(0);
+    const [inputValue, setInputValue] = useState(0);
+    const [userTaxSavings, setUserTaxSavings] = useState(0);
+    const [showUpOnlyGreenIcon, setshowUpOnlyGreenIcon] = useState(false);
 
+    showUpOnlyGreenIcon
+
+    const handleChange = (e) => {
+        // 👇 Store the input value to local state
+        setInputValue(e.target.value);
+      };
+
+      const handleChange2 = (e) => {
+        // 👇 Store the input value to local state
+        setUserTaxSavings(inputValue * 0.86);
+        setshowUpOnlyGreenIcon(true);
+
+      };
+    
+    
+
+    let  userInput = 0;
     return (
         <Box bg='white' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
         <Container>
@@ -76,8 +94,12 @@ export default function TaxCalculatorInputComponent () {
                             <Center w='full' pb={{base:10, md: 8}}>
                                 <Stat>
                                     <StatNumber textAlign='center' fontSize={{base: '3xl', md: '5xl'}}>
-                                         £ {userIncurredExpense}</StatNumber>
-                                    {/* <StatArrow alignSelf='center' type='increase' /> */}
+                                         £ {userTaxSavings}</StatNumber>
+                                        {/* { showUpOnlyGreenIcon && (
+                                            // <StatArrow alignSelf='center' type='increase' />
+                                            // <Icon />
+
+                                        )} */}
                                 </Stat>
                             </Center>
                     </Box>
@@ -95,7 +117,9 @@ export default function TaxCalculatorInputComponent () {
                     </Select>
 
                     <FormLabel pt={2} >Incurred Expense </FormLabel>
-                        <Input size='lg' placeholder='Enter amount (£)' name='userIncurredExpense' />
+                        <Input size='lg' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
+                        {/* I need this value entered to be console.logged */}
+
                         {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
                 </FormControl>
                 {/* <Text fontSize='xs'>
@@ -103,7 +127,7 @@ export default function TaxCalculatorInputComponent () {
                 </Text> */}
 
                 <SimpleGrid pt={{base: 6, md:8}}>
-                <Button colorScheme='green'mb={4} type='submit' onClick={() => setUserTaxSaving(1000000)}>
+                <Button colorScheme='green'mb={4} type='submit' onClick={handleChange2}>
                     Calculate Tax Savings*
                 </Button>
 
