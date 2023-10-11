@@ -12,6 +12,7 @@ import {
     Link,
     Stack,
     Textarea,
+    Show,
     Tooltip,
     useClipboard,
     useColorModeValue,
@@ -111,11 +112,12 @@ import {
                 }}
                 bgClip="text"
                 bgGradient="linear(to-r, green.900, green.300)"
+                textAlign={{base:'center'}}
                 >
                 Contact Us Today for Tax Savings!
               </Heading>
   
-              <SimpleGrid columns={2}>
+              <SimpleGrid columns={{base:1, md:2}}>
               <Stack
                 spacing={{ base: 4, md: 8, lg: 8 }}
                 direction={{ base: 'column', md: 'row' }}>
