@@ -90,7 +90,7 @@ export default function App(){
       >
         <SimpleGrid
           alignItems="center"
-          columns={{ base: 1, lg: 3 }}
+          columns={{ base: 1, md: 1, lg: 1 }}
           spacingY={{ base: 10, lg: 32 }}
           spacingX={{ base: 10, lg: 24 }}
         >
