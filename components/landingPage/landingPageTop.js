@@ -75,7 +75,7 @@ export default function CallToActionWithIllustration() {
           </Text>
         </Heading>
         <Text 
-        color={useColorModeValue('green.900', 'gray.50')} maxW={'5xl'} 
+        color={useColorModeValue('green.900', 'gray.50')} maxW={{md: '3xl',lg:'5xl'}} 
         fontSize={{ base: 'xl', sm: '4xl', md: '2xl' }} 
         transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
         >

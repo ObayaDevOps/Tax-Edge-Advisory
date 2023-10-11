@@ -90,7 +90,7 @@ export default function App(){
       >
         <SimpleGrid
           alignItems="center"
-          columns={{ base: 1, md: 1, lg: 1 }}
+          columns={{ base: 1, md: 1, lg: 3 }}
           spacingY={{ base: 10, lg: 32 }}
           spacingX={{ base: 10, lg: 24 }}
         >
@@ -117,7 +117,7 @@ export default function App(){
               One stop shop for UK Tax Incentives
             </chakra.h2>
             <chakra.p
-              mb={6}
+              mb={{md:0, lg:6}}
               fontSize={{ base: "lg", md: "xl" }}
               textAlign={{ base: "center", sm: "left" }}
               color="green.900"
