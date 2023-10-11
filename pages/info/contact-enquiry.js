@@ -16,13 +16,18 @@ import {
     useClipboard,
     useColorModeValue,
     VStack,
+    Container,
     useToast,
+    SimpleGrid,
   } from '@chakra-ui/react';
   import React from 'react';
   import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
   import { MdEmail, MdOutlineEmail } from 'react-icons/md';
   import Head from 'next/head'
   import { useState } from 'react'
+  import NextImage from 'next/image';
+
+  import constructionIllustration  from '../../public/images/illustrations/undraw_under_construction_-46-pa.svg';
 
 
   //We add the rest of the code here : https://greedytaker.in/nextjs/email-sending-contact-page-nextjs
@@ -74,7 +79,9 @@ import {
         bg={'blackAlpha.200'}
         align="center"
         justify="center"
-        id="contact">
+        id="contact"
+        pt={8} pb={12}
+        >
 
       <Head>
         <title>Tax Edge Advisory Enquiry</title>
@@ -82,6 +89,14 @@ import {
         <link rel="shortcut icon" href="../../../images/icon/uganda.png"></link>
       </Head>
 
+      <Container
+              maxW={{base:'1xl',md:'85vw'}} 
+              py={12} 
+              minHeight={{md:'110Fvh'}}   
+              rounded='3xl' 
+              shadow='2xl'    
+              background="rgba(240,255,244,0.65)"
+      >
         <Box
           borderRadius="lg"
           m={{ base: 5, md: 16, lg: 10 }}
@@ -97,11 +112,12 @@ import {
                 bgClip="text"
                 bgGradient="linear(to-r, green.900, green.300)"
                 >
-                Interested in Making Tax Savings?
+                Contact Us Today for Tax Savings!
               </Heading>
   
+              <SimpleGrid columns={2}>
               <Stack
-                spacing={{ base: 4, md: 8, lg: 20 }}
+                spacing={{ base: 4, md: 8, lg: 8 }}
                 direction={{ base: 'column', md: 'row' }}>
                 <Stack
                   align="center"
@@ -214,9 +230,17 @@ import {
                   </form>
                 </Box>
               </Stack>
+
+              <Box>
+                <NextImage src={constructionIllustration} width={500} height={500} >
+                </NextImage>
+              </Box>
+              </SimpleGrid>
+
             </VStack>
           </Box>
         </Box>
+        </Container>
       </Flex>
     );
   }

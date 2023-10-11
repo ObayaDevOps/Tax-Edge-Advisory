@@ -9,15 +9,75 @@ import {
   Button,
   chakra,
   Icon,
+  HStack,
+  VStack,
   useColorModeValue,
   UnorderedList,
   List,
   ListItem
 } from '@chakra-ui/react';
+import { CheckIcon } from '@chakra-ui/icons'
+
 
 import Head from 'next/head';
 import NextLink from 'next/link'
 
+const features2 = [
+  {
+    id: 0,
+    title: 'Reduced Corporate Tax',
+    text: 'One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.'  },
+  {
+    id: 1,
+    title: 'Encouragement for Innovation',
+    text: ' The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It&apos;s a win-win situation – businesses thrive through innovation, and the government supports economic growth.s a win-win situation – businesses thrive through innovation, and the government supports economic growth.',
+  },
+  {
+      id: 2,
+      title: 'Competitive Advantage',
+      text: 'Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position',
+    },
+
+    {
+      id: 3,
+      title: 'Streamlined Application Process',
+      text: 'Applying for Patent Box tax relief can be straightforward when done correctly. However, it&apos;s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.',
+    },
+    {
+      id: 3,
+      title: 'Supporting Documentation',
+      text: 'Provide any relevant supporting documents, such as project plans, technical reports, or patent applications, to substantiate the R&D claim',
+    },
+];
+
+
+const features3 = [
+  {
+    id: 0,
+    title: 'Hold qualifying patents or exclusive licences',
+    text: 'One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.'  },
+  {
+    id: 1,
+    title: 'Encouragement for Innovation',
+    text: 'The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It`&apos;`s a win-win situation – businesses thrive through innovation, and the government supports economic growth.s a win-win situation – businesses thrive through innovation, and the government supports economic growth.',
+  },
+  {
+      id: 2,
+      title: 'Competitive Advantage',
+      text: 'Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position',
+    },
+
+    {
+      id: 3,
+      title: 'Streamlined Application Process',
+      text: 'Applying for Patent Box tax relief can be straightforward when done correctly. However, it&apos;s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.',
+    },
+    {
+      id: 3,
+      title: 'Supporting Documentation',
+      text: 'Provide any relevant supporting documents, such as project plans, technical reports, or patent applications, to substantiate the R&D claim',
+    },
+];
 
 export default function CapitalAllowancePage() {
   return (
@@ -134,59 +194,41 @@ export default function CapitalAllowancePage() {
           >
           Benefits of Patent Box Tax Relief
           </Text>
+
+          <Container maxW={{md: '85vw'}} mt={2} >
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 1 }} spacing={8}>
+          {features2.map((feature) => (
+              <Box
+              maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
+              // padding={7}
+              py={10}
+              paddingRight={8}
+              paddingLeft={6}
+              bgColor="gray.100"
+              // opacity={0.15}
+              // background="rgba(192,192,192,0.15)"
+              background="white"
+              border='30px'
+              shadow={'xl'}
+              key={feature.id}
+              >
+
+              <HStack  align={'top'} >
+                <Box color={'green.400'} px={4} >
+                  <Icon as={CheckIcon} />
+                </Box>
+                <VStack align={'start'}>
+                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'}
+                  fontSize={'lg'}>{feature.text}</Text>
+                </VStack>
+              </HStack>
+              </Box>
+            ))}
+        </SimpleGrid>
+      </Container>
             
-          <List p={4}>
-                <ListItem pb={8}>
-                  <Text 
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
-                  >
-                    1. Reduced Corporate Tax
-                  </Text>
-                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                  One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.                  </Text>
-                </ListItem>
 
-                <ListItem pb={8}>
-                  <Text 
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
-                  >
-                    2. Encouragement for Innovation
-                  </Text>
-                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                  The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It&apos;s a win-win situation – businesses thrive through innovation, and the government supports economic growth.               
-                    </Text>
-                </ListItem>
-
-                <ListItem pb={8}>
-                  <Text 
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
-                  >
-                  3. Competitive Advantage
-                  </Text>
-                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                  Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position.
-                  </Text>
-                </ListItem>
-
-                <ListItem pb={8}>
-                  <Text 
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontSize={{ base: "3xl",md: "3xl"}} pb={2}
-                  >
-                  4. Streamlined Application Process
-                  </Text>
-                  <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={5}>
-                  Applying for Patent Box tax relief can be straightforward when done correctly. However, it&apos;s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.                  </Text>
-                </ListItem>                
-
-          </List>
         </Box>
 
         <Text
@@ -202,6 +244,38 @@ export default function CapitalAllowancePage() {
           <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
           To be eligible for Patent Box tax relief, your business must:
           </Text>
+
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 1 }} spacing={8}>
+          {features3.map((feature) => (
+              <Box
+              maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
+              // padding={7}
+              py={10}
+              paddingRight={8}
+              paddingLeft={6}
+              bgColor="gray.100"
+              // opacity={0.15}
+              // background="rgba(192,192,192,0.15)"
+              background="white"
+              border='30px'
+              shadow={'xl'}
+              key={feature.id}
+              >
+
+              <HStack  align={'top'} >
+                <Box color={'green.400'} px={4} >
+                  <Icon as={CheckIcon} />
+                </Box>
+                <VStack align={'start'}>
+                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'}
+                  fontSize={'lg'}>{feature.text}</Text>
+                </VStack>
+              </HStack>
+              </Box>
+            ))}
+        </SimpleGrid>
+
 
           <UnorderedList pb={{base: 20,md:0}}>
             <ListItem>

@@ -65,10 +65,10 @@ export default function App(){
   return (
     <Center 
     pt={16}>
-      <ScaleFade 
+      {/* <ScaleFade 
         initialScale={0.4}
         in={isInView1}
-      >
+      > */}
     <Flex
       bg='green.50'
       p={{base:0, md:12, lg:20}}
@@ -158,7 +158,7 @@ export default function App(){
         </SimpleGrid>
       </Box>
     </Flex>
-    </ScaleFade>
+    {/* </ScaleFade> */}
     </Center>
   );
 };

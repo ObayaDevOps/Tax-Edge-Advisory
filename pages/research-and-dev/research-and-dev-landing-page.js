@@ -179,7 +179,7 @@ const ArticleList = () => {
             flexDirection="column"
             justifyContent="center"
             marginTop={{ base: '3', sm: '0' }}>
-            <Heading marginTop={{base:4, md:1}}>
+            <Heading marginTop={{base:4, md:'-10vw'}}>
               <Text 
                 fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
                 w="full"
@@ -268,11 +268,11 @@ const ArticleList = () => {
               </Heading>
 
               <Container maxW={{md: '85vw'}} mt={2} >
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={8}>
                   {features1.map((feature) => (
                       <Box
                       maxW='md' borderWidth='1px' borderRadius='xl' overflow='hidden'
-                      padding={2}
+                      padding={4}
 
                       bgColor="gray.100"
                       // opacity={0.15}
@@ -306,7 +306,7 @@ const ArticleList = () => {
               </Box>
 
               <Box mt={{lg:16}}>
-                <NextLink href="research-and-dev/tax-credits">
+                <NextLink href="/research-and-dev/tax-credits">
                     <Button
                     as="a"
                     colorScheme="green"
@@ -391,25 +391,25 @@ const ArticleList = () => {
               <Text as="p" fontSize="md" my={{base:4,md:2}}>
               The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.              </Text>
 
-              <Heading fontSize="xl" marginTop={{md:8}}>
+              <Heading fontSize="xl" marginTop={{md:10}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   Why It Matters?
                   </Text>
               </Heading>
               <Text as="p" fontSize="md" marginTop="2">
               Holding patents is more than just protecting your intellectual capital; it&apos;s about gaining a competitive edge and realising significant tax benefits. This scheme rewards companies that invest in innovation and protect their unique ideas.              </Text>           
-              <Heading fontSize="xl" py={6}>
+              <Heading fontSize="xl" py={6} mt={{lg:8}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   What It Offers:
                   </Text>
               </Heading>
 
               <Container maxW={{md: '85vw'}} mt={2} >
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} spacing={8}>
                   {features2.map((feature) => (
                       <Box
                       maxW='md' borderWidth='1px' borderRadius='xl' overflow='hidden'
-                      padding={2}
+                      padding={4}
 
                       bgColor="gray.100"
                       // opacity={0.15}
@@ -442,7 +442,7 @@ const ArticleList = () => {
               </Box>
 
               <Box mt={{lg:24}}>
-                <NextLink href="research-and-dev/patent-box">
+                <NextLink href="/research-and-dev/patent-box">
                     <Button
                     as="a"
                     colorScheme="green"
@@ -486,7 +486,7 @@ const ArticleList = () => {
 
 
 
-        <Box pt={8}>
+        <Box pt={{base: 12,md:20}}>
           <Text             
           bgClip="text"
               bgGradient='linear(to-r, blackAlpha.800, green.500)'
