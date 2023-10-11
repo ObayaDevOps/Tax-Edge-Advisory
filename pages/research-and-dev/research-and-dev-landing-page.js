@@ -102,7 +102,7 @@ const Illustration3 = (props) => {
 const ArticleList = () => {
   return (
 
-    <Box bg='blackAlpha.200' py={6}>
+    <Box bg='blackAlpha.200' pt={6} pb={{base:12,md:20}}>
         <Head>
           <title>Research and Development Landing Page | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
@@ -180,8 +180,13 @@ const ArticleList = () => {
             justifyContent="center"
             marginTop={{ base: '3', sm: '0' }}>
             <Heading marginTop={{base:4, md:1}}>
-              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}
+              <Text 
                 fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
+                w="full"
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontWeight="extrabold"
+                transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
 
               >
               Fueling Growth Through Innovation and Tax Incentives
@@ -224,16 +229,18 @@ const ArticleList = () => {
               </Box>
 
               <Heading as="h2" marginTop="10" mb={8}>
-                <Text
-                fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
-                w="full"
-                bgClip="text"
-                bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                fontWeight="extrabold"
-                transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
-                >
-                  R&D Tax Credits: Fueling Innovation and Savings
-                </Text>
+                <NextLink href='/research-and-dev/tax-credits' passHref >
+                  <Text
+                  fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
+                  w="full"
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontWeight="extrabold"
+                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+                  >
+                    R&D Tax Credits: Fueling Innovation and Savings
+                  </Text>
+                </NextLink>
                 
               </Heading>
 
@@ -358,18 +365,21 @@ const ArticleList = () => {
               </Box>
 
               <Heading as="h2" marginTop="10" mb={8}>
-                <Text
-                  fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
-                  w="full"
-                  bgClip="text"
-                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
-                  fontWeight="extrabold"
-                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+              <NextLink href='/research-and-dev/patent-box' passHref >
+                  <Text
+                    fontSize={{ base: "2xl",md: "3xl", lg:"3xl",}}
+                    w="full"
+                    bgClip="text"
+                    bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                    fontWeight="extrabold"
+                    transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
 
-                >
-              Patent Box: Protecting Intellectual Capital and Tax Advantage
+                  >
+                Patent Box: Protecting Intellectual Capital and Tax Advantage
 
-                </Text>
+                  </Text>
+                </NextLink>
+
               </Heading>
 
               <Heading fontSize="xl" marginTop={{md:2}}>

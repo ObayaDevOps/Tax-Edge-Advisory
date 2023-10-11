@@ -72,7 +72,8 @@ export default function TaxCalculatorInputComponent () {
 
     let  userInput = 0;
     return (
-        <Box bg='green.300' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
+        <Box                     bgGradient='linear(to-r, green.200, green.400)'
+        mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
 
         <Container>
 
@@ -118,7 +119,7 @@ export default function TaxCalculatorInputComponent () {
                     </Box>
                 </Box>
 
-                <Box pt={{base: 6, md:6}}>
+                <Box pt={{base: 6, md:10}}>
                 <FormControl>
                     {/* <Select 
                     placeholder='Select Tax Type' 
