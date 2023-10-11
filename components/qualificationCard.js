@@ -65,7 +65,7 @@ export default function QualificationCard(){
 
   return (
 
-    <Center py={8}>
+    <Center pb={24}>
       {/* <ScaleFade 
           initialScale={0.4}
           in={isInView1}

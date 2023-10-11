@@ -27,10 +27,11 @@ export default function App(){
     <NextLink href={props.href}>
       <Box
       maxW='5xl' borderWidth='1px' borderRadius='xl' overflow='hidden'
-      padding={5}
+      padding={6}
       paddingRight={{base:8,md:16}}
       // bgColor="gray.100"
-      background="whiteAlpha.900"
+      background="blackAlpha.100"
+      shadow='md'
       >
         <Flex py={8}>
           <Flex shrink={0}>
@@ -38,7 +39,7 @@ export default function App(){
               boxSize={5}
               mt={1}
               mr={2}
-              color="brand.500"
+              color="green.500"
               _dark={{ color: "brand.300" }}
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -55,13 +56,13 @@ export default function App(){
               fontSize="xl"
               fontWeight="bold"
               lineHeight="6"
-              _light={{ color: "green.800" }}
+              _light={{ color: "green.600" }}
             >
             <Box>
               <NextLink href={props.href}>{props.title}</NextLink>
             </Box>
             </chakra.dt>
-            <chakra.dd mt={2} color="gray.700" _dark={{ color: "green.400" }}    fontSize="lg">
+            <chakra.dd mt={2} color="gray.900" _dark={{ color: "green.400" }}    fontSize="lg">
               <NextLink href={props.href}>
                 <Box>{props.children}</Box></NextLink>
             </chakra.dd>
@@ -82,13 +83,13 @@ export default function App(){
       > */}
     <Flex
       bg='green.50'
-      p={{base:0, md:12, lg:20}}
+      p={{base:0, md:12, lg:12}}
       w="auto"
       justifyContent="center"
       alignItems="center"
       maxW={'85vw'}
       rounded='3xl' 
-      shadow='lg'
+      shadow='xl'
       ref={ref1}
 
     >

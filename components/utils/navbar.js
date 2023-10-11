@@ -52,14 +52,11 @@ export default function WithSubnavigation() {
         py={{ base: 2, md:3 }}
         px={{ base: 4 }}
         shadow="xl"
-        // borderBottom={1}
-        // borderStyle={'solid'}
-        // borderColor={useColorModeValue('gray.200', 'gray.900')}
+
         margin='auto'
         rounded={{md:'3xl'}}
         maxW={{md:'85vw'}}
         maxH={{md: '8vh'}}
-        // position='absolute'
         >
         <Flex
           flex={{ base: 1, md: 'auto' }}
