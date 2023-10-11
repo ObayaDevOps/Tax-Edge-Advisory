@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  Button,
   VisuallyHidden,
   Input,
   IconButton,
@@ -83,10 +84,9 @@ export default function LargeWithNewsletter() {
               <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>
                 <FaLinkedin />
               </SocialButton>
-              <Text fontSize={{base:'sm',md:'xs'}} pt={{md: 1}}>
-              Built by 
-              <NextLink href='https://www.dralegawebops.com/'> DWO</NextLink>
-             </Text>
+              <Button as='a' href='https://www.dralegawebops.com/' size='sm' fontSize={{base:'sm',md:'xs'}} pt={{md: 1}}>
+              Built by DWO
+             </Button>
 
             </Stack>
             <Box>

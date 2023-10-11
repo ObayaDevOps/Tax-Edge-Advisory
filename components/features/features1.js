@@ -13,6 +13,9 @@ import {
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 
+import NextLink from 'next/link'
+
+
 
 export default function App(){
   const ref1 = useRef(null)
@@ -46,10 +49,13 @@ export default function App(){
             lineHeight="6"
             _light={{ color: "green.800" }}
           >
-            {props.title}
+          <Box>
+            <NextLink href={props.href}>{props.title}</NextLink>
+          </Box>
           </chakra.dt>
           <chakra.dd mt={2} color="gray.700" _dark={{ color: "green.400" }}    fontSize="lg">
-            {props.children}
+            <NextLink href={props.href}>
+              <Box>{props.children}</Box></NextLink>
           </chakra.dd>
         </Box>
       </Flex>
@@ -58,14 +64,14 @@ export default function App(){
 
   return (
     <Center 
-    pt={8}>
+    pt={16}>
       <ScaleFade 
         initialScale={0.4}
         in={isInView1}
       >
     <Flex
       bg='green.50'
-      p={20}
+      p={{base:0, md:12, lg:20}}
       w="auto"
       justifyContent="center"
       alignItems="center"
@@ -77,7 +83,6 @@ export default function App(){
     >
       <Box
         bg="whiteAlpha.900"
-        _dark={{ bg: "green.800" }}
         px={8}
         py={20}
         mx="auto"
@@ -129,22 +134,22 @@ export default function App(){
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 12 }}
             >
-              <Feature title="R&D Tax credits">
+              <Feature title="R&D Tax credits" href="/research-and-dev/tax-credits">
                 If your company invests in research and development activities, you may be sitting on a goldmine of tax-saving opportunities{" "}
               </Feature>
-              <Feature title="Patent Box tax relief">
+              <Feature title="Patent Box tax relief" href="/research-and-dev/patent-box">
                 {" "}
                 Offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability - rewarding businesses for protecting their intellectual property
               </Feature>
-              <Feature title="Land remediation relief">
+              <Feature title="Land remediation relief" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Provides financial benefits to companies for cleaning up contaminated or derelict land to encourage its redevelopment{" "}
               </Feature>
-              <Feature title="New property transactions">
+              <Feature title="New property transactions" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Claim tax deductions on qualifying capital expenditures related to commercial buildings
               </Feature>
-              <Feature title="Refurbishments for existing property">
+              <Feature title="Refurbishments for existing property" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Claim tax deductions on qualifying capital expenditures related to existing commercial buildings{" "}
               </Feature>
