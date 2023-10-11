@@ -65,11 +65,11 @@ export default function QualificationCard(){
 
   return (
 
-    <Center pt={8}>
-      <ScaleFade 
+    <Center py={8}>
+      {/* <ScaleFade 
           initialScale={0.4}
           in={isInView1}
-        >
+        > */}
         <Flex
           bg='white'
           w="auto"
@@ -93,7 +93,7 @@ export default function QualificationCard(){
 
           </Box>
         </Flex>
-      </ScaleFade>
+      {/* </ScaleFade> */}
     </Center>
   );
 };

@@ -70,7 +70,7 @@ import {
             <Stack spacing={6} >
               <Box>
                 <NextLink href='/#'>
-                <Image src={useColorModeValue( taxEdgeLogoBlack,taxEdgeLogoBlack)} width={350} height={350}/>
+                  <Image src={taxEdgeLogoBlack} width={80} height={80}/>
                 </NextLink>
               </Box>
               <Text fontSize={'sm'} textColor='white'>

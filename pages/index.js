@@ -27,13 +27,15 @@ export default function Home() {
       <Box bg={'blackAlpha.200'}>
         <LandingPageTop />
 
-        <QualificationCard />
+
         
         <Features1 />
 
-        <ProjectCards />
+        {/* <ProjectCards /> */}
 
         <CallToActionBanner />
+
+        <QualificationCard />
       </Box>
 
     </div>

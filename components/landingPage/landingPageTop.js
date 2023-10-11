@@ -41,10 +41,6 @@ export default function CallToActionWithIllustration() {
     style={{ filter: 'blur(80px)' }}
     />
 
-  {/* <ScaleFade 
-    initialScale={0.6}
-    in={isInView1}
-  > */}
     <Box pt={{md: 5}}  ref={ref1}>
     <Container 
       maxW={'85vw'} 
@@ -89,7 +85,7 @@ export default function CallToActionWithIllustration() {
         </Text>
 
 
-        <Stack spacing={{base: 8, md: 12}} direction={'row'} p={{md:6}}>
+        <Stack spacing={{base: 8, md: 12}} direction={{base:'column',md:'row'}} p={{md:6}}>
           <Button
             _hover={{ bg: 'green.300', textColor: 'green.700'  }}
             as="a"
@@ -145,7 +141,6 @@ export default function CallToActionWithIllustration() {
       </Stack>
     </Container>
     </Box>
-    {/* </ScaleFade> */}
     </Box>
   )
 }

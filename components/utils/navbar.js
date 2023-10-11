@@ -134,13 +134,16 @@ const DesktopNav = () => {
 
             {navItem.children && (
               <PopoverContent
+              w={{ base: "240px", md: "320px" }}
                 border={0}
                 boxShadow={'lg'}
                 bg={popoverContentBgColor}
                 p={4}
-                fontFamily={'Helvetica'}
+                // fontFamily={'Helvetica'}
                 rounded="lg"
-                minW={'sm'}>
+                // minW={'sm'}
+                
+                >
                 <Stack>
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
@@ -221,7 +224,7 @@ const MobileNavItem = ({ label, children, href }) => {
         href={href ?? '#'}
         justify={'space-between'}
         align={'center'}
-        fontFamily="Space Mono"
+        // fontFamily="Space Mono"
 
         _hover={{
           textDecoration: 'none',
@@ -269,70 +272,23 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [  
   {
     label: 'Tax Calculator',
-    children: [
-      {
-        label: 'Tax Calculator',
-        subLabel: 'See how much you can save today!',
-        href: '/tax/tax-calculator',
-      }
-    ],
+    href: '/tax/tax-calculator',
   },
   {
     label: 'Research & Development',
     href: '/research-and-dev/research-and-dev-landing-page',
-    // children: [
-    //   {
-    //     label: 'R&D Tax',
-    //     subLabel: 'How can R&D Taxation can help you ?',
-    //     href: '/research-and-dev/research-and-dev-landing-page',
-    //   }]
-    children: [
-      // {
-      //   label: 'R&D Home',
-      //   subLabel: '',
-      //   href: '/research-and-dev/research-and-dev-landing-page',
-      // },
-      {
-        label: 'R&D Tax Credits',
-        subLabel: 'Fueling Innovation and Savings',
-        href: '/research-and-dev/tax-credits',
-      },
-      {
-        label: 'Patent Box',
-        subLabel: 'UK government incentives for innovation and investment',
-        href: '/research-and-dev/patent-box',
-      }
-    ],
   },
   {
     label: 'Capital Allowances',
-    children: [
-      {
-        label: 'Capital Allowances',
-        subLabel: 'Tax relief available to commercial property owners in the UK',
-        href: '/capital-allowance/capital-allowance-info',
-      }
-    ],
+    href: '/capital-allowance/capital-allowance-info',
   },
   {
     label: 'Client Testimonials',
-    children: [
-      {
-        label: 'Client Testimonials',
-        subLabel: 'See what our past clients have said about us!',
-        href: '/past-work/client-testimonials',
-      }
-      ],
+    href: '/past-work/client-testimonials',
   },
   {
     label: 'Contact Us',
-    children: [
-      {
-        label: 'Get in Touch',
-        subLabel: 'Ask us about your tax matters today!',
-        href: '/info/contact-enquiry',
-      },
-    ],
+    href: '/info/contact-enquiry',
   },
 
 ];
