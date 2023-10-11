@@ -309,49 +309,17 @@ import {
               flexShrink={{ lg: 0 }}
               pb={12}
             >
-              <NextLink href="/pricing/our-prices">
-                  <Button
-                  as="a"
-                  variant="solid"
-                  colorScheme="whiteAlpha"
-                  textColor={useColorModeValue('green.600', 'white')}
-                  display="inline-flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow={'lg'}
-
-                  w={{
-                      base: "full",
-                      sm: "auto",
-                  }}
-                  mb={{
-                      base: 2,
-                      sm: 0,
-                  }}
-                  size="lg"
-                  cursor="pointer"
-                  >
-                  Tax Savings Calculator
-                  <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-                      <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                      />
-                  </Icon>
-                  </Button>
-                </NextLink>
               
 
                 <NextLink href="/info/contact-enquiry">
                     <Button
                     as="a"
-                    colorScheme="whiteAlpha"
+                    colorScheme="green"
                     display="inline-flex"
                     alignItems="center"
                     justifyContent="center"
                     shadow={'lg'}
-                    textColor={useColorModeValue('green.600', 'white')}
+                    textColor={'white'}
 
 
                     w={{

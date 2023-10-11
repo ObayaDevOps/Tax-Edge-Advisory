@@ -19,7 +19,7 @@ import {
 import { CheckIcon } from '@chakra-ui/icons'
 // import { ReactComponent as RndSvgIllustration } from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
 
-import   rndSvgIllustration  from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
+import rndSvgIllustration  from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
 import NextImage from 'next/image';
 
 
@@ -98,7 +98,7 @@ export default function CapitalAllowancePage() {
       <Container 
         maxW={{base:'1xl',md:'85vw'}} 
         py={12} 
-        minHeight={{md:'110vh'}}   
+        minHeight={{md:'110Fvh'}}   
         rounded='3xl' 
         shadow='2xl'    
         background="rgba(240,255,244,0.65)"
@@ -344,8 +344,7 @@ export default function CapitalAllowancePage() {
         Contact Us
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-        At Tax Edge Advisory, we are your trusted partners in navigating the complex landscape of capital investment reliefs.     
-          Our goal is to ensure your business maximises its financial potential by unlocking valuable tax savings through property capital allowances.
+        Contact Tax Edge Advisory today to schedule a consultation with our experienced tax professionals. Together, we can build a tax strategy that supports your innovation and growth.
         </Text>
         <Stack
             direction={{ base: "column", sm: "row" }}
@@ -357,8 +356,8 @@ export default function CapitalAllowancePage() {
                 <Button
                 as="a"
                 variant="solid"
-                colorScheme="whiteAlpha"
-                textColor={useColorModeValue('green.600', 'white')}
+                colorScheme="green"
+                textColor={'white'}
                 display="inline-flex"
                 alignItems="center"
                 justifyContent="center"
@@ -390,12 +389,12 @@ export default function CapitalAllowancePage() {
               <NextLink href="/info/contact-enquiry">
                   <Button
                   as="a"
-                  colorScheme="whiteAlpha"
+                  colorScheme="green"
                   display="inline-flex"
                   alignItems="center"
                   justifyContent="center"
                   shadow={'lg'}
-                  textColor={useColorModeValue('green.600', 'white')}
+                  textColor={ 'white'}
 
 
                   w={{

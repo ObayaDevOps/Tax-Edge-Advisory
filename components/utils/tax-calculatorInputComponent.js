@@ -72,7 +72,7 @@ export default function TaxCalculatorInputComponent () {
 
     let  userInput = 0;
     return (
-        <Box bg='white' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
+        <Box bg='green.300' mt={{base:-12,md: -20}}  p={{base:8,md: 16}} minW={{base:'65vw', md: '45vw'}} shadow='2xl' rounded='3xl' >
 
         <Container>
 
@@ -84,19 +84,20 @@ export default function TaxCalculatorInputComponent () {
                     paddingLeft={2}
                     bgColor="gray.100"
                     // opacity={0.15}
-                    background="rgba(192,192,192,0.1)"
+                    // background="rgba(192,192,192,0.1)"
+                    bg='green.100'
                     border='80px'
                     shadow={'md'}
                 >
 
-                    <Box ml={{md:4}} mt={{base: -2, md:4}} pt={{base:4, md: 1}}>
+                    <Box ml={{md:4}} mt={{base: -2, md:4}} pt={{base:4, md: 0}}>
                         <Center mt={8}>
                             {isExploding && <ConfettiExplosion duration={2500} particleCount={80} width={1000} color={'green'} />}
                         </Center>
                         <Text textAlign='center' fontSize={{base:'xl', md:'2xl', lg:'3xl'}}
                                                     w="full"
                                                     bgClip="text"
-                                                    bgGradient='linear(to-r, blackAlpha.800, green.600)'
+                                                    bgGradient='linear(to-r, green.600, green.600)'
                                                     fontWeight="extrabold"
                                                     transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
                         >
@@ -117,7 +118,7 @@ export default function TaxCalculatorInputComponent () {
                     </Box>
                 </Box>
 
-                <Box pt={{base: 6, md:10}}>
+                <Box pt={{base: 6, md:6}}>
                 <FormControl>
                     {/* <Select 
                     placeholder='Select Tax Type' 
@@ -128,10 +129,10 @@ export default function TaxCalculatorInputComponent () {
                         <option>Land Remediation Relief</option>
                     </Select> */}
 
-                    <FormLabel pt={2} >Incurred Expense (Overall) </FormLabel>
+                    <FormLabel fontSize='lg' pt={2} textColor='green.900' fontWeight={800} >Incurred Expense (Overall) </FormLabel>
                     <InputGroup>
                         <InputLeftAddon>£</InputLeftAddon>
-                        <Input size='md' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
+                        <Input bgColor='white' size='md' type='number' placeholder='Enter amount (£)' onChange={handleChange} value={inputValue} /> 
                         {/* I need this value entered to be console.logged */}
                     </InputGroup>
 
