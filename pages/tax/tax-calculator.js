@@ -25,7 +25,7 @@ import {
   
   import Head from 'next/head';
   import NextLink from 'next/link' 
-  import  TaxCalculator  from '../../components/utils/tax-calculatorInputComponent';
+import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorInputComponent';
 
  
  export default function TaxCalculatorPage() {
@@ -103,19 +103,17 @@ import {
 
                     {/* Calculator */}
                     <Center>
-                        <TaxCalculator />
+                        <TaxCalculatorInputComponent />
                     </Center>
 
 
 
                     <Box p={{base:4, md:20}}>
                         <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={10}>
-                        At Tax Edge Advisory we understand the importance of maximising your tax savings. That’s why we’ve developed an easy-to-use calculator to help you estimate your potential tax credits from three key UK tax incentives: Research and Development (R&D) tax credits,
-                        Embedded Capital Allowances, and Land Remediation Relief.                        
+                        Our calculator tool is designed to provide you with an approximate figure of the tax credits you could be eligible for based on your incurred expenditure for each incentive. Please note that the results provided by our calculator tool are approximate figures, and it’s essential to consult one of our tax advisors for a more accurate assessment tailored to your specific circumstances.
+                     
                         </Text>
-                        <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-                            Our calculator tool is designed to provide you with an approximate figure of the tax credits you could be eligible for based on your incurred expenditure for each incentive. Please note that the results provided by our calculator tool are approximate figures, and it’s essential to consult one of our tax advisors for a more accurate assessment tailored to your specific circumstances.                      
-                        </Text>
+
                     </Box>
 
                     </Stack>

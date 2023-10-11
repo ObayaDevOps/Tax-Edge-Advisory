@@ -75,7 +75,7 @@ export default function LargeWithNewsletter() {
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr  2fr' }}
           spacing={8}>
-          <Stack spacing={2}>
+          <Stack spacing={{base: 4,md:2}}>
             <Box>
               <Logo  />
             </Box>

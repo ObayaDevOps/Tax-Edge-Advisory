@@ -119,14 +119,14 @@ export default function TaxCalculatorInputComponent () {
 
                 <Box pt={{base: 6, md:10}}>
                 <FormControl>
-                    <Select 
+                    {/* <Select 
                     placeholder='Select Tax Type' 
                     variant='filled' size='lg'
                     >
                         <option>Research and Development Tax Credit</option>
                         <option>Embedded Capital Allowances</option>
                         <option>Land Remediation Relief</option>
-                    </Select>
+                    </Select> */}
 
                     <FormLabel pt={2} >Incurred Expense (Overall) </FormLabel>
                     <InputGroup>
@@ -148,9 +148,8 @@ export default function TaxCalculatorInputComponent () {
                     Calculate Tax Savings*
                 </Button>
 
-                <Button colorScheme='green' as="a" href='/info/contact-enquiry'
->
-                    FREE eligibility check!
+                <Button colorScheme='green' as="a" href='/info/contact-enquiry' whiteSpace='normal'>
+                    <Text textAlign='center' fontSize='sm'>Get in Contact for FREE eligibility check!</Text>
                 </Button>
 
                 <Text pt={{base: 2, md:1}}>
