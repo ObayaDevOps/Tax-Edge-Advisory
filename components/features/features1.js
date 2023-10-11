@@ -24,41 +24,52 @@ export default function App(){
 
   const Feature = (props) => {
     return (
-      <Flex py={10}>
-        <Flex shrink={0}>
-          <Icon
-            boxSize={5}
-            mt={1}
-            mr={2}
-            color="brand.500"
-            _dark={{ color: "brand.300" }}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            ></path>
-          </Icon>
-        </Flex>
-        <Box ml={4}>
-          <chakra.dt
-            fontSize="xl"
-            fontWeight="bold"
-            lineHeight="6"
-            _light={{ color: "green.800" }}
-          >
-          <Box>
-            <NextLink href={props.href}>{props.title}</NextLink>
+    <NextLink href={props.href}>
+      <Box
+      maxW='5xl' borderWidth='1px' borderRadius='xl' overflow='hidden'
+      padding={5}
+      paddingRight={{base:8,md:16}}
+      // bgColor="gray.100"
+      background="whiteAlpha.900"
+      >
+        <Flex py={8}>
+          <Flex shrink={0}>
+            <Icon
+              boxSize={5}
+              mt={1}
+              mr={2}
+              color="brand.500"
+              _dark={{ color: "brand.300" }}
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              ></path>
+            </Icon>
+          </Flex>
+          <Box ml={4}>
+            <chakra.dt
+              fontSize="xl"
+              fontWeight="bold"
+              lineHeight="6"
+              _light={{ color: "green.800" }}
+            >
+            <Box>
+              <NextLink href={props.href}>{props.title}</NextLink>
+            </Box>
+            </chakra.dt>
+            <chakra.dd mt={2} color="gray.700" _dark={{ color: "green.400" }}    fontSize="lg">
+              <NextLink href={props.href}>
+                <Box>{props.children}</Box></NextLink>
+            </chakra.dd>
           </Box>
-          </chakra.dt>
-          <chakra.dd mt={2} color="gray.700" _dark={{ color: "green.400" }}    fontSize="lg">
-            <NextLink href={props.href}>
-              <Box>{props.children}</Box></NextLink>
-          </chakra.dd>
+        </Flex>
+  
         </Box>
-      </Flex>
+      </NextLink>
     );
   };
 
@@ -99,6 +110,9 @@ export default function App(){
               fontWeight="semibold"
               letterSpacing="wide"
               fontSize={{ base: 'xl', sm: 'xl', md: '2xl' }}
+              textAlign={{ base: "center", sm: "left" }}
+              mb={{base:6,md:3}}
+
               lineHeight={'110%'}
               bgClip="text"
               bgGradient="linear(to-r, blackAlpha.900, green.500)"
@@ -106,7 +120,7 @@ export default function App(){
               Everything you need
             </chakra.h2>
             <chakra.h2
-              mb={3}
+              mb={{base:6,md:3}}
               fontSize={{ base: "3xl", md: "4xl" }}
               fontWeight="extrabold"
               textAlign={{ base: "center", sm: "left" }}

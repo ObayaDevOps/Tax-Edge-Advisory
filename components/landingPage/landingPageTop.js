@@ -34,14 +34,14 @@ export default function CallToActionWithIllustration() {
 
   return (
 <Box>
-  <Blur
+  {/* <Blur
     position={'absolute'}
     top={'60vh'}
     left={'40vw'}
     style={{ filter: 'blur(80px)' }}
-    />
+    /> */}
 
-    <Box pt={{md: 5}}  ref={ref1}>
+    <Box pt={{base: 8, md: 5}}  ref={ref1}>
     <Container 
       maxW={'85vw'} 
       rounded='3xl' 
@@ -55,10 +55,10 @@ export default function CallToActionWithIllustration() {
         py={{ base: 20, md: 16 }}
         >
         <Heading
-          fontSize={{ base: '3xl', sm: '7xl', md: '8xl' }}
+          fontSize={{ base: '6xl', sm: '7xl', md: '8xl' }}
           letterSpacing={'tight'}
           lineHeight={'110%'}
-
+          
           bgClip="text"
           bgGradient="linear(to-r, blackAlpha.900, green.500)"
           fontWeight="extrabold"
@@ -76,7 +76,7 @@ export default function CallToActionWithIllustration() {
         </Heading>
         <Text 
         color={useColorModeValue('green.900', 'gray.50')} maxW={{md: '3xl',lg:'5xl'}} 
-        fontSize={{ base: 'xl', sm: '4xl', md: '2xl' }} 
+        fontSize={{ base: 'lg', sm: '4xl', md: '2xl' }} 
         transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
         >
         Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
@@ -93,7 +93,7 @@ export default function CallToActionWithIllustration() {
             textColor={useColorModeValue('green.50', 'green.200')}
             alignItems="center"
             justifyContent="center"
-            mb={{ base: 2, sm: 0 }}
+            mb={{ base: 0, sm: 0 }}
             shadow={'xl'}
             size={'lg'}
             href='/tax/tax-calculator'
