@@ -30,7 +30,7 @@ export default function App(){
       padding={6}
       paddingRight={{base:8,md:16}}
       // bgColor="gray.100"
-      background="blackAlpha.100"
+      background="whiteAlpha.900"
       shadow='md'
       >
         <Flex py={8}>

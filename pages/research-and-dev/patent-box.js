@@ -10,6 +10,7 @@ import {
   chakra,
   Icon,
   HStack,
+  Center,
   VStack,
   useColorModeValue,
   UnorderedList,
@@ -21,6 +22,61 @@ import { CheckIcon } from '@chakra-ui/icons'
 
 import Head from 'next/head';
 import NextLink from 'next/link'
+import NextImage from 'next/image';
+
+
+import constructionIllustration  from '../../public/images/illustrations/undraw_under_construction_-46-pa.svg';
+import filesIllustration  from '../../public/images/illustrations/undraw_file_analysis_8k9b.svg';
+
+const features1 = [
+  {
+    id: 0,
+    title: 'One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.',
+    text: ''  },
+  
+];
+
+const secondFeatures2 = [
+  {
+    id: 1,
+    title: 'The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It`s a win-win situation – businesses thrive through innovation, and the government supports economic growth.' ,
+    text: ''  },
+  
+];
+
+const secondFeatures3 = [
+  {
+    id: 2,
+    title: 'Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position.',    text: ''  },
+  
+];
+
+const secondFeatures4 = [
+  {
+    id: 3,
+    title: 'Applying for Patent Box tax relief can be straightforward when done correctly. However, it`s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.',
+    text: ''  },
+  
+];
+
+const Illustration1 = (props) => {
+  return (
+    <Box>
+      <NextImage src={constructionIllustration} width={700} height={700} >
+      </NextImage>
+    </Box>
+  )
+}
+
+const Illustration2 = (props) => {
+  return (
+    <Box>
+      <NextImage src={filesIllustration} width={400} height={400} >
+      </NextImage>
+    </Box>
+  )
+}
+
 
 const features2 = [
   {
@@ -51,7 +107,7 @@ const features2 = [
 ];
 
 
-const features3 = [
+const qualifiedFeatures3 = [
   {
     id: 0,
     title: 'Hold qualifying patents or exclusive licences',
@@ -163,11 +219,11 @@ export default function CapitalAllowancePage() {
             bgGradient='linear(to-r, blackAlpha.800, green.500)'
             fontWeight="extrabold"
             fontSize={{ base: "3xl",md: "4xl",}}
-            pb={{base: 6, md: 0}}
+            pb={{base: 6, md: 3}}
           >
           Unlock the Power of Intellectual Property
           </Text>
-          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:12, md:2}} >
+          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:12, md:12}} >
             The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.        
             </Text>
           
@@ -181,7 +237,7 @@ export default function CapitalAllowancePage() {
           What is Patent Box Tax Relief?
           </Text>
           
-          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:6, md: 2}}>
+          <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:6, md: 12}}>
           The Patent Box is a UK government initiative designed to reward businesses that actively innovate and hold patents. This initiative offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability. Essentially, it rewards businesses for protecting their intellectual property.            </Text>
             
             
@@ -196,36 +252,63 @@ export default function CapitalAllowancePage() {
           </Text>
 
           <Container maxW={{md: '85vw'}} mt={2} >
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 1 }} spacing={8}>
-          {features2.map((feature) => (
-              <Box
-              maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
-              // padding={7}
-              py={10}
-              paddingRight={8}
-              paddingLeft={6}
-              bgColor="gray.100"
-              // opacity={0.15}
-              // background="rgba(192,192,192,0.15)"
-              background="white"
-              border='30px'
-              shadow={'xl'}
-              key={feature.id}
-              >
+            <Box
+              borderWidth='1px' 
+              borderRadius='xl' 
+              padding={8}
+              background="whiteAlpha.700"
+              mb={{base: 16,md:20}}
+            >
+            <Text
+                bgClip="text"
+                bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                fontWeight="extrabold"
+                fontSize={{ base: "2xl",md: "4xl",}}
+                p={{base: 4, lg:4}}
+            >
+            Reduced Corporate Tax
+            </Text>
 
-              <HStack  align={'top'} >
-                <Box color={'green.400'} px={4} >
-                  <Icon as={CheckIcon} />
-                </Box>
-                <VStack align={'start'}>
-                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
-                  <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
-                </VStack>
-              </HStack>
+            <Box  >
+            <SimpleGrid columns={{base: 1, md:2}}  >
+              <Center>
+                <Illustration2  />
+              </Center>
+              
+              <Box  mt={2} mb={{lg:20}} >
+                <SimpleGrid columns={1} spacing={6}>
+                  {features1.map((feature) => (
+                      <Box
+                      maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
+                      padding={3}
+                      paddingRight={{base:8,md:12}}
+                      // bgColor="gray.100"
+                      background="whiteAlpha.800"
+                      // border='30px'
+                      // shadow={'md'}
+                      key={feature.id}
+                      >
+                      <HStack  align={'flex-start'} >
+                        
+                        <Box color={'green.400'} px={2} >
+                          <Icon as={CheckIcon} />
+                        </Box>
+                        <VStack align={'start'}>
+                          <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
+                          <Text color={'black'}
+                          fontSize={'lg'}>{feature.text}</Text>
+                        </VStack>
+                      </HStack>
+                      </Box>
+                    ))}
+                </SimpleGrid>
               </Box>
-            ))}
-        </SimpleGrid>
+            </SimpleGrid>
+            </Box>
+        
+          </Box>
+
+
       </Container>
             
 
@@ -245,8 +328,8 @@ export default function CapitalAllowancePage() {
           To be eligible for Patent Box tax relief, your business must:
           </Text>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 1 }} spacing={8}>
-          {features3.map((feature) => (
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 1 }} spacing={8} pb={16}>
+          {qualifiedFeatures3.map((feature) => (
               <Box
               maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
               // padding={7}
@@ -276,25 +359,9 @@ export default function CapitalAllowancePage() {
             ))}
         </SimpleGrid>
 
-
-          <UnorderedList pb={{base: 20,md:0}}>
-            <ListItem>
-              <Text fontSize={{base:'xl', md: '2xl'}}>
-              Hold qualifying patents or exclusive licences
-              </Text>
-            </ListItem>
-            <ListItem>
-            <Text fontSize={{base:'xl', md: '2xl'}}>
-            Be liable to pay UK corporation tax
-              </Text>
-            </ListItem>
-            <ListItem>
-            <Text fontSize={{base:'xl', md: '2xl'}}>
-            Derive income from patented products or processes
-              </Text>
-            </ListItem>
-          </UnorderedList>
             
+
+
           <Text
             bgClip="text"
             bgGradient='linear(to-r, blackAlpha.800, green.500)'

@@ -54,6 +54,7 @@ export default function CallToActionWithIllustration() {
         spacing={{ base: 8, md: 5 }}
         py={{ base: 20, md: 16 }}
         >
+        <Container maxW={{base: '2xl', md:'3xl',lg:'5xl'}}  >
         <Heading
           fontSize={{ base: '6xl', sm: '7xl', md: '8xl' }}
           letterSpacing={'tight'}
@@ -74,15 +75,18 @@ export default function CallToActionWithIllustration() {
             made easy
           </Text>
         </Heading>
-        <Text 
-        color={useColorModeValue('green.900', 'gray.50')} maxW={{md: '3xl',lg:'5xl'}} 
-        fontSize={{ base: 'lg', sm: '4xl', md: '2xl' }} 
-        transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
-        >
-        Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
-        a focus on providing expert advice on UK tax incentives to businesses,
-        accountants, and other professional advisers.
-        </Text>
+        </Container>
+        <Container maxW={{base: 'xl', md:'3xl',lg:'5xl'}}  >
+            <Text 
+            color={useColorModeValue('green.900', 'gray.50')} 
+            fontSize={{ base: 'lg', sm: '4xl', md: '2xl' }} 
+            transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
+            >
+            Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
+            a focus on providing expert advice on UK tax incentives to businesses,
+            accountants, and other professional advisers.
+            </Text>
+        </Container>
 
 
         <Stack spacing={{base: 8, md: 12}} direction={{base:'column',md:'row'}} p={{md:6}}>

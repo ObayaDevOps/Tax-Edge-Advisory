@@ -61,23 +61,23 @@ export default function WithSubnavigation() {
         <Flex
           flex={{ base: 1, md: 'auto' }}
           // ml={{ base: -2 }}
-          p={6}
+          p={2}
           display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? <CloseIcon color='white' w={5} h={5} /> : <HamburgerIcon color='white' w={6} h={6} />
+              isOpen ? <CloseIcon color='white' w={5} h={5} /> : <HamburgerIcon color='white' w={5} h={5} />
             }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
 
-        <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }} ml={{base:-40, md: 0}} mt={{base:2}}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }} ml={{base:'-30vw', md: 0}} mt={{base:2}}>
           <Box mt={{lg: -2}}>
         <NextLink href='/#' passHref >
           <Link>
-              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={730/6} height={351/6} />
+              <NextImage src={colorMode === 'light' ? taxEdgeLogo:  taxEdgeLogo} width={730/7} height={351/7} />
           </Link>
         </NextLink>
         </Box>
