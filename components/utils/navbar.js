@@ -62,7 +62,8 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 'auto' }}
           // ml={{ base: -2 }}
           p={2}
-          display={{ base: 'flex', md: 'none' }}>
+          mt={{base: 1, md: 2}}
+          display={{ base: 'flex', md: 'flex', lg:'none' }}>
           <IconButton
             onClick={onToggle}
             icon={
@@ -73,7 +74,7 @@ export default function WithSubnavigation() {
           />
         </Flex>
 
-        <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }} ml={{base:'-30vw', md: 0}} mt={{base:2}}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }} ml={{base:'-30vw', md: '-20vw', lg:'5vw'}} mt={{base:2}}>
           <Box mt={{lg: -2}}>
         <NextLink href='/#' passHref >
           <Link>
@@ -83,7 +84,7 @@ export default function WithSubnavigation() {
         </Box>
 
 
-          <Flex display={{ base: 'none', md: 'flex' }} marginLeft={{lg:'7vw'}} >
+          <Flex display={{ base: 'none', md: 'none', lg: 'flex' }} marginLeft={{lg:'7vw'}} >
             <DesktopNav />
           </Flex>
         </Flex>
@@ -105,7 +106,7 @@ const DesktopNav = () => {
 
 
   return (
-    <Stack direction={'row'} spacing={4} paddingTop={{md:4}} >
+    <Stack direction={'row'} spacing={6} paddingTop={{lg:2}} >
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -203,7 +204,7 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue('whiteAlpha.600', 'black')}
       p={4}
-      display={{ md: 'none' }}>
+      display={{ lg: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}

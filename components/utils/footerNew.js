@@ -84,7 +84,7 @@ export default function LargeWithNewsletter() {
               <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>
                 <FaLinkedin />
               </SocialButton>
-              <Button as='a' href='https://www.dralegawebops.com/' size='sm' fontSize={{base:'sm',md:'xs'}} pt={{md: 1}}>
+              <Button as='a' href='https://www.dralegawebops.com/' size='sm' colorScheme='green' fontSize={{base:'xs',md:'xs'}} pt={{md: 1}}>
               Built by DWO
              </Button>
 
@@ -112,7 +112,7 @@ export default function LargeWithNewsletter() {
                 <Text fontSize={'lg'}>0700000000</Text>
             </Box>
             <Box>
-                <Text fontSize={'lg'}>Plot 64, Mayfair, London</Text>
+                <Text fontSize={'sm'}>Plot 64, Mayfair, London</Text>
             </Box>
 
 
