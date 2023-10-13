@@ -165,6 +165,8 @@ export default function CapitalAllowancePage() {
         <Head>
           <title>Capital Allowances | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
+          <link rel="icon" href="../public/images/icon/logo-black.svg" />
+
         </Head>
 
       <Container 

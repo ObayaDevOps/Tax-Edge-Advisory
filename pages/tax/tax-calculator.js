@@ -34,6 +34,8 @@ import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorIn
             <Head>
             <title>Tax Calculator | Tax Edge Advisory</title>
             <meta name="description" content="Tax Edge Advisory Webpage" />
+            <link rel="icon" href="../public/images/icon/logo-black.svg" />
+
             </Head>
 
             <Container 

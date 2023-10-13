@@ -105,6 +105,8 @@ const ArticleList = () => {
     <Box bg='blackAlpha.200' pt={6} pb={{base:12,md:20}}>
         <Head>
           <title>Research and Development Landing Page | Tax Edge Advisory</title>
+          <link rel="icon" href="../public/images/icon/logo-black.svg" />
+
           <meta name="description" content="Tax Edge Advisory Webpage" />
         </Head>
 

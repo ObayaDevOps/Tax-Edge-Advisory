@@ -47,6 +47,8 @@ import {
         <Head>
           <title>R&D Tax Credits | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
+          <link rel="icon" href="../public/images/icon/logo-black.svg" />
+
         </Head>
 
         <Box

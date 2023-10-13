@@ -12,6 +12,8 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
+import Head from 'next/head';
+
 
 const testimonials = [
   {
@@ -119,6 +121,13 @@ function TestimonialCard(props) {
 export default function GridBlurredBackdrop() {
   return (
       <Box bg='blackAlpha.200' py={6} >
+        <Head>
+        <title>Tax Edge Advisory Enquiry</title>
+        <meta name="description" content="Tax Edge Advisory Webpage" />
+        <link rel="icon" href="../public/images/icon/logo-black.svg" />
+
+      </Head>
+
         <Container 
             maxW={{base:'1xl',md:'85vw'}} 
             py={6} 
