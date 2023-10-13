@@ -25,8 +25,15 @@ import NextLink from 'next/link'
 import NextImage from 'next/image';
 
 
-import constructionIllustration  from '../../public/images/illustrations/undraw_under_construction_-46-pa.svg';
+import constructionIllustration  from '../../public/images/illustrations/undraw_visual_data_re_mxxo.svg';
 import filesIllustration  from '../../public/images/illustrations/undraw_projections_re_ulc6.svg';
+import filesIllustration2  from '../../public/images/illustrations/undraw_real_time_analytics_re_yliv.svg';
+import filesIllustration3  from '../../public/images/illustrations/undraw_investment_data_re_sh9x.svg';
+import filesIllustration4  from '../../public/images/illustrations/undraw_stock_prices_re_js33.svg';
+
+import filesIllustration5  from '../../public/images/illustrations/undraw_financial_data_re_p0fl.svg';
+import filesIllustration6  from '../../public/images/illustrations/undraw_term_sheet_re_ju7s.svg';
+
 
 
 const Illustration1 = (props) => {
@@ -41,16 +48,17 @@ const Illustration1 = (props) => {
 const Illustration2 = (props) => {
   return (
     <Box>
-      <NextImage src={filesIllustration} width={200} height={200} >
+      <NextImage src={constructionIllustration} width={400} height={400} >
       </NextImage>
     </Box>
   )
 }
 
+// start here
 const Illustration3 = (props) => {
   return (
     <Box>
-      <NextImage src={filesIllustration} width={400} height={400} >
+      <NextImage src={filesIllustration3} width={250} height={250} >
       </NextImage>
     </Box>
   )
@@ -60,7 +68,7 @@ const Illustration3 = (props) => {
 const Illustration4 = (props) => {
   return (
     <Box>
-      <NextImage src={filesIllustration} width={400} height={400} >
+      <NextImage src={filesIllustration2} width={250} height={250} >
       </NextImage>
     </Box>
   )
@@ -70,7 +78,7 @@ const Illustration4 = (props) => {
 const Illustration5 = (props) => {
   return (
     <Box>
-      <NextImage src={filesIllustration} width={400} height={400} >
+      <NextImage src={filesIllustration4} width={250} height={250} >
       </NextImage>
     </Box>
   )
@@ -80,7 +88,7 @@ const Illustration5 = (props) => {
 const Illustration6 = (props) => {
   return (
     <Box>
-      <NextImage src={filesIllustration} width={400} height={400} >
+      <NextImage src={filesIllustration5} width={250} height={250} >
       </NextImage>
     </Box>
   )
@@ -430,7 +438,7 @@ The Patent Box scheme encourages companies to invest in research and development
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration5  />
+                <Illustration6  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
@@ -492,7 +500,7 @@ The Patent Box scheme encourages companies to invest in research and development
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration6  />
+                <Illustration5  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
