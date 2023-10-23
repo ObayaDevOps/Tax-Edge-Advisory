@@ -275,7 +275,14 @@ const NAV_ITEMS = [
   },
   {
     label: 'Research & Development',
-    href: '/research-and-dev/research-and-dev-landing-page',
+    children: [
+      {
+        label: 'this.',
+        subLabel: "A Meditator's Journey. Reference and Perspective. Interactive",
+        href: '/tech/this',
+      },
+    ]
+    // href: '/research-and-dev/research-and-dev-landing-page',
   },
   {
     label: 'Capital Allowances',

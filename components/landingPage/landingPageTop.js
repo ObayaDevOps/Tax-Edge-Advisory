@@ -56,15 +56,15 @@ export default function CallToActionWithIllustration() {
         >
         <Container maxW={{base: '2xl', md:'3xl',lg:'5xl'}}  >
         <Heading
-          fontSize={{ base: '6xl', sm: '7xl', md: '8xl' }}
+          fontSize={{ base: '3xl', sm: '3xl', md: '4xl', lg:'7xl' }}
           letterSpacing={'tight'}
           lineHeight={'110%'}
           
           bgClip="text"
           bgGradient="linear(to-r, blackAlpha.900, green.500)"
           fontWeight="extrabold"
-          transition='all .65s ease' _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
-          >
+          transition='all .65s ease'
+                   >
           Tax affairs{' '}
           <Text as={'span'} color={'green.400'}
           bgClip="text"
@@ -79,7 +79,7 @@ export default function CallToActionWithIllustration() {
         <Container maxW={{base: 'xl', md:'3xl',lg:'5xl'}}  >
             <Text 
             color={useColorModeValue('green.900', 'gray.50')} 
-            fontSize={{ base: 'lg', sm: '4xl', md: '2xl' }} 
+            fontSize={{ base: 'lg', sm: '4xl', md: 'xl', lg:'xl' }} 
             transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
             >
             Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with

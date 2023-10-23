@@ -27,15 +27,15 @@ export default function App(){
     <NextLink href={props.href}>
       <Box
       maxW='5xl' borderWidth='1px' borderRadius='xl' overflow='hidden'
-      padding={6}
-      paddingRight={{base:8,md:16}}
+      padding={4}
+      paddingRight={{base:8,md:8}}
       // bgColor="gray.100"
       background="whiteAlpha.900"
       shadow='md'
       >
         <Flex py={8}>
           <Flex shrink={0}>
-            <Icon
+            {/* <Icon
               boxSize={5}
               mt={1}
               mr={2}
@@ -49,7 +49,7 @@ export default function App(){
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clipRule="evenodd"
               ></path>
-            </Icon>
+            </Icon> */}
           </Flex>
           <Box ml={4}>
             <chakra.dt
@@ -122,7 +122,7 @@ export default function App(){
             </chakra.h2>
             <chakra.h2
               mb={{base:6,md:3}}
-              fontSize={{ base: "3xl", md: "4xl" }}
+              fontSize={{ base: "3xl", md: "2xl" }}
               fontWeight="extrabold"
               textAlign={{ base: "center", sm: "left" }}
               _light={{ color: "black" }}
@@ -145,26 +145,26 @@ export default function App(){
             <Stack
               spacing={{ base: 10, md: 0 }}
               display={{ md: "grid" }}
-              gridTemplateColumns={{ md: "repeat(2,1fr)" }}
+              gridTemplateColumns={{ base:"repeat(2, 1fr)"  }}
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 12 }}
             >
               <Feature title="R&D Tax credits" href="/research-and-dev/tax-credits">
                 If your company invests in research and development activities, you may be sitting on a goldmine of tax-saving opportunities{" "}
               </Feature>
-              <Feature title="Patent Box tax relief" href="/research-and-dev/patent-box">
+              <Feature title="Patent Box Tax Relief" href="/research-and-dev/patent-box">
                 {" "}
                 Offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability - rewarding businesses for protecting their intellectual property
               </Feature>
-              <Feature title="Land remediation relief" href="/capital-allowance/capital-allowance-info">
+              <Feature title="Land Remediation Relief" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Provides financial benefits to companies for cleaning up contaminated or derelict land to encourage its redevelopment{" "}
               </Feature>
-              <Feature title="New property transactions" href="/capital-allowance/capital-allowance-info">
+              <Feature title="New Property Transactions" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Claim tax deductions on qualifying capital expenditures related to commercial buildings
               </Feature>
-              <Feature title="Refurbishments for existing property" href="/capital-allowance/capital-allowance-info">
+              <Feature title="Refurbishments for Existing Property" href="/capital-allowance/capital-allowance-info">
                 {" "}
                 Claim tax deductions on qualifying capital expenditures related to existing commercial buildings{" "}
               </Feature>

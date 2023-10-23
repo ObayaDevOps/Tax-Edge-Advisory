@@ -26,12 +26,8 @@ export default function Home() {
 
       <Box bg={'blackAlpha.200'}>
         <LandingPageTop />
-
-
         
         <Features1 />
-
-        {/* <ProjectCards /> */}
 
         <CallToActionBanner />
 
