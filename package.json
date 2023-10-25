@@ -20,6 +20,7 @@
     "formidable": "^2.0.1",
     "framer-motion": "^6.5.1",
     "lottie-react": "^2.4.0",
+    "n": "^9.2.0",
     "next": "12.1.4",
     "next-sanity": "^5.5.4",
     "nodemailer": "^6.7.4",
@@ -29,7 +30,7 @@
     "react-icons": "^4.3.1",
     "react-responsive-carousel": "^3.2.23",
     "react-typewriter-effect": "^1.1.0",
-    "sanity": "^3.16.7",
+    "sanity": "^3.18.1",
     "styled-components": "5.2"
   },
   "devDependencies": {
