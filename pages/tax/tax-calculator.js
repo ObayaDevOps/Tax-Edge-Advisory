@@ -27,8 +27,30 @@ import {
   import NextLink from 'next/link' 
 import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorInputComponent';
 
- 
- export default function TaxCalculatorPage() {
+
+import client from '../../sanityClient'
+
+
+  export async function getStaticProps(context) {
+    const taxCalculatorPageContent = await client.fetch(`
+    *[_type == "taxCalculatorPage"]`);
+
+    return {
+      props: {
+        taxCalculatorPageContent,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
+
+
+
+ export default function TaxCalculatorPage({taxCalculatorPageContent}) {
+    const pageContent  = taxCalculatorPageContent[0] || [];
+
+    console.log(pageContent.headingTopSmall)
+
      return (
         <Box bg="blackAlpha.200" pt={8} pb={12}>
             <Head>
@@ -65,7 +87,7 @@ import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorIn
                         fontSize={20}
                         textTransform={'uppercase'}
                         color={'green.400'}>
-                         Business tax savings
+                        {pageContent.headingTopSmall}
                         </chakra.h3>
                         <Heading
                         as={'h1'}
@@ -87,7 +109,7 @@ import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorIn
                             pt={8}
                             pb={6}
                             >
-                            Tax Relief Calculator
+                            {pageContent.headingMiddleLarge}
                             </Text>
                         </Heading>
                         <chakra.h2
@@ -97,8 +119,7 @@ import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorIn
                         fontSize={'lg'}
                         color={useColorModeValue('gray.500', 'gray.400')}
                         >
-                        See How Much 
-                        Tax Relief could you claim today!
+                        {pageContent.headingBottomSmall}
                         </chakra.h2>
                     </Box>
                     </Flex>
@@ -112,8 +133,8 @@ import TaxCalculatorInputComponent from '../../components/utils/tax-calculatorIn
 
                     <Box p={{base:4, md:20}}>
                         <Text  textAlign='center' color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={10}>
-                        Our calculator tool is designed to provide you with an approximate figure of the tax credits you could be eligible for based on your incurred expenditure for each incentive. Please note that the results provided by our calculator tool are approximate figures, and it’s essential to consult one of our tax advisors for a more accurate assessment tailored to your specific circumstances.
-                     
+                        {pageContent.lowerParagraphText}
+
                         </Text>
 
                     </Box>
