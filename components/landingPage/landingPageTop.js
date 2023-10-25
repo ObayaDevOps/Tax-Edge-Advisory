@@ -26,7 +26,9 @@ const TaxAnimation = () => {
 
 
 
-export default function CallToActionWithIllustration() {
+export default function CallToActionWithIllustration(props) {
+  const landingPageContent  = props.pageContent[0] || [];
+  
   const scaleFactor = 0.9;
 
   const ref1 = useRef(null)
@@ -65,14 +67,14 @@ export default function CallToActionWithIllustration() {
           fontWeight="extrabold"
           transition='all .65s ease'
                    >
-          Tax affairs{' '}
+          {landingPageContent.headingTopDark}{' '}
           <Text as={'span'} color={'green.400'}
           bgClip="text"
           bgGradient="linear(to-r, green.600, green.500)"
           fontWeight="extrabold"
           transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(110%)", }}
           >
-            made easy
+             {landingPageContent.headingTopLight}
           </Text>
         </Heading>
         </Container>
@@ -82,9 +84,7 @@ export default function CallToActionWithIllustration() {
             fontSize={{ base: 'lg', sm: '4xl', md: 'xl', lg:'xl' }} 
             transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(140%)", }}
             >
-            Tax Edge Advisory seeks to be a leading specialist tax consultancy firm with
-            a focus on providing expert advice on UK tax incentives to businesses,
-            accountants, and other professional advisers.
+             {landingPageContent.whatWeDoContentParagraph1} 
             </Text>
         </Container>
 
@@ -102,7 +102,7 @@ export default function CallToActionWithIllustration() {
             size={'lg'}
             href='/tax/tax-calculator'
             >
-            Calculate Tax Savings
+            {landingPageContent.buttonTextDark} 
             <Icon boxSize={4} ml={4} viewBox="0 0 20 20" fill="currentColor">
                       <path
                       fillRule="evenodd"
@@ -124,7 +124,7 @@ export default function CallToActionWithIllustration() {
             bg={'whiteAlpha.800'}
             href='/info/contact-enquiry'
           >
-            Get in Contact
+            {landingPageContent.buttonTextLight} 
             <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                     <path
                     fillRule="evenodd"

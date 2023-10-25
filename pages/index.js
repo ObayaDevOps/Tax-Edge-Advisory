@@ -14,8 +14,24 @@ import QualificationCard from '../components/qualificationCard'
 import Image from 'next/image'
 import CallToActionBanner from '../components/callToActionBanner'
 
+import client from '../sanityClient'
 
-export default function Home() {
+
+  export async function getStaticProps() {
+    const landingPageContent = await client.fetch(`
+    *[_type == "landingPage"]`);
+
+    return {
+      props: {
+        landingPageContent,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
+
+
+export default function Home(props) {
   return (
     <div >
       <Head>
@@ -25,13 +41,13 @@ export default function Home() {
       </Head>
 
       <Box bg={'blackAlpha.200'}>
-        <LandingPageTop />
+        <LandingPageTop pageContent={props.landingPageContent} />
         
-        <Features1 />
+        <Features1 pageContent={props.landingPageContent} />
 
-        <CallToActionBanner />
+        <CallToActionBanner pageContent={props.landingPageContent} />
 
-        <QualificationCard />
+        <QualificationCard pageContent={props.landingPageContent} />
       </Box>
 
     </div>

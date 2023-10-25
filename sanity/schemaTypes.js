@@ -11,7 +11,9 @@ import taxCalculatorPage from './schemas/taxCalculatorPageSchema'
 
 
 export const schema = {
-  types: [landingPage, rndOverarchingPage, taxCreditsPage, patentBoxPage, capitalAllowancePage, clientTestimonialsPage, contactUsPage, taxCalculatorPage ]
+  // types: [landingPage, rndOverarchingPage, taxCreditsPage, patentBoxPage, capitalAllowancePage, clientTestimonialsPage, contactUsPage, taxCalculatorPage ]
     
+  types: [landingPage]
+
   
 }

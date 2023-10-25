@@ -17,8 +17,20 @@ import { useInView } from "framer-motion";
 import NextImage from 'next/image'
 import IFAMasterLogo from '../public/images/qualification/IFA_Logo_Master_HR.png'
 
+import client from '../sanityClient'
+import imageUrlBuilder from '@sanity/image-url'
 
-export default function QualificationCard(){
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+  return builder.image(source)
+}
+
+
+export default function QualificationCard(props){
+  const landingPageContent  = props.pageContent[0] || [];
+  console.log(landingPageContent.socialProofImage)
+
   const scaleFactor = 0.9;
 
   const ref1 = useRef(null)
@@ -89,7 +101,7 @@ export default function QualificationCard(){
             mx="auto"
             rounded='3xl' 
           >
-            <NextImage src={IFAMasterLogo} width={(3531/5)} height={(1962/5)} />
+            <NextImage src={urlFor(landingPageContent.socialProofImage).url()}  width={(3531/5)} height={(1962/5)}  />
 
           </Box>
         </Flex>

@@ -28,148 +28,159 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'headingTop',
-      title: 'Heading Top',
+      name: 'headingTopDark',
+      title: 'Heading Top Dark',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'scrollingText1',
-      title: 'scrollingText1',
+      name: 'headingTopLight',
+      title: 'Heading Top Light',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'whatWeDoContentParagraph1',
+      title: 'What We Do Section Paragraph',
+      type: 'text',
+    }),
+
+    defineField({
+      name: 'buttonTextDark',
+      title: 'Button Text Dark',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-        name: 'scrollingText2',
-        title: 'scrollingText2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'scrollingText3',
-        title: 'scrollingText3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'scrollingText4',
-        title: 'scrollingText4',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+      name: 'buttonTextLight',
+      title: 'Button Text Light',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+
+
     defineField({
-        name: 'subheading',
-        title: 'SubHeading',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-    // defineField({
-    //   name: 'slug',
-    //   title: 'Slug',
-    //   type: 'slug',
-    //   options: {
-    //     source: 'title',
-    //     maxLength: 96,
-    //     isUnique: (value, context) => context.defaultIsUnique(value, context),
-    //   },
-    //   validation: (rule) => rule.required(),
-    // }),
-
-    //Top Background Image
+      name: 'featuresHeadingTop',
+      title: 'Features Heading Top',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
     defineField({
-        name: 'backgroundImage',
-        title: 'Background Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
+      name: 'featuresHeadingMiddle',
+      title: 'Features Heading Middle',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresHeadingBottom',
+      title: 'Features Heading Bottom',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'featuresBoxHeading1',
+      title: 'Features Box Heading 1',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxText1',
+      title: 'Features Text 1',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxHeading2',
+      title: 'Features Box Heading 2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxText2',
+      title: 'Features Text 2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    
+    defineField({
+      name: 'featuresBoxHeading3',
+      title: 'Features Box Heading 3',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxText3',
+      title: 'Features Text 3',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'featuresBoxHeading4',
+      title: 'Features Box Heading 4',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxText4',
+      title: 'Features Text 4',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'featuresBoxHeading5',
+      title: 'Features Box Heading 5',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'featuresBoxText5',
+      title: 'Features Text 5',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
 
 
 
-      //What we do
-      defineField({
-        name: 'whatWeDoTitle1',
-        title: 'What We Do Title 1',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph1',
-        title: 'What We Do Section Paragraph 1',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage1',
-        title: 'What We Do Section Image 1',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText1',
-        title: 'What We Do Button Text 1',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+
+
+    defineField({
+      name: 'callToActionText1',
+      title: 'Call To Action Text 1',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'callToActionText2',
+      title: 'Call To Action Text 2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'socialProofImage',
+      title: 'Social Proof Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
 
 
 
-      defineField({
-        name: 'whatWeDoTitle2',
-        title: 'What We Do Title 2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph2',
-        title: 'What We Do Section Paragraph 2',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage2',
-        title: 'What We Do Section Image 2',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText2',
-        title: 'What We Do Button Text 2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
 
 
 
-      defineField({
-        name: 'whatWeDoTitle3',
-        title: 'What We Do Title 3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph3',
-        title: 'What We Do Section Paragraph 3',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage3',
-        title: 'What We Do Section Image 3',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText3',
-        title: 'What We Do Button Text 3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
 
+
+
+   
 
 
 

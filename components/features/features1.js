@@ -17,7 +17,10 @@ import NextLink from 'next/link'
 
 
 
-export default function App(){
+export default function App(props){
+  const landingPageContent  = props.pageContent[0] || [];
+
+
   const ref1 = useRef(null)
   const isInView1 = useInView(ref1)
 
@@ -118,7 +121,8 @@ export default function App(){
               bgClip="text"
               bgGradient="linear(to-r, blackAlpha.900, green.500)"
             >
-              Everything you need
+              {landingPageContent.featuresHeadingTop}
+              
             </chakra.h2>
             <chakra.h2
               mb={{base:6,md:3}}
@@ -129,7 +133,7 @@ export default function App(){
               lineHeight="shorter"
               letterSpacing="tight"
             >
-              One stop shop for UK Tax Incentives
+              {landingPageContent.featuresHeadingMiddle}
             </chakra.h2>
             <chakra.p
               mb={{md:0, lg:6}}
@@ -138,7 +142,7 @@ export default function App(){
               color="green.900"
               _dark={{ color: "green.500" }}
             >
-              Click on a box to learn more about the incentive and how we can help you!
+              {landingPageContent.featuresHeadingBottom}
             </chakra.p>
           </Box>
           <GridItem colSpan={2}>
@@ -149,24 +153,24 @@ export default function App(){
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 12 }}
             >
-              <Feature title="R&D Tax credits" href="/research-and-dev/tax-credits">
-                If your company invests in research and development activities, you may be sitting on a goldmine of tax-saving opportunities{" "}
+              <Feature title={landingPageContent.featuresBoxHeading1} href="/research-and-dev/tax-credits">
+                {landingPageContent.featuresBoxText1}
               </Feature>
-              <Feature title="Patent Box Tax Relief" href="/research-and-dev/patent-box">
+              <Feature title={landingPageContent.featuresBoxHeading2} href="/research-and-dev/patent-box">
                 {" "}
-                Offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability - rewarding businesses for protecting their intellectual property
+                {landingPageContent.featuresBoxText2}
               </Feature>
-              <Feature title="Land Remediation Relief" href="/capital-allowance/capital-allowance-info">
+              <Feature title={landingPageContent.featuresBoxHeading3} href="/capital-allowance/capital-allowance-info">
                 {" "}
-                Provides financial benefits to companies for cleaning up contaminated or derelict land to encourage its redevelopment{" "}
+                {landingPageContent.featuresBoxText3}
               </Feature>
-              <Feature title="New Property Transactions" href="/capital-allowance/capital-allowance-info">
+              <Feature title={landingPageContent.featuresBoxHeading4} href="/capital-allowance/capital-allowance-info">
                 {" "}
-                Claim tax deductions on qualifying capital expenditures related to commercial buildings
+                {landingPageContent.featuresBoxText4}
               </Feature>
-              <Feature title="Refurbishments for Existing Property" href="/capital-allowance/capital-allowance-info">
+              <Feature title={landingPageContent.featuresBoxHeading5} href="/capital-allowance/capital-allowance-info">
                 {" "}
-                Claim tax deductions on qualifying capital expenditures related to existing commercial buildings{" "}
+                {landingPageContent.featuresBoxText5}
               </Feature>
             </Stack>
           </GridItem>

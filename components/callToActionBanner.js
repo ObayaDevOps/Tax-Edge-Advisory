@@ -4,7 +4,10 @@ import { chakra, Box, Flex, Stack, Button, Icon,  useColorModeValue
 import NextLink from 'next/link';
 
 
-export default function CallToActionBanner(){
+export default function CallToActionBanner(props){
+  const landingPageContent  = props.pageContent[0] || [];
+
+
   return (
     <Flex
       // bg="#edf3f8"
@@ -34,7 +37,9 @@ export default function CallToActionBanner(){
             color="gray.900"
             _dark={{ color: "gray.100" }}
           >
-            <chakra.span display="block">Ready to dive in?</chakra.span>
+            <chakra.span display="block">
+            {landingPageContent.callToActionText1}
+            </chakra.span>
             <chakra.span
               display="block"
               // color="brand.600"
@@ -43,7 +48,7 @@ export default function CallToActionBanner(){
             bgGradient="linear(to-r, green.900, green.300)"
             pr={10}
             >
-              Calculate your Tax Savings today!
+              {landingPageContent.callToActionText2}
             </chakra.span>
           </chakra.h2>
           <Stack
