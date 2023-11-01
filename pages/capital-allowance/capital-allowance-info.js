@@ -293,8 +293,6 @@ export default function CapitalAllowancePage() {
             <Illustration2  />
           </Center>
 
-
-
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
               {features1.map((feature) => (

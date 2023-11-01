@@ -14,7 +14,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaCodepen, FaCode } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 
 import NextLink from 'next/link'
@@ -84,6 +84,14 @@ export default function LargeWithNewsletter() {
               <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>
                 <FaLinkedin />
               </SocialButton>
+              <SocialButton label={'SanityStudioBackend'} href={'http://localhost:3000/studio/'}>
+                <FaCodepen />
+              </SocialButton>
+              <SocialButton label={'SanityManageBackend'} href={'https://www.sanity.io/manage/personal/project/7bjw1raj'}>
+                <FaCode />
+              </SocialButton>
+
+
               <Button as='a' href='https://www.dralegawebops.com/' size='sm' colorScheme='green' fontSize={{base:'xs',md:'xs'}} pt={{md: 1}}>
               Built by DWO
              </Button>
