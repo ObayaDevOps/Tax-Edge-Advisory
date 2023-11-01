@@ -27,152 +27,129 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+
     defineField({
-      name: 'headingTop',
-      title: 'Heading Top',
+      name: 'headingTopSmall',
+      title: 'Heading Top Small',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'scrollingText1',
-      title: 'scrollingText1',
+      name: 'headingMiddleLarge',
+      title: 'Heading Middle Large',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),   
+    defineField({
+      name: 'headingBottomSmall',
+      title: 'Heading Bottom Small',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'pageImage',
+      title: 'Page Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+
+    defineField({
+      name: 'section1Heading',
+      title: 'Section 1 Heading',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-        name: 'scrollingText2',
-        title: 'scrollingText2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'scrollingText3',
-        title: 'scrollingText3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'scrollingText4',
-        title: 'scrollingText4',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+      name: 'section1Paragraph1',
+      title: 'Section 1 Paragraph 1',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+
     defineField({
-        name: 'subheading',
-        title: 'SubHeading',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-    // defineField({
-    //   name: 'slug',
-    //   title: 'Slug',
-    //   type: 'slug',
-    //   options: {
-    //     source: 'title',
-    //     maxLength: 96,
-    //     isUnique: (value, context) => context.defaultIsUnique(value, context),
-    //   },
-    //   validation: (rule) => rule.required(),
-    // }),
-
-    //Top Background Image
+      name: 'section2Heading',
+      title: 'Section 2 Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
     defineField({
-        name: 'backgroundImage',
-        title: 'Background Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
+      name: 'section2Paragraph1',
+      title: 'Section 2 Paragraph 1',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'section3Heading',
+      title: 'Section 3 Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
 
 
-
-      //What we do
-      defineField({
-        name: 'whatWeDoTitle1',
-        title: 'What We Do Title 1',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph1',
-        title: 'What We Do Section Paragraph 1',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage1',
-        title: 'What We Do Section Image 1',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText1',
-        title: 'What We Do Button Text 1',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+    //Features Boxes - TODO
 
 
-
-      defineField({
-        name: 'whatWeDoTitle2',
-        title: 'What We Do Title 2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph2',
-        title: 'What We Do Section Paragraph 2',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage2',
-        title: 'What We Do Section Image 2',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText2',
-        title: 'What We Do Button Text 2',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+    defineField({
+      name: 'section4Heading',
+      title: 'Section 4 Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'section4Paragraph',
+      title: 'Section 4 Paragraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
 
 
-
-      defineField({
-        name: 'whatWeDoTitle3',
-        title: 'What We Do Title 3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
-      defineField({
-        name: 'whatWeDoContentParagraph3',
-        title: 'What We Do Section Paragraph 3',
-        type: 'text',
-      }),
-      defineField({
-        name: 'whoWeDoImage3',
-        title: 'What We Do Section Image 3',
-        type: 'image',
-        options: {
-          hotspot: true,
-        }
-      }),
-      defineField({
-        name: 'whatWeDoButtonText3',
-        title: 'What We Do Button Text 3',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
+    defineField({
+      name: 'section5Heading',
+      title: 'Section 5 Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'section5Paragraph',
+      title: 'Section 5 Paragraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
 
 
+    defineField({
+      name: 'section6Heading',
+      title: 'Section 6 Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'section6Paragraph',
+      title: 'Section 6 Paragraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+    //Features Grid - TODO
 
 
+    defineField({
+      name: 'contactUsHeading',
+      title: 'Contact Us Heading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'contactUsParagraph',
+      title: 'Contact Us Paragraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
 
 
 

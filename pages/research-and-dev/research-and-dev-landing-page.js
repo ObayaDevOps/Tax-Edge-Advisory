@@ -30,6 +30,9 @@ import devIllustration  from '../../public/images/illustrations/undraw_version_c
 import NextLink from 'next/link'
 import Head from 'next/head'
 
+import client from '../../sanityClient'
+
+
 const features1 = [
   {
     id: 0,
@@ -92,7 +95,25 @@ const Illustration3 = (props) => {
 }
 
 
-const ArticleList = () => {
+export async function getStaticProps(context) {
+  const rndLandingPageContent = await client.fetch(`
+  *[_type == "rndLandingPage"]`);
+
+  return {
+    props: {
+      rndLandingPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
+
+export default function ArticleList ({rndLandingPageContent}) {
+  const pageContent  = rndLandingPageContent[0] || [];
+
+  console.log(pageContent.headingTopSmall)
+
   return (
 
     <Box bg='blackAlpha.200' pt={6} pb={{base:12,md:20}}>
@@ -528,4 +549,3 @@ const ArticleList = () => {
 
 
 
-export default ArticleList

@@ -32,14 +32,13 @@ import environmentsIllustration  from '../../public/images/illustrations/undraw_
 import negotiateIllustration  from '../../public/images/illustrations/undraw_interview_re_e5jn.svg';
 
 
-
 import NextImage from 'next/image';
-
-
-
 
 import Head from 'next/head';
 import NextLink from 'next/link'
+
+import client from '../../sanityClient'
+
 
 const features1 = [
   {
@@ -159,13 +158,32 @@ const features7 = [
 
 
 
-export default function CapitalAllowancePage() {
+export async function getStaticProps(context) {
+  const capitalAllowancePageContent = await client.fetch(`
+  *[_type == "capitalAllowancePage"]`);
+
+  return {
+    props: {
+      capitalAllowancePageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
+
+export default function CapitalAllowancePage({capitalAllowancePageContent}) {
+  const pageContent  = capitalAllowancePageContent[0] || [];
+
+  console.log(pageContent.headingTopSmall)
+
   return (
     <Box bg="blackAlpha.200" pt={8} pb={12}>
         <Head>
           <title>Capital Allowances | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
-          <link rel="icon" href="../public/images/icon/logo-black.svg" />
+          <link rel="shortcut icon" href="../../public/images/icon/logo-black.svg"></link>
+
 
         </Head>
 

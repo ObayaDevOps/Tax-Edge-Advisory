@@ -22,12 +22,11 @@ import { CheckIcon } from '@chakra-ui/icons'
 import rndSvgIllustration  from '../../public/images/illustrations/undraw_maker_launch_re_rq81.svg';
 import NextImage from 'next/image';
 
-
-
-
-
 import Head from 'next/head';
 import NextLink from 'next/link'
+
+import client from '../../sanityClient'
+
 
 const features1 = [
   {
@@ -85,15 +84,32 @@ const features2 = [
     },
 ];
 
+export async function getStaticProps(context) {
+  const taxCreditsPageContent = await client.fetch(`
+  *[_type == "taxCreditsPage"]`);
+
+  return {
+    props: {
+      taxCreditsPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
 
 
-export default function CapitalAllowancePage() {
+
+
+export default function TaxCreditsPage({taxCreditsPageContent}) {
+  const pageContent  = taxCreditsPageContent[0] || [];
+
+  console.log(pageContent.headingTopSmall)
+
   return (
     <Box bg="blackAlpha.200" pt={8} pb={12}>
         <Head>
           <title>Research and Development Tax Credits | Tax Edge Advisory</title>
           <meta name="description" content="Tax Edge Advisory Webpage" />
-          <link rel="icon" href="../public/images/icon/logo-black.svg" />
+          <link rel="icon" href="../../public/images/icon/logo-black.svg" />
 
         </Head>
 

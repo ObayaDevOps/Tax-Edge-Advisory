@@ -1,5 +1,5 @@
 import landingPage from './schemas/landingPageSchema'
-import rndOverarchingPage from './schemas/rndOverarchingPageSchema'
+import rndLandingPage from './schemas/rndLandingPageSchema'
 import taxCreditsPage from './schemas/taxCreditsPageSchema'
 import patentBoxPage from './schemas/patentBoxPageSchema'
 import capitalAllowancePage from './schemas/capitalAllowancePageSchema'
@@ -11,9 +11,9 @@ import taxCalculatorPage from './schemas/taxCalculatorPageSchema'
 
 
 export const schema = {
-  // types: [landingPage, rndOverarchingPage, taxCreditsPage, patentBoxPage, capitalAllowancePage, clientTestimonialsPage, contactUsPage, taxCalculatorPage ]
+  // types: [landingPage, rndLandingPage, taxCreditsPage, patentBoxPage, capitalAllowancePage, clientTestimonialsPage, contactUsPage, taxCalculatorPage ]
     
-  types: [landingPage, taxCalculatorPage]
+  types: [landingPage, taxCalculatorPage, capitalAllowancePage, rndLandingPage, taxCreditsPage, patentBoxPage, contactUsPage]
 
   
 }

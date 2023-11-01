@@ -46,6 +46,15 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+
+    defineField({
+      name: 'pageImage',
+      title: 'Page Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
    
 
     defineField({
@@ -56,19 +65,19 @@ export default defineType({
     }),
 
     defineField({
-      name: 'introductionParagraph 1',
+      name: 'introductionParagraph1',
       title: 'Introduction Paragraph 1',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'introductionParagraph 2',
+      name: 'introductionParagraph2',
       title: 'Introduction Paragraph 2',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'introductionParagraph 3',
+      name: 'introductionParagraph3',
       title: 'Introduction Paragraph 3',
       type: 'string',
       validation: (rule) => rule.required(),
