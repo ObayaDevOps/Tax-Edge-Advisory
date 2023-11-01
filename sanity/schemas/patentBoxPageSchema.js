@@ -91,7 +91,95 @@ export default defineType({
     }),
 
 
-    //Features Boxes - TODO
+    //Features Boxes - TODO Section3
+    defineField({
+      name: 'subsectionHeading1',
+      title: 'SubSection Heading 1',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subsectionImage1',
+      title: 'Subsection Image 1',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subsectionParagraph1',
+      title: 'SubSection Paragraph 1',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subsectionHeading2',
+      title: 'SubSection Heading 2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subsectionImage2',
+      title: 'Subsection Image 2',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subsectionParagraph2',
+      title: 'SubSection Paragraph 2',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subsectionHeading3',
+      title: 'SubSection Heading 3',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subsectionImage3',
+      title: 'Subsection Image 3',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subsectionParagraph3',
+      title: 'SubSection Paragraph 3',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subsectionHeading4',
+      title: 'SubSection Heading 4',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subsectionImage4',
+      title: 'Subsection Image 4',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subsectionParagraph4',
+      title: 'SubSection Paragraph 4',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+
+
 
 
     defineField({
@@ -100,6 +188,16 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'sectionArray1',
+      title: 'Section Array1',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+
     defineField({
       name: 'section4Paragraph',
       title: 'Section 4 Paragraph',
@@ -126,6 +224,13 @@ export default defineType({
       name: 'section6Heading',
       title: 'Section 6 Heading',
       type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'SectionArray2',
+      title: 'Section Array2',
+      type: 'array',
+      of: [{type: 'string'}],
       validation: (rule) => rule.required(),
     }),
     defineField({

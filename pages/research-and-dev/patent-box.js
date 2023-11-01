@@ -24,6 +24,10 @@ import Head from 'next/head';
 import NextLink from 'next/link'
 import NextImage from 'next/image';
 
+import client from '../../sanityClient'
+import imageUrlBuilder from '@sanity/image-url'
+
+
 
 import constructionIllustration  from '../../public/images/illustrations/undraw_visual_data_re_mxxo.svg';
 import filesIllustration  from '../../public/images/illustrations/undraw_projections_re_ulc6.svg';
@@ -93,7 +97,6 @@ const Illustration6 = (props) => {
     </Box>
   )
 }
-
 
 
 const features2 = [
@@ -171,7 +174,34 @@ const qualifiedFeatures4 = [
 ];
 
 
-export default function PatentBoxPage() {
+
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+  return builder.image(source)
+}
+
+
+
+export async function getStaticProps(context) {
+  const patentBoxPageContent = await client.fetch(`
+  *[_type == "patentBoxPage"]`);
+
+  return {
+    props: {
+      patentBoxPageContent,
+    },
+    revalidate: 10, //In seconds
+  };
+}
+
+
+
+export default function PatentBoxPage({patentBoxPageContent}) {
+  const pageContent  = patentBoxPageContent[0] || [];
+
+
   return (
     <Box bg="blackAlpha.200" pt={6} pb={12}>
         <Head>
@@ -208,7 +238,7 @@ export default function PatentBoxPage() {
                 fontSize={20}
                 textTransform={'uppercase'}
                 color={'green.400'}>
-                Tax Information Series
+                  {pageContent.headingTopSmall}
               </chakra.h3>
               <Heading
                 as={'h1'}
@@ -229,8 +259,7 @@ export default function PatentBoxPage() {
                     transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
                     py={10}
                   >
-                    Maximising Your Benefits with Patent Box Tax Relief
-
+                    {pageContent.headingMiddleLarge}
                   </Text>
                 </Heading>
               <chakra.h2
@@ -240,7 +269,7 @@ export default function PatentBoxPage() {
                 fontSize={'lg'}
                 color={useColorModeValue('gray.500', 'gray.400')}
                 >
-                See why our clients have chosen Tax Edge Advisory
+                  {pageContent.headingBottomSmall}
               </chakra.h2>
             </Box>
             </Flex>
@@ -259,10 +288,10 @@ export default function PatentBoxPage() {
             fontSize={{ base: "3xl",md: "4xl",}}
             pb={{base: 6, md: 3}}
           >
-          Unlock the Power of Intellectual Property
+            {pageContent.section1Heading}
           </Text>
           <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:12, md:12}} >
-            The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.        
+            {pageContent.section1Paragraph1}
             </Text>
           
             <Text
@@ -272,11 +301,12 @@ export default function PatentBoxPage() {
             fontSize={{ base: "3xl",md: "4xl",}}
             py={4}
           >
-          What is Patent Box Tax Relief?
+            {pageContent.section2Heading}
           </Text>
           
           <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={{base:6, md: 12}}>
-          The Patent Box is a UK government initiative designed to reward businesses that actively innovate and hold patents. This initiative offers significant tax incentives, allowing eligible companies to reduce their corporate tax liability. Essentially, it rewards businesses for protecting their intellectual property.            </Text>
+            {pageContent.section2Paragraph1}
+          </Text>
             
             
             <Text
@@ -286,7 +316,7 @@ export default function PatentBoxPage() {
             fontSize={{ base: "3xl",md: "4xl",}}
             py={4}
           >
-          Benefits of Patent Box Tax Relief
+            {pageContent.section3Heading}
           </Text>
 
           <Container maxW={{md: '85vw'}} mt={2} >
@@ -304,13 +334,14 @@ export default function PatentBoxPage() {
                 fontSize={{ base: "2xl",md: "4xl",}}
                 p={{base: 4, lg:4}}
             >
-            Reduced Corporate Tax
+              {pageContent.subsectionHeading1}
+            
             </Text>
 
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration3  />
+                <NextImage src={urlFor(pageContent.subsectionImage1).url()}  width={250} height={250}  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
@@ -336,7 +367,7 @@ export default function PatentBoxPage() {
                           </Text>
                           <Text color={'black'}
                           fontSize={'lg'}>
-                            One of the primary benefits of Patent Box tax relief is a reduced corporate tax rate. Qualifying profits derived from patented products or processes are taxed at a lower rate than standard corporate tax rates, potentially leading to substantial tax savings.          
+                            {pageContent.subsectionParagraph1}
                             </Text>
                         </VStack>
                       </HStack>
@@ -368,13 +399,13 @@ export default function PatentBoxPage() {
                 fontSize={{ base: "2xl",md: "4xl",}}
                 p={{base: 4, lg:4}}
             >
-            Encouragement for Innovation
+              {pageContent.subsectionHeading2}
             </Text>
 
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration4  />
+                <NextImage src={urlFor(pageContent.subsectionImage2).url()}  width={250} height={250}  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
@@ -400,7 +431,8 @@ export default function PatentBoxPage() {
                           </Text>
                           <Text color={'black'}
                           fontSize={'lg'}>
-The Patent Box scheme encourages companies to invest in research and development, as the financial benefits make innovation more appealing. It&#x27;s a win-win situation – businesses thrive through innovation, and the government supports economic growth.                            </Text>
+                            {pageContent.subsectionParagraph2}
+                          </Text>
                         </VStack>
                       </HStack>
                       </Box>
@@ -432,13 +464,13 @@ The Patent Box scheme encourages companies to invest in research and development
                 fontSize={{ base: "2xl",md: "4xl",}}
                 p={{base: 4, lg:4}}
             >
-            Competitive Advantage
+              {pageContent.subsectionHeading3}
             </Text>
 
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration6  />
+                <NextImage src={urlFor(pageContent.subsectionImage3).url()}  width={250} height={250}  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
@@ -464,13 +496,11 @@ The Patent Box scheme encourages companies to invest in research and development
                           </Text>
                           <Text color={'black'}
                           fontSize={'lg'}>
-                            Holding patents can provide a competitive edge by protecting your unique ideas and inventions. With Patent Box, you not only safeguard your innovations but also gain tax advantages, strengthening your market position.                            </Text>
+                            {pageContent.subsectionParagraph3}
+                            </Text>
                         </VStack>
                       </HStack>
                       </Box>
-
-                      
-
 
                 </SimpleGrid>
               </Box>
@@ -494,13 +524,13 @@ The Patent Box scheme encourages companies to invest in research and development
                 fontSize={{ base: "2xl",md: "4xl",}}
                 p={{base: 4, lg:4}}
             >
-            Streamlined Application Process
+              {pageContent.subsectionHeading4}
             </Text>
 
             <Box  >
             <SimpleGrid columns={{base: 1, md:2}}  >
               <Center>
-                <Illustration5  />
+                <NextImage src={urlFor(pageContent.subsectionImage4).url()}  width={250} height={250}  />
               </Center>
               
               <Box  mt={2} mb={{lg:20}} >
@@ -526,7 +556,8 @@ The Patent Box scheme encourages companies to invest in research and development
                           </Text>
                           <Text color={'black'}
                           fontSize={'lg'}>
-Applying for Patent Box tax relief can be straightforward when done correctly. However, it&#x27;s crucial to understand the eligibility criteria and ensure your business meets the necessary requirements to maximise your benefits.                            </Text>
+                            {pageContent.subsectionParagraph4}
+                          </Text>
                         </VStack>
                       </HStack>
                       </Box>
@@ -555,15 +586,15 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
             fontSize={{ base: "3xl",md: "4xl",}}
             py={4}
           >
-          Who Qualifies for Patent Box?
+            {pageContent.section4Heading}
           </Text>
           
           <Text color={'black'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-          To be eligible for Patent Box tax relief, your business must:
+            {pageContent.section4Paragraph}
           </Text>
 
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} pb={16}>
-          {qualifiedFeatures3.map((feature) => (
+          {pageContent.sectionArray1.map((feature) => (
               <Box
               maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
               padding={8}
@@ -586,7 +617,7 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
                 <VStack align={'start'}>
                   <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
                   <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
+                  fontSize={'lg'}>{feature}</Text>
                 </VStack>
               </HStack>
               </Box>
@@ -603,11 +634,11 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
             fontSize={{ base: "3xl",md: "4xl",}}
             py={4}
           >
-          How Can Tax Edge Advisory Help?
+            {pageContent.section5Heading}
           </Text>
           
           <Text color={'black'} fontSize={{base:'2xl', md: '2xl'}} pb={{base:6, md:2}}>
-          Navigating the intricacies of tax incentives like the Patent Box scheme can be challenging. That&apos;s where Tax Edge Advisory comes in. Our team of experts specialises in helping businesses like yours make the most of tax relief opportunities.
+            {pageContent.section5Paragraph}
           </Text>
           <Text
             bgClip="text"
@@ -616,11 +647,11 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
             fontSize={{ base: "2xl",md: "4xl",}}
             py={4}
           >
-          We provide:
+            {pageContent.section6Heading}
           </Text>
 
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} pb={16}>
-          {qualifiedFeatures4.map((feature) => (
+          {pageContent.SectionArray2.map((feature) => (
               <Box
               maxW='7xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
               padding={8}
@@ -643,7 +674,7 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
                 <VStack align={'start'}>
                   <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
                   <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
+                  fontSize={'lg'}>{feature}</Text>
                 </VStack>
               </HStack>
               </Box>
@@ -652,7 +683,7 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
 
             
           <Text color={'black'} fontSize={'2xl'} pb={2}>
-          Let us help you harness the power of Patent Box tax relief to drive innovation, reduce your tax liability, and enhance your competitive advantage.
+            {pageContent.section6Paragraph}
           </Text>
 
             
@@ -663,10 +694,11 @@ Applying for Patent Box tax relief can be straightforward when done correctly. H
               fontWeight="extrabold"
               fontSize={{ base: "4xl",md: "4xl",}}
               pb={2}>
-          Contact Us
+                {pageContent.contactUsHeading}
           </Text>
           <Text color={'black'} fontSize={'2xl'} pb={6}>
-          Ready to explore the benefits of Patent Box tax relief for your business? Contact Tax Edge Advisory today to schedule a consultation with our experienced tax professionals. Together, we can build a tax strategy that supports your innovation and growth.
+            
+            {pageContent.contactUsParagraph}
           </Text>
           <Stack
               direction={{ base: "column", sm: "row" }}

@@ -26,6 +26,15 @@ import Head from 'next/head';
 import NextLink from 'next/link'
 
 import client from '../../sanityClient'
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+  return builder.image(source)
+}
+
+
 
 
 const features1 = [
@@ -139,7 +148,7 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
               fontSize={20}
               textTransform={'uppercase'}
               color={'green.400'}>
-              Research & Development Series
+                {pageContent.headingTopSmall}
             </chakra.h3>
             <Heading
               as={'h1'}
@@ -161,7 +170,7 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
                   pt={8}
                   pb={6}
                 >
-                  Research and Development Tax Credits
+                  {pageContent.headingMiddleLarge}
                 </Text>
               </Heading>
             <chakra.h2
@@ -171,13 +180,13 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
               fontSize={'lg'}
               color={useColorModeValue('gray.500', 'gray.400')}
               >
-             Incentives for Innovation and Investment in R&D
+                {pageContent.headingBottomSmall}
             </chakra.h2>
           </Box>
           </Flex>
 
         <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md: 24}}>
-          <Illustration2 height={{ sm: '24rem', lg: '30vh' }} mt={{ base: 0, md:-8 }} mb={{base:12,md: 5}} />
+          <NextImage src={urlFor(pageContent.pageImage).url()}  width={(3531/5)} height={(1962/5)}  />
         </SimpleGrid>
 
         </Stack>
@@ -189,16 +198,14 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
           fontSize={{ base: "4xl",md: "4xl",}}
           pb={4}
         >
-          Summary
+          {pageContent.introductionHeading}
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-          R&D tax credits are a valuable incentive introduced by the UK government to encourage
-          innovation and investment in research and development activities.
+          {pageContent.introductionParagraph1}
+
          </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-          They provide businesses
-          with tax relief or cash credits for a portion of their eligible R&D expenditures, fostering growth
-          and competitiveness within the UK economy.
+          {pageContent.introductionParagraph2}
         </Text>
       </Box>
 
@@ -208,20 +215,20 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
           fontWeight="extrabold"
           fontSize={{ base: "4xl",md: "4xl",}}
       >
-        Eligible R&D Activities
+        {pageContent.section1Heading}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
-        To qualify for R&D tax credits, a project must involve the creation or improvement of a product, process, or service through the resolution of scientific or technological uncertainties.
+        {pageContent.section1Paragraph1}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-          Examples of potentially qualifying activities include:
+        {pageContent.section1Paragraph2}
       </Text>
 
 
 {/* make this a sexy card - get your money bitch */}
       <Container maxW={{md: '85vw'}} mt={2} >
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-          {features1.map((feature) => (
+          {pageContent.subSection1Array1.map((feature) => (
               <Box
               maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
               padding={8}
@@ -245,7 +252,7 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
                 <VStack align={'start'}>
                   <Text color={'black'} fontWeight={200} fontSize={'xl'} textAlign='center'>{feature.title}</Text>
                   <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
+                  fontSize={'lg'}>{feature}</Text>
                 </VStack>
               </VStack>
               </Box>
@@ -255,7 +262,7 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
 
 
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} py={16}>
-        Please note that this is not an exhaustive list, and eligibility will depend on the specifics of each project.
+        {pageContent.section1Paragraph3}
       </Text>
 
       <Text
@@ -266,19 +273,19 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
           pt={12}
           pb={8}
       >
-        R&D Tax Credit Report
+        {pageContent.section2Heading}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-        An essential component of the R&D tax credit claim process is the preparation of a comprehensive report that details the project, its objectives, the scientific or technological uncertainties it aims to address, and the eligible R&D costs incurred. 
+        {pageContent.section2Paragraph1}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={8}>
-        The report should include the following sections:
+        {pageContent.section2Paragraph2}
       </Text>
       
       
       <Container maxW={{md: '85vw'}} mt={2} >
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-          {features2.map((feature) => (
+          {pageContent.subSectionArray2.map((feature) => (
               <Box
               maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
               // padding={7}
@@ -299,9 +306,9 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
                   <Icon as={CheckIcon} />
                 </Box>
                 <VStack align={'start'}>
-                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.title}</Text>
+                  <Text color={'black'} fontWeight={800} fontSize={'xl'}>{feature.featureTitle}</Text>
                   <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
+                  fontSize={'lg'}>{feature.featureText}</Text>
                 </VStack>
               </HStack>
               </Box>
@@ -317,13 +324,13 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
           pt={24}
           pb={8}
       >
-        UK R&D Tax Credit Scheme
+        {pageContent.section3Heading}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
-        In the UK, there are two primary R&D tax credit schemes: the Small and Medium-sized Enterprises (SME) scheme and the Research and Development Expenditure Credit (RDEC) scheme, designed for larger companies. The SME scheme offers more generous benefits but has specific eligibility criteria based on the company’s size, turnover, and balance sheet.
+        {pageContent.section3Paragraph1}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-        Under the new rules, effective from April, the SME scheme provides tax relief of up to 186% on qualifying R&D expenditures, meaning that for every £100 spent on eligible R&D activities, a company can deduct £186 from its taxable profits. This can significantly reduce the company’s corporation tax liability.
+        {pageContent.section3Paragraph2}
       </Text>
           
 
@@ -337,16 +344,16 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
           pt={12}
           pb={8}
       >
-        Loss-Making Companies and R&D Tax Credits
+        {pageContent.section4Heading}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
-      Loss-making companies, particularly SMEs, can also benefit from the R&D tax credit scheme. Instead of carrying the loss forward or backward to offset against future or past profits, a loss-making SME can choose to surrender the loss attributable to R&D expenditures for a cash credit from HM Revenue and Customs (HMRC).
+        {pageContent.section4Paragraph1}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={4}>
-      This is particularly beneficial for startups and early-stage businesses that may not yet be generating profits. The cash credit is calculated as 10% of the surrendered loss. For example, if a loss-making SME has £100,000 of qualifying R&D expenditures, it can surrender the loss related to the £186,000 tax deduction (186% of the expenditure) for a cash credit of £18,600 (£186,000 x 10%).
+      {pageContent.section4Paragraph2}
       </Text>
       <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-      To claim the R&D tax credit, the company must submit the R&D tax credit report, along with its corporation tax return (CT600) and any relevant supporting documents, to HMRC. It is essential to ensure that the report is accurate, complete, and compliant with HMRC’s guidelines, as errors or omissions can lead to delays, adjustments, or even rejections of the claim.
+      {pageContent.section4Paragraph3}
       </Text>
                  
                     
@@ -358,10 +365,10 @@ export default function TaxCreditsPage({taxCreditsPageContent}) {
             fontWeight="extrabold"
             fontSize={{ base: "4xl",md: "4xl",}}
             pb={2}>
-        Contact Us
+              {pageContent.contactUsHeading}
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-        Contact Tax Edge Advisory today to schedule a consultation with our experienced tax professionals. Together, we can build a tax strategy that supports your innovation and growth.
+          {pageContent.contactUsParagraph}
         </Text>
         <Stack
             direction={{ base: "column", sm: "row" }}

@@ -14,7 +14,6 @@ import { defineField, defineType } from 'sanity'
  */
 
 
-
 export default defineType({
   name: 'rndLandingPage',
   title: 'RnD Landing Page',
@@ -118,9 +117,10 @@ export default defineType({
 
 
     defineField({
-      name: 'box1FeaturesSubHeading1',
-      title: 'Box1 Features SubHeading1',
-      type: 'string',
+      name: 'box1FeaturesArray',
+      title: 'Box1 Features Array',
+      type: 'array',
+      of: [{type: 'featureObjectSchema'}],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -217,45 +217,14 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
 
-
     defineField({
-      name: 'box2FeaturesSubHeading1',
-      title: 'Box2 Features SubHeading1',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'box2FeaturesSubText1',
-      title: 'Box2 Features SubText 1',
-      type: 'string',
+      name: 'box2FeaturesArray',
+      title: 'Box2 Features Array',
+      type: 'array',
+      of: [{type: 'featureObjectSchema'}],
       validation: (rule) => rule.required(),
     }),
 
-    defineField({
-      name: 'box2FeaturesSubHeading2',
-      title: 'Box2 Features SubHeading2',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'box2FeaturesSubText2',
-      title: 'Box2 Features SubText 2',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-
-    defineField({
-      name: 'box2FeaturesSubHeading3',
-      title: 'Box2 Features SubHeading3',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'box2FeaturesSubText3',
-      title: 'Box2 Features SubText 3',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
 
 
     defineField({
@@ -264,6 +233,7 @@ export default defineType({
       type: 'text',
       validation: (rule) => rule.required(),
     }),
+
 
 
     //Contact Us Paragraph

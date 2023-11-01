@@ -31,68 +31,14 @@ import NextLink from 'next/link'
 import Head from 'next/head'
 
 import client from '../../sanityClient'
+import imageUrlBuilder from '@sanity/image-url'
 
+const builder = imageUrlBuilder(client)
 
-const features1 = [
-  {
-    id: 0,
-    title: 'Tax Savings',
-    text: 'Enjoy substantial reductions in your tax liability'  },
-  {
-    id: 1,
-    title: 'Encouragement for Innovation',
-    text: 'Foster a culture of creativity and growth',
-  },
-  {
-      id: 2,
-      title: 'Competitive Edge',
-      text: 'Stay ahead in your industry with cutting-edge developments',
-    },
-];
-
-const features2 = [
-  {
-    id: 0,
-    title: 'Reduced Corporate Tax',
-    text: 'Pay less tax on profits generated from patented products or processes'  },
-  {
-    id: 1,
-    title: 'Encouragement for Innovation',
-    text: 'Stimulate research and development efforts',
-  },
-  {
-      id: 2,
-      title: 'Market Leadership',
-      text: 'Strengthen your position through IP protection',
-    },
-];
-
-const Illustration1 = (props) => {
-  return (
-    <Box >
-      <NextImage src={scientistIllustration}  >
-      </NextImage>
-    </Box>
-  )
+function urlFor(source) {
+  return builder.image(source)
 }
 
-const Illustration2 = (props) => {
-  return (
-    <Box>
-      <NextImage src={illustration1} >
-      </NextImage>
-    </Box>
-  )
-}
-
-const Illustration3 = (props) => {
-  return (
-    <Box>
-      <NextImage src={devIllustration} >
-      </NextImage>
-    </Box>
-  )
-}
 
 
 export async function getStaticProps(context) {
@@ -112,7 +58,9 @@ export async function getStaticProps(context) {
 export default function ArticleList ({rndLandingPageContent}) {
   const pageContent  = rndLandingPageContent[0] || [];
 
-  console.log(pageContent.headingTopSmall)
+  console.log(pageContent.box1FeaturesArray)
+  console.log(pageContent.box1FeaturesTopHeading)
+
 
   return (
 
@@ -155,8 +103,7 @@ export default function ArticleList ({rndLandingPageContent}) {
                   fontWeight="extrabold"
                   transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
             >
-              Unleash the Power of Innovation with R&D Tax Credits and Patent Box
-
+              {pageContent.headingLarge}
             </Text>
             </Heading>
       </Center>
@@ -183,7 +130,7 @@ export default function ArticleList ({rndLandingPageContent}) {
               >
               <Box>
                 <Box height={{ sm: '24rem', lg: '50vh' }} mt={{ base: 12, sm: 16, md:0 }} mb={{lg: 5}}>
-                  <Illustration1  />
+                  <NextImage src={urlFor(pageContent.pageHeadingImage).url()}  width={(3531/5)} height={(1962/5)}  />
                 </Box>
               </Box>
             </Box>
@@ -205,7 +152,7 @@ export default function ArticleList ({rndLandingPageContent}) {
                 transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
 
               >
-              Fueling Growth Through Innovation and Tax Incentives
+                {pageContent.headingSmall}
               </Text>
             </Heading>
             <Text
@@ -213,14 +160,14 @@ export default function ArticleList ({rndLandingPageContent}) {
               marginTop="2"
               color={useColorModeValue('gray.700', 'gray.200')}
               fontSize="lg">
-              Welcome to our exploration of two powerful incentives that can transform the way your business thrives in today&apos;s competitive landscape: Research and Development (R&D) Tax Credits and the Patent Box scheme. 
+                {pageContent.introductionParagraph1}
               </Text>
               <Text
               as="p"
               marginTop="2"
               color={useColorModeValue('gray.700', 'gray.200')}
               fontSize="lg">
-              At TaxEdge Advisory, we believe in harnessing the full potential of innovation while optimising your tax strategy. Let&apos;s take a high-level glimpse into these game-changing incentives.
+                {pageContent.introductionParagraph2}
             </Text>
           </Box>
         </SimpleGrid>
@@ -238,7 +185,7 @@ export default function ArticleList ({rndLandingPageContent}) {
               <Box borderRadius="lg" overflow="hidden" pt={{base:6}}>
                 <Box textDecoration="none" _hover={{ textDecoration: 'none' }} maxH={{lg:'25vh'}}>
                     <NextLink href="/research-and-dev/tax-credits" passHref>
-                      <Illustration2 />
+                      <NextImage src={urlFor(pageContent.box1TopImage).url()}  width={(3531/5)} height={(1962/5)}  />
                   </NextLink>
                 </Box>
               </Box>
@@ -253,7 +200,7 @@ export default function ArticleList ({rndLandingPageContent}) {
                   fontWeight="extrabold"
                   transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
                   >
-                    R&D Tax Credits: Fueling Innovation and Savings
+                   {pageContent.box1TopHeading} 
                   </Text>
                 </NextLink>
                 
@@ -261,30 +208,31 @@ export default function ArticleList ({rndLandingPageContent}) {
 
               <Heading fontSize="xl" marginTop={{base: 6, md:2}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  What Are R&D Tax Credits?
+                  {pageContent.box1ParagraphHeading1}
                   </Text>
               </Heading>
               <Text as="p" fontSize="md" marginTop={{base:4,md:2}}>
-              R&D Tax Credits are a dynamic government initiative designed to reward businesses that dare to innovate. If your company invests in research and development activities, you may be sitting on a goldmine of tax-saving opportunities.
+                {pageContent.box1ParagraphText1}
               </Text>
 
               <Heading fontSize="xl" marginTop={8}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  How Do They Work?
+                    {pageContent.box1ParagraphHeading2}
                   </Text>
               </Heading>
               <Text as="p" fontSize="md" marginTop="2">
-              At its core, R&D Tax Credits provide a significant reduction in your corporation tax bill. They are designed to offset the costs incurred while advancing technology, developing new products, or enhancing existing processes. Whether you&apos;re a startup pioneering groundbreaking solutions or a seasoned industry player striving for excellence, R&D Tax Credits can empower your innovation journey.              </Text>
+                {pageContent.box1ParagraphText2}
+              </Text>
             
               <Heading fontSize="xl" py={6}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  Benefits at a Glance:
+                    {pageContent.box1FeaturesTopHeading}
                   </Text>
               </Heading>
 
               <Container maxW={{md: '85vw'}} mt={2} >
                 <SimpleGrid columns={{ base: 1 }} spacing={8}>
-                  {features1.map((feature) => (
+                  {pageContent.box1FeaturesArray.map((feature) => (
                       <Box
                       maxW='md' borderWidth='1px' borderRadius='xl' overflow='hidden'
                       padding={4}
@@ -303,9 +251,9 @@ export default function ArticleList ({rndLandingPageContent}) {
                           <Icon as={CheckIcon} />
                         </Box> */}
                         <VStack align={'start'}>
-                          <Text color={'black'} fontWeight={800} fontSize={'md'}>{feature.title}</Text>
+                          <Text color={'black'} fontWeight={800} fontSize={'md'}>{feature.featureTitle}</Text>
                           <Text color={'black'}
-                          fontSize={'md'}>{feature.text}</Text>
+                          fontSize={'md'}>{feature.featureText}</Text>
                         </VStack>
                       </HStack>
                       </Box>
@@ -315,7 +263,7 @@ export default function ArticleList ({rndLandingPageContent}) {
 
               <Box my={8}>
                 <Text fontStyle='italic'>
-                  Curious to learn more? Explore our dedicated R&D Tax Credits page for a deeper dive into eligibility, application, and maximising your benefits.
+                  {pageContent.box1BottomItalicParagraphText}
                 </Text>
 
               </Box>
@@ -367,7 +315,7 @@ export default function ArticleList ({rndLandingPageContent}) {
               <Box borderRadius="lg" overflow="hidden">
                 <Box textDecoration="none" _hover={{ textDecoration: 'none' }} maxH={'25vh'}>
                     <NextLink href="/research-and-dev/patent-box" passHref>
-                      <Illustration3 />
+                      <NextImage src={urlFor(pageContent.box2TopImage).url()}  width={(3531/5)} height={(1962/5)}  />
                   </NextLink>
                 </Box>
               </Box>
@@ -383,8 +331,7 @@ export default function ArticleList ({rndLandingPageContent}) {
                     transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
 
                   >
-                Patent Box: Protecting Intellectual Capital and Tax Advantage
-
+                    {pageContent.box2TopHeading}
                   </Text>
                 </NextLink>
 
@@ -392,29 +339,31 @@ export default function ArticleList ({rndLandingPageContent}) {
 
               <Heading fontSize="xl" marginTop={{md:2}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  Unlock the Power of Intellectual Property
-
+                    {pageContent.box2ParagraphHeading1}
                   </Text>
               </Heading>
               <Text as="p" fontSize="md" my={{base:4,md:2}}>
-              The Patent Box scheme is a strategic move by the UK government to incentivise the protection and commercialisation of intellectual property. If your business holds patents or licences, you&apos;re on the path to unlocking exceptional tax advantages.              </Text>
+                {pageContent.box2ParagraphText1}
+              </Text>
 
               <Heading fontSize="xl" marginTop={{md:10}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  Why It Matters?
+                    {pageContent.box2ParagraphHeading2}
                   </Text>
               </Heading>
               <Text as="p" fontSize="md" marginTop="2">
-              Holding patents is more than just protecting your intellectual capital; it&apos;s about gaining a competitive edge and realising significant tax benefits. This scheme rewards companies that invest in innovation and protect their unique ideas.              </Text>           
+                {pageContent.box2ParagraphText2}
+              </Text>           
               <Heading fontSize="xl" py={6} mt={{lg:8}}>
                   <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  What It Offers:
+                    {pageContent.box2FeaturesTopHeading}
+                  
                   </Text>
               </Heading>
 
               <Container maxW={{md: '85vw'}} mt={2} >
                 <SimpleGrid columns={{ base: 1 }} spacing={8}>
-                  {features2.map((feature) => (
+                  {pageContent.box2FeaturesArray.map((feature) => (
                       <Box
                       maxW='md' borderWidth='1px' borderRadius='xl' overflow='hidden'
                       padding={4}
@@ -433,9 +382,9 @@ export default function ArticleList ({rndLandingPageContent}) {
                           <Icon as={CheckIcon} />
                         </Box> */}
                         <VStack align={'start'}>
-                          <Text color={'black'} fontWeight={800} fontSize={'md'}>{feature.title}</Text>
+                          <Text color={'black'} fontWeight={800} fontSize={'md'}>{feature.featureTitle}</Text>
                           <Text color={'black'}
-                          fontSize={'md'}>{feature.text}</Text>
+                          fontSize={'md'}>{feature.featureText}</Text>
                         </VStack>
                       </HStack>
                       </Box>
@@ -445,7 +394,8 @@ export default function ArticleList ({rndLandingPageContent}) {
 
               <Box my={8}>
                 <Text fontStyle='italic'>
-                Ready to delve deeper into the world of Patent Box tax relief? Visit our dedicated page to uncover the details of eligibility, calculation, and strategic implementation.                </Text>
+                {pageContent.box2BottomItalicParagraphText}
+                </Text>
 
               </Box>
 
@@ -480,8 +430,6 @@ export default function ArticleList ({rndLandingPageContent}) {
                 </NextLink>
               </Box>  
 
-
-
             </Box>
             </SimpleGrid>
 
@@ -495,15 +443,16 @@ export default function ArticleList ({rndLandingPageContent}) {
               fontWeight="extrabold"
               fontSize={{ base: "4xl",md: "4xl",}}
               pb={2}>
-          Contact Us
+                {pageContent.contactUsHeading}
           </Text>
           <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-          At Tax Edge Advisory, we are your trusted guides on the journey of innovation and financial optimisation. Our expertise in R&D Tax Credits and the Patent Box scheme can help you navigate these complex landscapes, unlocking untapped potential for growth and savings.
+            {pageContent.contactUsParagraph1}
           </Text>
           <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-          Stay tuned as we venture deeper into the intricacies of these incentives on our dedicated R&D Tax Credits and Patent Box pages. Discover how your business can thrive by embracing innovation while strategically managing your tax obligations.          </Text>
+            {pageContent.contactUsParagraph2}
+           </Text>
           <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-          Ready to embark on this transformative journey? Let&apos;s get started together.
+          {pageContent.contactUsParagraph3}
           </Text>
         </Box>
 

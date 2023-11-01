@@ -96,6 +96,13 @@ export default defineType({
     }),
 
     //Features Grid 1 Content - TODO
+    defineField({
+      name: 'subSection1Array1',
+      title: 'subSection 1 Array1',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
 
 
     defineField({
@@ -128,6 +135,14 @@ export default defineType({
 
 
     //Features Grid 2 Content - TODO
+    defineField({
+      name: 'subSectionArray2',
+      title: 'subSection Array 2',
+      type: 'array',
+      of: [{type: 'featureObjectSchema'}],
+      validation: (rule) => rule.required(),
+    }),
+
 
     defineField({
       name: 'section3Heading',

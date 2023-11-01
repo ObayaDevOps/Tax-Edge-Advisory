@@ -21,7 +21,9 @@ import {
   import { ReactElement } from 'react';
   import Head from 'next/head';
   import Image from 'next/image';
-  
+
+  import client from '../../sanityClient'
+  import imageUrlBuilder from '@sanity/image-url'
   
   
   const Feature = ({ text, icon, iconBg }) => {
@@ -40,8 +42,35 @@ import {
       </Stack>
     );
   };
+
+
+
   
-  export default function RDTaxReliefPage() {
+  const builder = imageUrlBuilder(client)
+  
+  function urlFor(source) {
+    return builder.image(source)
+  }
+  
+  
+  
+  export async function getStaticProps(context) {
+    const taxCreditsPageContent = await client.fetch(`
+    *[_type == "taxCreditsPage"]`);
+  
+    return {
+      props: {
+        taxCreditsPageContent,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
+
+  
+  export default function RDTaxReliefPage({taxCreditsPageContent}) {
+    const pageContent  = taxCreditsPageContent[0] || [];
+
     return (
     <Box bg={'blackAlpha.200'} py={{base: 5, md:5}}>
         <Head>
@@ -67,7 +96,7 @@ import {
                     textAlign='center'
                     pt={{base:12, md:5}}
                     >
-                    Research and Development Tax Credits
+                    Research and Development Tax Credits BOOM
                 </Heading>   
 
                 <Center ml={{lg:12}} p={{base:8}}>
