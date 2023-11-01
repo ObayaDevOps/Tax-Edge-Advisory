@@ -11,10 +11,8 @@ import {
   Container,
   useDisclosure,
   VStack,
-  Center,
   IconButton,
   CloseButton,
-  Spacer,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -91,14 +89,14 @@ export default function WithSubnavigation(){
                 </NextLink>
               </Button>
 
-              <Button
+              {/* <Button
               variant="ghost"
               _hover={{ bg:'green.50', textColor: 'green.400'}}
               >
                 <NextLink href='/past-work/client-testimonials' passHref>
                 Client Testimonials
                 </NextLink>
-              </Button>
+              </Button> */}
 
               <Button
               variant="ghost"
@@ -174,14 +172,14 @@ export default function WithSubnavigation(){
                 </NextLink>
               </Button>
 
-              <Button
+              {/* <Button
               variant="ghost"
               _hover={{ bg:'green.50', textColor: 'green.400'}}
               >
                 <NextLink href='/past-work/client-testimonials' passHref>
                 Client Testimonials
                 </NextLink>
-              </Button>
+              </Button> */}
 
               <Button
               variant="ghost"

@@ -33,6 +33,15 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'pageImage',
+      title: 'Page Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+  
 
   
 

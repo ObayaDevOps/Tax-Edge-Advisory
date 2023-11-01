@@ -117,10 +117,7 @@ export default function LargeWithNewsletter() {
                 <Text fontSize={'lg'}>contact@taxedgeadvisory.co.uk</Text>
             </Box>
             <Box>
-                <Text fontSize={'lg'}>0700000000</Text>
-            </Box>
-            <Box>
-                <Text fontSize={'sm'}>Plot 64, Mayfair, London</Text>
+                <Text fontSize={'sm'}>124 City Road, London, United Kingdom, EC1V 2NX</Text>
             </Box>
 
 
