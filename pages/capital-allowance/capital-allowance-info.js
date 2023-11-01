@@ -38,123 +38,13 @@ import Head from 'next/head';
 import NextLink from 'next/link'
 
 import client from '../../sanityClient'
+import imageUrlBuilder from '@sanity/image-url'
 
+const builder = imageUrlBuilder(client)
 
-const features1 = [
-  {
-    id: 0,
-    title: 'Our team provides comprehensive feasibility reports and cost estimates',
-    text: ''  },
-  {
-    id: 1,
-    title: 'We assess potential relief opportunities to help you make informed decisions',
-    text: '',
-  },
-  {
-      id: 2,
-      title: 'These insights are invaluable for financial projections and evaluating the advantages of project proposals',
-      text: '',
-    },
-];
-
-const features2 = [
-  {
-    id: 0,
-    title: 'We craft highly detailed technical capital allowances cost reports',
-    text: ''  },
-  {
-    id: 1,
-    title: 'These reports optimise your claims by categorising assets effectively',
-    text: '',
-  },
-  {
-      id: 2,
-      title: 'This process simplifies filings with HMRC and ensures you claim every eligible allowance',
-      text: '',
-    },
-  {
-      id: 3,
-      title: 'Past Expenditure Analysis and Audit of Historic Claims',
-      text: '',
-    },
-];
-
-const features3 = [
-  {
-    id: 0,
-    title: 'Our team conducts thorough reviews of your past expenditure',
-    text: ''  },
-  {
-    id: 1,
-    title: 'We identify additional qualifying expenditure that can be included for capital allowances purposes',
-    text: '',
-  },
-  {
-      id: 2,
-      title: 'This leads to substantial cash reimbursements and future tax savings',
-      text: '',
-    },
-];
-
-const features4 = [
-  {
-    id: 0,
-    title: 'We offer advanced guidance on how to maximise qualifying expenditure',
-    text: ''  },
-  {
-    id: 1,
-    title: 'We help businesses navigate the nuances of the new relief, available for expenditures between April 1, 2021, and March 31, 2023 (Super Deductions) and March 31, 2023, onwards (Full Expensing)',
-    text: '',
-  },
-];
-
-const features5 = [
-  {
-    id: 0,
-    title: 'We assist businesses in factoring capital allowances into commercial negotiations and contract documentation.',
-    text: ''  },
-  {
-    id: 1,
-    title: 'Ensuring that value is preserved and maximised throughout property transactions',
-    text: '',
-  },
-];
-
-const features6 = [
-  {
-    id: 0,
-    title: 'We specialise in optimising 150% tax relief claims for companies involved in land remediation projects',
-    text: ''  },
-  {
-    id: 1,
-    title: 'This includes the possibility of repayable cash credits, ultimately generating substantial tax savings',
-    text: '',
-  },
-];
-
-const features7 = [
-  {
-    id: 0,
-    title: 'Our team is spearheaded by specialists possessing a unique blend of expertise',
-    text: ''  },
-  {
-    id: 1,
-    title: 'We are committed to guiding you through the intricate regulations with a personalised approach',
-    text: '',
-  },
-  {
-      id: 2,
-      title: 'Our modus operandi involves real-time, tailored advice',
-      text: '',
-    },
-
-    {
-      id: 3,
-      title: 'We leverage tried-and-tested methodologies to minimise disruptions to your business operations while achieving optimal outcomes',
-      text: '',
-    },,
-];
-
+function urlFor(source) {
+  return builder.image(source)
+}
 
 
 
@@ -175,7 +65,7 @@ export async function getStaticProps(context) {
 export default function CapitalAllowancePage({capitalAllowancePageContent}) {
   const pageContent  = capitalAllowancePageContent[0] || [];
 
-  console.log(pageContent.headingTopSmall)
+  console.log(pageContent.subSection1Array1)
 
   return (
     <Box bg="blackAlpha.200" pt={8} pb={12}>
@@ -215,7 +105,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
               fontSize={20}
               textTransform={'uppercase'}
               color={'green.400'}>
-              Capital Allowance Series
+              {pageContent.headingTopSmall}
             </chakra.h3>
             <Heading
               as={'h1'}
@@ -237,7 +127,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                   pt={8}
                   pb={6}
                 >
-                  Unlock Hidden Tax Savings with Property Capital Allowances
+                  {pageContent.headingMiddleLarge}
                 </Text>
               </Heading>
             <chakra.h2
@@ -247,13 +137,13 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
               fontSize={'lg'}
               color={useColorModeValue('gray.500', 'gray.400')}
               >
-             See why our clients have chosen Tax Edge Advisory
+                {pageContent.headingBottomSmall}
             </chakra.h2>
           </Box>
           </Flex>
 
         <SimpleGrid columns={{ base: 1, md: 1, lg:1 }} spacing={10} pb={{base: 2, md:4}}>
-          <Illustration1  />
+          <NextImage src={urlFor(pageContent.pageImage).url()}  width={700} height={700}  />
         </SimpleGrid>
 
         </Stack>
@@ -265,16 +155,17 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
           fontSize={{ base: "4xl",md: "5xl",}}
           pb={4}
         >
-          Introduction
+          {pageContent.introductionHeading}
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={2}>
-        Have you recently purchased a commercial property, or perhaps undertaken renovations on one? If you have, then you may be sitting on a goldmine of potential tax savings waiting to be uncovered.
+          {pageContent.introductionParagraph1}
          </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={{base:4, md:4}}>
-        Whenever your business invests in purchasing, constructing, refurbishing, fitting, or acquiring equipment, you have an opportunity to claim valuable capital allowances.
+          {pageContent.introductionParagraph2}
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={16}>
-        Capital allowances are a valuable tax benefit that can be claimed on the money you&apos;ve invested in your commercial property. Even better, you can still claim these allowances on qualifying expenditure from the past that is now part of the property        </Text>
+          {pageContent.introductionParagraph3}
+        </Text>
       </Box>
 
       <Text
@@ -284,7 +175,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
           fontSize={{ base: "3xl",md: "5xl",}}
           pb={{base:10,lg:10}}
       >
-      How We Empower Your Financial Success
+        {pageContent.mainSectionHeading1}
       </Text>
 
       <Box
@@ -302,18 +193,18 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Feasibility Reports and Estimates
+          {pageContent.subSection1Heading1}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration2  />
+            <NextImage src={urlFor(pageContent.subSection1Image1).url()}  width={400} height={400}  />
           </Center>
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features1.map((feature) => (
+              {pageContent.subSection1Array1.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -332,7 +223,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -359,20 +250,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Capital Allowances Cost Reports
+          {pageContent.subSection1Heading2}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration3  />
+            <NextImage src={urlFor(pageContent.subSection1Image2).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features2.map((feature) => (
+              {pageContent.subSection1Array2.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -391,7 +282,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -418,20 +309,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Review and Analysis of Prior Expenditure
+          {pageContent.subSection1Heading3}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration4  />
+            <NextImage src={urlFor(pageContent.subSection1Image3).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features3.map((feature) => (
+              {pageContent.subSection1Array3.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -450,7 +341,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -477,20 +368,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Full Expensing and Super Deductions
+          {pageContent.subSection1Heading4}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration5  />
+            <NextImage src={urlFor(pageContent.subSection1Image4).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features4.map((feature) => (
+              {pageContent.subSection1Array4.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -509,7 +400,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -536,20 +427,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Capital Allowances Integration
+          {pageContent.subSection1Heading5}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration6  />
+            <NextImage src={urlFor(pageContent.subSection1Image5).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features5.map((feature) => (
+              {pageContent.subSection1Array5.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -568,7 +459,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -595,20 +486,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        150% Contaminated Land Remediation Relief Claims
+        {pageContent.subSection1Heading6}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration7  />
+            <NextImage src={urlFor(pageContent.subSection1Image6).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features6.map((feature) => (
+              {pageContent.subSection1Array6.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -627,7 +518,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -654,20 +545,20 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontSize={{ base: "2xl",md: "4xl",}}
             p={{base: 4, lg:4}}
         >
-        Negotiations with HMRC
+          {pageContent.subSection1Heading7}
         </Text>
 
         <Box  >
         <SimpleGrid columns={{base: 1, md:2}}  >
           <Center>
-            <Illustration8  />
+            <NextImage src={urlFor(pageContent.subSection1Image7).url()}  width={400} height={400}  />
           </Center>
 
 
 
           <Box  mt={2} mb={{lg:20}} >
             <SimpleGrid columns={1} spacing={6}>
-              {features7.map((feature) => (
+              {pageContent.subSection1Array7.map((feature) => (
                   <Box
                   maxW='5xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
                   padding={3}
@@ -686,7 +577,7 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                     <VStack align={'start'}>
                       <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
                       <Text color={'black'}
-                      fontSize={'lg'}>{feature.text}</Text>
+                      fontSize={'lg'}>{feature}</Text>
                     </VStack>
                   </HStack>
                   </Box>
@@ -709,12 +600,12 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             pt={12}
             pb={8}
         >
-          Our Approach
+          {pageContent.mainSectionHeading2}
         </Text>
 
         <Box  mt={2} >
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-          {features7.map((feature) => (
+          {pageContent.subSection2Array.map((feature) => (
               <Box
               maxW='2xl' borderWidth='1px' borderRadius='lg' overflow='hidden'
               padding={8}
@@ -736,9 +627,9 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
                   <Icon as={ArrowRightIcon} />
                 </Box>
                 <VStack align={'start'}>
-                  <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text>
+                  {/* <Text color={'black'} fontWeight={200} fontSize={'xl'} >{feature.title}</Text> */}
                   <Text color={'black'}
-                  fontSize={'lg'}>{feature.text}</Text>
+                  fontSize={'lg'}>{feature}</Text>
                 </VStack>
               </HStack>
               </Box>
@@ -756,10 +647,10 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
             fontWeight="extrabold"
             fontSize={{ base: "4xl",md: "4xl",}}
             pb={2}>
-        Contact Us
+        {pageContent.contactUsHeading}
         </Text>
         <Text color={'gray.700'} fontSize={{base:'xl', md: '2xl'}} pb={6}>
-        Contact Tax Edge Advisory today to schedule a consultation with our experienced tax professionals. Together, we can build a tax strategy that supports your innovation and growth.
+          {pageContent.contactUsParagraph}
         </Text>
         <Stack
             direction={{ base: "column", sm: "row" }}
@@ -810,84 +701,4 @@ export default function CapitalAllowancePage({capitalAllowancePageContent}) {
       </Container>
     </Box>
   );
-}
-
-
-
-const Illustration1 = (props) => {
-  return (
-    <Box>
-      <NextImage src={constructionIllustration} width={700} height={700} >
-      </NextImage>
-    </Box>
-  )
-}
-
-const Illustration2 = (props) => {
-  return (
-    <Box>
-      <NextImage src={filesIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration3 = (props) => {
-  return (
-    <Box>
-      <NextImage src={segmentIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration4 = (props) => {
-  return (
-    <Box>
-      <NextImage src={timeIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration5 = (props) => {
-  return (
-    <Box>
-      <NextImage src={calendarIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration6 = (props) => {
-  return (
-    <Box>
-      <NextImage src={flatsIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration7 = (props) => {
-  return (
-    <Box>
-      <NextImage src={environmentsIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
-}
-
-
-const Illustration8 = (props) => {
-  return (
-    <Box>
-      <NextImage src={negotiateIllustration} width={400} height={400} >
-      </NextImage>
-    </Box>
-  )
 }

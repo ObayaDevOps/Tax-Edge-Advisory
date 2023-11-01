@@ -85,16 +85,203 @@ export default defineType({
    
    
     defineField({
-      name: 'mainSectionHeading',
-      title: 'Main Section Heading',
+      name: 'mainSectionHeading1',
+      title: 'Main Section Heading1',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
 
 
+    //TODO: 7
+    defineField({
+      name: 'subSection1Heading1',
+      title: 'Sub Section 1 Heading1',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image1',
+      title: 'subSection1 Image 1',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array1',
+      title: 'subSection 1 Array1',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'subSection1Heading2',
+      title: 'subSection 1 Heading2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image2',
+      title: 'subSection1 Image 2',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array2',
+      title: 'subSection 1 Array2',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subSection1Heading3',
+      title: 'subSection 1 Heading 3',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image3',
+      title: 'subSection1 Image 3',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array3',
+      title: 'subSection 1 Array 3',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subSection1Heading4',
+      title: 'subSection 1 Heading 4',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image4',
+      title: 'subSection1 Image 4',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array4',
+      title: 'subSection 1 Array 4',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subSection1Heading5',
+      title: 'subSection 1 Heading5',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image5',
+      title: 'subSection1 Image 5',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array5',
+      title: 'subSection 1 Array5',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subSection1Heading6',
+      title: 'subSection 1 Heading 6',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image6',
+      title: 'subSection1 Image 6',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array6',
+      title: 'subSection 1 Array 6',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'subSection1Heading7',
+      title: 'subSection 1 Heading 7',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subSection1Image7',
+      title: 'subSection1 Image 7',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
+      name: 'subSection1Array7',
+      title: 'subSection 1 Array 7',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
 
 
 
+    defineField({
+      name: 'mainSectionHeading2',
+      title: 'Main Section Heading2',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'subSection2Array',
+      title: 'subSection 2 Array',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: (rule) => rule.required(),
+    }),
+
+
+    defineField({
+      name: 'contactUsHeading',
+      title: 'contactUsHeading',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'contactUsParagraph',
+      title: 'contactUsParagraph',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
 
 
 
