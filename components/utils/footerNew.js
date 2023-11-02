@@ -84,7 +84,7 @@ export default function LargeWithNewsletter() {
               <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/tax-edge-advisory/'}>
                 <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'SanityStudioBackend'} href={'https://tax-edge-advisory-fgn5e9ln1-obayadevops.vercel.app/studio/'}>
+              <SocialButton label={'SanityStudioBackend'} href={'https://tax-edge-advisory.vercel.app/studio/'}>
                 <FaCodepen />
               </SocialButton>
               <SocialButton label={'SanityManageBackend'} href={'https://www.sanity.io/manage/personal/project/7bjw1raj'}>
