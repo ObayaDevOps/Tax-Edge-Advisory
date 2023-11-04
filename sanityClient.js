@@ -4,7 +4,7 @@ import { createClient} from '@sanity/client'
  const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-    apiVersion: "v2023-10-25",
+    apiVersion: "v2023-11-04",
     useCdn: false
     })
   
