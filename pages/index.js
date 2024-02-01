@@ -47,7 +47,7 @@ export default function Home(props) {
 
         <CallToActionBanner pageContent={props.landingPageContent} />
 
-        {/* <QualificationCard pageContent={props.landingPageContent} /> */}
+        <QualificationCard pageContent={props.landingPageContent} />
       </Box>
 
     </div>
