@@ -162,17 +162,16 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
 
+    defineField({
+      name: 'socialProofImage',
+      title: 'Social Proof Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (rule) => rule.required(),
 
-    // defineField({
-    //   name: 'socialProofImage',
-    //   title: 'Social Proof Image',
-    //   type: 'image',
-    //   options: {
-    //     hotspot: true,
-    //   },
-    //   validation: (rule) => rule.required(),
-
-    // }),
+    }),
 
 
 
