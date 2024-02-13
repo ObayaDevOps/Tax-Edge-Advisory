@@ -1,15 +1,25 @@
 import nodemailer from "nodemailer"
 
 //make this a promise: https://stackoverflow.com/questions/60684227/api-resolved-without-sending-a-response-in-nextjs
+
+//https://www.getmailbird.com/setup/access-bluehost-via-imap-smtp
+//https://clean.email/blog/email-settings/bluehost-email-settings
+
+
+//tls - https://stackoverflow.com/questions/38191770/nodemailer-2-x-configuration-for-office-365-direct-send
+
 export default async (req, res) => {
   const { Name, Email, Message } = req.body;
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "smtp.office365.com",
     port: 587,
-    secure: false,
+    secure: true,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD
+    },
+    tls: {
+        ciphers: 'SSLv3'
     }
   });
 const data={ from: Email,
