@@ -11,16 +11,33 @@ import nodemailer from "nodemailer"
 export default async (req, res) => {
   const { Name, Email, Message } = req.body;
   const transporter = nodemailer.createTransport({
-    host: "smtp.office365.com",
+    host: "smtp.gmail.com",
     port: 587,
-    secure: true,
+    secure: false,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD
-    },
-    tls: {
-        ciphers: 'SSLv3'
     }
+
+
+
+
+    // service:"outlook365",
+    // auth: {
+    //   user: process.env.SMTP_USER,
+    //   pass: process.env.SMTP_PASSWORD
+    // },
+
+    // host: "smtp.office365.com",
+    // port: 587,
+    // secure: false,
+    // auth: {
+    //   user: process.env.SMTP_USER,
+    //   pass: process.env.SMTP_PASSWORD
+    // },
+    // tls: {
+    //     ciphers: 'SSLv3'
+    // }
   });
 const data={ from: Email,
     to: process.env.RECIPIENT_ADDRESS,
