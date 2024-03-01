@@ -142,7 +142,32 @@ const BlogList = ({blogPage}) => {
         <link rel="shortcut icon" href="../../public/images/icon/logo-black.svg"></link>
       </Head>
 
-      <Heading as="h1" size={'3xl'}>Tax Edge Advisory Blog Articles</Heading>
+      <Heading
+              as={'h1'}
+                mb={{base: 2, md: 6}}
+                fontSize={{ base: "5xl",md: "6xl", lg:"7xl",}}
+                minHeight={'1vh'}
+                fontWeight="bold"
+                lineHeight="none"
+                letterSpacing={{base: "normal",md: "tight" }}
+                color="green.900"
+                textAlign='center'
+              >
+                <Text
+                  w="full"
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontWeight="extrabold"
+                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+                  pt={8}
+                  pb={6}
+                >
+                  Tax Edge Advisory Blog Articles
+                </Text>
+              </Heading>
+      
+      
+      
       <Box
         marginTop={{ base: '1', sm: '5' }}
         display="flex"

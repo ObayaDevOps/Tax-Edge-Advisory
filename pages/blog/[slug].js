@@ -31,7 +31,7 @@ import NextLink from 'next/link'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
 
 
-const Exhibition = ({blogPage}) => {
+const Blog = ({blogPage}) => {
 
     return (
     <Container maxW={'7xl'}>
