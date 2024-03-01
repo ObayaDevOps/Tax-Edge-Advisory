@@ -112,9 +112,12 @@ function BlogCard(props) {
             </Box>
             <BlogTags tags={blogTagList} marginTop="3" />
             <Heading fontSize="2xl" marginTop="2">
+            <NextLink href={slug} passHref>
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 {blogName}
               </Link>
+            </NextLink>
+
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
                 {blogLandingPageDisplayShortDescription}
