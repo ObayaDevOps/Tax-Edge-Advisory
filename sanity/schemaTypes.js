@@ -8,13 +8,14 @@ import contactUsPage from './schemas/contactUsPageSchema'
 import taxCalculatorPage from './schemas/taxCalculatorPageSchema'
 import featureObjectSchema from './schemas/featureObjectSchema'
 import blogPage from './schemas/blogPageSchema'
+import termsAndConditionsPage from './schemas/termsAndConditionsSchema'
 
 
 
 export const schema = {
   // types: [landingPage, rndLandingPage, taxCreditsPage, patentBoxPage, capitalAllowancePage, clientTestimonialsPage, contactUsPage, taxCalculatorPage ]
     
-  types: [landingPage, taxCalculatorPage, capitalAllowancePage, rndLandingPage, taxCreditsPage, patentBoxPage, contactUsPage, featureObjectSchema, blogPage]
+  types: [landingPage, taxCalculatorPage, capitalAllowancePage, rndLandingPage, taxCreditsPage, patentBoxPage, contactUsPage, featureObjectSchema, blogPage, termsAndConditionsPage]
 
   
 }

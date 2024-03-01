@@ -75,7 +75,7 @@ const BlogTags = (props) => {
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="blue" key={tag}>
+          <Tag size={'md'} variant="solid" colorScheme="green" key={tag}>
             {tag}
           </Tag>
         );

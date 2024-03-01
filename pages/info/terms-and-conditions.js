@@ -35,12 +35,14 @@ import NextImage from 'next/image'
 import ImageSlider from '../../components/utils/carousel/imageSlider'
 
 
-const Blog = ({blogPage}) => {
+export default function TermsAndConditionsPage({termsAndConditions}) {
+    const termsAndConditionsPage  = termsAndConditions[0] || [];
+
 
     return (
       <Box bg="blackAlpha.200" pt={8} pb={12}>
       <Head>
-        <title>{blogPage.blogName}</title>
+        <title>{termsAndConditionsPage.termsAndConditionsHeading}</title>
         <meta name="description" content="Tax Edge Advisory Webpage"  />
         <link rel="shortcut icon" href="../../public/images/icon/logo-black.svg"></link>
       </Head>
@@ -58,40 +60,46 @@ const Blog = ({blogPage}) => {
           columns={1}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 0, md: 5, lg:8 }}>
-          <Flex rounded={'2xl'}>
-                <NextImage
-                 src={blogPage.blogLandingDisplayImage} 
-                 height={1824} width={2736}
-                 
-                 ></NextImage>
 
-          </Flex>
           <Stack spacing={{ base: 6, md: 10 }}>
             <Box as={'header'}>
-              <Heading
-                lineHeight={1.1}
-                fontWeight={600}
-                fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                {blogPage.blogName}
+
+            <Heading
+              as={'h1'}
+                mb={{base: 2, md: 6}}
+                fontSize={{ base: "5xl",md: "6xl", lg:"7xl",}}
+                minHeight={'1vh'}
+                fontWeight="bold"
+                lineHeight="none"
+                letterSpacing={{base: "normal",md: "tight" }}
+                color="green.900"
+                textAlign='center'
+              >
+                <Text
+                  w="full"
+                  bgClip="text"
+                  bgGradient='linear(to-r, blackAlpha.800, green.500)'
+                  fontWeight="extrabold"
+                  transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
+                  pt={8}
+                  pb={6}
+                >
+                {termsAndConditionsPage.termsAndConditionsHeading}
+                </Text>
               </Heading>
+
               <Text
                 color={useColorModeValue('gray.600', 'gray.400')}
                 fontWeight={300}
                 fontSize={'xl'}>
-                {blogPage.subTitle}
+                {termsAndConditionsPage.subTitle}
               </Text>
               <Box py={4}>
                 <Text
                   color={useColorModeValue('gray.600', 'gray.400')}
                   fontWeight={300}
                   fontSize={'md'}>
-                  {blogPage.authorName}
-                </Text>
-                <Text
-                  color={useColorModeValue('gray.600', 'gray.400')}
-                  fontWeight={300}
-                  fontSize={'md'}>
-                  {blogPage.blogDate}
+                  Last Updated: {termsAndConditionsPage.termsAndConditionsDate}
                 </Text>
               </Box>
             </Box>
@@ -112,13 +120,7 @@ const Blog = ({blogPage}) => {
                     
                 </Text>
                 <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText1}
-                </Text>
-                <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText2}
-                </Text>
-                <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText3}
+                {termsAndConditionsPage.termsAndConditionsText}
                 </Text>
               </VStack>
 
@@ -172,61 +174,21 @@ const Blog = ({blogPage}) => {
 
 
 
-
-
-export async function getStaticPaths() {
-    const paths = await client.fetch(
-        `*[_type == "blogPage" && defined(slug.current)][].slug.current`
-    )
-
-    console.log("paths:")
-    console.log(paths) //prints the slug - is this what I need in navbar
-    //remember all this routing only works in the 'pages' directory
-
-    //so how to get into navbar ? - navbar cannot be a page
-
-    return {
-        paths: paths.map((slug) => ({params: {slug}})),
-        fallback: false,
-    }
-}
-
-const query = groq`*[_type == "blogPage" && slug.current == $slug][0]{
-    artistName,
-    "authorPFPUrl": authorPFP.asset->url,
-    "blogLandingDisplayImage":blogLandingDisplayImage.asset->url,
-    blogDate,
-    authorName,
-    blogName,
-    blogParagraphText1,
-    blogParagraphText2,
-    blogParagraphText3,
-    blogTagList,
-    subTitle,
-    title
-}`
-
-
 export async function getStaticProps(context) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = context.params
-
-
-    const blogPage = await client.fetch(
-        query, { slug }    
-    )
-
-    console.log("RETURNR")
-    console.log(blogPage)
+    const termsAndConditions = await client.fetch(`
+    *[_type == "termsAndConditionsPage"]`);
+  
+    console.log("HEEEEER")
+    console.log(termsAndConditions)
 
 
     return {
-        props: {
-            blogPage
-        },
-        revalidate: 10, //In seconds
+      props: {
+        termsAndConditions,
+      },
+      revalidate: 10, //In seconds
+    };
+  }
+  
 
-    }
-}
 
-export default Blog
