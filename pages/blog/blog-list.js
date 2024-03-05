@@ -165,7 +165,7 @@ const BlogList = ({blogPage}) => {
                   pt={8}
                   pb={6}
                 >
-                  Tax Edge Advisory Blog Articles
+                  Tax Edge Advisory Blog
                 </Text>
               </Heading>
       

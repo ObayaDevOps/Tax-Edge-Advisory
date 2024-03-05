@@ -10,6 +10,10 @@ h1,h2,h3, text {
   font-family: 'Open Sans', monospace;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;

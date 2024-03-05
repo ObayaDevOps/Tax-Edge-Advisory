@@ -31,18 +31,24 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 
+// import { useRemarkSync } from 'react-remark';
+import Markdown from 'react-markdown'
 
-import ImageSlider from '../../components/utils/carousel/imageSlider'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
 
-export default function TermsAndConditionsPage({termsAndConditions}) {
-    const termsAndConditionsPage  = termsAndConditions[0] || [];
+
+
+
+
+export default function PrivacyPolicyPage({privacyPolicy}) {
+    const privacyPolicyPage  = privacyPolicy[0] || [];
 
 
     return (
       <Box bg="blackAlpha.200" pt={8} pb={12}>
       <Head>
-        <title>{termsAndConditionsPage.termsAndConditionsHeading}</title>
+        <title>{privacyPolicyPage.privacyPolicyHeading}</title>
         <meta name="description" content="Tax Edge Advisory Webpage"  />
         <link rel="shortcut icon" href="../../public/images/icon/logo-black.svg"></link>
       </Head>
@@ -84,22 +90,22 @@ export default function TermsAndConditionsPage({termsAndConditions}) {
                   pt={8}
                   pb={6}
                 >
-                {termsAndConditionsPage.termsAndConditionsHeading}
+                {privacyPolicyPage.privacyPolicyHeading}
                 </Text>
               </Heading>
 
-              <Text
+              {/* <Text
                 color={useColorModeValue('gray.600', 'gray.400')}
                 fontWeight={300}
                 fontSize={'xl'}>
-                {termsAndConditionsPage.subTitle}
-              </Text>
+                {privacyPolicyPage.subTitle}
+              </Text> */}
               <Box py={4}>
                 <Text
                   color={useColorModeValue('gray.600', 'gray.400')}
                   fontWeight={300}
                   fontSize={'md'}>
-                  Last Updated: {termsAndConditionsPage.termsAndConditionsDate}
+                  Last Updated: {privacyPolicyPage.privacyPolicyDate}
                 </Text>
               </Box>
             </Box>
@@ -119,9 +125,18 @@ export default function TermsAndConditionsPage({termsAndConditions}) {
                   fontWeight={'300'}>
                     
                 </Text>
-                <Text fontSize={'lg'}>
-                {termsAndConditionsPage.termsAndConditionsText}
-                </Text>
+
+
+                <div className='markdown'>
+                  <Markdown components={ChakraUIRenderer()}  skipHtml>
+                    {privacyPolicyPage.privacyPolicyMarkdownText}
+                  </Markdown>
+
+                </div>
+
+
+
+
               </VStack>
 
               <NextLink href="/info/contact-enquiry">
@@ -172,19 +187,17 @@ export default function TermsAndConditionsPage({termsAndConditions}) {
 
 
 
-
-
 export async function getStaticProps(context) {
-    const termsAndConditions = await client.fetch(`
-    *[_type == "termsAndConditionsPage"]`);
+    const privacyPolicy = await client.fetch(`
+    *[_type == "privacyPolicyPage"]`);
   
     console.log("HEEEEER")
-    console.log(termsAndConditions)
+    console.log(privacyPolicy)
 
 
     return {
       props: {
-        termsAndConditions,
+        privacyPolicy,
       },
       revalidate: 10, //In seconds
     };

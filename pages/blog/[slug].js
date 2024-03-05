@@ -13,6 +13,7 @@ import {
     Button,
     Heading,
     Icon,
+    Center,
     SimpleGrid,
     StackDivider,
     useColorModeValue,
@@ -58,14 +59,14 @@ const Blog = ({blogPage}) => {
           columns={1}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 0, md: 5, lg:8 }}>
-          <Flex rounded={'2xl'}>
+          <Center alignItems='center'>
                 <NextImage
                  src={blogPage.blogLandingDisplayImage} 
-                 height={1824} width={2736}
+                 height={1824/4} width={2736/4}
                  
                  ></NextImage>
 
-          </Flex>
+          </Center>
           <Stack spacing={{ base: 6, md: 10 }}>
             <Box as={'header'}>
               <Heading

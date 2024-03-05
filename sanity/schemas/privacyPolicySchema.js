@@ -17,8 +17,8 @@ import { defineField, defineType, defineConfig } from 'sanity'
 
 
 export default defineType({
-  name: 'termsAndConditionsPage',
-  title: 'Terms and Conditions Page',
+  name: 'privacyPolicyPage',
+  title: 'Privacy Policy Page',
   icon: PackageIcon,
   type: 'document',
   fields: [
@@ -28,31 +28,29 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
-    defineField({
-        name: 'subtitle',
-        title: 'subTitle',
-        type: 'string',
-        validation: (rule) => rule.required(),
-      }),
 
-      defineField({
-        name: 'termsAndConditionsDate',
-        title: 'Terms and Conditions Date',
+    defineField({
+        name: 'privacyPolicyDate',
+        title: 'Privacy Policy Date',
         type: 'date',
         validation: (rule) => rule.required(),
       }),    
 
     defineField({
-        name: 'termsAndConditionsHeading',
-        title: 'Terms and Conditions Heading',
+        name: 'privacyPolicyHeading',
+        title: 'Privacy Policy Heading',
         type: 'string',
       }),
+
     defineField({
-      name: 'termsAndConditionsText',
-      title: 'Terms and Conditions Text',
-      type: 'text',
+      name: 'privacyPolicyMarkdownText',
+      title: 'Privacy Policy Markdown Text',
+      type: 'markdown',
       validation: (rule) => rule.required(),
+
     }),
+    
+
 
 
   ],
