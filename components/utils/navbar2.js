@@ -97,6 +97,14 @@ export default function WithSubnavigation(){
                 Client Testimonials
                 </NextLink>
               </Button> */}
+              <Button
+              variant="ghost"
+              _hover={{ bg:'green.50', textColor: 'green.400'}}
+              >
+                <NextLink href='/blog/blog-list' passHref>
+                Blog
+                </NextLink>
+              </Button>
 
               <Button
               variant="ghost"

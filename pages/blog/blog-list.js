@@ -100,16 +100,7 @@ function BlogCard(props) {
 
   return (
           <Box w="100%">
-            <Box overflow="hidden">
-              <NextLink href={slug} passHref>
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <NextImage
-                 src={blogLandingDisplayImage} 
-                 height={1824} width={2736}
-                 ></NextImage>
-              </Link>
-              </NextLink>
-            </Box>
+
             <BlogTags tags={blogTagList} marginTop="3" />
             <Heading fontSize="2xl" marginTop="2">
             <NextLink href={slug} passHref>
@@ -162,7 +153,7 @@ const BlogList = ({blogPage}) => {
                   bgGradient='linear(to-r, blackAlpha.800, green.500)'
                   fontWeight="extrabold"
                   transition="all .65s ease" _hover={{ transform: 'scale(1.005)', filter: "brightness(120%)", }}
-                  pt={8}
+                  pt={12}
                   pb={6}
                 >
                   Tax Edge Advisory Blog
