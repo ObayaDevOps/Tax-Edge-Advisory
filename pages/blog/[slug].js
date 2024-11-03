@@ -32,14 +32,15 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 
 import ImageSlider from '../../components/utils/carousel/imageSlider'
 
 
-const Blog = ({blogPage}) => {
-
-    return (
-      <Box bg="blackAlpha.200" pt={8} pb={12}>
+const Blog = ({blogPage, mdxSource}) => {
+  return (
+    <Box bg="blackAlpha.200" pt={8} pb={12}>
       <Head>
         <title>{blogPage.blogName}</title>
         <meta name="description" content="Tax Edge Advisory Webpage"  />
@@ -49,7 +50,7 @@ const Blog = ({blogPage}) => {
       <Container 
         maxW={{base:'1xl',md:'85vw'}} 
         py={12} 
-        minHeight={{md:'110Fvh'}}   
+        minHeight={{md:'110vh'}}   
         rounded='3xl' 
         shadow='2xl'    
         background="rgba(240,255,244,0.65)"
@@ -108,20 +109,20 @@ const Blog = ({blogPage}) => {
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
-                  fontWeight={'300'}>
-                    
+                {/* Updated markdown rendering */}
+                <Box className="prose prose-lg max-w-none w-full">
+                  <MDXRemote {...mdxSource} />
+                </Box>
+                
+                {/* Then render regular text content */}
+                <Text fontSize={'lg'}>
+                  {blogPage.blogParagraphText1}
                 </Text>
                 <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText1}
+                  {blogPage.blogParagraphText2}
                 </Text>
                 <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText2}
-                </Text>
-                <Text fontSize={'lg'}>
-                {blogPage.blogParagraphText3}
+                  {blogPage.blogParagraphText3}
                 </Text>
               </VStack>
 
@@ -201,6 +202,7 @@ const query = groq`*[_type == "blogPage" && slug.current == $slug][0]{
     blogDate,
     authorName,
     blogName,
+    blogParagraphmarkdown,
     blogParagraphText1,
     blogParagraphText2,
     blogParagraphText3,
@@ -211,24 +213,18 @@ const query = groq`*[_type == "blogPage" && slug.current == $slug][0]{
 
 
 export async function getStaticProps(context) {
-    // It's important to default the slug so that it doesn't return "undefined"
     const { slug = "" } = context.params
-
-
-    const blogPage = await client.fetch(
-        query, { slug }    
-    )
-
-    console.log("RETURNR")
-    console.log(blogPage)
-
+    const blogPage = await client.fetch(query, { slug })
+    
+    // Updated markdown serialization
+    const mdxSource = await serialize(blogPage.blogParagraphmarkdown || '')
 
     return {
         props: {
-            blogPage
+            blogPage,
+            mdxSource
         },
-        revalidate: 10, //In seconds
-
+        revalidate: 10,
     }
 }
 

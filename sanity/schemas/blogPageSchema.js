@@ -2,6 +2,7 @@ import { PackageIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType, defineConfig } from 'sanity'
 // import { muxInput } from 'sanity-plugin-mux-input'
+import {markdownSchema} from 'sanity-plugin-markdown/next'
 
 /**
  *
@@ -62,6 +63,13 @@ export default defineType({
       name: 'blogParagraphText1',
       title: 'Blog Paragraph Text 1',
       type: 'text',
+    }),
+
+    defineField({
+      name: 'blogParagraphmarkdown',
+      title: 'Blog Paragraph Markdown',
+      type: 'markdown',
+      description: 'A Github flavored markdown field with image uploading',
       validation: (rule) => rule.required(),
     }),
 
@@ -81,7 +89,6 @@ export default defineType({
       name: 'blogParagraphHeading3',
       title: 'Blog Paragraph Heading 3',
       type: 'text',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'blogParagraphText3',
@@ -93,7 +100,6 @@ export default defineType({
       name: 'blogParagraphHeading4',
       title: 'Blog Paragraph Heading 4',
       type: 'text',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'blogParagraphText4',
