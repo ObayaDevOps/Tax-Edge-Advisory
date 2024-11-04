@@ -34,6 +34,8 @@ import NextImage from 'next/image'
 
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXProvider } from '@mdx-js/react'
+import MDXComponents from '../../components/MDXComponents'
 
 import ImageSlider from '../../components/utils/carousel/imageSlider'
 
@@ -109,9 +111,11 @@ const Blog = ({blogPage, mdxSource}) => {
                 />
               }>
               <VStack spacing={{ base: 4, sm: 6 }}>
-                {/* Updated markdown rendering */}
-                <Box className="prose prose-lg max-w-none w-full">
-                  <MDXRemote {...mdxSource} />
+                {/* Wrap MDXRemote with MDXProvider */}
+                <Box w="full">
+                  <MDXProvider components={MDXComponents}>
+                    <MDXRemote {...mdxSource} components={MDXComponents} />
+                  </MDXProvider>
                 </Box>
                 
                 {/* Then render regular text content */}
