@@ -118,16 +118,6 @@ const Blog = ({blogPage, mdxSource}) => {
                   </MDXProvider>
                 </Box>
                 
-                {/* Then render regular text content */}
-                <Text fontSize={'lg'}>
-                  {blogPage.blogParagraphText1}
-                </Text>
-                <Text fontSize={'lg'}>
-                  {blogPage.blogParagraphText2}
-                </Text>
-                <Text fontSize={'lg'}>
-                  {blogPage.blogParagraphText3}
-                </Text>
               </VStack>
 
               <NextLink href="/info/contact-enquiry">

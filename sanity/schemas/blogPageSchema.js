@@ -54,16 +54,6 @@ export default defineType({
         validation: (rule) => rule.required(),
       }),    
 
-    defineField({
-        name: 'blogParagraphHeading1',
-        title: 'Blog Paragraph Heading 1',
-        type: 'text',
-      }),
-    defineField({
-      name: 'blogParagraphText1',
-      title: 'Blog Paragraph Text 1',
-      type: 'text',
-    }),
 
     defineField({
       name: 'blogParagraphmarkdown',
@@ -73,39 +63,6 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
 
-
-    defineField({
-      name: 'blogParagraphHeading2',
-      title: 'Blog Paragraph Heading 2',
-      type: 'text',
-    }),
-    defineField({
-      name: 'blogParagraphText2',
-      title: 'Blog Paragraph Text 2',
-      type: 'text',
-    }),
-
-    defineField({
-      name: 'blogParagraphHeading3',
-      title: 'Blog Paragraph Heading 3',
-      type: 'text',
-    }),
-    defineField({
-      name: 'blogParagraphText3',
-      title: 'Blog Paragraph Text 3',
-      type: 'text',
-    }),
-
-    defineField({
-      name: 'blogParagraphHeading4',
-      title: 'Blog Paragraph Heading 4',
-      type: 'text',
-    }),
-    defineField({
-      name: 'blogParagraphText4',
-      title: 'Blog Paragraph Text 4',
-      type: 'text',
-    }),
 
     defineField({
         name: 'blogTagList',
@@ -128,14 +85,6 @@ export default defineType({
     defineField({
         name: 'blogLandingDisplayImage',
         title: 'Blog Landing Display Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
-      defineField({
-        name: 'authorPFP',
-        title: 'Author Profile Picture',
         type: 'image',
         options: {
           hotspot: true,
